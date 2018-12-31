@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Scrapbook101core.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container pb-2">
+    <div class="row p-0">
+        <div class="col-md-4 text-left">
+            @using (Html.BeginForm("Create", "Item", FormMethod.Get))
+            {
+                <button type="submit" class="btn btn-sm" title="New Item" accesskey="N">Create New</button>
+            }
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <label class="form-control-sm">
+                    Search:
+                </label>
+                @using (Html.BeginForm("Search", "Item", FormMethod.Get, new { @id = "indexform", @class = "inline-form float-right" }))
+                {
+                    @Html.TextBox("searchString", null, new { @id = "Textbox_Search", @class = "form-control-sm" })
+                    <button type="submit" class="btn btn-sm form-control-sm ml-1" accesskey="S">Search</button>
+                }
+            </div>
+        </div>
+        <div class="col-md-4 text-right">
+            <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                View
+            </button>
+            <div class="dropdown-menu">
+                <a id="cardIcon" class="dropdown-item" href="#">Card View</a>
+                <a id="listIcon" class="dropdown-item" href="#">List View</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cardDisplay" class="row">
+    @{
+        int j = 0;
+        foreach (var item in Model)
+        {
+            string imagePath = ViewBag.imagePath[j];
+            string title = item.Title;
+            string detailLink = "/Item/Details?id=" + item.Id;
+            string bodyText = "";
+            string mouseOverText = "";
+            if (item.Description != null && item.Description.Length > 0)
+            {
+                bodyText = (item.Description.Length > 120) ? item.Description.Substring(0, 120) + "..." : item.Description;
+                mouseOverText = (item.Description.Length > 300) ? item.Description.Substring(0, 300) + "..." : item.Description;
+            }
+            bodyText = item.DateAdded.ToString().Substring(0, 10) + ": " + bodyText;
+            <div class="card mx-auto">
+                <div class="card-body p-0" style="max-width:220px; min-height:220px">
+                    <p>
+                        <a href="@detailLink">
+                            <img src="@imagePath" alt="@title" title="@title" width="220" height="220" style="object-fit:scale-down; background-color: silver">
+                        </a>
+                    </p>
+                    <strong>@title</strong>
+                    <p class="card-text" style="font-size: smaller">
+                        <span title="@mouseOverText">@bodyText</span>
+                        <i>@Html.ActionLink("Edit", "edit", new { id = item.Id })</i>, <i>@Html.ActionLink("Delete", "delete", new { id = item.Id })</i>
+                    </p>
+
+                </div>
+            </div>
+            j = j + 1;
+        }
+    }
+</div>
+<div id="tableDisplay" style="visibility:collapse">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateUpdated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssetPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAdded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateUpdated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @if (item.Description != null && item.Description.Length > 40)
+                    {
+                        @Html.DisplayFor(modelItem => item.Description).ToString().Substring(0, 40)
+                        @Html.Raw(" ...")
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Description).ToString();
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@section Scripts {
+
+    <script>
+        $(function () {
+            $("#listIcon").click(function () {
+                $('#tableDisplay').css('visibility', 'visible');
+                $('#cardDisplay').css('display', 'none');
+            });
+            $("#cardIcon").click(function () {
+                if ($('#cardDisplay').css('display') == 'none') {
+                    $('#cardDisplay').slideToggle();
+                }
+                $('#tableDisplay').css('visibility', 'collapse');
+                $('#cardDisplay').css('display', '');
+            });
+        });
+    </script>
+}

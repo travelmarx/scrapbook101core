@@ -1,0 +1,141 @@
+﻿@model Scrapbook101core.Models.CombinedModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<p>Details</p>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Type)
+        </dd>
+    </dl>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.AssetPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.AssetPath)
+        </dd>
+
+        <dt>Assets</dt>
+
+        <dd>
+            <p class="second-level-json">
+                @{
+                    if (Model.Item.Assets != null)
+                    {
+                        foreach (var asset in Model.Item.Assets)
+                        {
+                            @Html.Raw(asset.Name + ", " + asset.Size + "<br/>")
+                        }
+                    }
+                }
+            </p>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Category)
+        </dd>
+
+        <dt>Category Fields</dt>
+        <dd>
+            <p class="second-level-json">
+                @{
+                    var activeFields = Model.CategoryFieldMappingList.First(x => string.Compare(x.Name, Model.Item.Category, true) == 0).ActiveFields;
+                    foreach (var field in activeFields)
+                    {
+                        string val = "";
+                        if (Model.Item.CategoryFields != null)
+                        {
+                            val = Model.Item.CategoryFields[field] == null ? "" : Model.Item.CategoryFields[field].ToString();
+                        }
+                        @(Html.DisplayNameFor(x => x.Item.CategoryFields[field])) @Html.Raw(" = ")
+                        @(Html.DisplayFor(x => x.Item.CategoryFields[field])) @Html.Raw("<br/>")
+                    }
+                }
+            </p>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.DateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.DateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.DateUpdated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.DateUpdated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.UpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
