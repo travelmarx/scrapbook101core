@@ -3,7 +3,28 @@ sorted: true
 references:
 - uid: about
   name: About this site
-  href: articles/about.html
+  href: articles/about-this-site.html
+- uid: category-document
+  name: Category Document
+  href: articles/category-document.html
+- uid: code-discussion
+  name: Code Discussion
+  href: articles/code-discussion.html
+- uid: get-started
+  name: Get started
+  href: articles/get-started.html
+- uid: handling-assets
+  name: Handling Assets
+  href: articles/handling-assets.html
+- uid: introduction
+  name: Introduction
+  href: articles/index.html
+- uid: item-document
+  name: Item Document
+  href: articles/item-document.html
+- uid: next-steps
+  name: Next Steps
+  href: articles/next-steps.html
 - uid: Scrapbook101core
   name: Scrapbook101core
   href: api/Scrapbook101core.html
@@ -1476,3 +1497,6 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Startup.ConfigureServices
   nameWithType: Startup.ConfigureServices
+- uid: technology-overview
+  name: Technology Overview
+  href: articles/technology-overview.html
