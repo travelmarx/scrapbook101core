@@ -84,6 +84,49 @@
 <p>We started by running <code>docfx init</code> to create a simple documentation website. We played around with that for a bit, following the <a href="https://dotnet.github.io/docfx/tutorial/walkthrough/walkthrough_overview.html">walkthroughs</a>.</p>
 <p>After that initial simple documentation website, we started reading up on using <a href="https://dotnet.github.io/docfx/spec/triple_slash_comments_spec.html">C# XML documentation</a>.</p>
 <p>Then, we merged the simple documentation website structure with ScrapbookCore101. Specifically, we created a <strong>\docs</strong> and <strong>\docbuild</strong> folder parallel to code folder. In the <strong>\docbuild</strong> folder, we run <code>docfx</code> to gather metadata and build HTML. Then as a final step, we copy the <strong>\doc\build\ _site content</strong> over to <strong>\docs</strong>.</p>
+<p>Local process:</p>
+<ol>
+<li>Start in root folder as shown below.</li>
+<li>Change directory to <strong>\docbuild</strong>.</li>
+<li>Run <code>docfx metadata</code></li>
+<li>Run <code>docfx --serve --port=8090</code></li>
+<li>Copy all content from <strong>\docbuild\ _site</strong> to <strong>\docs</strong>.</li>
+<li>Commit, push to GitHub.</li>
+</ol>
+<p>If port 8080 is not in use, you can leave off the port specification. The copy operation is because DocFx is not integrated with GitHub Pages (<a href="https://github.com/dotnet/docfx/issues/3284">issue</a>).</p>
+<p>The directory structure at the root of Scrapbook101Core looks like this:</p>
+<pre><code>├───docbuild
+│   ├───api
+│   ├───articles
+│   ├───images
+│   ├───obj
+│   └───_site
+│       ├───api
+│       ├───articles
+│       ├───fonts
+│       └───styles
+├───docs
+└───Scrapbook101core
+    ├───Assets
+    ├───bin
+    ├───Controllers
+    ├───Models
+    ├───obj
+    ├───Properties
+    ├───Views
+    └───wwwroot
+</code></pre>
+<h3 id="gotchas">Gotchas</h3>
+<p>Some things we ran into:</p>
+<ul>
+<li><p>When testing the <a href="https://dotnet.github.io/docfx/tutorial/walkthrough/walkthrough_overview.html">walkthroughs</a>, we used the suggested folder naming <strong>\docfx_walkthrough\docfx_project</strong>. Then, in the context of the walkthrough,
+we pointed to Scrapbook101core code just to see what would happen and it built fine. However, when we then created the <strong>\docbuild</strong> folder inside of Scrapbook101core and tried to run <code>docfx metadata</code>, it was still looking for the <strong>\docfx_project</strong>. The culprit: <strong>\Scrapbook101core\obj\xdoc\cache</strong>. We deleted the cache folder and it started working.</p>
+</li>
+<li><p>In the process of ensuring we can always build everything from scratch, we often wipe out the .yml files in the <strong>\api</strong> folder. But be careful not to wipe out the index.md file if that is what you are pointing to in root toc.yml.</p>
+</li>
+<li><p>Pay attention to warnings in docfx output, they are useful.</p>
+</li>
+</ul>
 <h2 id="future">Future</h2>
 <p>Create a Azure pipeline process to build docs automatically. The flow would be then:</p>
 <ol>
