@@ -4,9 +4,13 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    /// <summary>
+    /// Defines a category in Scrapbook.
+    /// </summary>
+    /// <param name="value">The value of the class</param>
     public class Category
     {
-        [Required(ErrorMessage = "Id is required.")]
+        [Required(ErrorMessage = "id is required.")]
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 

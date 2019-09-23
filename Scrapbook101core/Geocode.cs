@@ -4,8 +4,17 @@
     using System;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Defines a static method to convert a string location to a geocode (latitude and longitude).
+    /// </summary>
     public static class GeoCodeHelper
     {
+
+        /// <summary>
+        /// Gets the geocode (latitude, longitude) from a string location description.
+        /// </summary>
+        /// <param name="location">A string describing a location. For example, "Seattle, WA" or "Italy".</param>
+        /// <returns>A struct of doubles representing longitude and latitude.</returns>
         public static async Task<double[]> GetGeocode(string location)
         {
             var noCoord = new double[] { 0, 0 };

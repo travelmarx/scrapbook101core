@@ -6,8 +6,18 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    /// <summary>
+    /// Defines the main Scrapbook item or entry.
+    /// </summary>
+    /// <remarks>
+    /// A Scrapbook Item object when written to the Document DB bcomes a block of JSON-formatted text.
+    /// Not all properties are required.
+    /// </remarks>
     public class Item
     {
+        /// <value>
+        /// A list of assets associated with the Item. There can be no assets associated.
+        /// </value>
         [JsonProperty(PropertyName = "assets")]
         public List<AssetItem> Assets { get; set; }
 
