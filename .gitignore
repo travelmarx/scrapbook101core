@@ -6,6 +6,7 @@ Gemfile.lock
 packages
 .git
 .vs
+.vscode
 **/bin
 **/obj
 
