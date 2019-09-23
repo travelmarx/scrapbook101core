@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/about-this-site.html",
-          "hash": "BTTeztmIM6J6WU8TvDtP2g=="
+          "hash": "gn/fcEYPz2UzoTWAX9DzBA=="
         }
       },
       "is_incremental": false,
@@ -448,10 +448,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "cwwJ70/JBs1Ns0A7Dr8Qow=="
+          "hash": "a3XlmFRuJRziiZwl9W4z7g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -483,17 +483,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 11,
-          "skipped_file_count": 10
-        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 20,
           "skipped_file_count": 20
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 9
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

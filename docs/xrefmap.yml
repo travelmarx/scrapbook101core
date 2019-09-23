@@ -16,6 +16,9 @@ references:
 - uid: handling-assets
   name: Handling Assets
   href: articles/handling-assets.html
+- uid: index
+  name: Homepage
+  href: index.html
 - uid: introduction
   name: Introduction
   href: articles/index.html
