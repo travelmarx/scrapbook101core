@@ -55,10 +55,12 @@
         }
       ],
       "dest": "_site",
+      "globalMetadata" : { "site_sn": "XXX"},
       "globalMetadataFiles": [],
       "fileMetadataFiles": [],
       "template": [
-        "default"
+        "default",
+        "templates/cust-template"
       ],
       "postProcessors": [],
       "markdownEngineName": "markdig",

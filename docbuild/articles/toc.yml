@@ -1,4 +1,18 @@
-- name: Introduction
-  href: intro.md
-- name: About this site
-  href: about.md
+- name: Index
+  href: index.md
+- name: Get Started
+  href: get-started.md
+- name: Technology Overview
+  href: technology-overview.md
+- name: Item Document
+  href: item-document.md
+- name: Category Document
+  href: category-document.md
+- name: Code Discussion
+  href: code-discussion.md
+- name: Next Steps
+  href: next-steps.md
+- name: Handling Assets
+  href: handling-assets.md
+- name: About this Site
+  href: about-this-site.md

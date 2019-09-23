@@ -28,12 +28,20 @@ Local process:
 
 1. Start in root folder as shown below.
 1. Change directory to **\docbuild**.
-1. Run `docfx metadata`
+    * There should be a docfx.json file in the root of this folder.
+1. Run `docfx metadata`.
+    * This generates YAML files from source code.
+1. Run `docfx build`.
+    * This generates client-only website combining API in YAML files and conceptual files.
 1. Run `docfx --serve --port=8090`
+    * This command essential executes the subcommands `metadata` and `build` and then creates a local web server to host the pages.
+    * To use a different port try `docfx --serve --port=8090`.
+    * If you ran `docfx metadata` and `docfx build`, then at this point you can navigate to the **_site** folder and just   open the index.html file without creating a local web server to host.
 1. Copy all content from **\docbuild\ _site** to **\docs**.
-1. Commit, push to GitHub.
+    * The copy operation is because DocFx is not integrated with GitHub Pages ([issue][issue3284]).
+    * The downside of this is that we end up pushing a lot of files (HTML and supporting files).
+1. Commit, push changes to GitHub.
 
-If port 8080 is not in use, you can leave off the port specification. The copy operation is because DocFx is not integrated with GitHub Pages ([issue][issue3284]).
 
 The directory structure at the root of Scrapbook101Core looks like this:
 
@@ -70,6 +78,12 @@ we pointed to Scrapbook101core code just to see what would happen and it built f
 * In the process of ensuring we can always build everything from scratch, we often wipe out the .yml files in the **\api** folder. But be careful not to wipe out the index.md file if that is what you are pointing to in root toc.yml.
 
 * Pay attention to warnings in docfx output, they are useful.
+
+## Refinements
+
+1. Export the templates.
+
+2. To do: revise templates
 
 ## Future
 
