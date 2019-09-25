@@ -1,6 +1,6 @@
 ---
-title: Next Steps
 uid: next-steps
+title: Scrapbook101core - Next Steps
 ---
 # Next Steps
 

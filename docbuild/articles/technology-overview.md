@@ -1,6 +1,6 @@
 ---
-title: Technology Overview
 uid: technology-overview
+title: Scrapbook101core - Technology Overview
 ---
 # Technology Overview
 

@@ -1,6 +1,6 @@
 ---
 uid: introduction
-title: Introduction
+title: Scrapbook101core - Introduction
 ---
 # Introduction
 

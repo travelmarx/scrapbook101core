@@ -1,6 +1,6 @@
 ---
-title: Code Discussion
 uid: code-discussion
+title: Scrapbook101core - Code Discussion
 ---
 # Code Discussion
 

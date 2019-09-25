@@ -55,7 +55,7 @@
         }
       ],
       "dest": "_site",
-      "globalMetadata" : { "site_sn": "XXX"},
+      "globalMetadata" : { "site.sn": "XXX"},
       "globalMetadataFiles": [],
       "fileMetadataFiles": [],
       "template": [

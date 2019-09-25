@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>About this site </title>
+    <title>Scrapbook101core - About this site </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="About this site ">
+    <meta name="title" content="Scrapbook101core - About this site ">
     <meta name="generator" content="docfx 2.42.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,29 +67,33 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="about">
-<h1 id="about-this-site">About this site</h1>
+<h1 id="about-this-site">About This Site</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This site was created with <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
-<p>How is this site different from our <a href="https://travelmarx.github.io/scrapbook101/">GitHub pages site</a> for Scrapbook101?</p>
+<p>This site was created with <a href="https://dotnet.github.io/docfx/">DocFx</a>. How is this site different from our <a href="https://travelmarx.github.io/scrapbook101/">GitHub pages site</a> for Scrapbook101?</p>
 <ul>
-<li><p>This site included parsing comments from code (under <strong>\Scrapbook101core</strong>)and creating API documentation  together with conceptual content (under <strong>\articles</strong>). The conceptual documentation from the GitHub pages site was reused here with few changes.</p>
+<li><p>This site parses comments from code (under <strong>\Scrapbook101core</strong>) and creates API documentation together with conceptual content (under <strong>\articles</strong>). The conceptual documentation from the GitHub pages site was reused here with few changes.</p>
 </li>
-<li><p>In the previous <a href="https://travelmarx.github.io/scrapbook101/">site</a>, we used Jekyll to create the website (and only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a <strong>\docs</strong> folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the <a href="https://travelmarx.github.io/scrapbook101/">site</a> live.</p>
+<li><p>In the previous <a href="https://travelmarx.github.io/scrapbook101/">site</a>, we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a <strong>\docs</strong> folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the HTML for the <a href="https://travelmarx.github.io/scrapbook101/">site</a>.</p>
 </li>
-<li><p>This site relies only DocFx. We still work offline (currently), run DocFx to produce the website with both conceptual and API documentation, and then push to Github <strong>\docs</strong> folder. The difference is that we are pushing the HTML files and are not relying on Jekyll to build HTML for us.</p>
+<li><p>This site relies only on DocFx. We still work offline (currently), run DocFx to produce the website with both conceptual and API documentation, and then push to Github <strong>\docs</strong> folder. The difference with our Jekyll site is that here we are pushing the HTML files and are not relying on Jekyll to build HTML for us.</p>
 </li>
 </ul>
 <h2 id="initial-steps">Initial steps</h2>
 <p>We started by running <code>docfx init</code> to create a simple documentation website. We played around with that for a bit, following the <a href="https://dotnet.github.io/docfx/tutorial/walkthrough/walkthrough_overview.html">walkthroughs</a>.</p>
 <p>After that initial simple documentation website, we started reading up on using <a href="https://dotnet.github.io/docfx/spec/triple_slash_comments_spec.html">C# XML documentation</a>.</p>
-<p>Then, we merged the simple documentation website structure with ScrapbookCore101. Specifically, we created a <strong>\docs</strong> and <strong>\docbuild</strong> folder parallel to code folder. In the <strong>\docbuild</strong> folder, we run <code>docfx</code> to gather metadata and build HTML. Then as a final step, we copy the <strong>\doc\build\ _site content</strong> over to <strong>\docs</strong>.</p>
-<p>Local process:</p>
+<p>Then, we merged the simple documentation website structure with Scrapbook101core. Specifically, we created a <strong>\docs</strong> and <strong>\docbuild</strong> folder parallel to code folder. In the <strong>\docbuild</strong> folder, we run <code>docfx</code> to gather metadata and build HTML. Then as a final step, we copy the <strong>\doc\build\ _site content</strong> over to <strong>\docs</strong>.</p>
+<p>Our local process:</p>
 <ol>
-<li>Start in root folder as shown below.</li>
+<li>Start in root folder.
+<ul>
+<li>In this case, it is the directory we cloned from GitHub, &quot;scrapbook101core&quot;.</li>
+</ul>
+</li>
 <li>Change directory to <strong>\docbuild</strong>.
 <ul>
-<li>There should be a docfx.json file in the root of this folder.</li>
+<li>There should be a docfx.json file in the root of this folder. We copied the filed from the walkthrough.</li>
+<li>If you didn't start with a docfx walkthrough, you can use the <code>docfx init</code> subcommand to generate an initial docfx.json file.</li>
 </ul>
 </li>
 <li>Run <code>docfx metadata</code>.
@@ -102,11 +106,11 @@
 <li>This generates client-only website combining API in YAML files and conceptual files.</li>
 </ul>
 </li>
-<li>Run <code>docfx --serve --port=8090</code>
+<li>Run <code>docfx --serve</code>
 <ul>
-<li>This command essential executes the subcommands <code>metadata</code> and <code>build</code> and then creates a local web server to host the pages.</li>
+<li>This command executes the subcommands <code>metadata</code> and <code>build</code> and then creates a local web server to host the pages. So the previous two steps can be skipped. They were shown just to talk about what's happening behind the scenes.</li>
 <li>To use a different port try <code>docfx --serve --port=8090</code>.</li>
-<li>If you ran <code>docfx metadata</code> and <code>docfx build</code>, then at this point you can navigate to the <strong>_site</strong> folder and just   open the index.html file without creating a local web server to host.</li>
+<li>Hosting the pages is not strictly necessary. If you ran <code>docfx metadata</code> and <code>docfx build</code>, then at this point you can navigate to the <strong>_site</strong> folder and just open the index.html file without creating a local web server to host.</li>
 </ul>
 </li>
 <li>Copy all content from <strong>\docbuild\ _site</strong> to <strong>\docs</strong>.
@@ -115,7 +119,11 @@
 <li>The downside of this is that we end up pushing a lot of files (HTML and supporting files).</li>
 </ul>
 </li>
-<li>Commit, push changes to GitHub.</li>
+<li>Commit, push changes to GitHub.
+<ul>
+<li>Don't forget to check you .gitignore file and make sure <strong>_site</strong> is excluded because we'll be publishing the docs in the <strong>\docs</strong> folder.</li>
+</ul>
+</li>
 </ol>
 <p>The directory structure at the root of Scrapbook101Core looks like this:</p>
 <pre><code>├───docbuild
@@ -129,6 +137,11 @@
 │       ├───fonts
 │       └───styles
 ├───docs
+│   ├───api
+│   ├───articles
+│   ├───fonts
+│   ├───images
+│   └───styles
 └───Scrapbook101core
     ├───Assets
     ├───bin
@@ -149,14 +162,43 @@ we pointed to Scrapbook101core code just to see what would happen and it built f
 </li>
 <li><p>Pay attention to warnings in docfx output, they are useful.</p>
 </li>
-</ul>
-<h2 id="refinements">Refinements</h2>
-<ol>
-<li><p>Export the templates.</p>
+<li><p>Using the Jekyll process, we could define global site variables like {{site.sn}}, where site.sn = &quot;Scrapbook101&quot;. With the docfx process, we haven't figured out how to do that.</p>
 </li>
-<li><p>To do: revise templates</p>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<h3 id="learn-about-templates">Learn about templates</h3>
+<p>Starting with the <a href="https://dotnet.github.io/docfx/tutorial/walkthrough/advanced_walkthrough.html#create-a-new-template">advanced walkthrough</a> as guidance, we did the following as a test:</p>
+<ol>
+<li><p>See what templates are available with <code>docfx template list</code>. We are interested in the default template.</p>
+</li>
+<li><p>Export the default template with <code>docfx export default</code>.</p>
+<ul>
+<li>This will created a folder called <strong>_exported_templates</strong>.  Either add this to .gitignore or delete after done.</li>
+</ul>
+</li>
+<li><p>In our <strong>\docbuild</strong> folder create a <strong>templates\cust-template</strong> folder.</p>
+</li>
+<li><p>Decide to change the footer template of the site to add the name of our site. So in <strong>_exported_templates\default\partials</strong> copy the footer.tmpl.partial file to <strong>docbuild\templates\cust-template\partials</strong>.</p>
+</li>
+<li><p>Edit the footer.tmpl.partial file to add &quot;Scrapbook101core&quot;.</p>
+</li>
+<li><p>In the <strong>build</strong> key of docfx.json reference the custom template.</p>
+<pre><code> &quot;template&quot;: [
+     &quot;default&quot;,
+     &quot;templates/cust-template&quot;
+ ],
+</code></pre>
+</li>
+<li><p>Build site and verify changes.</p>
 </li>
 </ol>
+<h3 id="learn-about-links-and-cross-references-via-uid">Learn about links and cross references via UID.</h3>
+<p>For example, here is a link to <a class="xref" href="code-discussion.html">Scrapbook101core - Code Discussion</a> file using its UID. Here is a link to a class in the API documentation using its UID: <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a>. Or we can change the text for the API link as so <a class="xref" href="../api/Scrapbook101core.Models.Item.html">The Item Class</a>. Here's the <a href="https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html">help page</a> on linking.</p>
+<p>Here are those links in markdown:</p>
+<pre><code>&lt;xref:code-discussion&gt;
+&lt;xref:Scrapbook101core.Models.Item&gt;
+[The Item Class](xref:Scrapbook101core.Models.Item)
+</code></pre>
 <h2 id="future">Future</h2>
 <p>Create a Azure pipeline process to build docs automatically. The flow would be then:</p>
 <ol>

@@ -1,6 +1,6 @@
 ---
-title: Handling Assets
 uid: handling-assets
+title: Scrapbook101core - Handling Assets
 ---
 # Handling Assets
 

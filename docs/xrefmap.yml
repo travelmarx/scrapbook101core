@@ -2,31 +2,31 @@
 sorted: true
 references:
 - uid: about
-  name: About this site
+  name: Scrapbook101core - About this site
   href: articles/about-this-site.html
 - uid: category-document
-  name: Category Document
+  name: Scrapbook101core - Category Document
   href: articles/category-document.html
 - uid: code-discussion
-  name: Code Discussion
+  name: Scrapbook101core - Code Discussion
   href: articles/code-discussion.html
 - uid: get-started
-  name: Get started
+  name: Scrapbook101core - Get Started
   href: articles/get-started.html
 - uid: handling-assets
-  name: Handling Assets
+  name: Scrapbook101core - Handling Assets
   href: articles/handling-assets.html
 - uid: index
-  name: Homepage
+  name: Scrapbook101core
   href: index.html
 - uid: introduction
-  name: Introduction
+  name: Scrapbook101core - Introduction
   href: articles/index.html
 - uid: item-document
-  name: Item Document
+  name: Scrapbook101core - Item Document
   href: articles/item-document.html
 - uid: next-steps
-  name: Next Steps
+  name: Scrapbook101core - Next Steps
   href: articles/next-steps.html
 - uid: Scrapbook101core
   name: Scrapbook101core
@@ -1501,5 +1501,5 @@ references:
   fullName: Scrapbook101core.Startup.ConfigureServices
   nameWithType: Startup.ConfigureServices
 - uid: technology-overview
-  name: Technology Overview
+  name: Scrapbook101core - Technology Overview
   href: articles/technology-overview.html

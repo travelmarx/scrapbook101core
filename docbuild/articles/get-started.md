@@ -1,6 +1,6 @@
 ---
-title: Get started
 uid: get-started
+title: Scrapbook101core - Get Started
 ---
 # Get Started
 
