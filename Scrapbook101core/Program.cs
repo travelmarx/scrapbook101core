@@ -14,8 +14,11 @@ namespace Scrapbook101core
     /// Defines the entry point into the Scrapbook ASP.NET Core web application. 
     /// ASP.NET core apps configure and launch a host. The host is responsible for the app startup
     /// and lifetime management. For more information,  
-    /// <see href="https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host?view=aspnetcore-2.2">ASP.NET Core Web Host</see>.
+    /// <see href="https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host?view=aspnetcore-3.0">ASP.NET Core Web Host</see>.
     /// </summary>
+    /// <remarks>
+    /// Program remarks.
+    /// </remarks>
     public class Program
     {
         /// <summary>

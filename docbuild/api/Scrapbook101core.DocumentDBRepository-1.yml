@@ -26,16 +26,19 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DocumentDBRepository
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 34
+    startLine: 45
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
+  summary: "\nDefines the methods for working with the Document DB repository. Also contains methods for initializing\na new repository if the application is configured to do so.\n"
+  example: []
   syntax:
     content: >-
       public static class DocumentDBRepository<T>
           where T : class
     typeParameters:
     - id: T
+      description: The Item class which represents a repository item.
     content.vb: Public Module DocumentDBRepository(Of T As Class)
   inheritance:
   - System.Object
@@ -75,7 +78,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 41
+    startLine: 52
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -114,7 +117,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemsAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 61
+    startLine: 72
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -154,7 +157,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 78
+    startLine: 89
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -193,7 +196,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 83
+    startLine: 94
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -234,7 +237,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 88
+    startLine: 99
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -273,7 +276,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Initialize
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 93
+    startLine: 104
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -307,7 +310,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 201
+    startLine: 212
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core

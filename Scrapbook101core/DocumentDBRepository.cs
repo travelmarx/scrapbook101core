@@ -12,6 +12,12 @@ using Scrapbook101core.Models;
 
 namespace Scrapbook101core
 {
+    /// <summary>
+    /// Defines static variables that map to known values at application start and that 
+    /// don't change during the application life time. These static variables mostly
+    /// map to the configu values in the <c>appsettings.json</c> file. For example,
+    /// the Document DB database name.
+    /// </summary>
     public static class AppVariables
     {
         public static readonly bool AddTestAssets = Scrapbook101Configuration.Current.AddTestAssets;
@@ -32,6 +38,11 @@ namespace Scrapbook101core
         public static List<CategoryFieldMapping> CategoryFieldMappingList { get; set; }
     }
 
+    /// <summary>
+    /// Defines the methods for working with the Document DB repository. Also contains methods for initializing
+    /// a new repository if the application is configured to do so.
+    /// </summary>
+    /// <typeparam name="T">The Item class which represents a repository item.</typeparam>
     public static class DocumentDBRepository<T> where T : class
     {
         private static readonly string DatabaseId = AppVariables.DatabaseId;

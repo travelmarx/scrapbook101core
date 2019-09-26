@@ -14,6 +14,12 @@ using Microsoft.Extensions.FileProviders;
 
 namespace Scrapbook101core
 {
+    /// <summary>
+    /// Configures services and the application's request pipeline. 
+    /// All ASP.NET Core apps use a Startup class, which is named Startup by convention.
+    /// For more information, see 
+    /// <see href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.0">App startup in ASP.NET Core</see>.
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)

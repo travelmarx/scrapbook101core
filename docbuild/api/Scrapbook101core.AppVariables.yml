@@ -34,10 +34,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AppVariables
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 14
+    startLine: 20
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
+  summary: "\nDefines static variables that map to known values at application start and that \ndon&apos;t change during the application life time. These static variables mostly\nmap to the configu values in the <code>appsettings.json</code> file. For example,\nthe Document DB database name.\n"
+  example: []
   syntax:
     content: public static class AppVariables
     content.vb: Public Module AppVariables
@@ -76,7 +78,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AddTestAssets
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -111,7 +113,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: ApplicationName
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 17
+    startLine: 23
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -146,7 +148,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetBasePath
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 18
+    startLine: 24
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -181,7 +183,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AuthKey
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 19
+    startLine: 25
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -216,7 +218,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: NoAssetImage
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 20
+    startLine: 26
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -251,7 +253,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: BingMapKey
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 21
+    startLine: 27
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -286,7 +288,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryDocumentType
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 22
+    startLine: 28
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -321,7 +323,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CollectionId
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 23
+    startLine: 29
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -356,7 +358,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DatabaseId
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 24
+    startLine: 30
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -391,7 +393,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Endpoint
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 25
+    startLine: 31
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -426,7 +428,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemDocumentType
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -461,7 +463,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestCategories
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 27
+    startLine: 33
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -496,7 +498,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestDocuments
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 28
+    startLine: 34
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -531,7 +533,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryDisplayList
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 30
+    startLine: 36
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -568,7 +570,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFieldMappingList
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core

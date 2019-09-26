@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Scrapbook101core
 {
+    /// <summary>
+    /// Represents the application settings definied in <c>appsettings.json.</c>
+    /// </summary>
     public class Scrapbook101Configuration
     {
         public static Scrapbook101Configuration Current;

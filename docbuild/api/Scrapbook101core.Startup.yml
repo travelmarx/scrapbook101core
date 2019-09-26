@@ -23,10 +23,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Startup
     path: ../Scrapbook101core/Startup.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
+  summary: "\nConfigures services and the application&apos;s request pipeline. \nAll ASP.NET Core apps use a Startup class, which is named Startup by convention.\nFor more information, see \n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.0\">App startup in ASP.NET Core</a>.\n"
+  example: []
   syntax:
     content: public class Startup
     content.vb: Public Class Startup
@@ -64,7 +66,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: .ctor
     path: ../Scrapbook101core/Startup.cs
-    startLine: 18
+    startLine: 24
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -97,7 +99,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Configuration
     path: ../Scrapbook101core/Startup.cs
-    startLine: 23
+    startLine: 29
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -132,7 +134,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: ConfigureServices
     path: ../Scrapbook101core/Startup.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -165,7 +167,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Configure
     path: ../Scrapbook101core/Startup.cs
-    startLine: 54
+    startLine: 60
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core

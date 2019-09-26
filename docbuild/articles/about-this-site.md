@@ -104,6 +104,8 @@ Starting with the [advanced walkthrough][awalk] as guidance, we did the followin
 1. Decide to change the footer template of the site to add the name of our site. So in **_exported_templates\default\partials** copy the footer.tmpl.partial file to **docbuild\templates\cust-template\partials**.
 
 1. Edit the footer.tmpl.partial file to add "Scrapbook101core".
+    * The .templ is a Mustache template file used by [renderers][renderers].
+    * In this simple case, it's obvious where to add the extra text "Scrapbook101core"
 
 1. In the **build** key of docfx.json reference the custom template.
    
@@ -116,6 +118,38 @@ Starting with the [advanced walkthrough][awalk] as guidance, we did the followin
 
 1. Build site and verify changes.
 
+### Fine tune reference with template
+
+The goal is to removed the inherited members section as shown below:
+
+![Class inherited members default](../images/class-inherited-members-default.jpg "Class inherited members default")
+
+
+1. Find the correct template **_exported_templates\default\partials\class.header.tmpl.partial** and copy to corresponding folder in **\cust-templates**.
+
+2. Edit out the inherited members part:
+
+    ```
+    {{#inheritedMembers.0}}
+    <div class="inheritedMembers">
+    <h5>{{__global.inheritedMembers}}</h5>
+    {{/inheritedMembers.0}}
+    {{#inheritedMembers}}
+    <div>
+    {{#definition}}
+        <xref uid="{{definition}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
+    {{/definition}}
+    {{^definition}}
+        <xref uid="{{uid}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
+    {{/definition}}
+    </div>
+    {{/inheritedMembers}}
+    {{#inheritedMembers.0}}
+    </div>
+    {{/inheritedMembers.0}}
+    ```
+3. Build and verify.
+
 ### Learn about links and cross references via UID. 
 
 For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:Scrapbook101core.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:Scrapbook101core.Models.Item). Here's the [help page][linkhelp] on linking.
@@ -127,6 +161,8 @@ Here are those links in markdown:
 <xref:Scrapbook101core.Models.Item>
 [The Item Class](xref:Scrapbook101core.Models.Item)
 ```
+
+How to link to a code file?  For example, [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json).
 
 ## Future
 
@@ -161,3 +197,4 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [site1]: https://travelmarx.github.io/scrapbook101/
 [issue3284]: https://github.com/dotnet/docfx/issues/3284
 [linkhelp]: https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html
+[renderers]: https://dotnet.github.io/docfx/tutorial/intro_template.html#renderer
