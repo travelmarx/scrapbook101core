@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.AppVariables.html",
-          "hash": "JoEzuN9GtTrIXMO0Jpv9+g=="
+          "hash": "OCR1Y19FjwAJPnsdVnyRyA=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.CategoryController.html",
-          "hash": "MIW5qjiQZwOONFaRuMeCIw=="
+          "hash": "bhGLlCNlfjonnBNoYIosHw=="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "Sip3A7aqqzmbV/byXwy51g=="
+          "hash": "C4yKu1YCiCZtxcQqbQDSZA=="
         }
       },
       "is_incremental": true,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.DocumentDBRepository-1.html",
-          "hash": "iKgHOGTh8LMiVpX3/O6eKg=="
+          "hash": "xfttTszMPUIPv+Z7fOoXdQ=="
         }
       },
       "is_incremental": true,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.GeoCodeHelper.html",
-          "hash": "PLxPBxXjfY5/LUZX6joTIA=="
+          "hash": "0Atzb6DkzoMfj2QwbUpC2Q=="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.AssetItem.html",
-          "hash": "sPrPFi04TUk13Ocg07cKlA=="
+          "hash": "TaDb0A0DAsBdUAKOGI+82g=="
         }
       },
       "is_incremental": true,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Category.html",
-          "hash": "02MHNsEbrUpXvi6hRjOyyQ=="
+          "hash": "PGdvONF2TNb2j/zmgpotVg=="
         }
       },
       "is_incremental": true,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFieldMapping.html",
-          "hash": "u3Q6InvhS3pMr21v/cyCPg=="
+          "hash": "QLBkv4cE7o/tmYojSmCxIw=="
         }
       },
       "is_incremental": true,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFields.html",
-          "hash": "i6ILZ6Y74lJXC0kWjEFPgw=="
+          "hash": "e95XzP8kliE47/h4lqkDRQ=="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItem.html",
-          "hash": "Ili6OfrCtlEHAz5sSBOpxA=="
+          "hash": "Mw5At05fFMVGx2yh+jLyBQ=="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItemDisplay.html",
-          "hash": "fJTqJONUOrMhZfKbWTimbQ=="
+          "hash": "AhtSleNe6TLPVxGVcek08A=="
         }
       },
       "is_incremental": true,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CombinedModel.html",
-          "hash": "L1TMTz4x7IGnKjU8acATfg=="
+          "hash": "VIb/ho8VtIwswiZyH1HLUg=="
         }
       },
       "is_incremental": true,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.FileItem.html",
-          "hash": "8qAqLjdqRLWmLDCVOtiCzQ=="
+          "hash": "9VK6acZrkDgS+22ct96coA=="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Item.html",
-          "hash": "wIoAo+cDpQl3d0o5lX52mQ=="
+          "hash": "YCPeUA32jKGFsSbb3dZu3w=="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Program.html",
-          "hash": "Gm4G8wCQ4CqdEwOirlM9Jw=="
+          "hash": "Fb8UH7dCFjim1Z2703xubQ=="
         }
       },
       "is_incremental": true,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Scrapbook101Configuration.html",
-          "hash": "KA5M89gH4pTRNdwuWgXEFw=="
+          "hash": "ZP6hBYT1WJ8e7z6ErHFEZQ=="
         }
       },
       "is_incremental": true,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Startup.html",
-          "hash": "SD0zOH8628sShipJChURzg=="
+          "hash": "UDjENibdzKmCRbcOsJAjlA=="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.html",
-          "hash": "e170/Hu0kUVaG7fDMjd8lw=="
+          "hash": "JRQXEMzgdVXftJybJNi/Pg=="
         }
       },
       "is_incremental": true,
@@ -273,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/about-this-site.html",
-          "hash": "PF5MzF4+H2Iiu6TZHaSdyg=="
+          "hash": "at99M63D/BL38Vo8S+5hCA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -333,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/index.html",
-          "hash": "6tThjGA339PI3jaRZvnvGg=="
+          "hash": "c6QS2qyK+Hzmy7Rt/pH1RA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -382,6 +382,17 @@
         ".html": {
           "relative_path": "articles/toc.html",
           "hash": "XB7jjdS+mbDXzefEgScyDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/class-inherited-members-default.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/class-inherited-members-default.jpg"
         }
       },
       "is_incremental": false,
@@ -451,7 +462,7 @@
           "hash": "jm3M1w+9YicuM1nTt+xFkQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -483,12 +494,11 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 11,
+          "skipped_file_count": 11
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -496,11 +506,12 @@
           "total_file_count": 20,
           "skipped_file_count": 20
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 11,
-          "skipped_file_count": 10
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },

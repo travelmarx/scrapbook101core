@@ -78,9 +78,15 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Scrapbook101core.AppVariables.html">AppVariables</a></h4>
-      <section></section>
+      <section><p>Defines static variables that map to known values at application start and that
+don't change during the application life time. These static variables mostly
+map to the configu values in the <code>appsettings.json</code> file. For example,
+the Document DB database name.</p>
+</section>
       <h4><a class="xref" href="Scrapbook101core.DocumentDBRepository-1.html">DocumentDBRepository&lt;T&gt;</a></h4>
-      <section></section>
+      <section><p>Defines the methods for working with the Document DB repository. Also contains methods for initializing
+a new repository if the application is configured to do so.</p>
+</section>
       <h4><a class="xref" href="Scrapbook101core.GeoCodeHelper.html">GeoCodeHelper</a></h4>
       <section><p>Defines a static method to convert a string location to a geocode (latitude and longitude).</p>
 </section>
@@ -88,12 +94,17 @@
       <section><p>Defines the entry point into the Scrapbook ASP.NET Core web application.
 ASP.NET core apps configure and launch a host. The host is responsible for the app startup
 and lifetime management. For more information,<br>
-<a href="https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host?view=aspnetcore-2.2">ASP.NET Core Web Host</a>.</p>
+<a href="https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host?view=aspnetcore-3.0">ASP.NET Core Web Host</a>.</p>
 </section>
       <h4><a class="xref" href="Scrapbook101core.Scrapbook101Configuration.html">Scrapbook101Configuration</a></h4>
-      <section></section>
+      <section><p>Represents the application settings definied in <code>appsettings.json.</code></p>
+</section>
       <h4><a class="xref" href="Scrapbook101core.Startup.html">Startup</a></h4>
-      <section></section>
+      <section><p>Configures services and the application's request pipeline.
+All ASP.NET Core apps use a Startup class, which is named Startup by convention.
+For more information, see
+<a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.0">App startup in ASP.NET Core</a>.</p>
+</section>
 </article>
           </div>
           
