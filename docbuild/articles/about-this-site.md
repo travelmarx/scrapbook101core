@@ -172,7 +172,7 @@ How to link to a code file?  Here's an full qualified path link: [appsettings.js
 In the docfx.json file, under the **build** key, specify this:
 
 ```json
-    "globalMetadata" : { "_appTitle": "Scrapbook101core" },
+"globalMetadata" : { "_appTitle": "Scrapbook101core" },
 ```
 
 which will add this text to the title of every page, as viewed in browser tab. The _appTitle is added to the UID of each page, so for the "Get Started" page, the title is "Get Started | Scrapbook101core". For more information on reservied metadata you can use, see [reserved metadata][metadata].
