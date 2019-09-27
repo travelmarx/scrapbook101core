@@ -1,6 +1,6 @@
 ---
 uid: technology-overview
-title: Scrapbook101core - Technology Overview
+title: Technology Overview
 ---
 # Technology Overview
 
@@ -21,7 +21,7 @@ For more background reading on schemas and relational versus NoSQL databases, se
 
 [Microsoft Azure Cosmos DB][cosmos] is a multi-modeled database service that supports NoSQL databases called [document-oriented data stores][docdb], which is what Scrapbook101core uses. In document-oriented data stores, data is stored in *documents* where each document can differ slightly (if needed) in its schema while remaining part of a larger database collection. Documents are roughly equivalent to an object be it represented in code or JSON.
 
-Each Scrapbook101core item (or object) is represented as in the document data store as one document in JSON. For example, an item representing a book could be represented by the following:
+Each Scrapbook101core <xref:Scrapbook101core.Models.Item> (or object) is represented as in the document data store as one document in JSON. For example, an item representing a book could be represented by the following:
 
 ```json
 {
@@ -53,21 +53,21 @@ In a relational database, the data that consitutes a Scrapbook101core item would
 }
 ```
 
-The two documents share common fields like **id**, **title**, **description**, and **rating** and differ on other fields that are specific to the category of the item. The Scrapbook101core [schema](/prototype-document) is a bit more complex than the book and film example above, but the idea is essentially the same. 
+The two documents share common fields like **id**, **title**, **description**, and **rating** and differ on other fields that are specific to the category of the item. The actual Scrapbook101core [item schema][item-document] is a bit more complex than the book and film example above, but the idea is essentially the same. 
 
 ### CRUD
 
-With Cosmos DB, you have the usual CRUD (create, read, update, delete) operations on the documents in the data store. And you can use SQL-like query language to query the document store. For example, in the local emulator you can create a query to search for documents. The following image shows a query that finds items with a rating greater than 3.
+With Cosmos DB, you have the usual CRUD (create, read, update, delete) operations on the documents in the data store. And you can use a SQL-like query language to query the document store. For example, in the local emulator you can create a query to search for documents. The following image shows a query that finds items with a rating greater than 3.
 
 ![A query in the Cosmos local emulator](../images/crud-example.png "A query in the Cosmos local emulator.")
 
 In the Scrapbook101core code, similar queries are constructed using Language Integrated Queries ([LINQ][linq]).
 
-### Origins
+### Starting point
 
 The Scrapbook101core code was initially built starting with the [ASP.NET MVC][aspmvc] To-Do List app and customizing it. From that version, the ASP.NET core version was created. 
 
-The To-Do list is a simple list of items with three pieces of tracked information: name, description, and status (completed or not completed). The To-Do List app allows CRUD operations. After running the To-Do list sample and looking in the document store, you will see documents that look like the following:
+The To-Do list is a simple list of items with three pieces of tracked information: **name**, **description**, and **status** (completed or not completed). The To-Do List app allows CRUD operations. After running the To-Do list sample and looking in the document store, you will see documents that look like the following:
 
 ```json
 {
@@ -83,7 +83,7 @@ While Scrapbook101core is more complex, that is, more pieces of information are 
 
 The second technology that underlies Scrapbook101core is the [Model-view-controller][mvcwiki] (MVC) software pattern. This pattern is commonly used to divide an application into functional pieces. Doing so has the advantages of better code reuse, parallel development, and ease of modification. The main challenge many encounter with MVC is that there is an initial learning curve getting used to thinking in terms of the three components (model, view, and controller) and understanding how they communicate.
 
-Scrapbook101core is built around the MVC pattern as supported by the [.NET Framework][aspmvc] as well as [.NET Core][coremvc]. The ASP.NET MVC Visual Studio project file is [here][scrapmvc] and the ASP.NET Core Visual Studio project file is [here][scrapcore]. For more on the difference between the .NET Framework and .NET Core, see [The Difference Between .NET Framework and .NET Core][diff].
+Scrapbook101core is built around the MVC pattern as supported in [.NET Core][coremvc]. The ASP.NET MVC Visual Studio project file is [here][scrapmvc] and the ASP.NET Core Visual Studio project file is [here][scrapcore]. For more on the difference between the .NET Framework and .NET Core, see [The Difference Between .NET Framework and .NET Core][diff].
 
 The model-view-control pattern is supported by many programming languages such as Java, Ruby, Python and JavaScript. For example, the [TodoMVC][todomvc] project shows many different implementations in JavaScript-based frameworks. 
 
@@ -96,9 +96,9 @@ Taking the To-Do list application and looking at it in Visual Studio gives a goo
 
 Scrapbook101core can be used with Bing Maps [geocoding][geocode]. Geocoding is the process of converting an address presented as a string ("Seattle, WA, USA") into a location on Earth represented by geographical coordinates (latitude and longitude).  Each Scrapbook101core item has an associated **location** that contains a string value such as "Seattle, WA, USA" or "Italy".
 
-If you set the `bingMapKey` key in the `web.config` file to a valid key, then geocoding is enabled and addition to the **location**, a **geoLocation** value is calculated that contains the geographical coordinates corresponding to the string value. If The `bingMapKey` key is blank, which it is by default, no geocoding is performed.
+If you set the `bingMapKey` key in the `appsettings.json` file to a valid key, then geocoding is enabled and addition to the **location**, a **geoLocation** value is calculated that contains the geographical coordinates corresponding to the string value. If the `bingMapKey` key is blank, which it is by default, no geocoding is performed.
 
-Why is geocoding important? With the intuitive nature of searching for information with a map and the integration of maps in many aspects of our lives, it is important to associated Scrapbook101core items with geocodes that are universal and independent of string names. A good analogy is in botany when referring to a plant. The most accurate way to refer to a plant is by its scientific name rather than its common name, which depends on location and language.
+Why is geocoding important? With the intuitive nature of searching for information on a map coupled with the integration of maps in many aspects of our lives, it is important to associated Scrapbook101core items with geocodes that are universal and independent of string names. A good analogy is in botany when referring to a plant. The most accurate way to refer to a plant is by its scientific name rather than its common name, which depends on location and language.
 
 Taking the example above and using the [Bing Maps Rest Service][bingrest] with an unstructured URL, we can test finding the geocode for "Seattle, WA" as follows:
 
@@ -108,7 +108,7 @@ http://dev.virtualearth.net/REST/v1/Locations?
     maxResults=1&key=BingMapsKey
 ```
 
-we are returned the followng response (truncated for simplicity):
+This query returns the following response (truncated for simplicity):
 
 ```json
 {

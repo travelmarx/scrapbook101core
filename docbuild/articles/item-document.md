@@ -1,6 +1,6 @@
 ---
 uid: item-document
-title: Scrapbook101core - Item Document
+title: Item Document
 ---
 # Item Document
 

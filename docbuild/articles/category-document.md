@@ -1,6 +1,6 @@
 ---
 uid: category-document
-title: Scrapbook101core - Category Document
+title: Category Document
 ---
 # Category Document
 

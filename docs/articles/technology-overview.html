@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Scrapbook101core - Technology Overview </title>
+    <title>Technology Overview | Scrapbook101core -  </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Scrapbook101core - Technology Overview ">
+    <meta name="title" content="Technology Overview | Scrapbook101core -  ">
     <meta name="generator" content="docfx 2.42.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -78,7 +78,7 @@
 <a href="https://medium.com/capital-one-tech/nosql-database-doesnt-mean-no-schema-a824d591034e">NoSQL Database Doesn’t Mean No Schema</a>.</p>
 <h3 id="document-oriented">Document-oriented</h3>
 <p><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Microsoft Azure Cosmos DB</a> is a multi-modeled database service that supports NoSQL databases called <a href="https://en.wikipedia.org/wiki/Document-oriented_database">document-oriented data stores</a>, which is what Scrapbook101core uses. In document-oriented data stores, data is stored in <em>documents</em> where each document can differ slightly (if needed) in its schema while remaining part of a larger database collection. Documents are roughly equivalent to an object be it represented in code or JSON.</p>
-<p>Each Scrapbook101core item (or object) is represented as in the document data store as one document in JSON. For example, an item representing a book could be represented by the following:</p>
+<p>Each Scrapbook101core <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a> (or object) is represented as in the document data store as one document in JSON. For example, an item representing a book could be represented by the following:</p>
 <pre><code class="lang-json">{
     &quot;id&quot;: &quot;GUID&quot;,
     &quot;title&quot;: &quot;Book title&quot;,
@@ -104,14 +104,14 @@
     }
 }
 </code></pre>
-<p>The two documents share common fields like <strong>id</strong>, <strong>title</strong>, <strong>description</strong>, and <strong>rating</strong> and differ on other fields that are specific to the category of the item. The Scrapbook101core <a href="/prototype-document">schema</a> is a bit more complex than the book and film example above, but the idea is essentially the same.</p>
+<p>The two documents share common fields like <strong>id</strong>, <strong>title</strong>, <strong>description</strong>, and <strong>rating</strong> and differ on other fields that are specific to the category of the item. The actual Scrapbook101core <a href="item-document.html">item schema</a> is a bit more complex than the book and film example above, but the idea is essentially the same.</p>
 <h3 id="crud">CRUD</h3>
-<p>With Cosmos DB, you have the usual CRUD (create, read, update, delete) operations on the documents in the data store. And you can use SQL-like query language to query the document store. For example, in the local emulator you can create a query to search for documents. The following image shows a query that finds items with a rating greater than 3.</p>
+<p>With Cosmos DB, you have the usual CRUD (create, read, update, delete) operations on the documents in the data store. And you can use a SQL-like query language to query the document store. For example, in the local emulator you can create a query to search for documents. The following image shows a query that finds items with a rating greater than 3.</p>
 <p><img src="../images/crud-example.png" alt="A query in the Cosmos local emulator" title="A query in the Cosmos local emulator."></p>
 <p>In the Scrapbook101core code, similar queries are constructed using Language Integrated Queries (<a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ</a>).</p>
-<h3 id="origins">Origins</h3>
+<h3 id="starting-point">Starting point</h3>
 <p>The Scrapbook101core code was initially built starting with the <a href="https://www.asp.net/mvc">ASP.NET MVC</a> To-Do List app and customizing it. From that version, the ASP.NET core version was created.</p>
-<p>The To-Do list is a simple list of items with three pieces of tracked information: name, description, and status (completed or not completed). The To-Do List app allows CRUD operations. After running the To-Do list sample and looking in the document store, you will see documents that look like the following:</p>
+<p>The To-Do list is a simple list of items with three pieces of tracked information: <strong>name</strong>, <strong>description</strong>, and <strong>status</strong> (completed or not completed). The To-Do List app allows CRUD operations. After running the To-Do list sample and looking in the document store, you will see documents that look like the following:</p>
 <pre><code class="lang-json">{
     &quot;id&quot;: &quot;GUID&quot;,
     &quot;name&quot;: &quot;To-do item 1&quot;,
@@ -122,20 +122,20 @@
 <p>While Scrapbook101core is more complex, that is, more pieces of information are tracked and document JSON structure can change as shown in the book/film example above, the idea is essentially the same as the To-Do list.</p>
 <h2 id="mvc">MVC</h2>
 <p>The second technology that underlies Scrapbook101core is the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-view-controller</a> (MVC) software pattern. This pattern is commonly used to divide an application into functional pieces. Doing so has the advantages of better code reuse, parallel development, and ease of modification. The main challenge many encounter with MVC is that there is an initial learning curve getting used to thinking in terms of the three components (model, view, and controller) and understanding how they communicate.</p>
-<p>Scrapbook101core is built around the MVC pattern as supported by the <a href="https://www.asp.net/mvc">.NET Framework</a> as well as <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.2">.NET Core</a>. The ASP.NET MVC Visual Studio project file is <a href="https://github.com/travelmarx/scrapbook101">here</a> and the ASP.NET Core Visual Studio project file is <a href="https://github.com/travelmarx/scrapbook101core">here</a>. For more on the difference between the .NET Framework and .NET Core, see <a href="https://www.c-sharpcorner.com/article/difference-between-net-framework-and-net-core/">The Difference Between .NET Framework and .NET Core</a>.</p>
+<p>Scrapbook101core is built around the MVC pattern as supported in <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.2">.NET Core</a>. The ASP.NET MVC Visual Studio project file is <a href="https://github.com/travelmarx/scrapbook101">here</a> and the ASP.NET Core Visual Studio project file is <a href="https://github.com/travelmarx/scrapbook101core">here</a>. For more on the difference between the .NET Framework and .NET Core, see <a href="https://www.c-sharpcorner.com/article/difference-between-net-framework-and-net-core/">The Difference Between .NET Framework and .NET Core</a>.</p>
 <p>The model-view-control pattern is supported by many programming languages such as Java, Ruby, Python and JavaScript. For example, the <a href="http://todomvc.com/">TodoMVC</a> project shows many different implementations in JavaScript-based frameworks.</p>
 <p>Taking the To-Do list application and looking at it in Visual Studio gives a good idea of working with MVC in ASP.NET. In this example, note the representation of the JSON notation of an item in C# code.</p>
 <p><img src="../images/mvc-in-visual-studio.png" alt="To-Do app in Visual Studio" title="To-Do app in Visual Studio showing Model, Views, and Controller."></p>
 <h2 id="geocode">Geocode</h2>
 <p>Scrapbook101core can be used with Bing Maps <a href="https://en.wikipedia.org/wiki/Geocoding">geocoding</a>. Geocoding is the process of converting an address presented as a string (&quot;Seattle, WA, USA&quot;) into a location on Earth represented by geographical coordinates (latitude and longitude).  Each Scrapbook101core item has an associated <strong>location</strong> that contains a string value such as &quot;Seattle, WA, USA&quot; or &quot;Italy&quot;.</p>
-<p>If you set the <code>bingMapKey</code> key in the <code>web.config</code> file to a valid key, then geocoding is enabled and addition to the <strong>location</strong>, a <strong>geoLocation</strong> value is calculated that contains the geographical coordinates corresponding to the string value. If The <code>bingMapKey</code> key is blank, which it is by default, no geocoding is performed.</p>
-<p>Why is geocoding important? With the intuitive nature of searching for information with a map and the integration of maps in many aspects of our lives, it is important to associated Scrapbook101core items with geocodes that are universal and independent of string names. A good analogy is in botany when referring to a plant. The most accurate way to refer to a plant is by its scientific name rather than its common name, which depends on location and language.</p>
+<p>If you set the <code>bingMapKey</code> key in the <code>appsettings.json</code> file to a valid key, then geocoding is enabled and addition to the <strong>location</strong>, a <strong>geoLocation</strong> value is calculated that contains the geographical coordinates corresponding to the string value. If the <code>bingMapKey</code> key is blank, which it is by default, no geocoding is performed.</p>
+<p>Why is geocoding important? With the intuitive nature of searching for information on a map coupled with the integration of maps in many aspects of our lives, it is important to associated Scrapbook101core items with geocodes that are universal and independent of string names. A good analogy is in botany when referring to a plant. The most accurate way to refer to a plant is by its scientific name rather than its common name, which depends on location and language.</p>
 <p>Taking the example above and using the <a href="https://msdn.microsoft.com/en-us/library/ff701715.aspx">Bing Maps Rest Service</a> with an unstructured URL, we can test finding the geocode for &quot;Seattle, WA&quot; as follows:</p>
 <pre><code>http://dev.virtualearth.net/REST/v1/Locations?
     query=Seattle,WA&amp;include=includeValue&amp;
     maxResults=1&amp;key=BingMapsKey
 </code></pre>
-<p>we are returned the followng response (truncated for simplicity):</p>
+<p>This query returns the following response (truncated for simplicity):</p>
 <pre><code class="lang-json">{
     &quot;authenticationResultCode&quot;:&quot;ValidCredentials&quot;,
     &quot;resourceSets&quot;:[

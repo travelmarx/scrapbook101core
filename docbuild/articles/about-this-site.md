@@ -1,6 +1,6 @@
 ---
 uid: about
-title: Scrapbook101core - About this site
+title: About this site
 ---
 # About This Site
 
@@ -118,7 +118,9 @@ Starting with the [advanced walkthrough][awalk] as guidance, we did the followin
 
 1. Build site and verify changes.
 
-### Fine tune reference with template
+Perhaps a simpler way to make this change would habe been to specify the _appFooter as globalMetadata. See the [below](about-this-site.md#specify-site-title) for changing _appTitle.
+
+### Tweak reference template
 
 The goal is to removed the inherited members section as shown below:
 
@@ -150,7 +152,7 @@ The goal is to removed the inherited members section as shown below:
     ```
 3. Build and verify.
 
-### Learn about links and cross references via UID. 
+### Links and cross references via UID. 
 
 For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:Scrapbook101core.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:Scrapbook101core.Models.Item). Here's the [help page][linkhelp] on linking.
 
@@ -162,7 +164,19 @@ Here are those links in markdown:
 [The Item Class](xref:Scrapbook101core.Models.Item)
 ```
 
-How to link to a code file?  Here's an absolute link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json). Here's a relative link to the same file: [appsettings.json]().
+How to link to a code file?  Here's an full qualified path link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json). Is there another way to do it?
+
+
+### Specify site title
+
+In the docfx.json file, under the **build** key, specify this:
+
+```json
+    "globalMetadata" : { "_appTitle": "Scrapbook101core - " },
+```
+
+which will add this text to the title of every page, as viewed in browser tab. The _appTitle is added to the UID of each page. For more information on reservied metadata you can use, see [reserved metadata][metadata].
+
 
 ## Future
 
@@ -198,3 +212,4 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [issue3284]: https://github.com/dotnet/docfx/issues/3284
 [linkhelp]: https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html
 [renderers]: https://dotnet.github.io/docfx/tutorial/intro_template.html#renderer
+[metadata]: https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#322-reserved-metadata
