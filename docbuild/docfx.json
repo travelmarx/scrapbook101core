@@ -55,7 +55,7 @@
         }
       ],
       "dest": "_site",
-      "globalMetadata" : { "_appTitle": "Scrapbook101core - " },
+      "globalMetadata" : { "_appTitle": "Scrapbook101core" },
       "globalMetadataFiles": [],
       "fileMetadataFiles": [],
       "template": [
