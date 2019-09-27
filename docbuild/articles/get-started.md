@@ -4,7 +4,7 @@ title: Scrapbook101core - Get Started
 ---
 # Get Started
 
-To build the {{site_sn}} app on Windows use the following:
+To build the Scrapbook101core app on Windows use the following:
 
 * [Visual Studio Community Edition][vsdown]  
 * [Azure Cosmos DB Local Emulator][emul]
@@ -12,7 +12,7 @@ To build the {{site_sn}} app on Windows use the following:
 
 Install these components on your development or local server. This server will be your local run/test environment as well as the publish point to push changes live, if you choose to do so.
 
-Visual Studio has different workloads that can be installed. If you are running {{site.sn}} on ASP.NET for Windows, then you need the *ASP.NET and web development* workload. If you are running {{site.sn}} on ASP.NET Core, then you need the *.NET Cross-platform development workload*. For more information on workloads, see [Selecting Workloads in Visual Studio 2017][work].
+Visual Studio has different workloads that can be installed. If you are running Scrapbook101core on ASP.NET for Windows, then you need the *ASP.NET and web development* workload. If you are running Scrapbook101core on ASP.NET Core, then you need the *.NET Cross-platform development workload*. For more information on workloads, see [Selecting Workloads in Visual Studio 2017][work].
 
 After installing the Cosmos DB Emulator, confirm that you can run Cosmos DB Local Emulator. You should see a screen like the following image. 
 
@@ -20,81 +20,42 @@ After installing the Cosmos DB Emulator, confirm that you can run Cosmos DB Loca
 
 ## Run local
 
-Running {{site.sn}} locally, you can try out your ideas at no cost or risk.
+Running Scrapbook101core locally, you can try out your ideas at no cost or risk. Here are the steps:
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" href="#runlocal1" role="tab"
-    data-toggle="tab">ASP.NET MVC</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#runlocal2" role="tab"
-    data-toggle="tab">ASP.NET Core</a>
-  </li>
-</ul>
+1. Clone (<https://github.com/travelmarx/scrapbook101core.git>) or download the Scrapbook101core code and open it as a solution in Visual Studio. The source code in the
+`Scrapbook101core` folder. 
 
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane aspnetmvc active" id="runlocal1">
-  <ol><li>Clone (<a href="https://github.com/travelmarx/scrapbook101.git">https://github.com/travelmarx/scrapbook101.git</a>) or download the {{site.sn}} code and open it as a solution in Visual Studio. The source code in the <code>src</code> folder and these docs in the <code>docs</code> folder.</li>
-<li>Open the solution in Visual Studio. For example, open the solution file <code>Scrapbook101.sln</code>.
-   </li><li>Customize the code as follows in the <code>web.config</code> file.
-   <ul><li>Enter the correct value for <strong>authKey</strong>, which you can get from the local emulator home page as show above.</li><li>Enter a Bing Maps Key for <strong>bingMapKey</strong> if you have one; if blank, then geocoding is skipped.</li><li>Set the value for <strong>addTestAssets</strong> to <code>true</code> to write test assets or <code>false</code> not to write them.</li></ul>
-   There are other <code>web.config</code> settings you can change, but the the three above are the enough to get started.
-   </li></ol>
-</div>
-  <div role="tabpanel" class="tab-pane aspnetcore" id="runlocal2">
-  <ol><li>Clone (<a href="https://github.com/travelmarx/scrapbook101core.git">https://github.com/travelmarx/scrapbook101core.git</a>) or download the {{site.sn}} code and open it as a solution in Visual Studio. The source code in the <code>
-Scrapbook101core</code> folder. </li>
-  <li>Open the solution in Visual Studio. For example, open the solution file <code>Scrapbook101core.sln</code>.
-   </li><li>Customize the code as follows in the <code>appsettings.json</code> file.
-   <ul><li>Enter the correct value for <strong>AuthKey</strong>, which you can get from the local emulator home page as show above.</li><li>Enter a Bing Maps Key for <strong>BingMapKey</strong> if you have one; if blank, then geocoding is skipped.</li><li>Set the value for <strong>AddTestAssets</strong> to <code>true</code> to write test assets or <code>false</code> not to write them.</li></ul>
-   There are other <code>appsettings.json</code> settings you can change, but the the three above are the enough to get started.
-   </li></ol>
-  </div>
-</div>
+1. Open the solution in Visual Studio. For example, open the solution file `Scrapbook101core.sln`.
 
-With the Cosmos DB Local Emulator running, run the solution (Visual Studio F5) and view {{site.sn}} in a browser, e.g. https://localhost:port#/. You should see something ressembling the following screenshot:
+1. Customize the code as follows in the `<code>`appsettings.json` file.
+    * Enter the correct value for **AuthKey**, which you can get from the local emulator home page as show above.
+
+    * Enter a Bing Maps Key for **BingMapKey** if you have one; if blank, then geocoding is skipped.
+
+    * Set the value for **AddTestAssets** to `true` to write test assets or `false` not to write them.
+
+  There are other `appsettings.json` settings you can change, but the three above are the enough to get started. For information on running locally for the ASP.NET MVC version of this project (called Scrapbook101), see <https://travelmarx.github.io/scrapbook101/get-started#run-local>.
+
+With the Cosmos DB Local Emulator running, run the solution (Visual Studio F5) and view Scrapbook101core in a browser, e.g. https://localhost:port#/. You should see something ressembling the following screenshot:
 
 ![Scrapbook101Core home page](../images/scrapbook101-running.png "Scrapbook101 Home Page")
 
+Here's what happened on startup:
 
-What happened on startup:
+1. In the document store, a database named **Scrapbook101** was created with a collection named **Items**.
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" href="#explanation1" role="tab"
-    data-toggle="tab">ASP.NET MVC</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#explanation2" role="tab"
-    data-toggle="tab">ASP.NET Core</a>
-  </li>
-</ul>
+1. A [category document][cat] was created and stored in the document store. The category information was read from the file `Assets/categories-document.json`.
 
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane aspnetmvc active" id="explanation1">
-    <ol>
-    <li>In the document store, a database named <strong>Scrapbook101</strong> was created with a collection named <strong>Items</strong>.</li>
-    <li>A <a href="category-document.md">category document</a> was created and stored in the document store. The category information was read from the file <code>Assets/categories-document.json</code>.</li>
-    <li>If the configuration option <strong>addTestAssets</strong> to create test assets was set to `true` in 
-    the <code>web.config</code> file, then test items were added to the document store as well. They were read from the file <code>App_data/categories-document.json</code>.</li>
-    </ol>
-  </div>
-  <div role="tabpanel" class="tab-pane aspnetcore" id="explanation2">
-    <ol>
-    <li>In the document store, a database named <strong>Scrapbook101</strong> was created with a collection named <strong>Items</strong>.</li>
-    <li>A <a href="category-document.md">category document</a> was created and stored in the document store. The category information was read from the file <code>Assets/categories-document.json</code>.</li>
-    <li>If the configuration option <strong>AddTestAssets</strong> to create test assets was set to `true` in 
-    <code>appsettings.json</code>, then test items were added to the document store as well. They were read from the file <code>Assets/categories-document.json</code>.</li>
-    </ol>
-  </div>
-</div>
+1. If the configuration option **AddTestAssets** to create test assets was set to `true` in 
+    `appsettings.json`, then test items were added to the document store as well. They were read from the file `Assets/categories-document.json`.
+
+For information on what happened on startup for the ASP.NET MVC version of this project (called Scrapbook101), see <https://travelmarx.github.io/scrapbook101/get-started#run-local>.
 
 ## Create an item
 
-At this point, you can start working with {{site.sn}} items with CRUD (create, read, update, delete) operations. The home page is https://localhost:port#/ or https://localhost:port#/Item/Index.
+At this point, you can start working with Scrapbook101core items with CRUD (create, read, update, delete) operations. The home page is https://localhost:port#/ or https://localhost:port#/Item/Index.
 
-To create a new {{site.sn}} item.
+To create a new Scrapbook101core item.
 
 1. On the home page, select **Create**.
 2. Choose a category in the **Category** dropdown.
@@ -103,19 +64,19 @@ To create a new {{site.sn}} item.
 
 ## Run live
 
-After running {{site.sn}} locally, you can take optional next step and run {{site.sn}} as a web service. To do this you need to go live, which means publishing your site live with the following services:
+After running Scrapbook101core locally, you can take an optional next step and run Scrapbook101core as a web service. To do this you need to go live, which means publishing your site live with the following services:
 
 - [Azure Cosmos DB Service][cosmos] - This works the same as local emulator and you can copy any documents created locally to the live service. 
  
 * [Azure Application Service][azapp] - You can publish your site directly from Visual Studio to the Azure Application service.
 
-Using Azure Cosmos DB Service you will eventually incur charges, but be sure to take advantage of any limited, free use offers. 
+Using Azure Cosmos DB Service, you will eventually incur charges, but be sure to take advantage of any limited, free tier offers. 
 
 There are a couple of other considerations when going live. In the least, you should consider:
 
 * Authentication and authorization.
 * Transfering any documents from local emulator to live service.
-* How to deal with asset storage.
+* Dealing with asset storage.
 
 These and other topics are discussed in [Next Steps][next-steps] and [Handling Assets][handling-assets].
 

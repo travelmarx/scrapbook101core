@@ -70,10 +70,10 @@
 <h1 id="handling-assets">Handling Assets</h1>
 
 <h2 id="overview">Overview</h2>
-<p>One obvious question is if assets (images, documents, etc.) are needed? They add a level of complexity to the code that is significant. We would argue that the assets, especially images, are very important because visualizing {{site.sn}} items is simpler and more intuitive than just looking at text. Agreeing that assets are important, the question becomes how to upload assets and where to store them.</p>
-<p>Running locally, assets can be stored in a folder on the local file system, e.g. <code>C:\Assets</code>. In the version of {{site.sn}} we use the <code>Assets</code> folder (.NET Core version) or <code>App_data</code> (.NET Framework version) that are part of the Visual Studio solution to make documentation and demonstation easier. However, this approach isn't practical or recommended.</p>
+<p>One obvious question is if assets (images, documents, etc.) are needed? They add a level of complexity to the code that is significant. We would argue that the assets, especially images, are very important because visualizing Scrapbook101core items is simpler and more intuitive than just looking at text. Agreeing that assets are important, the question becomes how to upload assets and where to store them.</p>
+<p>Running locally, assets can be stored in a folder on the local file system, e.g. <code>C:\Assets</code>. In the version of Scrapbook101core we use the <code>Assets</code> folder (.NET Core version) or <code>App_data</code> (.NET Framework version) that are part of the Visual Studio solution to make documentation and demonstation easier. However, this approach isn't practical or recommended.</p>
 <blockquote>
-<p>The {{site.sn}} application allows basic handling of assets through browser in the
+<p>The Scrapbook101core application allows basic handling of assets through browser in the
 create operation using the <a href="https://www.w3schools.com/jsref/dom_obj_fileupload.asp">HTML File Upload Object</a>. Assets can be deleted in the edit operation.
 In practice, you will need more renaming and file functionality in your code.</p>
 </blockquote>
@@ -83,9 +83,9 @@ In practice, you will need more renaming and file functionality in your code.</p
 OneDrive using the <a href="https://docs.microsoft.com/it-it/onedrive/developer/rest-api/?view=odsp-graph-online">OneDrive REST API</a>. Regardless of where the assets originate, our Scrapbook assets are stored permanently in
 <a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Microsoft Azure Blob Storage</a>.</p>
 </blockquote>
-<p>Assets that are stored in an online service could be used when running {{site.sn}} both locally or live. Finally, note that assets stored in an online service should not be &quot;open&quot;; access to the assets should by only authenticated and authorized accounts.</p>
+<p>Assets that are stored in an online service could be used when running Scrapbook101core both locally or live. Finally, note that assets stored in an online service should not be &quot;open&quot;; access to the assets should by only authenticated and authorized accounts.</p>
 <h2 id="asset-organization">Asset organization</h2>
-<p>In the {{site.sn}} code, the naming convention show in the <code>Assets</code> folder (.NET Core version) or <code>App_data</code> (.NET Framework version) is only for demonstration and is not scaleable to a large number of items.</p>
+<p>In the Scrapbook101core code, the naming convention show in the <code>Assets</code> folder (.NET Core version) or <code>App_data</code> (.NET Framework version) is only for demonstration and is not scaleable to a large number of items.</p>
 <p>Here's an example of how you might organize your assets in a more scaleable way regardless of whether you do it locally or online. The description below is in fact how we do it as described in the <a href="http://blog.travelmarx.com/2017/12/a-personal-information-management-system-introducing-scrapbook.html">blog post</a>.</p>
 <pre><code>\2018\2018-10-01\Folder.png
 \2018\2018-10-01\dinner-menu.png
@@ -101,10 +101,10 @@ OneDrive using the <a href="https://docs.microsoft.com/it-it/onedrive/developer/
 <p>Furthermore, consumer-oriented storage services offer ever-improving file/folder paradigms for searching, and object storage services can be searched with third party tools like <a href="https://www.cloudberrylab.com/explorer.aspx">CloudBerry Explorer</a>. Therfore, even if you don't use dates as part of the naming strategy, don't use GUIDs or any other naming strategy that is not easy to &quot;look&quot; at in the storage service browsers or tools.</p>
 <p>A second reason for using dates as part of the asset path is that the date an asset is entered can be used to automatically assign the <strong>assetPath</strong> value in the <a href="item-document.html">item document</a>.</p>
 <p><strong>What name to use for assets?</strong></p>
-<p>Naming of assets in {{site.sn}} is not currently fixed to any particular convention. Assets can be any legal file name. The first image asset found at the specified <strong>assetPath</strong> is used to represent the item on main page (<code>Item\Index.cshtml</code>).</p>
+<p>Naming of assets in Scrapbook101core is not currently fixed to any particular convention. Assets can be any legal file name. The first image asset found at the specified <strong>assetPath</strong> is used to represent the item on main page (<code>Item\Index.cshtml</code>).</p>
 <p>In our personalized version of Scrapbook, and as hinted at above, we use <code>Folder.png</code> or the first image found to represent the main image visual representation of an item. Another approach would be to add another asset JSON data field called <strong>role</strong> for each asset with values such as &quot;display&quot;, &quot;main&quot;, or &quot;asset&quot; for example.</p>
 <p><strong>How to deal with repeated items with the same date?</strong></p>
-<p>Choosing the date (YYYY-MM-DD) as part of the asset path name leads to the problem of dealing with multiple {{site.sn}} items on the same date. We resolve this issue in our personal version of Scrapbook (but not here in {{site.sn}}) by appending numbers (01, 02, etc.) at the end of the date so as to still retain the date format. Therefore, in the example file listing above there are two {{site.sn}} items for <code>2018-10-28</code>, one located at <code>\2018\2018-10-28\</code> and one at <code>\2018\2018-10-28-01\</code>.</p>
+<p>Choosing the date (YYYY-MM-DD) as part of the asset path name leads to the problem of dealing with multiple Scrapbook101core items on the same date. We resolve this issue in our personal version of Scrapbook (but not here in Scrapbook101core) by appending numbers (01, 02, etc.) at the end of the date so as to still retain the date format. Therefore, in the example file listing above there are two Scrapbook101core items for <code>2018-10-28</code>, one located at <code>\2018\2018-10-28\</code> and one at <code>\2018\2018-10-28-01\</code>.</p>
 <p><strong>Is the extra level of year in the path necessary?</strong></p>
 <p>In the listing above, we flatten the asset hierarchy a little by removing the <code>\2018\</code> from each path. We find that in practice, and again because of the ubiquity of storage service browsers and tools, keeping they assets organized by year and therefore keeping the extra level of directory structure helps.</p>
 </article>

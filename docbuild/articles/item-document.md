@@ -4,14 +4,14 @@ title: Scrapbook101core - Item Document
 ---
 # Item Document
 
-In the [technology overview][tn] section, we briefly discussed the ideas behind a document-oriented database and how it is used in {{site.sn}}. In this section we describe one of the key document types stored in the document-oriented database, the item document.
+In the [technology overview][tn] section, we briefly discussed the ideas behind a document-oriented database and how it is used in Scrapbook101core. In this section we describe one of the key document types stored in the document-oriented database, the item document.
 
-Our design approach is model-first approach meaning we start with a prototype item document in JSON that represents one {{site.sn}} item. From this prototype document, the code class `Item.cs` is defined in our Visual Studio project representing this item document.
+Our design approach is model-first approach meaning we start with a prototype item document in JSON that represents one Scrapbook101core item. From this prototype document, the code class `Item.cs` is defined in our Visual Studio project representing this item document.
 
 
 ## Overview
 
-Below is the prototype item document that describes one {{site.sn}} item in JSON. The document data store will contain one document that looks like this for every {{site.sn}} item. This item document is one of the two document types (distinguished by the `type` field) stored in the document datastore. The other document type is the [Category Document][cat]. 
+Below is the prototype item document that describes one Scrapbook101core item in JSON. The document data store will contain one document that looks like this for every Scrapbook101core item. This item document is one of the two document types (distinguished by the `type` field) stored in the document datastore. The other document type is the [Category Document][cat]. 
 
 The values of the fields in the key-value pairs aren't important below, only the structure is. Following the JSON are descriptions of each field.
 
@@ -52,7 +52,7 @@ Fields not marked as <u>Required</u> are not required.
 
 <dl class="deflist">
     <dt>assets</dt>
-    <dd>A list of assets associated with the {{site.sn}} item. Can be <i>null</i>, meaning no assets are associated with the item.
+    <dd>A list of assets associated with the Scrapbook101core item. Can be <i>null</i>, meaning no assets are associated with the item.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -74,7 +74,7 @@ Fields not marked as <u>Required</u> are not required.
     </dl>
     </dd>
     <dt>assetPath</dt>
-    <dd>This is the path to any digital assets associated with the item. For example, there might be images, PDFs or other documents that give context about the item. Associating assets is not necessary if you plan to implement {{site.sn}} without any assets. Part of the spirit behind {{site.sn}} however is to provide strong visual cues for remembering an item as well as archiving data associated with it, so at least one image for each {{site.sn}} is recommended.
+    <dd>This is the path to any digital assets associated with the item. For example, there might be images, PDFs or other documents that give context about the item. Associating assets is not necessary if you plan to implement Scrapbook101core without any assets. Part of the spirit behind Scrapbook101core however is to provide strong visual cues for remembering an item as well as archiving data associated with it, so at least one image for each Scrapbook101core is recommended.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -82,7 +82,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>category</dt>
-    <dd>One of the category values described in <a href="/category-document">Category Document</a>. A {{site.sn}} item must
+    <dd>One of the category values described in <a href="/category-document">Category Document</a>. A Scrapbook101core item must
     be assigned to a category.
     <p class="inset">
         <u>Required</u>
@@ -91,14 +91,14 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>categoryFields</dt>
-    <dd>Fields specific to the category selected for the {{site.sn}} item. See the <a href="/category-document">Category Document</a> for more information. Each
+    <dd>Fields specific to the category selected for the Scrapbook101core item. See the <a href="/category-document">Category Document</a> for more information. Each
     category has a fixed set of fields.
     <p class="inset">
         <u>Default</u>: Depends on the category chosen.
         <br/>
         <u>Format</u>: An object containing key-value pairs. 
     </p>
-    <p>For example, for a {{site.sn}} book item, the <strong>categoryField</strong> object would look like the following:</p>
+    <p>For example, for a Scrapbook101core book item, the <strong>categoryField</strong> object would look like the following:</p>
     <pre>
 "categoryFields": {
     "author": "author name",
@@ -115,7 +115,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>dateUpdated</dt>
-    <dd>This value is automatically inserted by code. On initial creation of an {{site.sn}} item, <strong>dateUpdated</strong> equals <strong>dateAdded</strong>. When an item is edited, <strong>dateUpdated</strong> is updated with the correct timestamp.
+    <dd>This value is automatically inserted by code. On initial creation of an Scrapbook101core item, <strong>dateUpdated</strong> equals <strong>dateAdded</strong>. When an item is edited, <strong>dateUpdated</strong> is updated with the correct timestamp.
     <p class="inset">
         <u>Default</u>: Initially equal to <strong>dateAdded</strong>.
         <br/>
@@ -123,7 +123,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>description</dt>
-    <dd>Information about the {{site.sn}} item that isn't already captured in other fields. This field provides the context of why the item is important. Descriptions longer than a couple hundred words should be added as assets.
+    <dd>Information about the Scrapbook101core item that isn't already captured in other fields. This field provides the context of why the item is important. Descriptions longer than a couple hundred words should be added as assets.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -138,7 +138,7 @@ Fields not marked as <u>Required</u> are not required.
         <u>Format</u>: An object that contains a string and an array:
         <dl class="subdeflist">
             <dt>type</dt>
-            <dd>The type of geocode. {{site.sn}} stores points, so this value is always "Point".</dd>
+            <dd>The type of geocode. Scrapbook101core stores points, so this value is always "Point".</dd>
             <dt>coordinates</dt>
             <dd>An array of two numbers, the first is longitude and the second is latitude. For exmple,
             [43.5290298461914, 12.1621837615967].</dd>
@@ -154,7 +154,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>location</dt>
-    <dd>This field is a friendly name of the location that is relevant for the {{site.sn}} item. It is not required but is helpful. It is important to be consistent with how you enter values to make searching easier.
+    <dd>This field is a friendly name of the location that is relevant for the Scrapbook101core item. It is not required but is helpful. It is important to be consistent with how you enter values to make searching easier.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -162,7 +162,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>rating</dt>
-    <dd>A rating of the {{site.sn}} item, if applicable. The rating system will be unique for each implementation. The test data provided with {{site.sn}} uses a rating of 1 - 5.
+    <dd>A rating of the Scrapbook101core item, if applicable. The rating system will be unique for each implementation. The test data provided with Scrapbook101core uses a rating of 1 - 5.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -170,7 +170,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>title</dt>
-    <dd>A descriptive title for the {{site.sn}} item. For example, if item is a book, use all or part of the book title.
+    <dd>A descriptive title for the Scrapbook101core item. For example, if item is a book, use all or part of the book title.
     <p class="inset">
         <u>Required</u>
         <br/>
@@ -178,7 +178,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>type</dt>
-    <dd>Describes the type of record. If your documents are stored in a data store with other documents from other applications using an <strong>id</strong> field, then <strong>type</strong> helps distinguish {{site.sn}} records uniquely. There are two types of documents, item documents and <a href="/category-document">category documents</a>.
+    <dd>Describes the type of record. If your documents are stored in a data store with other documents from other applications using an <strong>id</strong> field, then <strong>type</strong> helps distinguish Scrapbook101core records uniquely. There are two types of documents, item documents and <a href="/category-document">category documents</a>.
     <p class="inset">
         <u>Required</u>
         <br/>
@@ -200,9 +200,9 @@ Fields not marked as <u>Required</u> are not required.
 
 *Optional.*
 
-The description of the fields above is usually sufficient for programmers looking for an overview of the item document's structure, its fields and their values. Another way to approach "documenting" the {{site.sn}} item document is with a [JSON schema][json-schema], which would provide a more precise description of the JSON. Besides describing the JSON item document, the schema could also be used to validate any new block JSON as representing a valid item document or not. 
+The description of the fields above is usually sufficient for programmers looking for an overview of the item document's structure, its fields and their values. Another way to approach "documenting" the Scrapbook101core item document is with a [JSON schema][json-schema], which would provide a more precise description of the JSON. Besides describing the JSON item document, the schema could also be used to validate any new block JSON as representing a valid item document or not. 
 
-In the {{site.sn}} application, validation is done implicitly as the JSON is serialized from a class object and deserialized into a class object. In other words, documents in our data store are valid JSON because they are created and edited via a fixed class (see for example the `Item.cs` class). In this situation, a JSON schema isn't as critical because we won't be encountering JSON that isn't in the context of this application. 
+In the Scrapbook101core application, validation is done implicitly as the JSON is serialized from a class object and deserialized into a class object. In other words, documents in our data store are valid JSON because they are created and edited via a fixed class (see for example the `Item.cs` class). In this situation, a JSON schema isn't as critical because we won't be encountering JSON that isn't in the context of this application. 
 
 Consider the following simplified item document:
 

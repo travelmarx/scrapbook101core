@@ -86,9 +86,9 @@ we pointed to Scrapbook101core code just to see what would happen and it built f
 
 * Pay attention to warnings in docfx output, they are useful.
 
-* Using the Jekyll process, we could define global site variables like {{site.sn}}, where site.sn = "Scrapbook101". With the docfx process, we haven't figured out how to do that.
+* Using the Jekyll process, we could define global site variables like Scrapbook101core, where site.sn = "Scrapbook101". With the docfx process, we haven't figured out how to do that.
 
-## Next steps
+## Customization
 
 ### Learn about templates
 
@@ -162,7 +162,7 @@ Here are those links in markdown:
 [The Item Class](xref:Scrapbook101core.Models.Item)
 ```
 
-How to link to a code file?  For example, [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json).
+How to link to a code file?  Here's an absolute link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json). Here's a relative link to the same file: [appsettings.json]().
 
 ## Future
 
