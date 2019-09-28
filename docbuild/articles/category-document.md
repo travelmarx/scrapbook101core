@@ -4,15 +4,15 @@ title: Category Document
 ---
 # Category Document
 
-In the [technology overview][tn] section, we briefly discussed the ideas behind a document-oriented database and how it is used in Scrapbook101core. In this section we describe one of the two key document types stored in the document-oriented database, the category document.
+In the [technology overview][tn] section, we briefly discussed the ideas behind a document-oriented database and how it is used in {{productName}}. In this section we describe one of the two key document types stored in the document-oriented database, the category document.
 
-Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents Scrapbook101core categories. From this prototype document, a the code class `Category.cs` is defined in our Visual Studio project representing this category document.
+Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents {{productName}} categories. From this prototype document, a the code class `Category.cs` is defined in our Visual Studio project representing this category document.
 
 ## Overview
 
-This Scrapbook101core category document defines the types of categories that items can belong to (via the **category** field). It is one of the two document types (distinguished by the **type** field) stored in the document-oriented datastore. The other is the [Item Document][item]. The data store will contain many item documents and one category document.
+This {{productName}} category document defines the types of categories that items can belong to (via the **category** field). It is one of the two document types (distinguished by the **type** field) stored in the document-oriented datastore. The other is the [Item Document][item]. The data store will contain many item documents and one category document.
 
-The categories used in Scrapbook101core are: Book, Event, Film, Museum, People, and Performance. This reduced number of categories was selected to make the code easier to work with and describe. In the version of Scrapbook described in the related [blog post][blog] over 20 categories are used. 
+The categories used in {{productName}} are: Book, Event, Film, Museum, People, and Performance. This reduced number of categories was selected to make the code easier to work with and describe. In the version of Scrapbook described in the related [blog post][blog] over 20 categories are used. 
 
 Each category has a **name**, **description**, and one or more associated **categoryFields**. 
 
@@ -87,12 +87,12 @@ Fields not marked as <u>Required</u> are not required.
 
 <dl class="deflist">
     <dt>categoryFields</dt>
-    <dd>Data fields specific to the category. In this implementation of Scrapbook101core item, the following keys are supported
+    <dd>Data fields specific to the category. In this implementation of {{productName}} item, the following keys are supported
     <strong>artist</strong>, <strong>author</strong>, <strong>birthDate</strong>, <strong>director</strong>, 
     <strong>genre</strong>, <strong>highlight</strong>, <strong>location</strong>, 
     <strong>synopsis</strong>, <strong>theme</strong>, <strong>type</strong> <strong>who</strong>, and <strong>year</strong>. The keys are not required. If specified, their values are strings.
     <br/><br/>
-    Which keys are used depends on the category chosen for the Scrapbook101core item. If <i>null</i>, no keys are stored for the item.
+    Which keys are used depends on the category chosen for the {{productName}} item. If <i>null</i>, no keys are stored for the item.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -118,7 +118,7 @@ Fields not marked as <u>Required</u> are not required.
     </dd>
     <dt>type</dt>
     <dd>Describes the type of record. If your records are stored in a data store with other records with
-        an <strong>id</strong> field, then <strong>type</strong> helps distinguish Scrapbook101core records uniquely.
+        an <strong>id</strong> field, then <strong>type</strong> helps distinguish {{productName}} records uniquely.
         There are two types of documents, <a href="/item-document">item documents</a> and category documents.
     <p class="inset">
         <u>Required</u>

@@ -8,7 +8,7 @@ title: About this site
 
 This site was created with [DocFx][docfx]. How is this site different from our [GitHub pages site][site1] for Scrapbook101? 
 
-* This site parses comments from code (under **\Scrapbook101core**) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
+* This site parses comments from code (under **\{{productName}}**) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
 
 * In the previous [site][site1], we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a **\docs** folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the HTML for the [site][site1].
 
@@ -21,7 +21,7 @@ We started by running `docfx init` to create a simple documentation website. We 
 
 After that initial simple documentation website, we started reading up on using [C# XML documentation][ref3]. 
 
-Then, we merged the simple documentation website structure with Scrapbook101core. Specifically, we created a **\docs** and **\docbuild** folder parallel to code folder. In the **\docbuild** folder, we run `docfx` to gather metadata and build HTML. Then as a final step, we copy the **\doc\build\ _site content** over to **\docs**.
+Then, we merged the simple documentation website structure with {{productName}}. Specifically, we created a **\docs** and **\docbuild** folder parallel to code folder. In the **\docbuild** folder, we run `docfx` to gather metadata and build HTML. Then as a final step, we copy the **\doc\build\ _site content** over to **\docs**.
 
 Our local process:
 
@@ -64,7 +64,7 @@ The directory structure at the root of Scrapbook101Core looks like this:
 │   ├───fonts
 │   ├───images
 │   └───styles
-└───Scrapbook101core
+└───{{productName}}
     ├───Assets
     ├───bin
     ├───Controllers
@@ -80,13 +80,13 @@ The directory structure at the root of Scrapbook101Core looks like this:
 Some things we ran into:
 
 * When testing the [walkthroughs][walk], we used the suggested folder naming **\docfx_walkthrough\docfx_project**. Then, in the context of the walkthrough,
-we pointed to Scrapbook101core code just to see what would happen and it built fine. However, when we then created the **\docbuild** folder inside of Scrapbook101core and tried to run `docfx metadata`, it was still looking for the **\docfx_project**. The culprit: **\Scrapbook101core\obj\xdoc\cache**. We deleted the cache folder and it started working.
+we pointed to {{productName}} code just to see what would happen and it built fine. However, when we then created the **\docbuild** folder inside of {{productName}} and tried to run `docfx metadata`, it was still looking for the **\docfx_project**. The culprit: **\{{productName}}\obj\xdoc\cache**. We deleted the cache folder and it started working.
 
 * In the process of ensuring we can always build everything from scratch, we often wipe out the .yml files in the **\api** folder. But be careful not to wipe out the index.md file if that is what you are pointing to in root toc.yml.
 
 * Pay attention to warnings in docfx output, they are useful.
 
-* Using the Jekyll process, we could define global site variables like Scrapbook101core, where site.sn = "Scrapbook101". With the docfx process, we haven't figured out how to do that.
+* Using the Jekyll process, we could define global site variables like {{productName}}, where site.sn = "Scrapbook101". With the docfx process, we haven't figured out how to do that.
 
 ## Customization
 
@@ -103,9 +103,9 @@ Starting with the [advanced walkthrough][awalk] as guidance, we did the followin
 
 1. Decide to change the footer template of the site to add the name of our site. So in **_exported_templates\default\partials** copy the footer.tmpl.partial file to **docbuild\templates\cust-template\partials**.
 
-1. Edit the footer.tmpl.partial file to add "Scrapbook101core".
+1. Edit the footer.tmpl.partial file to add "{{productName}}".
     * The .templ is a Mustache template file used by [renderers][renderers].
-    * In this simple case, it's obvious where to add the extra text "Scrapbook101core"
+    * In this simple case, it's obvious where to add the extra text "{{productName}}"
 
 1. In the **build** key of docfx.json reference the custom template.
    
@@ -154,7 +154,7 @@ The goal is to removed the inherited members section as shown below:
 
 ### Links and cross references via UID. 
 
-For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:Scrapbook101core.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:Scrapbook101core.Models.Item). Here's the [help page][linkhelp] on linking.
+For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:{{productName}}.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:{{productName}}.Models.Item). Here's the [help page][linkhelp] on linking.
 
 Here are those links in markdown:
 
@@ -164,7 +164,7 @@ Here are those links in markdown:
 [The Item Class](xref:Scrapbook101core.Models.Item)
 ```
 
-How to link to a code file?  Here's an full qualified path link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json). Is there another way to do it?
+How to link to a code file?  Here's an full qualified path link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/{{productName}}/appsettings.json). Is there another way to do it?
 
 
 ### Specify site title
@@ -172,11 +172,79 @@ How to link to a code file?  Here's an full qualified path link: [appsettings.js
 In the docfx.json file, under the **build** key, specify this:
 
 ```json
-"globalMetadata" : { "_appTitle": "Scrapbook101core" },
+"globalMetadata" : { "_appTitle": "{{productName}}" },
 ```
 
-which will add this text to the title of every page, as viewed in browser tab. The _appTitle is added to the UID of each page, so for the "Get Started" page, the title is "Get Started | Scrapbook101core". For more information on reservied metadata you can use, see [reserved metadata][metadata].
+which will add this text to the title of every page, as viewed in browser tab. The _appTitle is added to the UID of each page, so for the "Get Started" page, the title is "Get Started | {{productName}}". For more information on reservied metadata you can use, see [reserved metadata][metadata].
 
+### Add a global variable
+
+Goal: Add a global variable to represent the product name "{{productName}}" so that in markdown files we could just put `{{productName}}` and have the build process substitute the correct vallue.
+
+Here's how we achieved it. (It may not be the most elegant way.)
+
+1.  Export the default template with `docfx export default` if you haven't already.
+    * This will created a folder called **_exported_templates**.  Either add this to .gitignore or delete after done.
+
+1. In our **\docbuild** folder create a **templates\cust-template** folder, if you haven't already.
+
+1. Copy the file conceptual.extension.js from **_exported_templates** to **templates\cust-template**.
+
+1. Start with some simple experiments adding Javascript code to the conceptual.extension.js file and always rebuilding.
+
+    1. For example, in the exports.postTransform function add code to confirm you can see the warning line in the output when you run `docfx --serve`.
+
+        ```javascript
+        exports.postTransform = function (model) {
+            console.warn("******************postprocessor******************");
+            return model;
+        }
+        ```
+
+    1. Next, take a look at what the model is with:
+
+        ```javascript
+        exports.postTransform = function (model) {
+            console.warn("******************postprocessor******************");
+            console.warn(JSON.stringify(model));
+            return model;
+        }
+        ```
+
+        From the output of `docfx --serve`, copy an example of the stringified model object and put it into a .json file and format it. For a conceptual file, you should see something like this:
+
+        ```json
+        {
+            "conceptual": "..."
+            "type": "Conceptual",
+            "source": {...}
+            ...
+        }
+        ```
+
+        From this output, you can see what you can access in the model and change.
+
+1. In the docfx.json file put this:
+
+    ```json
+    "globalMetadata" : { "_appTitle": "{{productName}}", "productName": "Scrapbook101core" },
+    ```
+
+1. Read this value from the model and use it to substitute in the model by adding this code to conceptual.extension.js:
+
+    ```javascript
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+    };
+
+    exports.postTransform = function (model) {
+    model.conceptual = model.conceptual.replaceAll("{{productName}}", model["productName"] );
+    return model;
+    }
+    ```
+
+    The replaceAll functionality came from a suggestion in [Stack Overflow][replaceAll]. If you needed this functionality more widely, you could put in the common.js file.
 
 ## Future
 
@@ -213,3 +281,4 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [linkhelp]: https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html
 [renderers]: https://dotnet.github.io/docfx/tutorial/intro_template.html#renderer
 [metadata]: https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#322-reserved-metadata
+[replaceAll]: https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string

@@ -4,7 +4,7 @@ title: Technology Overview
 ---
 # Technology Overview
 
-The two main technologies underlying Scrapbook101core are how data is stored using a NoSQL data storage approach and how we present and interact with the data in a browser using a Model-view-controller (MVC) software pattern. We discuss these two technologies here along with a quick introduction to geocoding as used in Scrapbook101core.
+The two main technologies underlying {{productName}} are how data is stored using a NoSQL data storage approach and how we present and interact with the data in a browser using a Model-view-controller (MVC) software pattern. We discuss these two technologies here along with a quick introduction to geocoding as used in {{productName}}.
 
 ## NoSQL
 
@@ -12,16 +12,16 @@ NoSQL is a broad term that refers to storage and retrieval of data that is ***no
 
 It's helpful to think about NoSQL databases as providing solutions for classes of problems that require more flexibility for storing data, be it a document store to store documents, a graph database to represent relationships, or a key/value store for accessing essential information in a simplified way. These classes of problems arose with the surge in social networking and big data applications, and are examples where relational databases can't adequately address the problem, in particular, performing at scales required by these new classes of problems.
 
-We can also say that NoSQL data storage solutions do not have a fixed schemas but intead have flexible schemas. What does flexible mean? It means a schema - at least as we are interpreting for Scrapbook101core - that is defined outside of the database and is easier for application developers to work with and change. How is it easier for application developer? Here, we show just one simple example of how by defining our "prototype" document schema in JSON and then creating a programming class representation of that. In this way, processing of the data in the database and changes to the schema are more developer-centric.
+We can also say that NoSQL data storage solutions do not have a fixed schemas but intead have flexible schemas. What does flexible mean? It means a schema - at least as we are interpreting for {{productName}} - that is defined outside of the database and is easier for application developers to work with and change. How is it easier for application developer? Here, we show just one simple example of how by defining our "prototype" document schema in JSON and then creating a programming class representation of that. In this way, processing of the data in the database and changes to the schema are more developer-centric.
 
 For more background reading on schemas and relational versus NoSQL databases, see 
 [NoSQL Database Doesn’t Mean No Schema][ref1nosql].
 
 ### Document-oriented
 
-[Microsoft Azure Cosmos DB][cosmos] is a multi-modeled database service that supports NoSQL databases called [document-oriented data stores][docdb], which is what Scrapbook101core uses. In document-oriented data stores, data is stored in *documents* where each document can differ slightly (if needed) in its schema while remaining part of a larger database collection. Documents are roughly equivalent to an object be it represented in code or JSON.
+[Microsoft Azure Cosmos DB][cosmos] is a multi-modeled database service that supports NoSQL databases called [document-oriented data stores][docdb], which is what {{productName}} uses. In document-oriented data stores, data is stored in *documents* where each document can differ slightly (if needed) in its schema while remaining part of a larger database collection. Documents are roughly equivalent to an object be it represented in code or JSON.
 
-Each Scrapbook101core <xref:Scrapbook101core.Models.Item> (or object) is represented as in the document data store as one document in JSON. For example, an item representing a book could be represented by the following:
+Each {{productName}} <xref:Scrapbook101core.Models.Item> (or object) is represented as in the document data store as one document in JSON. For example, an item representing a book could be represented by the following:
 
 ```json
 {
@@ -37,7 +37,7 @@ Each Scrapbook101core <xref:Scrapbook101core.Models.Item> (or object) is represe
 }
 ```
 
-In a relational database, the data that consitutes a Scrapbook101core item would be spread across separate (normalized) tables whereas in a document-oriented data store, each item is stored in one document, all pieces of information together. Each Scrapbook101core item's document, as mentioned previously, can be different in terms of its schema. For example, if Scrapbook101core includes book and film items, the documents for a film and a book might share some data aspects (JSON fields) but differ on others. For example, compare the book item above with the following film item:
+In a relational database, the data that consitutes a {{productName}} item would be spread across separate (normalized) tables whereas in a document-oriented data store, each item is stored in one document, all pieces of information together. Each {{productName}} item's document, as mentioned previously, can be different in terms of its schema. For example, if {{productName}} includes book and film items, the documents for a film and a book might share some data aspects (JSON fields) but differ on others. For example, compare the book item above with the following film item:
 
 ``` json
 {
@@ -53,7 +53,7 @@ In a relational database, the data that consitutes a Scrapbook101core item would
 }
 ```
 
-The two documents share common fields like **id**, **title**, **description**, and **rating** and differ on other fields that are specific to the category of the item. The actual Scrapbook101core [item schema][item-document] is a bit more complex than the book and film example above, but the idea is essentially the same. 
+The two documents share common fields like **id**, **title**, **description**, and **rating** and differ on other fields that are specific to the category of the item. The actual {{productName}} [item schema][item-document] is a bit more complex than the book and film example above, but the idea is essentially the same. 
 
 ### CRUD
 
@@ -61,11 +61,11 @@ With Cosmos DB, you have the usual CRUD (create, read, update, delete) operation
 
 ![A query in the Cosmos local emulator](../images/crud-example.png "A query in the Cosmos local emulator.")
 
-In the Scrapbook101core code, similar queries are constructed using Language Integrated Queries ([LINQ][linq]).
+In the {{productName}} code, similar queries are constructed using Language Integrated Queries ([LINQ][linq]).
 
 ### Starting point
 
-The Scrapbook101core code was initially built starting with the [ASP.NET MVC][aspmvc] To-Do List app and customizing it. From that version, the ASP.NET core version was created. 
+The {{productName}} code was initially built starting with the [ASP.NET MVC][aspmvc] To-Do List app and customizing it. From that version, the ASP.NET core version was created. 
 
 The To-Do list is a simple list of items with three pieces of tracked information: **name**, **description**, and **status** (completed or not completed). The To-Do List app allows CRUD operations. After running the To-Do list sample and looking in the document store, you will see documents that look like the following:
 
@@ -77,13 +77,13 @@ The To-Do list is a simple list of items with three pieces of tracked informatio
     "isComplete": false,
 }
 ```
-While Scrapbook101core is more complex, that is, more pieces of information are tracked and document JSON structure can change as shown in the book/film example above, the idea is essentially the same as the To-Do list. 
+While {{productName}} is more complex, that is, more pieces of information are tracked and document JSON structure can change as shown in the book/film example above, the idea is essentially the same as the To-Do list. 
 
 ## MVC
 
-The second technology that underlies Scrapbook101core is the [Model-view-controller][mvcwiki] (MVC) software pattern. This pattern is commonly used to divide an application into functional pieces. Doing so has the advantages of better code reuse, parallel development, and ease of modification. The main challenge many encounter with MVC is that there is an initial learning curve getting used to thinking in terms of the three components (model, view, and controller) and understanding how they communicate.
+The second technology that underlies {{productName}} is the [Model-view-controller][mvcwiki] (MVC) software pattern. This pattern is commonly used to divide an application into functional pieces. Doing so has the advantages of better code reuse, parallel development, and ease of modification. The main challenge many encounter with MVC is that there is an initial learning curve getting used to thinking in terms of the three components (model, view, and controller) and understanding how they communicate.
 
-Scrapbook101core is built around the MVC pattern as supported in [.NET Core][coremvc]. The ASP.NET MVC Visual Studio project file is [here][scrapmvc] and the ASP.NET Core Visual Studio project file is [here][scrapcore]. For more on the difference between the .NET Framework and .NET Core, see [The Difference Between .NET Framework and .NET Core][diff].
+{{productName}} is built around the MVC pattern as supported in [.NET Core][coremvc]. The ASP.NET MVC Visual Studio project file is [here][scrapmvc] and the ASP.NET Core Visual Studio project file is [here][scrapcore]. For more on the difference between the .NET Framework and .NET Core, see [The Difference Between .NET Framework and .NET Core][diff].
 
 The model-view-control pattern is supported by many programming languages such as Java, Ruby, Python and JavaScript. For example, the [TodoMVC][todomvc] project shows many different implementations in JavaScript-based frameworks. 
 
@@ -94,11 +94,11 @@ Taking the To-Do list application and looking at it in Visual Studio gives a goo
 
 ## Geocode
 
-Scrapbook101core can be used with Bing Maps [geocoding][geocode]. Geocoding is the process of converting an address presented as a string ("Seattle, WA, USA") into a location on Earth represented by geographical coordinates (latitude and longitude).  Each Scrapbook101core item has an associated **location** that contains a string value such as "Seattle, WA, USA" or "Italy".
+{{productName}} can be used with Bing Maps [geocoding][geocode]. Geocoding is the process of converting an address presented as a string ("Seattle, WA, USA") into a location on Earth represented by geographical coordinates (latitude and longitude).  Each {{productName}} item has an associated **location** that contains a string value such as "Seattle, WA, USA" or "Italy".
 
 If you set the `bingMapKey` key in the `appsettings.json` file to a valid key, then geocoding is enabled and addition to the **location**, a **geoLocation** value is calculated that contains the geographical coordinates corresponding to the string value. If the `bingMapKey` key is blank, which it is by default, no geocoding is performed.
 
-Why is geocoding important? With the intuitive nature of searching for information on a map coupled with the integration of maps in many aspects of our lives, it is important to associated Scrapbook101core items with geocodes that are universal and independent of string names. A good analogy is in botany when referring to a plant. The most accurate way to refer to a plant is by its scientific name rather than its common name, which depends on location and language.
+Why is geocoding important? With the intuitive nature of searching for information on a map coupled with the integration of maps in many aspects of our lives, it is important to associated {{productName}} items with geocodes that are universal and independent of string names. A good analogy is in botany when referring to a plant. The most accurate way to refer to a plant is by its scientific name rather than its common name, which depends on location and language.
 
 Taking the example above and using the [Bing Maps Rest Service][bingrest] with an unstructured URL, we can test finding the geocode for "Seattle, WA" as follows:
 
@@ -135,7 +135,7 @@ This query returns the following response (truncated for simplicity):
     "statusDescription":"OK"
 }
 ```
-The latitude (47.6035690307617) and longitude (-122.329452514648) are what would be stored with the Scrapbook101core item **geoLocation** field in the [item document][item-document].
+The latitude (47.6035690307617) and longitude (-122.329452514648) are what would be stored with the {{productName}} item **geoLocation** field in the [item document][item-document].
 
 [item-document]: item-document.md
 [aspmvc]: https://www.asp.net/mvc

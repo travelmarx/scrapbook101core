@@ -4,7 +4,7 @@ title: Get Started
 ---
 # Get Started
 
-To build the Scrapbook101core app on Windows use the following:
+To build the {{productName}} app on Windows use the following:
 
 * [Visual Studio Community Edition][vsdown]  
 * [Azure Cosmos DB Local Emulator][emul]
@@ -12,7 +12,7 @@ To build the Scrapbook101core app on Windows use the following:
 
 Install these components on your development or local server. This server will be your local run/test environment as well as the publish point to push changes live, if you choose to do so.
 
-Visual Studio has different workloads that can be installed. If you are running Scrapbook101core on ASP.NET for Windows, then you need the *ASP.NET and web development* workload. If you are running Scrapbook101core on ASP.NET Core, then you need the *.NET Cross-platform development workload*. For more information on workloads, see [Selecting Workloads in Visual Studio 2017][work].
+Visual Studio has different workloads that can be installed. If you are running {{productName}} on ASP.NET for Windows, then you need the *ASP.NET and web development* workload. If you are running {{productName}} on ASP.NET Core, then you need the *.NET Cross-platform development workload*. For more information on workloads, see [Selecting Workloads in Visual Studio 2017][work].
 
 After installing the Cosmos DB Emulator, confirm that you can run Cosmos DB Local Emulator. You should see a screen like the following image. 
 
@@ -20,12 +20,12 @@ After installing the Cosmos DB Emulator, confirm that you can run Cosmos DB Loca
 
 ## Run local
 
-Running Scrapbook101core locally, you can try out your ideas at no cost or risk. Here are the steps:
+Running {{productName}} locally, you can try out your ideas at no cost or risk. Here are the steps:
 
-1. Clone (<https://github.com/travelmarx/scrapbook101core.git>) or download the Scrapbook101core code and open it as a solution in Visual Studio. The source code in the
-`Scrapbook101core` folder. 
+1. Clone (<https://github.com/travelmarx/scrapbook101core.git>) or download the {{productName}} code and open it as a solution in Visual Studio. The source code in the
+`{{productName}}` folder. 
 
-1. Open the solution in Visual Studio. For example, open the solution file `Scrapbook101core.sln`.
+1. Open the solution in Visual Studio. For example, open the solution file `{{productName}}.sln`.
 
 1. Customize the code as follows in the `<code>`appsettings.json` file.
     * Enter the correct value for **AuthKey**, which you can get from the local emulator home page as show above.
@@ -36,7 +36,7 @@ Running Scrapbook101core locally, you can try out your ideas at no cost or risk.
 
   There are other `appsettings.json` settings you can change, but the three above are the enough to get started. For information on running locally for the ASP.NET MVC version of this project (called Scrapbook101), see <https://travelmarx.github.io/scrapbook101/get-started#run-local>.
 
-With the Cosmos DB Local Emulator running, run the solution (Visual Studio F5) and view Scrapbook101core in a browser, e.g. https://localhost:port#/. You should see something ressembling the following screenshot:
+With the Cosmos DB Local Emulator running, run the solution (Visual Studio F5) and view {{productName}} in a browser, e.g. https://localhost:port#/. You should see something ressembling the following screenshot:
 
 ![Scrapbook101Core home page](../images/scrapbook101-running.png "Scrapbook101 Home Page")
 
@@ -53,9 +53,9 @@ For information on what happened on startup for the ASP.NET MVC version of this 
 
 ## Create an item
 
-At this point, you can start working with Scrapbook101core items with CRUD (create, read, update, delete) operations. The home page is https://localhost:port#/ or https://localhost:port#/Item/Index.
+At this point, you can start working with {{productName}} items with CRUD (create, read, update, delete) operations. The home page is https://localhost:port#/ or https://localhost:port#/Item/Index.
 
-To create a new Scrapbook101core item.
+To create a new {{productName}} item.
 
 1. On the home page, select **Create**.
 2. Choose a category in the **Category** dropdown.
@@ -64,7 +64,7 @@ To create a new Scrapbook101core item.
 
 ## Run live
 
-After running Scrapbook101core locally, you can take an optional next step and run Scrapbook101core as a web service. To do this you need to go live, which means publishing your site live with the following services:
+After running {{productName}} locally, you can take an optional next step and run {{productName}} as a web service. To do this you need to go live, which means publishing your site live with the following services:
 
 - [Azure Cosmos DB Service][cosmos] - This works the same as local emulator and you can copy any documents created locally to the live service. 
  

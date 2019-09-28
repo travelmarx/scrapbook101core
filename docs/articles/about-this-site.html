@@ -72,7 +72,7 @@
 <h2 id="overview">Overview</h2>
 <p>This site was created with <a href="https://dotnet.github.io/docfx/">DocFx</a>. How is this site different from our <a href="https://travelmarx.github.io/scrapbook101/">GitHub pages site</a> for Scrapbook101?</p>
 <ul>
-<li><p>This site parses comments from code (under <strong>\Scrapbook101core</strong>) and creates API documentation together with conceptual content (under <strong>\articles</strong>). The conceptual documentation from the GitHub pages site was reused here with few changes.</p>
+<li><p>This site parses comments from code (under <strong>Scrapbook101core</strong>) and creates API documentation together with conceptual content (under <strong>\articles</strong>). The conceptual documentation from the GitHub pages site was reused here with few changes.</p>
 </li>
 <li><p>In the previous <a href="https://travelmarx.github.io/scrapbook101/">site</a>, we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a <strong>\docs</strong> folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the HTML for the <a href="https://travelmarx.github.io/scrapbook101/">site</a>.</p>
 </li>
@@ -156,7 +156,7 @@
 <p>Some things we ran into:</p>
 <ul>
 <li><p>When testing the <a href="https://dotnet.github.io/docfx/tutorial/walkthrough/walkthrough_overview.html">walkthroughs</a>, we used the suggested folder naming <strong>\docfx_walkthrough\docfx_project</strong>. Then, in the context of the walkthrough,
-we pointed to Scrapbook101core code just to see what would happen and it built fine. However, when we then created the <strong>\docbuild</strong> folder inside of Scrapbook101core and tried to run <code>docfx metadata</code>, it was still looking for the <strong>\docfx_project</strong>. The culprit: <strong>\Scrapbook101core\obj\xdoc\cache</strong>. We deleted the cache folder and it started working.</p>
+we pointed to Scrapbook101core code just to see what would happen and it built fine. However, when we then created the <strong>\docbuild</strong> folder inside of Scrapbook101core and tried to run <code>docfx metadata</code>, it was still looking for the <strong>\docfx_project</strong>. The culprit: <strong>Scrapbook101core\obj\xdoc\cache</strong>. We deleted the cache folder and it started working.</p>
 </li>
 <li><p>In the process of ensuring we can always build everything from scratch, we often wipe out the .yml files in the <strong>\api</strong> folder. But be careful not to wipe out the index.md file if that is what you are pointing to in root toc.yml.</p>
 </li>
@@ -227,18 +227,77 @@ we pointed to Scrapbook101core code just to see what would happen and it built f
 </li>
 </ol>
 <h3 id="links-and-cross-references-via-uid">Links and cross references via UID.</h3>
-<p>For example, here is a link to <a class="xref" href="code-discussion.html">Code Discussion</a> file using its UID. Here is a link to a class in the API documentation using its UID: <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a>. Or we can change the text for the API link as so <a class="xref" href="../api/Scrapbook101core.Models.Item.html">The Item Class</a>. Here's the <a href="https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html">help page</a> on linking.</p>
+<p>For example, here is a link to <a class="xref" href="code-discussion.html">Code Discussion</a> file using its UID. Here is a link to a class in the API documentation using its UID: <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a>. Or we can change the text for the API link as so <a href="xref:%7B%7BproductName%7D%7D.Models.Item">The Item Class</a>. Here's the <a href="https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html">help page</a> on linking.</p>
 <p>Here are those links in markdown:</p>
 <pre><code>&lt;xref:code-discussion&gt;
 &lt;xref:Scrapbook101core.Models.Item&gt;
 [The Item Class](xref:Scrapbook101core.Models.Item)
 </code></pre>
-<p>How to link to a code file?  Here's an full qualified path link: <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json">appsettings.json</a>. Is there another way to do it?</p>
+<p>How to link to a code file?  Here's an full qualified path link: <a href="https://github.com/travelmarx/scrapbook101core/blob/master/%7B%7BproductName%7D%7D/appsettings.json">appsettings.json</a>. Is there another way to do it?</p>
 <h3 id="specify-site-title">Specify site title</h3>
 <p>In the docfx.json file, under the <strong>build</strong> key, specify this:</p>
-<pre><code class="lang-json">    &quot;globalMetadata&quot; : { &quot;_appTitle&quot;: &quot;Scrapbook101core&quot; },
+<pre><code class="lang-json">&quot;globalMetadata&quot; : { &quot;_appTitle&quot;: &quot;Scrapbook101core&quot; },
 </code></pre>
 <p>which will add this text to the title of every page, as viewed in browser tab. The _appTitle is added to the UID of each page, so for the &quot;Get Started&quot; page, the title is &quot;Get Started | Scrapbook101core&quot;. For more information on reservied metadata you can use, see <a href="https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#322-reserved-metadata">reserved metadata</a>.</p>
+<h3 id="add-a-global-variable">Add a global variable</h3>
+<p>Goal: Add a global variable to represent the product name &quot;Scrapbook101core&quot; so that in markdown files we could just put <code>Scrapbook101core</code> and have the build process substitute the correct vallue.</p>
+<p>Here's how we achieved it. (It may not be the most elegant way.)</p>
+<ol>
+<li><p>Export the default template with <code>docfx export default</code> if you haven't already.</p>
+<ul>
+<li>This will created a folder called <strong>_exported_templates</strong>.  Either add this to .gitignore or delete after done.</li>
+</ul>
+</li>
+<li><p>In our <strong>\docbuild</strong> folder create a <strong>templates\cust-template</strong> folder, if you haven't already.</p>
+</li>
+<li><p>Copy the file conceptual.extension.js from <strong>_exported_templates</strong> to <strong>templates\cust-template</strong>.</p>
+</li>
+<li><p>Start with some simple experiments adding Javascript code to the conceptual.extension.js file and always rebuilding.</p>
+<ol>
+<li><p>For example, in the exports.postTransform function add code to confirm you can see the warning line in the output when you run <code>docfx --serve</code>.</p>
+<pre><code class="lang-javascript">exports.postTransform = function (model) {
+    console.warn(&quot;******************postprocessor******************&quot;);
+    return model;
+}
+</code></pre>
+</li>
+<li><p>Next, take a look at what the model is with:</p>
+<pre><code class="lang-javascript">exports.postTransform = function (model) {
+    console.warn(&quot;******************postprocessor******************&quot;);
+    console.warn(JSON.stringify(model));
+    return model;
+}
+</code></pre>
+<p>From the output of <code>docfx --serve</code>, copy an example of the stringified model object and put it into a .json file and format it. For a conceptual file, you should see something like this:</p>
+<pre><code class="lang-json">{
+    &quot;conceptual&quot;: &quot;...&quot;
+    &quot;type&quot;: &quot;Conceptual&quot;,
+    &quot;source&quot;: {...}
+    ...
+}
+</code></pre>
+<p>From this output, you can see what you can access in the model and change.</p>
+</li>
+</ol>
+</li>
+<li><p>In the docfx.json file put this:</p>
+<pre><code class="lang-json">&quot;globalMetadata&quot; : { &quot;_appTitle&quot;: &quot;Scrapbook101core&quot;, &quot;productName&quot;: &quot;Scrapbook101core&quot; },
+</code></pre>
+</li>
+<li><p>Read this value from the model and use it to substitute in the model by adding this code to conceptual.extension.js:</p>
+<pre><code class="lang-javascript">String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
+exports.postTransform = function (model) {
+model.conceptual = model.conceptual.replaceAll(&quot;Scrapbook101core&quot;, model[&quot;productName&quot;] );
+return model;
+}
+</code></pre>
+<p>The replaceAll functionality came from a suggestion in <a href="https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string">Stack Overflow</a>. If you needed this functionality more widely, you could put in the common.js file.</p>
+</li>
+</ol>
 <h2 id="future">Future</h2>
 <p>Create a Azure pipeline process to build docs automatically. The flow would be then:</p>
 <ol>
