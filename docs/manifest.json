@@ -12,7 +12,7 @@
           "hash": "bQ58u7F2BQkhCX3pq8LUnQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "qRIcof1kM0wNzcHBanXiIg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "3cw2aNhFc0qCQ5JevVBKyg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "g7bms1rE77jf8lTRwacIvw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "uOV/OcdMmHHT7y5RsyQ37Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -72,7 +72,7 @@
           "hash": "PuguPl1ugOsGAG84rYLKUA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.AssetItem.html",
-          "hash": "6xkBu57uK/TeoO0lDhFjlg=="
+          "hash": "v9hBbTt3bNHvTYZQ+xhj4g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "p0PtZpYlFNU2NewWzWbs5A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -108,7 +108,7 @@
           "hash": "icid/wfD7klDJa6hS/dFVA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -120,7 +120,7 @@
           "hash": "r37IiPd8DKaKi5TslFZVFA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -132,7 +132,7 @@
           "hash": "NrNPuCdkgNV8xLlqZbeVUA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -144,7 +144,7 @@
           "hash": "HKKvLFtuuJvsu/XrY3TddQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -156,7 +156,7 @@
           "hash": "FngcA7hHoEEXE1O51q0oDg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -168,7 +168,7 @@
           "hash": "7SdXK2m+2b3PhZTmlje7FA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Item.html",
-          "hash": "15p1sfevNmvkqwZsDYdxQw=="
+          "hash": "orHGl9wKrXxcp4ER4zBsxg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -192,7 +192,7 @@
           "hash": "GCu3nu9DcIJBualWgZ2/8Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -204,7 +204,7 @@
           "hash": "1BfmWSgp2oQbBwPL5g+r7g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -216,7 +216,7 @@
           "hash": "OVk9WvtrPQTR6G7Z3OQUaw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -228,7 +228,7 @@
           "hash": "EpxwEoqhU442QT8N3PUClA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -240,7 +240,7 @@
           "hash": "sz5XE5m/xsrKQyL73qOrzw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -252,7 +252,7 @@
           "hash": "DC7DkjyldKOhYrvOI04dyQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -268,15 +268,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "articles/about-this-site.md",
       "output": {
         ".html": {
           "relative_path": "articles/about-this-site.html",
-          "hash": "B2ZA+31emntXoShOrzEa+w=="
+          "hash": "hfVZ2T9Ncj8mWbK81WIigg=="
         }
       },
       "is_incremental": false,
@@ -291,7 +288,7 @@
           "hash": "/GkB8Y5L1dNgQUY9en7+Mw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -303,7 +300,7 @@
           "hash": "svVfgvHfII/vcJUxaMz5rg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -315,7 +312,7 @@
           "hash": "WNl9bMJQq0M6q1BEQh11Fw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -327,7 +324,7 @@
           "hash": "mggfN3JXqtNl/OQz3QWUzQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -348,10 +345,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/item-document.html",
-          "hash": "MDFoYU8NLVHmfT9+gX/n5A=="
+          "hash": "Sh9wFeaGeWbXsPWT4UmexA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -363,7 +360,7 @@
           "hash": "Z0A14KKM4TRzTFFFyCibwg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -375,7 +372,7 @@
           "hash": "o/JchL5CkLKEhBc5zHJS5w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -418,6 +415,17 @@
       "output": {
         "resource": {
           "relative_path": "images/documentDB-data-migration-tool-connection.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/item-location-documentation.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/item-location-documentation.jpg"
         }
       },
       "is_incremental": false,
@@ -490,6 +498,18 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 20,
+          "skipped_file_count": 20
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 10
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -503,18 +523,6 @@
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 11,
-          "skipped_file_count": 10
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 20,
-          "skipped_file_count": 20
         }
       }
     },

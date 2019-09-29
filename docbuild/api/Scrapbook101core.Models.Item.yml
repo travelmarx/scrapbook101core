@@ -90,7 +90,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{Scrapbook101core.Models.AssetItem}
-      description: "\nA list of assets associated with the Item. There can be no assets associated.\n"
+      description: "\nA list of assets associated with the item. Can be null, meaning no assets are associated with the item.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="assets")>
 
@@ -128,10 +128,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetPath
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 23
+    startLine: 33
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nFor example, there might be images, PDFs\nor other documents that give context about the item. Associating assets is not necessary if you plan to\nimplement Scrapbook101core without any assets. Part of the spirit behind Scrapbook101core however is\nto provide strong visual cues for remembering an item as well as archiving data associated with it,\nso at least one image for each Scrapbook101core is recommended. \n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "assetPath")]
@@ -140,6 +142,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nThis is the path to any digital assets associated with the item. Example value: &quot;assets/2019/2019-01-01&quot;.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="assetPath")>
 
@@ -177,10 +180,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Category
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 26
+    startLine: 40
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  example: []
   syntax:
     content: >-
       [Required(ErrorMessage = "Category is required.")]
@@ -191,6 +195,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nOne of the category values described in the <xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class.\nA Scrapbook101core item must be assigned to a category.\n"
     content.vb: >-
       <Required(ErrorMessage:="Category is required.")>
 
@@ -237,10 +242,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFields
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 30
+    startLine: 49
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "categoryFields")]
@@ -249,6 +255,7 @@ items:
     parameters: []
     return:
       type: Scrapbook101core.Models.CategoryFields
+      description: "\nFields specific to the category selected for the Scrapbook101core item. \nSee the <xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class for more information.\nEach category has a fixed set of fields.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="categoryFields")>
 
@@ -286,10 +293,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DateAdded
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 33
+    startLine: 56
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "dateAdded")]
@@ -298,6 +306,7 @@ items:
     parameters: []
     return:
       type: System.DateTime
+      description: "\nThis value is automatically inserted by code upon initial creation of an item and then never changed.\nExample: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="dateAdded")>
 
@@ -335,10 +344,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DateUpdated
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 36
+    startLine: 67
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nOn initial creation of an Scrapbook101core item,\nthis property equals <strong>dateAdded</strong>. When an item is edited, this property is updated with the correct timestamp.\n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "dateUpdated")]
@@ -347,6 +358,7 @@ items:
     parameters: []
     return:
       type: System.DateTime
+      description: "\nThis value is automatically inserted.\nExample: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="dateUpdated")>
 
@@ -384,10 +396,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Description
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 39
+    startLine: 77
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nThis property provides the\ncontext of why the item is important. Descriptions longer than a couple hundred words should be added as assets.\n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "description")]
@@ -396,6 +410,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nInformation about the Scrapbook101core item that isn&apos;t already captured in other fields.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="description")>
 
@@ -433,10 +448,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GeoLocation
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 42
+    startLine: 88
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nA <a href=\"https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.spatial.point\">Microsoft.Azure.Documents.Spatial.Point</a>\nIf you have a Bing Maps Key and it is specified in the appsettings.json file, then location values are\nconverted into latitude and longitude coordinates (geocoded) to allow for more flexible location searches.\n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "geoLocation")]
@@ -445,6 +462,7 @@ items:
     parameters: []
     return:
       type: Microsoft.Azure.Documents.Spatial.Point
+      description: "\nRepresents a point geometry class in the Azure Cosmos DB service.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="geoLocation")>
 
@@ -482,10 +500,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Id
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 45
+    startLine: 94
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "id")]
@@ -494,6 +513,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nAn auto-generated globally unique identifier (GUID), like &quot;c73af369-7a21-45dd-b9ec-fe31af354fe1&quot;.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="id")>
 
@@ -531,10 +551,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Location
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 48
+    startLine: 104
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nIt is not required but is helpful. It is important to be consistent with how you enter values to make searching easier.\nExamples: &quot;Seattle, WA&quot; or &quot;101 Main St. Seattle 98103, USA&quot; or &quot;Italy&quot;.\n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "location")]
@@ -543,6 +565,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nA friendly name of the location that is relevant for the Scrapbook101core item.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="location")>
 
@@ -580,10 +603,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Rating
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 51
+    startLine: 114
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nThe rating system will be unique for each implementation. The test data provided with Scrapbook101core\nuses a rating of 1 - 5.\n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "rating")]
@@ -592,6 +617,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nA rating of the Scrapbook101core item, if applicable.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="rating")>
 
@@ -629,10 +655,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdatedBy
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 54
+    startLine: 124
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  remarks: "\nThis could be a user name or ID. For example, if you implement\nan authentication scheme based on Windows Live, Facebook, or Google, you can use the user&apos;s email or ID in this field.\n"
+  example: []
   syntax:
     content: >-
       [JsonProperty(PropertyName = "updatedBy")]
@@ -641,6 +669,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nAn identifier representing who changed the entry.\n"
     content.vb: >-
       <JsonProperty(PropertyName:="updatedBy")>
 
@@ -678,10 +707,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Title
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 57
+    startLine: 130
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  example: []
   syntax:
     content: >-
       [Required(ErrorMessage = "Title is required.")]
@@ -692,6 +722,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: "\nA descriptive title for the Scrapbook101core item. For example, if item is a book, use all or part of the book title.\n"
     content.vb: >-
       <Required(ErrorMessage:="Title is required.")>
 
@@ -738,10 +769,13 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Type
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 61
+    startLine: 141
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  summary: "\nDefines the Document DB entry type. \n"
+  remarks: "\nThe value of the an item type is read from the appsettings.json file. For example, &quot;scrapbook101Item&quot;. The\ntype distinguished the item from other Document DB entries like category.\n"
+  example: []
   syntax:
     content: >-
       [Required(ErrorMessage = "Type is required.")]
@@ -1182,6 +1216,11 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Scrapbook101core.Models.Category
+  commentId: T:Scrapbook101core.Models.Category
+  name: Category
+  nameWithType: Category
+  fullName: Scrapbook101core.Models.Category
 - uid: Scrapbook101core.Models.Item.Category*
   commentId: Overload:Scrapbook101core.Models.Item.Category
   name: Category

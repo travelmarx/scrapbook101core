@@ -6,15 +6,13 @@ title: Item Document
 
 In the [technology overview][tn] section, we briefly discussed the ideas behind a document-oriented database and how it is used in {{productName}}. In this section we describe one of the key document types stored in the document-oriented database, the item document.
 
-Our design approach is model-first approach meaning we start with a prototype item document in JSON that represents one {{productName}} item. From this prototype document, the code class `Item.cs` is defined in our Visual Studio project representing this item document.
-
-A test {{productName}}.
+Our design approach is model-first approach meaning we start with a prototype item document in JSON that represents one {{productName}} item. From this prototype document, the code class [`Item`](xref:Scrapbook101core.Models.Item) is defined in our Visual Studio project representing this item document.
 
 ## Overview
 
-Below is the prototype item document that describes one {{productName}} item in JSON. The document data store will contain one document that looks like this for every {{productName}} item. This item document is one of the two document types (distinguished by the `type` field) stored in the document datastore. The other document type is the [Category Document][cat]. 
+Below is the prototype item document that describes one {{productName}} item in JSON. The document data store will contain one document that looks like this for every {{productName}} item. This item document is one of the two document types (distinguished by the [`type`](xref:Scrapbook101core.Models.Item#Scrapbook101core_Models_Item_Type) field) stored in the document datastore. The other document type is the [Category Document][cat]. 
 
-The values of the fields in the key-value pairs aren't important below, only the structure is. Following the JSON are descriptions of each field.
+The values of the fields in the key-value pairs aren't important below, only the structure is. Following the JSON are descriptions of each field. Remember that each of these fields is represented by a property in the [`Item class`](xref:Scrapbook101core.Models.Item).
 
 ```json
 {
@@ -132,7 +130,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>geoLocation</dt>
-    <dd>If you have a <a href="https://www.microsoft.com/en-us/maps/create-a-bing-maps-key">Bing Maps Key</a> and it is specified in the <code>web.config</code> file, then <strong>location</strong> values are converted into latitude and longitude coordinates (geocoded) to allow for more flexible location searches.
+    <dd>If you have a <a href="https://www.microsoft.com/en-us/maps/create-a-bing-maps-key">Bing Maps Key</a> and it is specified in the <code>appsettings.json</code> file, then <strong>location</strong> values are converted into latitude and longitude coordinates (geocoded) to allow for more flexible location searches.
     <p class="inset">
         <u>Default</u>: <i>null</i>
         <br/>
@@ -187,7 +185,7 @@ Fields not marked as <u>Required</u> are not required.
     </p>
     </dd>
     <dt>updatedBy</dt>
-    <dd>This could be a user name or ID. For example, if you implement a authentication scheme based on Windows Live, Facebook, or Google, you can use
+    <dd>This could be a user name or ID. For example, if you implement an authentication scheme based on Windows Live, Facebook, or Google, you can use
     the user's email or ID in this field.
     <p class="inset">
         <u>Default</u>: <i>null</i>
@@ -263,3 +261,4 @@ Using a schema generator like [JSONschema.net][json-schema-gen], a possible sche
 [docdb]: https://en.wikipedia.org/wiki/Document-oriented_database
 [json-schema]: https://json-schema.org/
 [json-schema-gen]: https://www.jsonschema.net/
+[item-cs]:https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Models/Item.cs

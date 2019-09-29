@@ -8,7 +8,7 @@ title: About this site
 
 This site was created with [DocFx][docfx]. How is this site different from our [GitHub pages site][site1] for Scrapbook101? 
 
-* This site parses comments from code (under **\{{productName}}**) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
+* This site parses comments from code (under [Scrapbook101core][cide]) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
 
 * In the previous [site][site1], we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a **\docs** folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the HTML for the [site][site1].
 
@@ -154,7 +154,7 @@ The goal is to removed the inherited members section as shown below:
 
 ### Links and cross references via UID. 
 
-For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:{{productName}}.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:{{productName}}.Models.Item). Here's the [help page][linkhelp] on linking.
+For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:Scrapbook101core.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:Scrapbook101core.Models.Item). Here's the [help page][linkhelp] on linking.
 
 Here are those links in markdown:
 
@@ -179,7 +179,7 @@ which will add this text to the title of every page, as viewed in browser tab. T
 
 ### Add a global variable
 
-Goal: Add a global variable to represent the product name "{{productName}}" so that in markdown files we could just put `{{productName}}` and have the build process substitute the correct vallue.
+Our goal is to add a global variable to represent the site/product name "{{productName}}" so that in conceptual markdown files we could just put `{{productName}}` and have the build process substitute the correct value.
 
 Here's how we achieved it. (It may not be the most elegant way.)
 
@@ -190,9 +190,9 @@ Here's how we achieved it. (It may not be the most elegant way.)
 
 1. Copy the file conceptual.extension.js from **_exported_templates** to **templates\cust-template**.
 
-1. Start with some simple experiments adding Javascript code to the conceptual.extension.js file and always rebuilding.
+1. Start with some simple experiments adding JavaScript code to the conceptual.extension.js file and always rebuilding.
 
-    1. For example, in the exports.postTransform function add code to confirm you can see the warning line in the output when you run `docfx --serve`.
+    1. For example, in the `exports.postTransform` function add code to confirm you can see the warning line in the output when you run `docfx --serve`.
 
         ```javascript
         exports.postTransform = function (model) {
@@ -211,7 +211,7 @@ Here's how we achieved it. (It may not be the most elegant way.)
         }
         ```
 
-        From the output of `docfx --serve`, copy an example of the stringified model object and put it into a .json file and format it. For a conceptual file, you should see something like this:
+        From the output of `docfx --serve`, copy an example of the stringified model object and put it into a .json file and format it. For a conceptual file, you should see a form something like this:
 
         ```json
         {
@@ -222,9 +222,9 @@ Here's how we achieved it. (It may not be the most elegant way.)
         }
         ```
 
-        From this output, you can see what you can access in the model and change.
+        From this output, you can see what you can access in the model.
 
-1. In the docfx.json file put this:
+1. In the docfx.json file put thisunder the "build" key:
 
     ```json
     "globalMetadata" : { "_appTitle": "{{productName}}", "productName": "Scrapbook101core" },
@@ -244,7 +244,43 @@ Here's how we achieved it. (It may not be the most elegant way.)
     }
     ```
 
-    The replaceAll functionality came from a suggestion in [Stack Overflow][replaceAll]. If you needed this functionality more widely, you could put in the common.js file.
+    The `replaceAll` functionality came from a suggestion in [Stack Overflow][replaceAll]. If you needed this functionality more widely, you could put the prototype function in the common.js file.
+
+### Triple-slash for properties
+
+We started to document the [`Item class`](xref:Scrapbook101core.Models.Item) to understand how different fields render and what our "style" would be. For example, to document the properties, we have:
+
+```
+/// <summary>
+/// A summary.
+/// </summary>
+/// <value>
+/// The property value description.
+/// </value>
+/// <remarks>
+/// Additional information about the property.
+/// </remarks>
+```
+
+We decided that the **summary** tag was too much for property documentation and went with just the **value** and **remarks** tags. For example, for the [`Location`](xref:Scrapbook101core.Models.Item#Scrapbook101core_Models_Item_Location) property:
+
+```
+/// <value>
+/// A friendly name of the location that is relevant for the Scrapbook101core item.
+/// </value>
+/// <remarks>
+/// It is not required but is helpful. It is important to be consistent with how you enter
+/// values to make searching easier.
+/// Examples: "Seattle, WA" or "101 Main St. Seattle 98103, USA" or "Italy".
+/// </remarks>
+[JsonProperty(PropertyName = "location")]
+public string Location { get; set; }
+```
+
+which renders as: 
+
+![Item Location property API documentation](../images/item-location-documentation.jpg "Item Location property API documentation")
+
 
 ## Future
 
@@ -277,6 +313,7 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [ref3]: https://dotnet.github.io/docfx/spec/triple_slash_comments_spec.html
 [ref4]: https://docs.microsoft.com/dotnet/csharp/programming-guide/xmldoc/
 [site1]: https://travelmarx.github.io/scrapbook101/
+[code]: https://github.com/travelmarx/scrapbook101core/tree/master/Scrapbook101core
 [issue3284]: https://github.com/dotnet/docfx/issues/3284
 [linkhelp]: https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html
 [renderers]: https://dotnet.github.io/docfx/tutorial/intro_template.html#renderer
