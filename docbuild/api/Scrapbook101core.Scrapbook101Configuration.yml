@@ -38,7 +38,7 @@ items:
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
-  summary: "\nRepresents the application settings definied in <code>appsettings.json.</code>\n"
+  summary: "\nRepresents the application settings defined in <code>appsettings.json.</code>\n"
   example: []
   syntax:
     content: public class Scrapbook101Configuration

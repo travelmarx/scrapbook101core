@@ -9,6 +9,12 @@ using Scrapbook101core.Models;
 
 namespace Scrapbook101core.Controllers
 {
+    /// <summary>
+    /// In the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input involving
+    /// item operations. The most important method is the
+    /// <see cref="Scrapbook101core.Controllers.ItemController.IndexAsync"/>, which
+    /// returns a list of items.
+    /// </summary>
     public class ItemController : Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;

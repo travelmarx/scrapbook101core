@@ -25,10 +25,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetItem
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 146
+    startLine: 149
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  summary: "\nDefines one asset for an item.\n"
+  example: []
   syntax:
     content: 'public class AssetItem : IComparable<AssetItem>'
     content.vb: >-
@@ -68,7 +70,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 148
+    startLine: 151
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -117,7 +119,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Size
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 151
+    startLine: 154
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -166,7 +168,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 154
+    startLine: 157
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -201,7 +203,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 159
+    startLine: 162
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -239,7 +241,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetHashCode
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 166
+    startLine: 169
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -274,7 +276,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CompareTo
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 170
+    startLine: 173
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models

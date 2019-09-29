@@ -22,10 +22,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryController
     path: ../Scrapbook101core/Controllers/CategoryController.cs
-    startLine: 9
+    startLine: 13
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nIn the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input involving\ncategory operations.\n"
+  example: []
   syntax:
     content: 'public class CategoryController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
@@ -258,7 +260,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Index
     path: ../Scrapbook101core/Controllers/CategoryController.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -290,7 +292,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetCategoryFieldsAsync
     path: ../Scrapbook101core/Controllers/CategoryController.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -344,7 +346,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetString
     path: ../Scrapbook101core/Controllers/CategoryController.cs
-    startLine: 43
+    startLine: 47
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers

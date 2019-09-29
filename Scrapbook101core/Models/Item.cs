@@ -144,6 +144,9 @@
         public string Type { get; set; }
     }
 
+    /// <summary>
+    /// Defines one asset for an item.
+    /// </summary>
     public class AssetItem : IComparable<AssetItem>
     {
         [JsonProperty(PropertyName = "name")]

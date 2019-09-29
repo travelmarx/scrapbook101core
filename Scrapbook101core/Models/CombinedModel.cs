@@ -27,6 +27,9 @@
         public List<string> ActiveFields { get; set; }
     }
 
+    /// <summary>
+    /// Represents a file uploaded locally.
+    /// </summary>
     public class FileItem
     {
         public string Name { get; set; }

@@ -28,10 +28,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemController
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nIn the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input involving\nitem operations. The most important method is the\n<xref href=\"Scrapbook101core.Controllers.ItemController.IndexAsync\" data-throw-if-not-resolved=\"false\"></xref>, which\nreturns a list of items.\n"
+  example: []
   syntax:
     content: 'public class ItemController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
@@ -264,7 +266,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: .ctor
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 15
+    startLine: 21
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -297,7 +299,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: IndexAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 20
+    startLine: 26
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -341,7 +343,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 61
+    startLine: 67
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -388,7 +390,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 75
+    startLine: 81
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -432,7 +434,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 92
+    startLine: 98
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -493,7 +495,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 149
+    startLine: 155
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -547,7 +549,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 174
+    startLine: 180
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -608,7 +610,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 198
+    startLine: 204
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -662,7 +664,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteConfirmedAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 216
+    startLine: 222
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -699,6 +701,9 @@ items:
   modifiers.vb:
   - Public
 references:
+- uid: Scrapbook101core.Controllers.ItemController.IndexAsync
+  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync
+  isExternal: true
 - uid: Scrapbook101core.Controllers
   commentId: N:Scrapbook101core.Controllers
   name: Scrapbook101core.Controllers
