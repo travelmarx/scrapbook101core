@@ -299,7 +299,7 @@ return model;
 </li>
 </ol>
 <h3 id="triple-slash-for-properties">Triple-slash for properties</h3>
-<p>We started to document the <a class="xref" href="../api/Scrapbook101core.Models.Item.html"><code>Item class</code></a> to understand how different fields render and what our &quot;style&quot; would be. For example, to document the properties, we have:</p>
+<p>We started to document the <a class="xref" href="../api/Scrapbook101core.Models.Item.html"><code>Item class</code></a> to understand how different tags render and what our &quot;style&quot; would be. For example, to document the properties, we have three useful tags:</p>
 <pre><code>/// &lt;summary&gt;
 /// A summary.
 /// &lt;/summary&gt;
@@ -310,7 +310,8 @@ return model;
 /// Additional information about the property.
 /// &lt;/remarks&gt;
 </code></pre>
-<p>We decided that the <strong>summary</strong> tag was too much for property documentation and went with just the <strong>value</strong> and <strong>remarks</strong> tags. For example, for the <a class="xref" href="../api/Scrapbook101core.Models.Item.html#Scrapbook101core_Models_Item_Location"><code>Location</code></a> property:</p>
+<p>These tags render in the order shown above, regardless of how you arrange them.</p>
+<p>We decided that the <strong>summary</strong> tag was too much for property documentation and decided to go with just the <strong>value</strong> and <strong>remarks</strong> tags. And, the <strong>value</strong> tag would have just a short description, one to two sentences while the <strong>remarks</strong> would be any clarifying information. For example, for the <a class="xref" href="../api/Scrapbook101core.Models.Item.html#Scrapbook101core_Models_Item_Location"><code>Location</code></a> property:</p>
 <pre><code>/// &lt;value&gt;
 /// A friendly name of the location that is relevant for the Scrapbook101core item.
 /// &lt;/value&gt;

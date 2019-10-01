@@ -248,7 +248,7 @@ Here's how we achieved it. (It may not be the most elegant way.)
 
 ### Triple-slash for properties
 
-We started to document the [`Item class`](xref:Scrapbook101core.Models.Item) to understand how different fields render and what our "style" would be. For example, to document the properties, we have:
+We started to document the [`Item class`](xref:Scrapbook101core.Models.Item) to understand how different tags render and what our "style" would be. For example, to document the properties, we have three useful tags:
 
 ```
 /// <summary>
@@ -262,7 +262,9 @@ We started to document the [`Item class`](xref:Scrapbook101core.Models.Item) to 
 /// </remarks>
 ```
 
-We decided that the **summary** tag was too much for property documentation and went with just the **value** and **remarks** tags. For example, for the [`Location`](xref:Scrapbook101core.Models.Item#Scrapbook101core_Models_Item_Location) property:
+These tags render in the order shown above, regardless of how you arrange them.
+
+We decided that the **summary** tag was too much for property documentation and decided to go with just the **value** and **remarks** tags. And, the **value** tag would have just a short description, one to two sentences while the **remarks** would be any clarifying information. For example, for the [`Location`](xref:Scrapbook101core.Models.Item#Scrapbook101core_Models_Item_Location) property:
 
 ```
 /// <value>
