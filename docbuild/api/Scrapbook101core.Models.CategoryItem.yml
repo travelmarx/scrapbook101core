@@ -22,10 +22,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryItem
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 25
+    startLine: 31
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  summary: "\nDefines one category inside the <xref href=\"Scrapbook101core.Models.Category.Categories\" data-throw-if-not-resolved=\"false\"></xref> list of the\n<xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
   syntax:
     content: public class CategoryItem
     content.vb: Public Class CategoryItem
@@ -63,7 +65,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 27
+    startLine: 33
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -123,7 +125,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Description
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -172,7 +174,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFields
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 34
+    startLine: 40
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -204,6 +206,14 @@ items:
   modifiers.vb:
   - Public
 references:
+- uid: Scrapbook101core.Models.Category.Categories
+  commentId: P:Scrapbook101core.Models.Category.Categories
+  isExternal: true
+- uid: Scrapbook101core.Models.Category
+  commentId: T:Scrapbook101core.Models.Category
+  name: Category
+  nameWithType: Category
+  fullName: Scrapbook101core.Models.Category
 - uid: Scrapbook101core.Models
   commentId: N:Scrapbook101core.Models
   name: Scrapbook101core.Models

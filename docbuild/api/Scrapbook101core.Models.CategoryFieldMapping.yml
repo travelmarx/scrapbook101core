@@ -21,10 +21,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFieldMapping
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 23
+    startLine: 36
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  summary: "\nUsed for tracking what fields are valid for a category. Not used to deserialize JSON.\n"
+  example: []
   syntax:
     content: public class CategoryFieldMapping
     content.vb: Public Class CategoryFieldMapping
@@ -62,7 +64,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 25
+    startLine: 38
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -97,7 +99,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: ActiveFields
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 26
+    startLine: 39
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models

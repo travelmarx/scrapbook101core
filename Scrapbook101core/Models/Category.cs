@@ -5,9 +5,12 @@
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Defines a category in Scrapbook.
+    /// Defines the categories in Scrapbook101core.
     /// </summary>
-    /// <param name="value">The value of the class</param>
+    /// <remarks>
+    /// The list of categories is read in from one document from the database identified by
+    /// an <see cref="Scrapbook101core.Models.Category.Id"/> and <see cref="Scrapbook101core.Models.Category.Type"/>.
+    /// </remarks>
     public class Category
     {
         [Required(ErrorMessage = "id is required.")]
@@ -22,7 +25,10 @@
         public List<CategoryItem> Categories { get; set; }
     }
 
-    // Defines items inside CategoryTemplate
+    /// <summary>
+    /// Defines one category inside the <see cref="Scrapbook101core.Models.Category.Categories"/> list of the
+    /// <see cref="Scrapbook101core.Models.Category"/> class.
+    /// </summary>
     public class CategoryItem
     {
         [Required(ErrorMessage = "Name is required.")]
@@ -36,7 +42,9 @@
         public CategoryFields CategoryFields { get; set; }
     }
 
-    // Keep in sync with that used in AppFunction
+    /// <summary>
+    /// Represents all the possible category fields. A category field may apply to some categories and not to others.
+    /// </summary>
     public class CategoryFields
     {
 

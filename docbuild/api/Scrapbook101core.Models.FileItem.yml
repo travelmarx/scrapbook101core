@@ -23,11 +23,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: FileItem
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 32
+    startLine: 45
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
-  summary: "\nRepresents a file uploaded locally.\n"
+  summary: "\nRepresents a file asset that uploaded locally.\n"
   example: []
   syntax:
     content: public class FileItem
@@ -66,7 +66,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 34
+    startLine: 47
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Path
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 35
+    startLine: 48
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -136,7 +136,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Role
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 36
+    startLine: 49
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -171,7 +171,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Size
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 37
+    startLine: 50
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models

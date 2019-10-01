@@ -22,10 +22,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryItemDisplay
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 15
+    startLine: 26
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
+  summary: "\nRepresents one category for display purposes.\n"
+  example: []
   syntax:
     content: public class CategoryItemDisplay
     content.vb: Public Class CategoryItemDisplay
@@ -63,7 +65,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Id
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 17
+    startLine: 28
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -98,7 +100,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 18
+    startLine: 29
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -133,7 +135,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryInfo
     path: ../Scrapbook101core/Models/CombinedModel.cs
-    startLine: 19
+    startLine: 30
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models

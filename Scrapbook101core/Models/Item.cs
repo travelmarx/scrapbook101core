@@ -145,7 +145,8 @@
     }
 
     /// <summary>
-    /// Defines one asset for an item.
+    /// Defines one asset in the <see cref="Scrapbook101core.Models.Item.Assets"/> property of 
+    /// the <see cref="Scrapbook101core.Models.Item"/> class.
     /// </summary>
     public class AssetItem : IComparable<AssetItem>
     {

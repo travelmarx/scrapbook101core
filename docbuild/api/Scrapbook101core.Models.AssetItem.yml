@@ -25,11 +25,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetItem
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 149
+    startLine: 150
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
-  summary: "\nDefines one asset for an item.\n"
+  summary: "\nDefines one asset in the <xref href=\"Scrapbook101core.Models.Item.Assets\" data-throw-if-not-resolved=\"false\"></xref> property of \nthe <xref href=\"Scrapbook101core.Models.Item\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
   example: []
   syntax:
     content: 'public class AssetItem : IComparable<AssetItem>'
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 151
+    startLine: 152
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -119,7 +119,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Size
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 154
+    startLine: 155
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -168,7 +168,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 157
+    startLine: 158
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -203,7 +203,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 162
+    startLine: 163
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -241,7 +241,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetHashCode
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 169
+    startLine: 170
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -276,7 +276,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core.git
     id: CompareTo
     path: ../Scrapbook101core/Models/Item.cs
-    startLine: 173
+    startLine: 174
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -296,6 +296,15 @@ items:
   modifiers.vb:
   - Public
 references:
+- uid: Scrapbook101core.Models.Item.Assets
+  commentId: P:Scrapbook101core.Models.Item.Assets
+  isExternal: true
+- uid: Scrapbook101core.Models.Item
+  commentId: T:Scrapbook101core.Models.Item
+  parent: Scrapbook101core.Models
+  name: Item
+  nameWithType: Item
+  fullName: Scrapbook101core.Models.Item
 - uid: Scrapbook101core.Models
   commentId: N:Scrapbook101core.Models
   name: Scrapbook101core.Models
