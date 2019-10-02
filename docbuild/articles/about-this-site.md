@@ -326,7 +326,7 @@ Some notes:
 
 * What happened above? The steps built the site as if runing build in Visual Studio.
 
-* If you make a change to ? file, the build process will kick off again because the **trigger** parameter in the pipeline config file.
+* If you make a change to  file, the build process will kick off again because the **trigger** parameter in the pipeline config file.
 
 
 To file:
