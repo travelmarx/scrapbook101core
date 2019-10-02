@@ -283,6 +283,41 @@ which renders as:
 
 ![Item Location property API documentation](../images/item-location-documentation.jpg "Item Location property API documentation")
 
+### Create a pipeline build
+
+First steps...
+
+1. Go to Azure devops signin.
+
+2. Create a project "Scrapbook101core" in the organization that was created.
+
+3. Go to Pipelines, and create a new Build pipeline.
+
+4. Connect to GitHub and select Scrapbook101core and Run.
+
+These steps built the site. There is a new file azure-pipeline.yml in the root of the repo.
+
+```yaml
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+```
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
 
 ## Future
 
