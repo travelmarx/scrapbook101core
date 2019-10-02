@@ -19,7 +19,7 @@
       "categoryFields": {
         "location": "Joe Smith's house, restaurant name.",
         "people": "A list of people who were there.",
-        "type": "[dinner, lunch, party, wedding, festival]"
+        "type": "[dinner, lunch, brunch, party, wedding, festival]"
       }
     },
     {
