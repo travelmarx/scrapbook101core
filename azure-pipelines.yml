@@ -6,6 +6,9 @@
 trigger:
 - master
 
+steps:
+- bash: echo "Hello World"
+
 pool:
   vmImage: 'ubuntu-latest'
 
