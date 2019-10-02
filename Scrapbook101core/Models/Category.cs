@@ -8,7 +8,7 @@
     /// Defines the categories in Scrapbook101core.
     /// </summary>
     /// <remarks>
-    /// The list of categories is read in from one document from the database identified by
+    /// The list of categories is read in from one document stored in the database and identified by
     /// an <see cref="Scrapbook101core.Models.Category.Id"/> and <see cref="Scrapbook101core.Models.Category.Type"/>.
     /// </remarks>
     public class Category

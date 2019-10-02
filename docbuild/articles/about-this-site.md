@@ -289,35 +289,47 @@ First steps...
 
 1. Go to Azure devops signin.
 
-2. Create a project "Scrapbook101core" in the organization that was created.
+1. Create a project "Scrapbook101core" in the organization that was created.
 
-3. Go to Pipelines, and create a new Build pipeline.
+1. Go to Pipelines, and create a new Build pipeline.
 
-4. Connect to GitHub and select Scrapbook101core and Run.
+1. Connect to GitHub and select Scrapbook101core and Run.
 
-These steps built the site. There is a new file azure-pipeline.yml in the root of the repo.
+1. Configure the pipeline as "ASP.NET Core".
+   
+   This will create a azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge.)
+   The file is at the root of the GitHub project.
 
-```yaml
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+    ```yaml
+    # ASP.NET Core
+    # Build and test ASP.NET Core projects targeting .NET Core.
+    # Add steps that run tests, create a NuGet package, deploy, and more:
+    # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-trigger:
-- master
+    trigger:
+    - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+    pool:
+    vmImage: 'ubuntu-latest'
 
-variables:
-  buildConfiguration: 'Release'
+    variables:
+    buildConfiguration: 'Release'
 
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-```
+    steps:
+    - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
+    ```
 
-https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
+Some notes:
+
+* Do I pay? There is a [free tier][freetier] Azure Dev Ops options to get started.
+
+* What happened above? The steps built the site as if runing build in Visual Studio.
+
+
+To file:
+
+* https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
 
 ## Future
 
@@ -356,3 +368,4 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [renderers]: https://dotnet.github.io/docfx/tutorial/intro_template.html#renderer
 [metadata]: https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#322-reserved-metadata
 [replaceAll]: https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string
+[freetier]: https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/
