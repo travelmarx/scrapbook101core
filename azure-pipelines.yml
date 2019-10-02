@@ -18,6 +18,9 @@ jobs:
     vmImage: 'ubuntu-latest'
   steps:
   - script: echo hello from Linux
+  - bash: echo "Hello World"
+  - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
 - job: macOS
   pool:
     vmImage: 'macOS-latest'
@@ -29,7 +32,3 @@ jobs:
   steps:
   - script: echo hello from Windows
 
-steps:
-- bash: echo "Hello World"
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
