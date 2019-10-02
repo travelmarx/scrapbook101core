@@ -325,6 +325,86 @@ public string Location { get; set; }
 </code></pre>
 <p>which renders as:</p>
 <p><img src="../images/item-location-documentation.jpg" alt="Item Location property API documentation" title="Item Location property API documentation"></p>
+<h3 id="build-pipeline">Build pipeline</h3>
+<p>First steps...</p>
+<ol>
+<li><p>Go to Azure devops signin.</p>
+</li>
+<li><p>Create a project &quot;Scrapbook101core&quot; in the organization that was created.</p>
+</li>
+<li><p>Go to Pipelines, and create a new Build pipeline.</p>
+</li>
+<li><p>Connect to GitHub and select Scrapbook101core and Run.</p>
+</li>
+<li><p>Configure the pipeline as &quot;ASP.NET Core&quot;.</p>
+<p>This will create a azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge.)
+The file is at the root of the GitHub project.</p>
+<pre><code class="lang-yaml"># ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+vmImage: 'ubuntu-latest'
+
+variables:
+buildConfiguration: 'Release'
+
+steps:
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+</code></pre>
+</li>
+</ol>
+<p>Some notes:</p>
+<ul>
+<li><p>Do I pay? There is a <a href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free tier</a> Azure Dev Ops options to get started.</p>
+</li>
+<li><p>What happened above? The steps built the site as if you ran build in Visual Studio. We could and should insert tests for code coverage and quality?</p>
+</li>
+<li><p>If you make a changes to any file in the repo, the build process will kick off again because the <strong>trigger</strong> parameter in the pipeline config file.</p>
+</li>
+</ul>
+<p>Next steps...</p>
+<p>Read up on <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases">jobs</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">agents</a>. The idea is that we can build the docs in the build pipeline. (Or would that be better in the release phase?)</p>
+<ol>
+<li><p>Create a simple job. Add to the azure-pipelines.yml file to say &quot;Hello World&quot;.</p>
+<pre><code class="lang-yaml">steps:
+- bash: echo &quot;Hello World&quot;
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+</code></pre>
+</li>
+<li><p>Create different agents. Add this to config and run:</p>
+<pre><code class="lang-yaml">jobs:
+- job: Linux
+pool:
+    vmImage: 'ubuntu-latest'
+steps:
+- script: echo hello from Linux
+- bash: echo &quot;Hello World&quot;
+- script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
+- job: macOS
+pool:
+    vmImage: 'macOS-latest'
+steps:
+- script: echo hello from macOS
+- job: Windows
+pool:
+    vmImage: 'windows-latest'
+steps:
+- script: echo hello from Windows
+</code></pre>
+</li>
+</ol>
+<p>To file:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops">https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops</a></li>
+</ul>
 <h2 id="future">Future</h2>
 <p>Create a Azure pipeline process to build docs automatically. The flow would be then:</p>
 <ol>

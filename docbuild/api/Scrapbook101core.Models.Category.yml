@@ -27,7 +27,7 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   summary: "\nDefines the categories in Scrapbook101core.\n"
-  remarks: "\nThe list of categories is read in from one document from the database identified by\nan <xref href=\"Scrapbook101core.Models.Category.Id\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Scrapbook101core.Models.Category.Type\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nThe list of categories is read in from one document stored in the database and identified by\nan <xref href=\"Scrapbook101core.Models.Category.Id\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Scrapbook101core.Models.Category.Type\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public class Category

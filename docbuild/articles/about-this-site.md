@@ -283,7 +283,7 @@ which renders as:
 
 ![Item Location property API documentation](../images/item-location-documentation.jpg "Item Location property API documentation")
 
-### Create a pipeline build
+### Build pipeline
 
 First steps...
 
@@ -317,17 +317,53 @@ First steps...
 
     steps:
     - script: dotnet build --configuration $(buildConfiguration)
-    displayName: 'dotnet build $(buildConfiguration)'
+      displayName: 'dotnet build $(buildConfiguration)'
     ```
 
 Some notes:
 
 * Do I pay? There is a [free tier][freetier] Azure Dev Ops options to get started.
 
-* What happened above? The steps built the site as if runing build in Visual Studio.
+* What happened above? The steps built the site as if you ran build in Visual Studio. We could and should insert tests for code coverage and quality?
 
-* If you make a change to  file, the build process will kick off again because the **trigger** parameter in the pipeline config file.
+* If you make a changes to any file in the repo, the build process will kick off again because the **trigger** parameter in the pipeline config file.
 
+Next steps...
+
+Read up on [jobs][jobs] and [agents][agents]. The idea is that we can build the docs in the build pipeline. (Or would that be better in the release phase?)
+
+1. Create a simple job. Add to the azure-pipelines.yml file to say "Hello World".
+
+    ```yaml
+    steps:
+    - bash: echo "Hello World"
+    - script: dotnet build --configuration $(buildConfiguration)
+      displayName: 'dotnet build $(buildConfiguration)'
+    ```
+
+1. Create different agents. Add this to config and run:
+
+    ```yaml
+    jobs:
+    - job: Linux
+    pool:
+        vmImage: 'ubuntu-latest'
+    steps:
+    - script: echo hello from Linux
+    - bash: echo "Hello World"
+    - script: dotnet build --configuration $(buildConfiguration)
+        displayName: 'dotnet build $(buildConfiguration)'
+    - job: macOS
+    pool:
+        vmImage: 'macOS-latest'
+    steps:
+    - script: echo hello from macOS
+    - job: Windows
+    pool:
+        vmImage: 'windows-latest'
+    steps:
+    - script: echo hello from Windows
+    ```
 
 To file:
 
@@ -355,7 +391,6 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 * [Customizing template](https://stackoverflow.com/questions/56458435/docfx-how-to-suppress-certain-info-about-type-inheritance-constructors-assem)
 
 
-
 [docfx]: https://dotnet.github.io/docfx/
 [walk]: https://dotnet.github.io/docfx/tutorial/walkthrough/walkthrough_overview.html
 [awalk]: https://dotnet.github.io/docfx/tutorial/walkthrough/advanced_walkthrough.html#create-a-new-template
@@ -371,3 +406,5 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [metadata]: https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#322-reserved-metadata
 [replaceAll]: https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string
 [freetier]: https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/
+[jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases
+[agents]: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted
