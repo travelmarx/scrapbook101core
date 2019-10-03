@@ -410,6 +410,10 @@ The next step is to figure out how to run a PowerShell script.
 
 Next, we need to [verify][vmImage] what's on the 'windows-latest' images we will use. [Chocolatey][choco] is on the image as well as Powershell Core and this is enough to run our builddocs.ps1 script and install [DocFx][docfx].
 
+After a bit of trial and error we ended up with the [builddocs.ps1][build-script].
+
+What does it mean to be headless Git?
+
 To file:
 
 * https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
@@ -449,3 +453,4 @@ To file:
 [pstask]: https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/powershell?view=azure-devops
 [vmImage]: https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md
 [choco]: https://chocolatey.org
+[build-script]: https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/builddocs.ps1
