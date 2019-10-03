@@ -6,7 +6,7 @@ try {
 
     Write-Host "## Run DocFx."
     Write-Host "## Location is" $PSScriptRoot.ToString()
-    dir
+    cd .\docbuild
 
     docfx metadata .
     docfx build .
@@ -14,6 +14,7 @@ try {
     Write-Host "## Docfx ran successfully."
 
     Write-Host "## Copy files."
+    cd ..
     Get-ChildItem .\docs -Recurse | Remove-Item -Recurse
 
     $files = Get-ChildItem -Path .\docbuild\_site
