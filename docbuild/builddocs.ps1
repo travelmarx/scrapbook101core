@@ -1,15 +1,18 @@
-Write-Host -ForegroundColor Green "## Start of build script."
-Write-Host -ForegroundColor Green "## Location is" $PSScriptRoot.ToString()
+Write-Host "## Start of build script."
+Write-Host "## Location is" $PSScriptRoot.ToString()
 try {
-    Write-Host -ForegroundColor Green "## Install chocolatey."
+    write-host "## Install chocolatey."
     choco install docfx -y
 
-    Write-Host -ForegroundColor Green "## Run DocFx."
+    Write-Host "## Run DocFx."
+    Write-Host "## Location is" $PSScriptRoot.ToString()
+
     docfx metadata
     docfx build
-    Write-Host -ForegroundColor Green "## Docfx ran successfully."
 
-    Write-Host -ForegroundColor Green "## Copy files."
+    Write-Host "## Docfx ran successfully."
+
+    Write-Host "## Copy files."
     Get-ChildItem .\docs -Recurse | Remove-Item -Recurse
 
     $files = Get-ChildItem -Path .\docbuild\_site
@@ -26,6 +29,6 @@ try {
     
     Write-Host -ForegroundColor Green "## Build ran successfully."
 }
-finally {
+catch {
     Write-Host -ForegroundColor Red "Something went wrong in the build. Check the output."
 }
