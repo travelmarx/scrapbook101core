@@ -408,7 +408,7 @@ The next step is to figure out how to run a PowerShell script.
     displayName: 'dotnet build $(buildConfiguration)'
     ```
 
-Next, we need to [verify][vmImage] what's on the 'windows-latest' images we will use. [Chocolatey][choco] is there and is what we'll use to install [DocFx][docfx].
+Next, we need to [verify][vmImage] what's on the 'windows-latest' images we will use. [Chocolatey][choco] is on the image as well as Powershell Core and this is enough to run our builddocs.ps1 script and install [DocFx][docfx].
 
 To file:
 
