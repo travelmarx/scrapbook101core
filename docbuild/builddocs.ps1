@@ -8,6 +8,7 @@ try {
     Write-Host "## Location is" $PSScriptRoot.ToString()
     cd .\docbuild
     Write-Host "## Location is" $PSScriptRoot.ToString()
+    dir
 
     docfx metadata .
     docfx build .
