@@ -7,8 +7,8 @@ try {
     Write-Host "## Run DocFx."
     Write-Host "## Location is" $PSScriptRoot.ToString()
 
-    docfx metadata
-    docfx build
+    docfx metadata .
+    docfx build .
 
     Write-Host "## Docfx ran successfully."
 
