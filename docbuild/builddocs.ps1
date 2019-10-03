@@ -10,8 +10,8 @@ try {
     Write-Host "## Location is" $PSScriptRoot.ToString()
     dir
 
-    docfx metadata .
-    docfx build .
+    docfx metadata
+    docfx build
 
     Write-Host "## Docfx ran successfully."
 
