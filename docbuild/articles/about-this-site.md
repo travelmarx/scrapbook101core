@@ -285,20 +285,19 @@ which renders as:
 
 ### Build pipeline
 
-First steps...
+Our first steps in devops land went something like this:
 
-1. Go to Azure devops signin.
+1. Go to [Azure devops][devops].
 
 1. Create a project "Scrapbook101core" in the organization that was created.
 
-1. Go to Pipelines, and create a new Build pipeline.
+1. Go to Pipelines section, and create a new Build pipeline.
 
-1. Connect to GitHub and select Scrapbook101core and Run.
+1. Connect to GitHub, select the Scrapbook101core repo, and Run.
 
 1. Configure the pipeline as "ASP.NET Core".
    
-   This will create a azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge.)
-   The file is at the root of the GitHub project.
+   This will create a azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge.) The config file is at the root of the GitHub project.
 
     ```yaml
     # ASP.NET Core
@@ -322,17 +321,15 @@ First steps...
 
 Some notes:
 
-* Do I pay? There is a [free tier][freetier] Azure Dev Ops options to get started.
+* Do I pay? There is a [free tier][freetier] Azure Dev Ops options to get started. For small tests and limited use, you won't pay.
 
-* What happened above? The steps built the site as if you ran build in Visual Studio. We could and should insert tests for code coverage and quality?
+* What happened above? The steps built the site as if you ran build in Visual Studio. (To do: We could and should insert tests for code coverage and quality.)
 
 * If you make a changes to any file in the repo, the build process will kick off again because the **trigger** parameter in the pipeline config file.
 
-Next steps...
+So far, so good. The next step was to play around with the config file. First, read up on [jobs][jobs] and [agents][agents]. The idea is that we can build the docs in the build pipeline. But before doing that, we need to know about running tasks.
 
-Read up on [jobs][jobs] and [agents][agents]. The idea is that we can build the docs in the build pipeline. (Or would that be better in the release phase?)
-
-1. Create a simple job. Add to the azure-pipelines.yml file to say "Hello World".
+1. Create a simple job. Modify the azure-pipelines.yml file to say "Hello World". Run to test.
 
     ```yaml
     steps:
@@ -341,29 +338,60 @@ Read up on [jobs][jobs] and [agents][agents]. The idea is that we can build the 
       displayName: 'dotnet build $(buildConfiguration)'
     ```
 
-1. Create different agents. Add this to config and run:
+1. Create different agents. Add this to config and run.
 
     ```yaml
     jobs:
     - job: Linux
-    pool:
+      pool:
         vmImage: 'ubuntu-latest'
-    steps:
-    - script: echo hello from Linux
-    - bash: echo "Hello World"
-    - script: dotnet build --configuration $(buildConfiguration)
+      steps:
+      - script: echo hello from Linux
+      - bash: echo "Hello World"
+      - script: dotnet build --configuration $(buildConfiguration)
         displayName: 'dotnet build $(buildConfiguration)'
     - job: macOS
-    pool:
+      pool:
         vmImage: 'macOS-latest'
-    steps:
-    - script: echo hello from macOS
+      steps:
+      - script: echo hello from macOS
     - job: Windows
-    pool:
+      pool:
         vmImage: 'windows-latest'
-    steps:
-    - script: echo hello from Windows
+      steps:
+      - script: echo hello from Windows
     ```
+
+In the screenshot below, clicking on the **cmdline** task would show the output from the echo commands in the config file.
+
+![Build pipeline example with three agents](../images/build-pipeline-test-three-agents.jpg "Build pipeline example with three agents")
+
+The next step is to figure out how to run a PowerShell script.
+
+1. Go back to simpler config file, save, and run.
+
+    ```yaml
+    trigger:
+    - master
+
+    pool:
+    vmImage: 'windows-latest'
+
+    variables:
+    buildConfiguration: 'Release'
+
+    steps:
+    - script: echo "hello from Windows"
+    - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
+    ```
+
+1. Create a simple Powershell script and check it into the repo at **.\docbuild\builddocs.ps1**
+
+    ```ps1
+    write-host "Hello World from PowerShell!"
+    ```
+
 
 To file:
 
@@ -408,3 +436,4 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [freetier]: https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/
 [jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases
 [agents]: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted
+[devops]: https://dev.azure.com
