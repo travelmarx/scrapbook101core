@@ -285,7 +285,15 @@ which renders as:
 
 ### Build pipeline
 
-Our first steps in devops land went something like this:
+Our goal is to create a Azure pipeline process to build docs automatically. The flow would be:
+
+1. Code or author comments in code.
+
+2. Check in changes.
+
+3. A pipeline automatically build upon detected changes to code.
+
+TO approach this goal, our first steps in devopsland went something like this:
 
 1. Go to [Azure devops][devops].
 
@@ -391,19 +399,20 @@ The next step is to figure out how to run a PowerShell script.
     ```ps1
     write-host "Hello World from PowerShell!"
     ```
+1. Modify the config above to use this script. (Here's a [help page][pstask].)
 
+    ```yaml
+    steps:
+    - powershell: .\docbuild\builddocs.ps1
+    - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
+    ```
+
+Next, we need to [verify][vmImage] what's on the 'windows-latest' images we will use. [Chocolatey][choco] is there and is what we'll use to install [DocFx][docfx].
 
 To file:
 
 * https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
-
-## Future
-
-Create a Azure pipeline process to build docs automatically. The flow would be then:
-
-1. Author comments in code.
-2. Check in code changes.
-3. Kick off or set up pipeline to automatically build upon changes to code. TBD.
 
 
 ## References
@@ -437,3 +446,6 @@ Create a Azure pipeline process to build docs automatically. The flow would be t
 [jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases
 [agents]: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted
 [devops]: https://dev.azure.com
+[pstask]: https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/powershell?view=azure-devops
+[vmImage]: https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md
+[choco]: https://chocolatey.org
