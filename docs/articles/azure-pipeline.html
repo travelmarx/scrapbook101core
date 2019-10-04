@@ -70,8 +70,8 @@
 <h1 id="pipeline-setup">Pipeline setup</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Our goal is to create a Azure pipeline process to build docs (and ran other tasks) automatically upon checkin of code. To do this, we need to look into Devops. The term is a compound of development (Dev) and operations (Ops) and represents the union of people, process, and technology to continually provide value to customers. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a>. In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simpleset sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests and code checking, and create the documentation with [DocFx][docfx].</p>
-<p>Our authoring and developer flow would be:</p>
+<p>Our goal is to create a Azure pipeline process to build docs (and ran other tasks) automatically upon checkin of code. To do this, we need to look into Devops. The term is a compound of development (Dev) and operations (Ops) and represents the union of people, process, and technology to continually provide value to customers. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a>. In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simpleset sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests and code checking, and create the documentation with <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
+<p>Our desired authoring and developer flow is:</p>
 <ol>
 <li><p>Code or author comments in code.</p>
 </li>
@@ -177,7 +177,7 @@ displayName: 'dotnet build $(buildConfiguration)'
 </li>
 <li><p>Modify the config above to use this script. (Here's a <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/powershell?view=azure-devops">help page</a>.)</p>
 <pre><code class="lang-yaml">steps:
-- powershell: .\scripts\builddocs.ps1
+- pwsh: .\scripts\builddocs.ps1
 - script: dotnet build --configuration $(buildConfiguration)
 displayName: 'dotnet build $(buildConfiguration)'
 </code></pre>
@@ -187,7 +187,7 @@ displayName: 'dotnet build $(buildConfiguration)'
 <ul>
 <li><p>Also on the image is <a href="https://github.com/powershell/powershell">Powershell Core</a>, a cross-platform (Windows, Linux, and macOS) version of PowerShell.</p>
 </li>
-<li><p>One important component is <a href="https://chocolatey.org">Chocolatey</a>, a Windows package manager. We'll use Chocolately to install [DocFx][docfx].</p>
+<li><p>One important component is <a href="https://chocolatey.org">Chocolatey</a>, a Windows package manager. We'll use Chocolately to install <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
 </li>
 </ul>
 <p>These two components together will be enough to run our builddocs.ps1 script.</p>

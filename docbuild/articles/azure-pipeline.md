@@ -8,7 +8,7 @@ title: Azure Pipeline
 
 Our goal is to create a Azure pipeline process to build docs (and ran other tasks) automatically upon checkin of code. To do this, we need to look into Devops. The term is a compound of development (Dev) and operations (Ops) and represents the union of people, process, and technology to continually provide value to customers. For more information, see [What is DevOps?][devops-def]. In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a *pipeline*. A pipeline in its simpleset sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests and code checking, and create the documentation with [DocFx][docfx].
 
-Our authoring and developer flow would be:
+Our desired authoring and developer flow is:
 
 1. Code or author comments in code.
 
@@ -128,7 +128,7 @@ The next step is to figure out how to run a PowerShell script with the idea that
 
     ```yaml
     steps:
-    - powershell: .\scripts\builddocs.ps1
+    - pwsh: .\scripts\builddocs.ps1
     - script: dotnet build --configuration $(buildConfiguration)
     displayName: 'dotnet build $(buildConfiguration)'
     ```
@@ -158,6 +158,7 @@ To file:
 * https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
 
 
+[docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
 [freetier]: https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/
 [jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases
