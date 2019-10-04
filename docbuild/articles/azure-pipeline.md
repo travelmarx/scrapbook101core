@@ -145,6 +145,9 @@ These two components together will be enough to run our builddocs.ps1 script.
 
 After a bit of trial and error we ended up with the [builddocs.ps1][build-script].
 
+Script path on agent D:\a\1\s
+Change directory for example D:\a\1\s\docbuild
+
 Here are the approximate steps:
 
 
