@@ -2,8 +2,11 @@
 sorted: true
 references:
 - uid: about
-  name: About this site
+  name: About This Site
   href: articles/about-this-site.html
+- uid: azure-pipeline
+  name: Azure Pipeline
+  href: articles/azure-pipeline.html
 - uid: category-document
   name: Category Document
   href: articles/category-document.html

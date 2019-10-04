@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Azure Pipeline | Scrapbook101core </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Azure Pipeline | Scrapbook101core ">
+    <meta name="generator" content="docfx 2.42.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="azure-pipeline">
+<h1 id="pipeline-setup">Pipeline setup</h1>
+
+<h2 id="overview">Overview</h2>
+<p>Our goal is to create a Azure pipeline process to build docs (and ran other tasks) automatically upon checkin of code. To do this, we need to look into Devops. The term is a compound of development (Dev) and operations (Ops) and represents the union of people, process, and technology to continually provide value to customers. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a>. In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simpleset sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests and code checking, and create the documentation with [DocFx][docfx].</p>
+<p>Our authoring and developer flow would be:</p>
+<ol>
+<li><p>Code or author comments in code.</p>
+</li>
+<li><p>Check in changes.</p>
+</li>
+<li><p>A pipeline automatically build upon detected changes to code.</p>
+</li>
+</ol>
+<h2 id="starting-setup">Starting setup</h2>
+<p>To approach the idea process flow described above, our first steps in devopsland went something like this:</p>
+<ol>
+<li><p>Go to <a href="https://dev.azure.com">Azure devops</a>.</p>
+</li>
+<li><p>Create a project &quot;Scrapbook101core&quot; in the organization that was created.</p>
+</li>
+<li><p>Go to Pipelines section, and create a new Build pipeline.</p>
+</li>
+<li><p>Connect to GitHub, select the Scrapbook101core repo, and Run.</p>
+</li>
+<li><p>Configure the pipeline as &quot;ASP.NET Core&quot;. For more information see <a href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">Build, test, and deploy .NET Core apps</a></p>
+<p>This will create a azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge.) The config file is at the root of the GitHub project.</p>
+<pre><code class="lang-yaml">trigger:
+- master
+
+pool:
+vmImage: 'ubuntu-latest'
+
+variables:
+buildConfiguration: 'Release'
+
+steps:
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+</code></pre>
+</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li><p>Do I pay? There is a <a href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free tier</a> Azure Dev Ops options to get started. For small tests and limited use, you won't pay.</p>
+</li>
+<li><p>What happened above? The steps built the site as if you ran build in Visual Studio. (To do: We could and should insert tests for code coverage and quality.)</p>
+</li>
+<li><p>If you make a changes to any file in the repo, the build process will kick off again because the <strong>trigger</strong> parameter in the pipeline config file.</p>
+</li>
+</ul>
+<h2 id="custom-build-task">Custom build task</h2>
+<p>So far, so good. Our next step was to play around with the config file. First, read up on <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases">jobs</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">agents</a>. The idea is that we can build the docs in the build pipeline. But before doing that, we need to know about running tasks.</p>
+<ol>
+<li><p>Create a simple job. Modify the azure-pipelines.yml file to say &quot;Hello World&quot;. Run to test.</p>
+<pre><code class="lang-yaml">steps:
+- bash: echo &quot;Hello World&quot;
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+</code></pre>
+</li>
+<li><p>Create different agents. Add this to config and run.</p>
+<pre><code class="lang-yaml">jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: echo hello from Linux
+  - bash: echo &quot;Hello World&quot;
+  - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
+- job: macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+  - script: echo hello from macOS
+- job: Windows
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - script: echo hello from Windows
+</code></pre>
+<p>In the screenshot below, clicking on the <strong>cmdline</strong> task would show the output from the echo commands in the config file.</p>
+<p><img src="../images/build-pipeline-test-three-agents.jpg" alt="Build pipeline example with three agents" title="Build pipeline example with three agents"></p>
+</li>
+<li><p>Go back to simpler config file based on <strong>vmImage</strong> = 'windows-latest'. Save  and run.</p>
+<pre><code class="lang-yaml">trigger:
+- master
+
+pool:
+vmImage: 'windows-latest'
+
+variables:
+buildConfiguration: 'Release'
+
+steps:
+- script: echo &quot;hello from Windows&quot;
+- script: dotnet build --configuration $(buildConfiguration)
+displayName: 'dotnet build $(buildConfiguration)'
+</code></pre>
+</li>
+</ol>
+<h2 id="powershell-task">PowerShell task</h2>
+<p>The next step is to figure out how to run a PowerShell script with the idea that we will create a PowerShell build script. So, let's start with &quot;Hello World&quot;.</p>
+<ol>
+<li><p>Create a simple Powershell script and check it into the repo at <strong>.\scripts\builddocs.ps1</strong></p>
+<pre><code class="lang-ps1">write-host &quot;Hello World from PowerShell!&quot;
+</code></pre>
+</li>
+<li><p>Modify the config above to use this script. (Here's a <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/powershell?view=azure-devops">help page</a>.)</p>
+<pre><code class="lang-yaml">steps:
+- powershell: .\scripts\builddocs.ps1
+- script: dotnet build --configuration $(buildConfiguration)
+displayName: 'dotnet build $(buildConfiguration)'
+</code></pre>
+</li>
+</ol>
+<p>The <a href="https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md">hosted Windows 2019</a> we are using has a pre-installed software:</p>
+<ul>
+<li><p>Also on the image is <a href="https://github.com/powershell/powershell">Powershell Core</a>, a cross-platform (Windows, Linux, and macOS) version of PowerShell.</p>
+</li>
+<li><p>One important component is <a href="https://chocolatey.org">Chocolatey</a>, a Windows package manager. We'll use Chocolately to install [DocFx][docfx].</p>
+</li>
+</ul>
+<p>These two components together will be enough to run our builddocs.ps1 script.</p>
+<h2 id="build-task">Build task</h2>
+<p>After a bit of trial and error we ended up with the <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/builddocs.ps1">builddocs.ps1</a>.</p>
+<p>Here are the approximate steps:</p>
+<p>To do:</p>
+<ul>
+<li>What does it mean to be headless Git?</li>
+<li>set-location in ps1</li>
+</ul>
+<p>To file:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops">https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/azure-pipeline.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong> for Scrapbook101Core</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

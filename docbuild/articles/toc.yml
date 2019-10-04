@@ -14,5 +14,7 @@
   href: next-steps.md
 - name: Handling Assets
   href: handling-assets.md
-- name: About this Site
+- name: About This Site
   href: about-this-site.md
+- name: Azure Pipeline
+  href: azure-pipeline.md
