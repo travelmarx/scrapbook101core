@@ -24,7 +24,7 @@ try {
     Write-Host "## Files count =" $files.Count
     foreach ($f in $files)
     {
-        Wrte-Host "## ## Copying" $f.FullName
+        Write-Host "## ## Copying" $f.FullName
         Copy-Item $f.FullName -Destination .\docs -Recurse -Force
     }
     
