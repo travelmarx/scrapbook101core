@@ -32,8 +32,11 @@ try {
         Write-Host "Check in new content in docs folder."
     }
     
-    Write-Host -ForegroundColor Green "## Build ran successfully."
+    Write-Host "## Check git command."
+    git status
+    
+    Write-Host "## Build ran successfully."
 }
 catch {
-    Write-Host -ForegroundColor Red "Something went wrong in the build. Check the output."
+    Write-Host "Something went wrong in the build. Check the output."
 }

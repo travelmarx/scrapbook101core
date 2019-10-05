@@ -16,5 +16,8 @@
   href: handling-assets.md
 - name: About This Site
   href: about-this-site.md
-- name: Azure Pipeline
-  href: azure-pipeline.md
+  items:
+  - name: Build with DocFX
+    href: build-with-docfx.md
+  - name: Azure Pipeline
+    href: azure-pipeline.md
