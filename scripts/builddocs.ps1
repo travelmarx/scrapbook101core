@@ -34,10 +34,10 @@ try {
     }
     
     Write-Host "## Check git command."
-    git version
+    & git version
 
     Write-Host "## Build ran successfully."
 }
 catch {
-    Write-Host "##Something went wrong in the build. Check the output."
+    Write-Host "## Something went wrong in the build. Check the output."
 }
