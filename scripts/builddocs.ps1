@@ -19,13 +19,15 @@ try {
     Write-Host "## Location is" (Get-Location).Path
     Get-ChildItem .\docs -Recurse | Remove-Item -Recurse
 
-    Write-Host "## Copy files. Second step: copy."
+    Write-Host "## Copy files. Second step: start copy."
     $files = Get-ChildItem -Path .\docbuild\_site
     foreach ($f in $files)
     {
+        Wrte-Host "## ## Copying" $f.FullName
         Copy-Item $f.FullName -Destination .\docs -Recurse -Force
     }
     
+    Write-Host "## Copy files. Second step: copy complete."
     $directoryInfo = Get-ChildItem .\docs | Measure-Object
     if ($directoryInfo.Count -ne 0)
     {
