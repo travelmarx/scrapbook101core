@@ -20,6 +20,7 @@ try {
     Get-ChildItem .\docs -Recurse | Remove-Item -Recurse
 
     Write-Host "## Copy files. Second step: start copy."
+    Write-Host "## pwd:" (pwd).Path    
     $files = Get-ChildItem -Path .\docbuild\_site
     foreach ($f in $files)
     {
