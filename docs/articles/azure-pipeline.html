@@ -70,29 +70,29 @@
 <h1 id="pipeline-setup">Pipeline setup</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Our goal is to create a Azure pipeline process to build docs (and ran other tasks) automatically upon checkin of code. To do this, we need to look into Devops. The term is a compound of development (Dev) and operations (Ops) and represents the union of people, process, and technology to continually provide value to customers. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a>. In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simpleset sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests and code checking, and create the documentation with <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
-<p>Our desired authoring and developer flow is:</p>
+<p>Our goal is to create a Azure pipeline process to build docs (and run other tasks) automatically upon check in of code. To do this, we need to look into Devops. The term is a composed of the terms development (Dev) and operations (Ops) and represents a new way of thinking about development and operation processes as tightly connected together. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a> In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simplest sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests like checking quality, and create documentation with <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
+<p>Our desired authoring / developer flow is:</p>
 <ol>
-<li><p>Code or author comments in code.</p>
+<li><p>Code or author.</p>
 </li>
 <li><p>Check in changes.</p>
 </li>
-<li><p>A pipeline automatically build upon detected changes to code.</p>
+<li><p>A pipeline automatically builds upon detected changes to code or content.</p>
 </li>
 </ol>
 <h2 id="starting-setup">Starting setup</h2>
-<p>To approach the idea process flow described above, our first steps in devopsland went something like this:</p>
+<p>To approach the ideal process flow described above, our first steps in devopsland went something like this:</p>
 <ol>
 <li><p>Go to <a href="https://dev.azure.com">Azure devops</a>.</p>
 </li>
-<li><p>Create a project &quot;Scrapbook101core&quot; in the organization that was created.</p>
+<li><p>Create a project &quot;Scrapbook101core&quot; in the organization that was created when we signed up.</p>
 </li>
-<li><p>Go to Pipelines section, and create a new Build pipeline.</p>
+<li><p>Go to Pipelines section of the project, and create a new Build pipeline.</p>
 </li>
 <li><p>Connect to GitHub, select the Scrapbook101core repo, and Run.</p>
 </li>
 <li><p>Configure the pipeline as &quot;ASP.NET Core&quot;. For more information see <a href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">Build, test, and deploy .NET Core apps</a></p>
-<p>This will create a azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge.) The config file is at the root of the GitHub project.</p>
+<p>This will create am azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge later.) The config file is at the root of the GitHub project.</p>
 <pre><code class="lang-yaml">trigger:
 - master
 
@@ -110,17 +110,17 @@ steps:
 </ol>
 <p>Notes:</p>
 <ul>
-<li><p>Do I pay? There is a <a href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free tier</a> Azure Dev Ops options to get started. For small tests and limited use, you won't pay.</p>
+<li><p>Do I pay? There is a <a href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free tier</a> Azure Dev Ops options to get started. For small tests and limited use, you probably won't pay. For more information, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github">Build GitHub repositories</a>.</p>
 </li>
-<li><p>What happened above? The steps built the site as if you ran build in Visual Studio. (To do: We could and should insert tests for code coverage and quality.)</p>
+<li><p>What happened when running a pipeline with the YML file above? The steps built the site as if you ran build in Visual Studio.</p>
 </li>
 <li><p>If you make a changes to any file in the repo, the build process will kick off again because the <strong>trigger</strong> parameter in the pipeline config file.</p>
 </li>
 </ul>
 <h2 id="custom-build-task">Custom build task</h2>
-<p>So far, so good. Our next step was to play around with the config file. First, read up on <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases">jobs</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">agents</a>. The idea is that we can build the docs in the build pipeline. But before doing that, we need to know about running tasks.</p>
+<p>So far, so good. Our next step was to play around with the YML config file. First, we read up on <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases">jobs</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">agents</a>. Remember, our goal is to build the docs in the pipeline. But before doing that, we need to know about running tasks.</p>
 <ol>
-<li><p>Create a simple job. Modify the azure-pipelines.yml file to say &quot;Hello World&quot;. Run to test.</p>
+<li><p>Create a simple job. Modify the azure-pipelines.yml file to say &quot;Hello World&quot;. Check in the changed file. Build the pipeine, or if you have followed this far, the pipeline will build itself because you changed the YML file and checked in the changes.</p>
 <pre><code class="lang-yaml">steps:
 - bash: echo &quot;Hello World&quot;
 - script: dotnet build --configuration $(buildConfiguration)
@@ -148,7 +148,7 @@ steps:
   steps:
   - script: echo hello from Windows
 </code></pre>
-<p>In the screenshot below, clicking on the <strong>cmdline</strong> task would show the output from the echo commands in the config file.</p>
+<p>In the screenshot below, clicking on the <strong>cmdline</strong> task would show the output from the echo commands in the YML config file.</p>
 <p><img src="../images/build-pipeline-test-three-agents.jpg" alt="Build pipeline example with three agents" title="Build pipeline example with three agents"></p>
 </li>
 <li><p>Go back to simpler config file based on <strong>vmImage</strong> = 'windows-latest'. Save  and run.</p>
@@ -169,9 +169,9 @@ displayName: 'dotnet build $(buildConfiguration)'
 </li>
 </ol>
 <h2 id="powershell-task">PowerShell task</h2>
-<p>The next step is to figure out how to run a PowerShell script with the idea that we will create a PowerShell build script. So, let's start with &quot;Hello World&quot;.</p>
+<p>Our next step was to figure out how to run a PowerShell script with the idea that we will create a PowerShell build script. So, let's start with &quot;Hello World&quot;.</p>
 <ol>
-<li><p>Create a simple Powershell script and check it into the repo at <strong>.\scripts\builddocs.ps1</strong></p>
+<li><p>Create a simple PowerShell in the repo at this location: <strong>.\scripts\builddocs.ps1</strong></p>
 <pre><code class="lang-ps1">write-host &quot;Hello World from PowerShell!&quot;
 </code></pre>
 </li>
@@ -182,26 +182,33 @@ displayName: 'dotnet build $(buildConfiguration)'
 displayName: 'dotnet build $(buildConfiguration)'
 </code></pre>
 </li>
-</ol>
-<p>The <a href="https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md">hosted Windows 2019</a> we are using has a pre-installed software:</p>
-<ul>
-<li><p>Also on the image is <a href="https://github.com/powershell/powershell">Powershell Core</a>, a cross-platform (Windows, Linux, and macOS) version of PowerShell.</p>
+<li><p>Check both changes in to kick of a pipeline build.</p>
 </li>
-<li><p>One important component is <a href="https://chocolatey.org">Chocolatey</a>, a Windows package manager. We'll use Chocolately to install <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
+</ol>
+<p>The <a href="https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md">hosted Windows 2019</a> we are using has a pre-installed software, including:</p>
+<ul>
+<li><p><a href="https://github.com/powershell/powershell">Powershell Core</a>, a cross-platform (Windows, Linux, and macOS) version of PowerShell.</p>
+</li>
+<li><p><a href="https://chocolatey.org">Chocolatey</a>, a Windows package manager. We'll use Chocolately to install <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
 </li>
 </ul>
 <p>These two components together will be enough to run our builddocs.ps1 script.</p>
 <h2 id="build-task">Build task</h2>
-<p>After a bit of trial and error we ended up with the <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/builddocs.ps1">builddocs.ps1</a>.</p>
-<p>Here are the approximate steps:</p>
+<p>After a bit of trial and error we were able to build a simplistic build script <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/builddocs.ps1">builddocs.ps1</a>.
+Here are approximate steps taken:</p>
+<ol>
+<li><p>Install Chocolately with <code>choco install docfx -y</code>.</p>
+</li>
+<li><p>Run docfx with <code>docfx metadata</code> and <code>docfx build</code>.</p>
+<p>Note that we don't need to serve the docs like we might do building locally. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.</p>
+</li>
+<li><p>Copy all files from <strong>docbuild_site</strong> to <strong>docs</strong>.</p>
+</li>
+</ol>
+<p>Looking at the task log, you should see that the script path on the agent is: &quot;D:\a\1\s&quot;. By default, code is checked out into a directory called &quot;s&quot;. Inside the build script, we can change directory for example to: &quot;D:\a\1\s\docbuild&quot;. For more information, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git">Pipeline options for Git repositories</a>.</p>
 <p>To do:</p>
 <ul>
 <li>What does it mean to be headless Git?</li>
-<li>set-location in ps1</li>
-</ul>
-<p>To file:</p>
-<ul>
-<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops">https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops</a></li>
 </ul>
 </article>
           </div>

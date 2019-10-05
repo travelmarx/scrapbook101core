@@ -7,6 +7,9 @@ references:
 - uid: azure-pipeline
   name: Azure Pipeline
   href: articles/azure-pipeline.html
+- uid: build-with-docfx
+  name: Build with DocFX
+  href: articles/build-with-docfx.html
 - uid: category-document
   name: Category Document
   href: articles/category-document.html

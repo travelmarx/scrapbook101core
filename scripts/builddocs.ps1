@@ -16,6 +16,7 @@ try {
 
     Write-Host "## Copy files. First step: delete old."
     Set-Location -Path $PSScriptRoot
+    Write-Host "## Location is" (Get-Location).Path
     Get-ChildItem .\docs -Recurse | Remove-Item -Recurse
 
     Write-Host "## Copy files. Second step: copy."
@@ -33,10 +34,10 @@ try {
     }
     
     Write-Host "## Check git command."
-    git status
-    
+    git version
+
     Write-Host "## Build ran successfully."
 }
 catch {
-    Write-Host "Something went wrong in the build. Check the output."
+    Write-Host "##Something went wrong in the build. Check the output."
 }
