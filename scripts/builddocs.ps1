@@ -21,7 +21,7 @@ try {
 
     Write-Host "## Copy files. Second step: start copy."
     $files = Get-ChildItem -Path .\docbuild\_site
-    Write-Host "## Files count =" $files.ToString()
+    Write-Host "## Files count =" $files.Count
     foreach ($f in $files)
     {
         Wrte-Host "## ## Copying" $f.FullName
