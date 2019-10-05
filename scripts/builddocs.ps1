@@ -15,7 +15,7 @@ try {
     Write-Host "## Docfx ran successfully."
 
     Write-Host "## Copy files. First step: delete old."
-    Set-Location -Path $PSScriptRoot
+    Set-Location -Path ".."
     Write-Host "## Location is" (Get-Location).Path
     Get-ChildItem .\docs -Recurse | Remove-Item -Recurse
 
@@ -36,7 +36,7 @@ try {
     }
     
     Write-Host "## Check git command."
-    & git version
+    git version
 
     Write-Host "## Build ran successfully."
 }
