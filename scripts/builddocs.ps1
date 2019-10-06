@@ -38,11 +38,13 @@ try {
     if ($directoryInfo.Count -ne 0)
     {
         Write-Host "## There is content to add to repo."
-        Write-Host "## Checking in changes."
-        git status
+        Write-Host "## Staging files."
+        #git status -q
         git add .
+        Write-Host "## Switch to master"
         git checkout master
         #git branch tmp head
+        Write-Host "## Merging tmp."
         git merge tmp
         git commit -m"Pipeline build check in."
         git push
