@@ -147,21 +147,27 @@ These two components together will be enough to run our builddocs.ps1 script.
 
 After a bit of trial and error we were able to build a simplistic build script [builddocs.ps1][build-script]. 
 
-We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script]. To run the local build script start in the root directory and run ``.\scripts\localbuilds.ps1``.
+---
+**NOTE**
 
-Here are approximate steps taken:
+We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script]. To run the local build script start in the root directory and run ``.\scripts\localbuilds.ps1``. We typically do this from inside of Visual Studio Code set to master branch. The information below assumes this setup.
 
-1. Install Chocolately with ``choco install docfx -y``.
+---
+
+
+Here are approximate steps taken in the doc build scripts.
+
+1. Install Chocolately with ``choco install docfx -y``. (Only in the pipeline doc build script.)
 
 1. Run docfx with ``docfx metadata`` and ``docfx build``.
 
-   Note that we don't need to serve the docs like we might do building locally. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.
+   Note that for the pipeline build, we don't need to serve the docs like we might do building locally so we don't run ``docfx --serve``. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.
 
 1. Copy all files from **docbuild\_site** to **docs**.
 
-   Looking at the task log, you should see that the script path on the agent is: "D:\a\1\s". By default, code is checked out into a directory called "s". Inside the build script, we can change directory for example to: "D:\a\1\s\docbuild". For more information, see [Pipeline options for Git repositories][pipeline-git].
+   Looking at the task log, you should see that the script path on the agent is: "D:\a\1\s". By default, code is checked out into a directory called "s". Inside the build script, we can change directory for example to: "D:\a\1\s\docbuild". For more information about directories on agents, see [Pipeline options for Git repositories][pipeline-git].
 
-1. Check in the changes in the **docs** folder with:
+1. Check in the changes in the **docs** folder with the local script (from inside of Visual Studio Code set to the master branch) with:
    
    ```bash
    git status
@@ -170,6 +176,11 @@ Here are approximate steps taken:
    git push
    ```
 
+  For the pipeline build script we are in a different situation because have a detached head. What's that?
+
+To link to:
+https://stackoverflow.com/questions/10228760/fix-a-git-detached-head
+https://git-scm.com/docs/git-checkout
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
