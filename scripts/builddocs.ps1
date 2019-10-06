@@ -38,6 +38,9 @@ try {
         Write-Host "## There is content to add to repo."
         Write-Host "## Checking in changes."
         git status
+        git checkout master
+        git branch tmp head
+        git merge tmp
         git add .
         git commit -m"Pipeline build check in."
         git push
