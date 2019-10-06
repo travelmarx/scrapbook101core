@@ -39,7 +39,7 @@ try {
     {
         Write-Host "## There is content to add to repo."
         Write-Host "## Staging files."
-        #git status -q
+        git status
         git ls-files
         git add docs/articles/azure-pipeline.html
         Write-Host "## Switch to master"
