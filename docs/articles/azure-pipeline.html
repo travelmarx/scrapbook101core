@@ -210,29 +210,28 @@ displayName: 'dotnet build $(buildConfiguration)'
 <p>Looking at the task log, you should see that the script path on the agent is: &quot;D:\a\1\s&quot;. By default, code is checked out into a directory called &quot;s&quot;. Inside the build script, we can change directory for example to: &quot;D:\a\1\s\docbuild&quot;. For more information about directories on agents, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git">Pipeline options for Git repositories</a>.</p>
 </li>
 <li><p>Update the repo, by pushing changed files in the <strong>docs</strong> folder to GitHub.</p>
-<ol>
-<li><p>Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:</p>
+<ul>
+<li><p>Local. Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:</p>
 <pre><code class="lang-bash">git status
 git add .
 git commit -m&quot;Pipeline build check in.&quot;
 git push
 </code></pre>
 </li>
-</ol>
-</li>
-<li><p>For the pipeline build script we are in a different situation because have a detached head. A detached head
-is when. For more information, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
+<li><p>Pipeline. For the pipeline build script we are in a different situation because have a detached head. A detached head is when. See the documentation for how to <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands">run git in scripts</a>. For more information about detached head, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
 <pre><code class="lang-bash">git status
-git add .
+git add -A
 git checkout master
 git branch tmp head
 git merge tmp
-git commit -m&quot;Pipeline build check in.&quot;
+git commit -m&quot;[skip ci]Pipeline build check in.&quot;
 git push
 </code></pre>
 </li>
+</ul>
+</li>
 </ol>
-<p>Not working.</p>
+<p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build.</p>
 </article>
           </div>
           
