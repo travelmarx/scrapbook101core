@@ -169,7 +169,7 @@ Here are approximate steps taken in the doc build scripts.
 
 1. Update the repo, by pushing changed files in the **docs** folder to GitHub.
 
-   1. Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:
+   * Local. Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:
    
       ```bash
       git status
@@ -177,8 +177,7 @@ Here are approximate steps taken in the doc build scripts.
       git commit -m"Pipeline build check in."
       git push
       ```
-  1. For the pipeline build script we are in a different situation because have a detached head. A detached head
-     is when. For more information, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
+   * Pipeline. For the pipeline build script we are in a different situation because have a detached head. A detached head is when. See the documentation for how to [run git in scripts][git-commands]. For more information about detached head, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
 
       ```bash
       git status
@@ -186,11 +185,12 @@ Here are approximate steps taken in the doc build scripts.
       git checkout master
       git branch tmp head
       git merge tmp
-      git commit -m"Pipeline build check in."
+      git commit -m"[skip ci]Pipeline build check in."
       git push
       ```
 
-The above script doesn't work - yet.
+The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
+
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
@@ -209,3 +209,4 @@ The above script doesn't work - yet.
 [pipeline-github]: https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github
 [detached-head]: https://stackoverflow.com/questions/10228760/fix-a-git-detached-head
 [git-checkout]: https://git-scm.com/docs/git-checkout
+[git-commands]: https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands

@@ -46,7 +46,7 @@ try {
         #git branch tmp head
         Write-Host "## Merging tmp."
         git merge tmp
-        git commit -m"Pipeline build check in."
+        git commit -m"[skip ci]Pipeline build check in."
         git push
         }
     
