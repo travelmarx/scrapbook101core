@@ -145,7 +145,9 @@ These two components together will be enough to run our builddocs.ps1 script.
 
 ## Build task
 
-After a bit of trial and error we were able to build a simplistic build script [builddocs.ps1][build-script]. We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script].
+After a bit of trial and error we were able to build a simplistic build script [builddocs.ps1][build-script]. 
+
+We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script]. To run the local build script start in the root directory and run ``.\scripts\localbuilds.ps1``.
 
 Here are approximate steps taken:
 
