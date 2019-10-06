@@ -32,15 +32,14 @@ try {
     $directoryInfo = Get-ChildItem .\docs | Measure-Object
     if ($directoryInfo.Count -ne 0)
     {
-        Write-Host "There is content to add to repo."
-        Write-Host "Check in new content in docs folder."
-    }
+        Write-Host "## There is content to add to repo."
+        Write-Host "## Checking in changes."
+        git status
+        git add .
+        git commit -m"Pipeline build check in."
+        git push
+        }
     
-    Write-Host "## Check in changes."
-    git status
-    git add .
-    git commit -m"Pipeline build check in."
-    git push
  
     Write-Host "## Build ran successfully."
 }
