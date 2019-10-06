@@ -55,7 +55,7 @@ Notes:
 
 * If you make a changes to any file in the repo, the build process will kick off again because the **trigger** parameter in the pipeline config file.
 
-* Under variables add **system.debug: true** to get debug information in the logs.
+* Under variables add **system.debug: true** to get debug information in the logs. See [troubleshooting][troubleshooting].
 
 ## Custom build task
 
@@ -213,3 +213,4 @@ Troubleshoot: https://docs.microsoft.com/en-us/azure/devops/pipelines/troublesho
 [detached-head]: https://stackoverflow.com/questions/10228760/fix-a-git-detached-head
 [git-checkout]: https://git-scm.com/docs/git-checkout
 [git-commands]: https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands
+[troubleshooting]: https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting

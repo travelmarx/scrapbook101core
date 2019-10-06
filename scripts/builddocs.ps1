@@ -40,6 +40,7 @@ try {
         Write-Host "## There is content to add to repo."
         Write-Host "## Staging files."
         #git status -q
+        git ls-files
         git add -A
         Write-Host "## Switch to master"
         git checkout master
