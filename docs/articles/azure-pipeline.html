@@ -203,13 +203,15 @@ Here are approximate steps taken:</p>
 <p>Note that we don't need to serve the docs like we might do building locally. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.</p>
 </li>
 <li><p>Copy all files from <strong>docbuild_site</strong> to <strong>docs</strong>.</p>
+<p>Looking at the task log, you should see that the script path on the agent is: &quot;D:\a\1\s&quot;. By default, code is checked out into a directory called &quot;s&quot;. Inside the build script, we can change directory for example to: &quot;D:\a\1\s\docbuild&quot;. For more information, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git">Pipeline options for Git repositories</a>.</p>
+</li>
+<li><p>Check in the changes in the <strong>docs</strong> folder with:</p>
+<pre><code class="lang-bash">git status
+git add TBD
+git commit TBD
+</code></pre>
 </li>
 </ol>
-<p>Looking at the task log, you should see that the script path on the agent is: &quot;D:\a\1\s&quot;. By default, code is checked out into a directory called &quot;s&quot;. Inside the build script, we can change directory for example to: &quot;D:\a\1\s\docbuild&quot;. For more information, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git">Pipeline options for Git repositories</a>.</p>
-<p>To do:</p>
-<ul>
-<li>What does it mean to be headless Git?</li>
-</ul>
 </article>
           </div>
           

@@ -156,12 +156,15 @@ Here are approximate steps taken:
 
 1. Copy all files from **docbuild\_site** to **docs**.
 
-Looking at the task log, you should see that the script path on the agent is: "D:\a\1\s". By default, code is checked out into a directory called "s". Inside the build script, we can change directory for example to: "D:\a\1\s\docbuild". For more information, see [Pipeline options for Git repositories][pipeline-git].
+   Looking at the task log, you should see that the script path on the agent is: "D:\a\1\s". By default, code is checked out into a directory called "s". Inside the build script, we can change directory for example to: "D:\a\1\s\docbuild". For more information, see [Pipeline options for Git repositories][pipeline-git].
 
-
-To do:
-
-* What does it mean to be headless Git?
+1. Check in the changes in the **docs** folder with:
+   
+   ```bash
+   git status
+   git add TBD
+   git commit TBD
+   ```
 
 
 [docfx]: https://dotnet.github.io/docfx/
