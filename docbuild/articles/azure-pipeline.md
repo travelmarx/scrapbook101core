@@ -145,7 +145,7 @@ These two components together will be enough to run our builddocs.ps1 script.
 
 ## Build task
 
-After a bit of trial and error we were able to build a simplistic build script [builddocs.ps1][build-script]. We also found it useful to create the script locally first to test it out, with more or less the same commands. The local script is [localbuild.ps1][local-build-script].
+After a bit of trial and error we were able to build a simplistic build script [builddocs.ps1][build-script]. We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script].
 
 Here are approximate steps taken:
 
@@ -178,8 +178,8 @@ Here are approximate steps taken:
 [pstask]: https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/powershell?view=azure-devops
 [vmImage]: https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md
 [choco]: https://chocolatey.org
-[build-script]: https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/builddocs.ps1
-[local-build-script]: https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/localbuild.ps1
+[build-script]: https://github.com/travelmarx/scrapbook101core/blob/master/scripts/builddocs.ps1
+[local-build-script]: https://github.com/travelmarx/scrapbook101core/blob/master/scripts/localbuild.ps1
 [devops-core]: https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 [ps-core]: https://github.com/powershell/powershell
 [pipeline-git]: https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git
