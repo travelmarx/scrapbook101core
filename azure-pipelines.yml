@@ -17,6 +17,9 @@ steps:
 - checkout: self
   persistCredentials: true
   clean: true
+- task: CmdLine@2
+  inputs:
+    script: git ls-files
 - pwsh: .\scripts\builddocs.ps1
   displayName: PowerShell builddocs.ps1 task
 - script: dotnet build --configuration $(buildConfiguration)
