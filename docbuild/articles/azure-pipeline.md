@@ -176,7 +176,7 @@ Here are approximate steps taken in the doc build scripts.
    git push
    ```
 
-  For the pipeline build script we are in a different situation because have a detached head. What's that?
+For the pipeline build script we are in a different situation because have a detached head. What's that?
 
 To link to:
 https://stackoverflow.com/questions/10228760/fix-a-git-detached-head
