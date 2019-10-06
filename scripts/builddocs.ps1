@@ -41,7 +41,7 @@ try {
         Write-Host "## Staging files."
         #git status -q
         git ls-files
-        git add .\docs\articles\azure-pipeline.html
+        git add docs/articles/azure-pipeline.html
         Write-Host "## Switch to master"
         git checkout master
         #git branch tmp head
