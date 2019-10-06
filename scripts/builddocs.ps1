@@ -16,9 +16,8 @@ try {
     docfx build
 
     Write-Host "## Docfx ran successfully."
-    Write-Host "## git checkout master, create tmp branch."
-    git checkout master
-    git checkout -b tmp
+    Write-Host "## git checkout -b tmp"
+    git checkout -q -b tmp
 
     Write-Host "## Copy files. First step: delete old."
     Set-Location -Path ".."
