@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  system.debug: true
 
 steps:
 - checkout: self
