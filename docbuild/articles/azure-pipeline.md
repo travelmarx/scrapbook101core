@@ -157,7 +157,7 @@ We also found it useful to create a local script simultaneously to test out idea
 
 Here are approximate steps taken in the doc build scripts.
 
-1. Install Chocolately with ``choco install docfx -y``. (Only in the pipeline doc build script.)
+1. Install Chocolately with ``choco install docfx -y``. (Only in the pipeline doc build script do we do this.)
 
 1. Run docfx with ``docfx metadata`` and ``docfx build``.
 
@@ -167,20 +167,30 @@ Here are approximate steps taken in the doc build scripts.
 
    Looking at the task log, you should see that the script path on the agent is: "D:\a\1\s". By default, code is checked out into a directory called "s". Inside the build script, we can change directory for example to: "D:\a\1\s\docbuild". For more information about directories on agents, see [Pipeline options for Git repositories][pipeline-git].
 
-1. Check in the changes in the **docs** folder with the local script (from inside of Visual Studio Code set to the master branch) with:
+1. Update the repo, by pushing changed files in the **docs** folder to GitHub.
+
+   1. Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:
    
-   ```bash
-   git status
-   git add .
-   git commit -m"Pipeline build check in."
-   git push
-   ```
+      ```bash
+      git status
+      git add .
+      git commit -m"Pipeline build check in."
+      git push
+      ```
+  1. For the pipeline build script we are in a different situation because have a detached head. A detached head
+     is when. For more information, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
 
-For the pipeline build script we are in a different situation because have a detached head. What's that?
+      ```bash
+      git status
+      git log -n 1
+      git checkout master
+      git branch tmp <commit-hash>
+      git merge tmp
+      git add .
+      git commit -m"Pipeline build check in."
+      git push
+      ```
 
-To link to:
-https://stackoverflow.com/questions/10228760/fix-a-git-detached-head
-https://git-scm.com/docs/git-checkout
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
@@ -197,3 +207,5 @@ https://git-scm.com/docs/git-checkout
 [ps-core]: https://github.com/powershell/powershell
 [pipeline-git]: https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git
 [pipeline-github]: https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github
+[detached-head]: https://stackoverflow.com/questions/10228760/fix-a-git-detached-head
+[git-checkout]: https://git-scm.com/docs/git-checkout
