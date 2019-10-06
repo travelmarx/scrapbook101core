@@ -1,3 +1,6 @@
+#
+# A script for building Scrapbook101core docs in an Azure pipeline.
+#
 Write-Host "## Start of build script."
 Write-Host "## Script location is" $PSScriptRoot.ToString()
 try {

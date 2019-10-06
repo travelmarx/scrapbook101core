@@ -1,4 +1,8 @@
-﻿Write-Host "## Start of local build script."
+﻿#
+# A script for building Scrapbook101core docs locally.
+# Assumes docfx is available in the system.
+#
+Write-Host "## Start of local build script."
 Write-Host "## Script location is" $PSScriptRoot.ToString()
 
 try {
