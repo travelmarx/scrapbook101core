@@ -19,9 +19,7 @@ steps:
   clean: true
 - task: CmdLine@2
   inputs:
-    script: |
-      Tool: git
-      Arguments: ls-files
+    script: git ls-files
 - pwsh: .\scripts\builddocs.ps1
   displayName: PowerShell builddocs.ps1 task
 - script: dotnet build --configuration $(buildConfiguration)
