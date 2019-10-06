@@ -16,6 +16,9 @@ try {
     docfx build
 
     Write-Host "## Docfx ran successfully."
+    Write-Host "## git checkout master, create tmp branch."
+    git checkout master
+    git checkout -b tmp
 
     Write-Host "## Copy files. First step: delete old."
     Set-Location -Path ".."
@@ -40,7 +43,7 @@ try {
         git status
         git add .
         git checkout master
-        git branch tmp head
+        #git branch tmp head
         git merge tmp
         git commit -m"Pipeline build check in."
         git push
