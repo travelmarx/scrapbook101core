@@ -36,9 +36,12 @@ try {
         Write-Host "Check in new content in docs folder."
     }
     
-    Write-Host "## Check git command."
-    git version
-
+    Write-Host "## Check in changes."
+    git status
+    git add .
+    git commit -m"Pipeline build check in."
+    git push
+ 
     Write-Host "## Build ran successfully."
 }
 catch {

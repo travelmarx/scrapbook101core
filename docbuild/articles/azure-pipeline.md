@@ -162,8 +162,9 @@ Here are approximate steps taken:
    
    ```bash
    git status
-   git add TBD
-   git commit TBD
+   git add .
+   git commit -m"Pipeline build check in."
+   git push
    ```
 
 
