@@ -182,7 +182,7 @@ Here are approximate steps taken in the doc build scripts.
 
       ```bash
       git status
-      git add .
+      git add -A
       git checkout master
       git branch tmp head
       git merge tmp
@@ -190,7 +190,7 @@ Here are approximate steps taken in the doc build scripts.
       git push
       ```
 
-
+The above script doesn't work - yet.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
