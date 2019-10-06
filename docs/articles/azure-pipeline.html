@@ -97,10 +97,10 @@
 - master
 
 pool:
-vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest'
 
 variables:
-buildConfiguration: 'Release'
+  buildConfiguration: 'Release'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
@@ -115,6 +115,8 @@ steps:
 <li><p>What happened when running a pipeline with the YML file above? The steps built the site as if you ran build in Visual Studio.</p>
 </li>
 <li><p>If you make a changes to any file in the repo, the build process will kick off again because the <strong>trigger</strong> parameter in the pipeline config file.</p>
+</li>
+<li><p>Under variables add <strong>system.debug: true</strong> to get debug information in the logs.</p>
 </li>
 </ul>
 <h2 id="custom-build-task">Custom build task</h2>
@@ -232,6 +234,7 @@ git push
 </li>
 </ol>
 <p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build.</p>
+<p>Troubleshoot: <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting">https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting</a></p>
 </article>
           </div>
           

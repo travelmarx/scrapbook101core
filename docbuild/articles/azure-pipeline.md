@@ -37,10 +37,10 @@ To approach the ideal process flow described above, our first steps in devopslan
     - master
 
     pool:
-    vmImage: 'ubuntu-latest'
+      vmImage: 'ubuntu-latest'
 
     variables:
-    buildConfiguration: 'Release'
+      buildConfiguration: 'Release'
 
     steps:
     - script: dotnet build --configuration $(buildConfiguration)
@@ -54,6 +54,8 @@ Notes:
 * What happened when running a pipeline with the YML file above? The steps built the site as if you ran build in Visual Studio. 
 
 * If you make a changes to any file in the repo, the build process will kick off again because the **trigger** parameter in the pipeline config file.
+
+* Under variables add **system.debug: true** to get debug information in the logs.
 
 ## Custom build task
 
@@ -189,8 +191,9 @@ Here are approximate steps taken in the doc build scripts.
       git push
       ```
 
-The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
+  The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
 
+Troubleshoot: https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
