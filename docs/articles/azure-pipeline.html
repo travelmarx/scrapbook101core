@@ -201,7 +201,7 @@ displayName: 'dotnet build $(buildConfiguration)'
 <hr>
 <p>Here are approximate steps taken in the doc build scripts.</p>
 <ol>
-<li><p>Install Chocolately with <code>choco install docfx -y</code>. (Only in the pipeline doc build script.)</p>
+<li><p>Install Chocolately with <code>choco install docfx -y</code>. (Only in the pipeline doc build script do we do this.)</p>
 </li>
 <li><p>Run docfx with <code>docfx metadata</code> and <code>docfx build</code>.</p>
 <p>Note that for the pipeline build, we don't need to serve the docs like we might do building locally so we don't run <code>docfx --serve</code>. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.</p>
@@ -209,7 +209,9 @@ displayName: 'dotnet build $(buildConfiguration)'
 <li><p>Copy all files from <strong>docbuild_site</strong> to <strong>docs</strong>.</p>
 <p>Looking at the task log, you should see that the script path on the agent is: &quot;D:\a\1\s&quot;. By default, code is checked out into a directory called &quot;s&quot;. Inside the build script, we can change directory for example to: &quot;D:\a\1\s\docbuild&quot;. For more information about directories on agents, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git">Pipeline options for Git repositories</a>.</p>
 </li>
-<li><p>Check in the changes in the <strong>docs</strong> folder with the local script (from inside of Visual Studio Code set to the master branch) with:</p>
+<li><p>Update the repo, by pushing changed files in the <strong>docs</strong> folder to GitHub.</p>
+<ol>
+<li><p>Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:</p>
 <pre><code class="lang-bash">git status
 git add .
 git commit -m&quot;Pipeline build check in.&quot;
@@ -217,10 +219,20 @@ git push
 </code></pre>
 </li>
 </ol>
-<p>For the pipeline build script we are in a different situation because have a detached head. What's that?</p>
-<p>To link to:
-<a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">https://stackoverflow.com/questions/10228760/fix-a-git-detached-head</a>
-<a href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></p>
+</li>
+<li><p>For the pipeline build script we are in a different situation because have a detached head. A detached head
+is when. For more information, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
+<pre><code class="lang-bash">git status
+git add .
+git checkout master
+git branch tmp head
+git merge tmp
+git commit -m&quot;Pipeline build check in.&quot;
+git push
+</code></pre>
+</li>
+</ol>
+<p>Not working.</p>
 </article>
           </div>
           
