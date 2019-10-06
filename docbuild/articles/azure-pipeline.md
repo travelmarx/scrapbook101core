@@ -182,11 +182,10 @@ Here are approximate steps taken in the doc build scripts.
 
       ```bash
       git status
-      git log -n 1
-      git checkout master
-      git branch tmp <commit-hash>
-      git merge tmp
       git add .
+      git checkout master
+      git branch tmp head
+      git merge tmp
       git commit -m"Pipeline build check in."
       git push
       ```
