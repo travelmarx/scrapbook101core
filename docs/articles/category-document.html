@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Category Document | Scrapbook101core </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Category Document | Scrapbook101core ">
+    <meta name="generator" content="docfx 2.42.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="category-document">
+<h1 id="category-document">Category Document</h1>
+
+<p>In the <a href="technology-overview.html">technology overview</a> section, we briefly discussed the ideas behind a document-oriented database and how it is used in Scrapbook101core. In this section we describe one of the two key document types stored in the document-oriented database, the category document.</p>
+<p>Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents Scrapbook101core categories. From this prototype document, a the code class <code>Category.cs</code> is defined in our Visual Studio project representing this category document.</p>
+<h2 id="overview">Overview</h2>
+<p>This Scrapbook101core category document defines the types of categories that items can belong to (via the <strong>category</strong> field). It is one of the two document types (distinguished by the <strong>type</strong> field) stored in the document-oriented datastore. The other is the <a href="item-document.html">Item Document</a>. The data store will contain many item documents and one category document.</p>
+<p>The categories used in Scrapbook101core are: Book, Event, Film, Museum, People, and Performance. This reduced number of categories was selected to make the code easier to work with and describe. In the version of Scrapbook described in the related <a href="http://blog.travelmarx.com/2017/12/a-personal-information-management-system-introducing-scrapbook.html">blog post</a> over 20 categories are used.</p>
+<p>Each category has a <strong>name</strong>, <strong>description</strong>, and one or more associated <strong>categoryFields</strong>.</p>
+<pre><code class="lang-json">{
+    &quot;id&quot;: &quot;GUID&quot;,
+    &quot;type&quot;: &quot;scrapbook101Categories&quot;,
+    &quot;categories&quot;: [
+        {
+            &quot;name&quot;: &quot;Book&quot;,
+            &quot;description&quot;: &quot;Book&quot;,
+            &quot;categoryFields&quot;: {
+                &quot;author&quot;: &quot;Author name.&quot;,
+                &quot;genre&quot;: &quot;Genre.&quot;,
+                &quot;pubYear&quot;: &quot;Year published.&quot;,
+                &quot;synopsis&quot;: &quot;Short description.&quot;,
+                &quot;theme&quot;: &quot;Topic or themes.&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Event&quot;,
+            &quot;description&quot;: &quot;A gathering, party, celebration.&quot;,
+            &quot;categoryFields&quot;: {
+                &quot;location&quot;: &quot;Joe Smith's house, restaurant name.&quot;,
+                &quot;people&quot;: &quot;A list of people who were there.&quot;,
+                &quot;type&quot;: &quot;[dinner, lunch, party, wedding, festival]&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Film&quot;,
+            &quot;description&quot;: &quot;Movie, documentary, series.&quot;,
+            &quot;categoryFields&quot;: {
+                &quot;director&quot;: &quot;Director name.&quot;,
+                &quot;genre&quot;: &quot;Genre&quot;,
+                &quot;releaseYear&quot;: &quot;Release year.&quot;,
+                &quot;synopsis&quot;: &quot;Short description.&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Museum&quot;,
+            &quot;description&quot;: &quot;A musuem, site.&quot;,
+            &quot;categoryFields&quot;: {
+                &quot;highlight&quot;: &quot;Highlight.&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;People&quot;,
+            &quot;description&quot;: &quot;Friend, family, contact, group.&quot;,
+            &quot;categoryFields&quot;: {
+                &quot;birthDate&quot;: &quot;yyyy-mm-dd&quot;,
+                &quot;location:&quot;: &quot;Where the person lives.&quot;,
+                &quot;type&quot;: &quot;[family, friend, contact, group]&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Performance&quot;,
+            &quot;description&quot;: &quot;Theater, concert, play, live performance.&quot;,
+            &quot;categoryFields&quot;: {
+                &quot;artist&quot;: &quot;Composer, author, or artist.&quot;,
+                &quot;location&quot;: &quot;Venue, theater name.&quot;,
+                &quot;synopsis&quot;: &quot;Brief one sentence overview.&quot;,
+                &quot;type&quot;: &quot;[theater, theatre, concert, play, ballet, opera, dance]&quot;
+            }
+        }
+    ]
+}
+</code></pre>
+<h2 id="description-of-fields">Description of fields</h2>
+<p>Fields not marked as <u>Required</u> are not required.</p>
+<dl class="deflist">
+    <dt>categoryFields</dt>
+    <dd>Data fields specific to the category. In this implementation of Scrapbook101core item, the following keys are supported
+    <strong>artist</strong>, <strong>author</strong>, <strong>birthDate</strong>, <strong>director</strong>, 
+    <strong>genre</strong>, <strong>highlight</strong>, <strong>location</strong>, 
+    <strong>synopsis</strong>, <strong>theme</strong>, <strong>type</strong> <strong>who</strong>, and <strong>year</strong>. The keys are not required. If specified, their values are strings.
+    <br><br>
+    Which keys are used depends on the category chosen for the Scrapbook101core item. If <i>null</i>, no keys are stored for the item.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A JSON object containing key-value pairs. 
+    </p>
+    </dd>
+    <dt>description</dt>
+    <dd>Describes the category. This field is used for information in dropdowns or tooltips.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A string.
+    </p>
+    </dd>
+    <dt>id</dt>
+    <dd>This is an auto-generated GUID representing the item. The value can be auto-generated or assigned. 
+    The <strong>id</strong> is used to easily reference the category document.
+    <p class="inset">
+        <u>Required</u>
+        <br>
+        <u>Format</u>: A GUID, e.g., "49916d87-e565-4220-8806-b9e60c867ae6".
+    </p>
+    </dd>
+    <dt>type</dt>
+    <dd>Describes the type of record. If your records are stored in a data store with other records with
+        an <strong>id</strong> field, then <strong>type</strong> helps distinguish Scrapbook101core records uniquely.
+        There are two types of documents, <a href="/item-document">item documents</a> and category documents.
+    <p class="inset">
+        <u>Required</u>
+        <br>
+        <u>Format</u>: A string equal to "scrapbook101Categories".
+    </p>
+    </dd>
+</dl>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/category-document.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong> for Scrapbook101Core</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

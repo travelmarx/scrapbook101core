@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Item Document | Scrapbook101core </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Item Document | Scrapbook101core ">
+    <meta name="generator" content="docfx 2.42.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="item-document">
+<h1 id="item-document">Item Document</h1>
+
+<p>In the <a href="technology-overview.html">technology overview</a> section, we briefly discussed the ideas behind a document-oriented database and how it is used in Scrapbook101core. In this section we describe one of the key document types stored in the document-oriented database, the item document.</p>
+<p>Our design approach is model-first approach meaning we start with a prototype item document in JSON that represents one Scrapbook101core item. From this prototype document, the code class <a class="xref" href="../api/Scrapbook101core.Models.Item.html"><code>Item</code></a> is defined in our Visual Studio project representing this item document.</p>
+<h2 id="overview">Overview</h2>
+<p>Below is the prototype item document that describes one Scrapbook101core item in JSON. The document data store will contain one document that looks like this for every Scrapbook101core item. This item document is one of the two document types (distinguished by the <a class="xref" href="../api/Scrapbook101core.Models.Item.html#Scrapbook101core_Models_Item_Type"><code>type</code></a> field) stored in the document datastore. The other document type is the <a href="category-document.html">Category Document</a>.</p>
+<p>The values of the fields in the key-value pairs aren't important below, only the structure is. Following the JSON are descriptions of each field. Remember that each of these fields is represented by a property in the <a class="xref" href="../api/Scrapbook101core.Models.Item.html"><code>Item class</code></a>.</p>
+<pre><code class="lang-json">{
+    &quot;assets&quot;: [
+        {
+            &quot;name&quot;: &quot;name&quot;,
+            &quot;size&quot;: 10000
+        }
+    ],
+    &quot;assetPath&quot;: &quot;path to assets&quot;,
+    &quot;category&quot;: &quot;category&quot;,
+    &quot;categoryFields&quot;: {
+    },
+    &quot;dateAdded&quot;: &quot;timestamp&quot;,
+    &quot;dateUpdated&quot;: &quot;timestamp&quot;,
+    &quot;description&quot;: &quot;description&quot;,
+    &quot;geoLocation&quot;: {
+        &quot;type&quot;: &quot;Point&quot;,
+        &quot;coordinates&quot;: [
+            43.5290298461914, 
+            12.1621837615967
+        ]
+    },
+    &quot;id&quot;: &quot;GUID&quot;,
+    &quot;location&quot;: &quot;location name&quot;,
+    &quot;rating&quot;: &quot;rating&quot;,
+    &quot;title&quot;: &quot;title&quot;,
+    &quot;type&quot;: &quot;scrapbook101Item&quot;,
+    &quot;updatedBy&quot;: &quot;identifier, email or name&quot;
+}
+</code></pre>
+<h2 id="description-of-fields">Description of fields</h2>
+<p>Fields not marked as <u>Required</u> are not required.</p>
+<dl class="deflist">
+    <dt>assets</dt>
+    <dd>A list of assets associated with the Scrapbook101core item. Can be <i>null</i>, meaning no assets are associated with the item.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A JSON array of objects containing two strings and a number:
+    </p>
+    <dl class="subdeflist">
+        <dt>name</dt>
+        <dd>The name of the asset.
+        <p>
+            <strong>Format</strong>: A string, e.g., "Folder.jpg".
+        </p>
+        </dd>
+        <dt>size</dt>
+        <dd>The size in bytes of the asset.
+        <p>
+            <strong>Format</strong>: A number, e.g., 20056.
+        </p>
+        </dd>
+    </dl>
+    </dd>
+    <dt>assetPath</dt>
+    <dd>This is the path to any digital assets associated with the item. For example, there might be images, PDFs or other documents that give context about the item. Associating assets is not necessary if you plan to implement Scrapbook101core without any assets. Part of the spirit behind Scrapbook101core however is to provide strong visual cues for remembering an item as well as archiving data associated with it, so at least one image for each Scrapbook101core is recommended.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A string, e.g., "year2018/jan-10" or "assets/2018/2018-12-10".
+    </p>
+    </dd>
+    <dt>category</dt>
+    <dd>One of the category values described in <a href="/category-document">Category Document</a>. A Scrapbook101core item must
+    be assigned to a category.
+    <p class="inset">
+        <u>Required</u>
+        <br>
+        <u>Format</u>: A string, e.g. "Books".
+    </p>
+    </dd>
+    <dt>categoryFields</dt>
+    <dd>Fields specific to the category selected for the Scrapbook101core item. See the <a href="/category-document">Category Document</a> for more information. Each
+    category has a fixed set of fields.
+    <p class="inset">
+        <u>Default</u>: Depends on the category chosen.
+        <br>
+        <u>Format</u>: An object containing key-value pairs. 
+    </p>
+    <p>For example, for a Scrapbook101core book item, the <strong>categoryField</strong> object would look like the following:</p>
+    <pre>
+"categoryFields": {
+    "author": "author name",
+    "genre": "genre",
+    "year": "year",
+    "synopsis": "synopsis",
+    "theme": "theme"
+}</pre>
+    </dd>
+    <dt>dateAdded</dt>
+    <dd>This value is automatically inserted by code upon initial creation of an item and then never changed.
+    <p class="inset">
+        <u>Format</u>: A string that is an ISO 8601 date and time, e.g., "2018-06-07T00:00:00".
+    </p>
+    </dd>
+    <dt>dateUpdated</dt>
+    <dd>This value is automatically inserted by code. On initial creation of an Scrapbook101core item, <strong>dateUpdated</strong> equals <strong>dateAdded</strong>. When an item is edited, <strong>dateUpdated</strong> is updated with the correct timestamp.
+    <p class="inset">
+        <u>Default</u>: Initially equal to <strong>dateAdded</strong>.
+        <br>
+        <u>Format</u>: A string that is an ISO 8601 date and time, e.g., "2018-06-07T00:00:00".
+    </p>
+    </dd>
+    <dt>description</dt>
+    <dd>Information about the Scrapbook101core item that isn't already captured in other fields. This field provides the context of why the item is important. Descriptions longer than a couple hundred words should be added as assets.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A string, e.g. "The best book I've read in 2018...".
+    </p>
+    </dd>
+    <dt>geoLocation</dt>
+    <dd>If you have a <a href="https://www.microsoft.com/en-us/maps/create-a-bing-maps-key">Bing Maps Key</a> and it is specified in the <code>appsettings.json</code> file, then <strong>location</strong> values are converted into latitude and longitude coordinates (geocoded) to allow for more flexible location searches.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: An object that contains a string and an array:
+        <dl class="subdeflist">
+            <dt>type</dt>
+            <dd>The type of geocode. Scrapbook101core stores points, so this value is always "Point".</dd>
+            <dt>coordinates</dt>
+            <dd>An array of two numbers, the first is longitude and the second is latitude. For exmple,
+            [43.5290298461914, 12.1621837615967].</dd>
+        </dl>
+    </p>
+    </dd>
+    <dt>id</dt>
+    <dd>This is a GUID auto-generated upon insertion into the document store.
+    <p class="inset">
+        <u>Required</u>
+        <br>
+        <u>Format</u>: A GUID, e.g., "d26f6d16-591e-4ae2-9072-d7ba113ec454".
+    </p>
+    </dd>
+    <dt>location</dt>
+    <dd>This field is a friendly name of the location that is relevant for the Scrapbook101core item. It is not required but is helpful. It is important to be consistent with how you enter values to make searching easier.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A string, e.g. "Seattle, WA" or "101 Main St., Seattle 98103, USA".
+    </p>
+    </dd>
+    <dt>rating</dt>
+    <dd>A rating of the Scrapbook101core item, if applicable. The rating system will be unique for each implementation. The test data provided with Scrapbook101core uses a rating of 1 - 5.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A number, e.g. 3.
+    </p>
+    </dd>
+    <dt>title</dt>
+    <dd>A descriptive title for the Scrapbook101core item. For example, if item is a book, use all or part of the book title.
+    <p class="inset">
+        <u>Required</u>
+        <br>
+        <u>Format</u>: A string, e.g. "Brief Answers to the Big Questions".
+    </p>
+    </dd>
+    <dt>type</dt>
+    <dd>Describes the type of record. If your documents are stored in a data store with other documents from other applications using an <strong>id</strong> field, then <strong>type</strong> helps distinguish Scrapbook101core records uniquely. There are two types of documents, item documents and <a href="/category-document">category documents</a>.
+    <p class="inset">
+        <u>Required</u>
+        <br>
+        <u>Format</u>: A string equal to "scrapbook101Item".
+    </p>
+    </dd>
+    <dt>updatedBy</dt>
+    <dd>This could be a user name or ID. For example, if you implement an authentication scheme based on Windows Live, Facebook, or Google, you can use
+    the user's email or ID in this field.
+    <p class="inset">
+        <u>Default</u>: <i>null</i>
+        <br>
+        <u>Format</u>: A string, e.g. "somename@someemail.com".
+    </p>
+    </dd>
+</dl>
+<h2 id="json-schema">JSON schema</h2>
+<p><em>Optional.</em></p>
+<p>The description of the fields above is usually sufficient for programmers looking for an overview of the item document's structure, its fields and their values. Another way to approach &quot;documenting&quot; the Scrapbook101core item document is with a <a href="https://json-schema.org/">JSON schema</a>, which would provide a more precise description of the JSON. Besides describing the JSON item document, the schema could also be used to validate any new block JSON as representing a valid item document or not.</p>
+<p>In the Scrapbook101core application, validation is done implicitly as the JSON is serialized from a class object and deserialized into a class object. In other words, documents in our data store are valid JSON because they are created and edited via a fixed class (see for example the <code>Item.cs</code> class). In this situation, a JSON schema isn't as critical because we won't be encountering JSON that isn't in the context of this application.</p>
+<p>Consider the following simplified item document:</p>
+<pre><code class="lang-json">{
+    &quot;category&quot;: &quot;category&quot;,
+    &quot;description&quot;: &quot;description&quot;,
+    &quot;id&quot;: &quot;GUID&quot;,
+    &quot;rating&quot;: &quot;rating&quot;,
+    &quot;title&quot;: &quot;book title&quot;,
+    &quot;type&quot;: &quot;scrapbook101Item&quot;
+}
+</code></pre>
+<p>Using a schema generator like <a href="https://www.jsonschema.net/">JSONschema.net</a>, a possible schema describing the simplified item document might look like the following (truncated to show just the initial part of the schema):</p>
+<pre><code class="lang-json">{
+   &quot;definitions&quot;: {},
+   &quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
+   &quot;$id&quot;: &quot;http://example.com/root.json&quot;,
+   &quot;type&quot;: &quot;object&quot;,
+   &quot;title&quot;: &quot;The Root Schema&quot;,
+   &quot;required&quot;: [
+     &quot;item&quot;
+   ],
+   &quot;properties&quot;: {
+     &quot;item&quot;: {
+       &quot;$id&quot;: &quot;#/properties/item&quot;,
+       &quot;type&quot;: &quot;object&quot;,
+       &quot;title&quot;: &quot;The Item Schema&quot;,
+       &quot;required&quot;: [
+         &quot;category&quot;,
+         &quot;id&quot;,
+         &quot;title&quot;,
+         &quot;type&quot;
+       ],
+       &quot;properties&quot;: {
+         &quot;category&quot;: {
+           &quot;$id&quot;: &quot;#/properties/item/properties/category&quot;,
+           &quot;type&quot;: &quot;string&quot;,
+           &quot;title&quot;: &quot;The Category Schema&quot;,
+           &quot;default&quot;: &quot;&quot;,
+           &quot;examples&quot;: [
+             &quot;category&quot;
+           ],
+           &quot;pattern&quot;: &quot;^(.*)$&quot;
+         },
+...
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/item-document.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong> for Scrapbook101Core</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
