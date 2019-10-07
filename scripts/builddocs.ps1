@@ -68,6 +68,6 @@ try {
  
     Write-Host "## Build ran successfully."
 }
-catch {
+finally {
     Write-Host "## Something went wrong in the build. Check the output."
 }
