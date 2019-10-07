@@ -49,7 +49,7 @@ try {
         Write-Host "## git checkout -b tmp"
         git checkout -b tmp
 
-        Write-Host "## Check git branch"
+        Write-Host "## Check git branch to list"
         git branch
 
         Write-Host "## git commit -a m'message'"
