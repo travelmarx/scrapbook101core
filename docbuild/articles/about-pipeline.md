@@ -8,7 +8,6 @@ title: Azure Pipeline
 
 Our goal is to create a Azure pipeline process to build docs (and run other tasks) automatically upon check in of code. To do this, we need to look into Devops. The term is a composed of the terms development (Dev) and operations (Ops) and represents a new way of thinking about development and operation processes as tightly connected together. For more information, see [What is DevOps?][devops-def] In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a *pipeline*. A pipeline in its simplest sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests like checking quality, and create documentation with [DocFx][docfx].
 
-
 Our desired authoring / developer flow is:
 
 1. Code or author.
