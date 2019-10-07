@@ -4,9 +4,9 @@ references:
 - uid: about
   name: About This Site
   href: articles/about-this-site.html
-- uid: azure-pipeline
+- uid: about-pipeline
   name: Azure Pipeline
-  href: articles/azure-pipeline.html
+  href: articles/about-pipeline.html
 - uid: build-with-docfx
   name: Build with DocFX
   href: articles/build-with-docfx.html

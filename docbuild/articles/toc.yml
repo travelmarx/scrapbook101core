@@ -20,4 +20,4 @@
   - name: Build with DocFX
     href: build-with-docfx.md
   - name: Azure Pipeline
-    href: azure-pipeline.md
+    href: about-pipeline.md

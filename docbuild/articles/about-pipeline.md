@@ -1,5 +1,5 @@
 ---
-uid: azure-pipeline
+uid: about-pipeline
 title: Azure Pipeline
 ---
 # Pipeline setup
