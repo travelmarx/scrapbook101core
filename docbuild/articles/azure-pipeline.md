@@ -195,7 +195,6 @@ Here are approximate steps taken in the doc build scripts.
 
 Troubleshoot: https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting
 
-Change.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
