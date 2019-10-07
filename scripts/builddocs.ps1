@@ -56,7 +56,7 @@ try {
         git commit -a -m'[skip ci]Pipeline build check in.' -q
 
         Write-Host "## Switch to master: git checkout master"
-        git checkout master
+        git checkout master -q
 
         Write-Host "## git merge tmp"
         git merge tmp
