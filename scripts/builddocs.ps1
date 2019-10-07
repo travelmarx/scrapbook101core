@@ -16,8 +16,6 @@ try {
     docfx build
 
     Write-Host "## Docfx ran successfully."
-    Write-Host "## git checkout -b tmp"
-    git checkout -q -b tmp
 
     Write-Host "## Copy files. First step: delete old."
     Set-Location -Path ".."
@@ -44,11 +42,13 @@ try {
         git status
         Write-Host "## Switch to master: git checkout master"
         git checkout master
-        Write-Host "## Add all: git add -all"
-        git add -all
-        #git branch tmp head
-        Write-Host "## Merging tmp."
+        Write-Host "## git checkout -b tmp"
+        git branch tmp head
+        Write-Host "## git merge tmp"
         git merge tmp
+        Write-Host "## git add ."
+        git add .
+        Write-Host "## git commit"
         git commit -m"[skip ci]Pipeline build check in."
         git push
         }
