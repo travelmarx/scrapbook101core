@@ -38,14 +38,12 @@ try {
     if ($directoryInfo.Count -ne 0)
     {
         Write-Host "## There is content to add to repo."
-        Write-Host "## Staging files."
+        Write-Host "## Staging files: git status"
         git status
-        git ls-files
-        git config --global user.email "travelmarx@live.com"
-        git config --global user.name "Travelmarx"
-        git add
-        Write-Host "## Switch to master"
+        Write-Host "## Switch to master: git checkout master"
         git checkout master
+        Write-Host "## Add all: git add -all"
+        git add -all
         #git branch tmp head
         Write-Host "## Merging tmp."
         git merge tmp
