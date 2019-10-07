@@ -53,7 +53,7 @@ try {
         git branch
 
         Write-Host "## git commit -a m'message'"
-        git commit -a -m'[skip ci]Pipeline build check in.' -q
+        git commit -q -a -m'[skip ci]Pipeline build check in.'
 
         Write-Host "## Switch to master: git checkout master"
         git checkout master -q
