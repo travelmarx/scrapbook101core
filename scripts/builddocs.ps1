@@ -48,7 +48,10 @@ try {
         
         Write-Host "## git checkout -b tmp"
         git checkout -b tmp
-        
+
+        Write-Host "## Check git branch"
+        git branch
+
         Write-Host "## git commit -a m'message'"
         git commit -a -m'[skip ci]Pipeline build check in.'
 
