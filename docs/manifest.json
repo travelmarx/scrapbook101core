@@ -273,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/about-pipeline.html",
-          "hash": "KlO/93Y6DdK87i7PIUfs5g=="
+          "hash": "MwXV2HGGZcaeybRVNLMK/Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,7 +288,7 @@
           "hash": "trpDjyOumlksuIB2HLngCQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -300,7 +300,7 @@
           "hash": "L8bg1eC5ek67GrKK7kQbaQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -551,7 +551,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 13,
-          "skipped_file_count": 13
+          "skipped_file_count": 12
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
