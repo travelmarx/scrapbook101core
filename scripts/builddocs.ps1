@@ -43,7 +43,9 @@ try {
         Write-Host "## Switch to master: git checkout master"
         git checkout master
         Write-Host "## git checkout -b tmp"
-        git branch tmp head
+        git checkout -b tmp
+        Write-Host "## Switch to master: git checkout master"
+        git checkout master
         Write-Host "## git merge tmp"
         git merge tmp
         Write-Host "## git add ."
