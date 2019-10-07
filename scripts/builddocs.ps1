@@ -56,7 +56,8 @@ try {
         git config core.autocrlf true
 
         Write-Host "## git commit -a m'message'"
-        git commit -q -a -m"[skip ci]Pipeline build check in."
+        git add . -q
+        git commit -q -m"[skip ci]Pipeline build check in."
 
         Write-Host "## Switch to master: git checkout master"
         git checkout master -q
@@ -66,8 +67,7 @@ try {
 
         Write-Host "## git commit"
         git push -q
-        }
-    
+        }    
  
     Write-Host "## Build ran successfully."
 }
