@@ -191,9 +191,10 @@ Here are approximate steps taken in the doc build scripts.
       git push
       ```
 
-  The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
+  The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build. Finding the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.
 
 Troubleshoot: https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting
+
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
