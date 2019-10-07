@@ -47,7 +47,7 @@ try {
         Write-Host "## git merge tmp"
         git merge tmp
         Write-Host "## git add ."
-        git add .
+        git add -all
         Write-Host "## git commit"
         git commit -m"[skip ci]Pipeline build check in."
         git push
