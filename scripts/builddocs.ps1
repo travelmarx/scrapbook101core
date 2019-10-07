@@ -52,6 +52,9 @@ try {
         Write-Host "## Check git branch to list"
         git branch
 
+        Write-Host "## git config core.autocrlf true"
+        git config core.autocrlf true
+
         Write-Host "## git commit -a m'message'"
         git commit -q -a -m"[skip ci]Pipeline build check in."
 
