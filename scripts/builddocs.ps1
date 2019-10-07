@@ -36,22 +36,29 @@ try {
     if ($directoryInfo.Count -ne 0)
     {
         Write-Host "## There is content to add to repo."
+        
         Write-Host "## Check git version: git --version"
         git --version
+
+        Write-Host "## Check git branch"
+        git branch
+
         Write-Host "## Staging files: git status"
         git status
-        Write-Host "## Switch to master: git checkout master"
-        git checkout master
+        
         Write-Host "## git checkout -b tmp"
         git checkout -b tmp
+        
+        Write-Host "## git commit -a m'message'"
+        git commit -a -m'[skip ci]Pipeline build check in.'
+
         Write-Host "## Switch to master: git checkout master"
         git checkout master
+
         Write-Host "## git merge tmp"
         git merge tmp
-        Write-Host "## git add ."
-        git add -all
+
         Write-Host "## git commit"
-        git commit -m"[skip ci]Pipeline build check in."
         git push
         }
     
