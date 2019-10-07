@@ -47,7 +47,7 @@ try {
         git status
         
         Write-Host "## git checkout -b tmp"
-        git checkout -b tmp
+        git checkout -b tmp -q
 
         Write-Host "## Check git branch to list"
         git branch
