@@ -59,10 +59,10 @@ try {
         git checkout master -q
 
         Write-Host "## git merge tmp"
-        git merge tmp
+        git merge tmp -q
 
         Write-Host "## git commit"
-        git push
+        git push -q
         }
     
  
