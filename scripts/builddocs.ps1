@@ -41,6 +41,8 @@ try {
         Write-Host "## Staging files."
         git status
         git ls-files
+        git config --global user.email "travelmarx@live.com"
+        git config --global user.name "Travelmarx"
         git add
         Write-Host "## Switch to master"
         git checkout master
