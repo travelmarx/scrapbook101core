@@ -38,6 +38,8 @@ try {
     if ($directoryInfo.Count -ne 0)
     {
         Write-Host "## There is content to add to repo."
+        Write-Host "## Check git version: git --version"
+        git --version
         Write-Host "## Staging files: git status"
         git status
         Write-Host "## Switch to master: git checkout master"
