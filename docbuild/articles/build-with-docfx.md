@@ -284,7 +284,7 @@ which renders as:
 
 ## Next steps
 
-The next step was to investigate Azure devops. This is discussed in the article <xref:azure-pipeline>.
+The next step was to investigate Azure devops. This is discussed in the article <xref:about-pipeline>.
 
 ## References
 
