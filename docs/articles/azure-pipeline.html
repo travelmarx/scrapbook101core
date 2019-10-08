@@ -259,32 +259,36 @@ the repo. When the build task on the agent went to push changes we got a message
 <p>After getting pipeline build task working against master, we realized that our process was a bit of mess. Granted, this is a small team affair, but still, it could use improving.</p>
 <p>So with the pipeline, we adopt this workflow.</p>
 <ol>
-<li>Authoring (code or docs) should be done on a working branch.</li>
-</ol>
+<li><p>Authoring (code or docs) should be done on a working branch.</p>
 <ul>
 <li><p>The branch can be tested locally with <code>docfx --serve</code>. This builds docs in <strong>docbuild_site</strong> folder. We do not copy those changes into <strong>docs</strong> folder because we don't want to check in HTML for the working branch.</p>
 </li>
 <li><p>Do a <code>git merge master</code> to pick up changes from master.</p>
 </li>
 </ul>
-<ol start="2">
-<li>Push working branch changes to GitHub.</li>
-</ol>
+</li>
+<li><p>Push working branch changes to GitHub.</p>
 <ul>
 <li><p>There is no view option for GitHub pages for non-master branch, i.e., the web site <a href="https://travelmarx.github.io/scrapbook101core/index.html">https://travelmarx.github.io/scrapbook101core/index.html</a> is based off master. Also, we haven't checked in any HTML.</p>
 </li>
 <li><p>The push to the repo working branch does not kick off the pipeline, which only has a trigger on master.</p>
 </li>
 </ul>
-<ol start="3">
-<li>Merge working branch into master.</li>
-</ol>
+</li>
+<li><p>Merge working branch into master.</p>
 <ul>
 <li><p>This process is what would kick off the pipeline build, which would then build docs that appear in <strong>docs</strong> folder.</p>
 </li>
 <li><p>In the local working branch, <code>git pull</code> will pull changes to <strong>docs</strong>.</p>
 </li>
 </ul>
+</li>
+</ol>
+<p>In the process of working through this workflow, we realized we needed to change our pipeline config file to ignore pull requests.</p>
+<pre><code class="lang-yaml">trigger:
+- master
+pr: none
+</code></pre>
 </article>
           </div>
           
