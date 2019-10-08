@@ -239,6 +239,8 @@ So with the pipeline, we adopt this workflow.
 In the process of working through this workflow, we realized we needed to change our pipeline config file to ignore pull requests.
 
 ```yaml
+trigger:
+- master
 pr: none
 ```
 
