@@ -213,28 +213,38 @@ displayName: 'dotnet build $(buildConfiguration)'
 </li>
 <li><p>Update the repo, by pushing changed files in the <strong>docs</strong> folder to GitHub.</p>
 <ul>
-<li><p>Local. Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:</p>
+<li><p>Local. Using the local build script from inside of Visual Studio Code set to the master branch, we can do
+something like this:</p>
 <pre><code class="lang-bash">git status
 git add .
 git commit -m&quot;Pipeline build check in.&quot;
 git push
 </code></pre>
 </li>
-<li><p>Pipeline. For the pipeline build script we are in a different situation because have a detached head. A detached head is when. See the documentation for how to <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands">run git in scripts</a>. For more information about detached head, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
+<li><p>Pipeline. For the pipeline build script we are in a different situation because have a detached head. In a detached head situation, changes that are committed in this state are not remembered unless you create a branch and commit them.. See the documentation for how to <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands">run git in scripts</a>. For more information about detached head, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
+<p>So, the flow of git commands looks something like this:</p>
 <pre><code class="lang-bash">git status
 git add -A
+git branch tmp
 git checkout master
-git branch tmp head
 git merge tmp
 git commit -m&quot;[skip ci]Pipeline build check in.&quot;
 git push
 </code></pre>
+<p>Notes:</p>
+<ul>
+<li><p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build.</p>
+</li>
+<li><p>Finding  the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.</p>
+</li>
+<li><p>The key problem we ran into was
+that we had to redirect stderr to stdout in the PowerShell script with <code>$env:GIT_REDIRECT_STDERR = '2&gt;&amp;1'</code>. This was described in this <a href="https://github.com/dahlbyk/posh-git/issues/109">issue</a>.</p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
 </ol>
-<p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build. Finding the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.</p>
-<p>Troubleshoot: <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting">https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting</a></p>
 </article>
           </div>
           
