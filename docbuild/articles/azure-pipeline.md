@@ -241,6 +241,7 @@ In the process of working through this workflow, we realized we needed to change
 ```yaml
 trigger:
 - master
+
 pr: none
 ```
 
