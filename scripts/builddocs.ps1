@@ -1,6 +1,9 @@
 #
 # A script for building Scrapbook101core docs in an Azure pipeline.
 #
+Write-Host "## Redirect stderr to stdout."
+$env:GIT_REDIRECT_STDERR = '2>&1'
+
 Write-Host "## Start of build script."
 Write-Host "## Script location is" $PSScriptRoot.ToString()
 try {
