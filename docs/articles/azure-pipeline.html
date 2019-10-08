@@ -8,7 +8,7 @@
     <title>Azure Pipeline | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Azure Pipeline | Scrapbook101core ">
-    <meta name="generator" content="docfx 2.42.4.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -249,21 +249,12 @@ that we had to redirect stderr to stdout in the PowerShell script with <code>$en
 </ol>
 <p>Other thoughts on the pipeline build task:</p>
 <ul>
-<<<<<<< HEAD
 <li><p>Too many files are checked in the pipeline build, basically everything in <strong>\docs</strong>.  Building locally however only checks in what really changed, which is correct. Why is this the case?</p>
 </li>
 <li><p>We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
-the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a <code>git pull</code> first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging.</p>
+the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a <code>git pull</code> first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging. Going forward, we'll work on branch when working locally.</p>
 </li>
-=======
-<li>Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?</li>
->>>>>>> 2f7c4f65c928ce51ef2ef664e558df901e23f4f1
 </ul>
-<p>error: failed to push some refs to 'https://github.com/travelmarx/scrapbook101core'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.</p>
 </article>
           </div>
           
