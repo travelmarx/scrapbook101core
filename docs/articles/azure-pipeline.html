@@ -238,7 +238,7 @@ git push
 <li><p>Finding  the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.</p>
 </li>
 <li><p>The key problem we ran into was
-that we had to redirect stderr to stdout in the PowerShell script with <code>$env:GIT_REDIRECT_STDERR = '2&gt;&amp;1'</code>. This was described in this <a href="https://github.com/dahlbyk/posh-git/issues/109">issue</a>.</p>
+that we had to redirect stderr to stdout in the PowerShell script with <code>$env:GIT_REDIRECT_STDERR = '2&gt;&amp;1'</code>. This was described in this <a href="https://github.com/dahlbyk/posh-git/issues/109">issue</a>. We tried to attach the problem with using <code>-q</code> switch on git commands but that only took us so far and we needed the redirect.</p>
 </li>
 </ul>
 </li>
@@ -247,11 +247,13 @@ that we had to redirect stderr to stdout in the PowerShell script with <code>$en
 </ol>
 <p>Other thoughts on the build task:</p>
 <ul>
-<li><p>Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?</p>
-</li>
-<li><p>We work in Visual Studio Code, and we kept forgetting to pull first to get chnages the pipeline submitted. It's obvious, but represented a change of thinking.</p>
-</li>
+<li>Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?</li>
 </ul>
+<p>error: failed to push some refs to 'https://github.com/travelmarx/scrapbook101core'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.</p>
 </article>
           </div>
           
