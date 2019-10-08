@@ -201,13 +201,17 @@ Here are approximate steps taken in the doc build scripts.
       * Finding  the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.
 
       * The key problem we ran into was
-        that we had to redirect stderr to stdout in the PowerShell script with ``$env:GIT_REDIRECT_STDERR = '2>&1'``. This was described in this [issue][redirect-issue].
+        that we had to redirect stderr to stdout in the PowerShell script with ``$env:GIT_REDIRECT_STDERR = '2>&1'``. This was described in this [issue][redirect-issue]. We tried to attach the problem with using ``-q`` switch on git commands but that only took us so far and we needed the redirect.
 
 Other thoughts on the build task:
 
 * Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?
 
-* We work in Visual Studio Code, and we kept forgetting to pull first to get chnages the pipeline submitted. It's obvious, but represented a change of thinking.
+error: failed to push some refs to 'https://github.com/travelmarx/scrapbook101core'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again. 
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
