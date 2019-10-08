@@ -8,7 +8,7 @@
     <title>Azure Pipeline | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Azure Pipeline | Scrapbook101core ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.42.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -235,21 +235,24 @@ git push
 <ul>
 <li><p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build.</p>
 </li>
+<li><p>We needed to add <code>git config --global user.email</code> and <code>git config --global user.name</code> for the script to work.</p>
+</li>
 <li><p>Finding  the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.</p>
 </li>
 <li><p>The key problem we ran into was
-that we had to redirect stderr to stdout in the PowerShell script with <code>$env:GIT_REDIRECT_STDERR = '2&gt;&amp;1'</code>. This was described in this <a href="https://github.com/dahlbyk/posh-git/issues/109">issue</a>.</p>
+that we had to redirect stderr to stdout in the PowerShell script with <code>$env:GIT_REDIRECT_STDERR = '2&gt;&amp;1'</code>. This was described in this <a href="https://github.com/dahlbyk/posh-git/issues/109">issue</a>. We tried to attach the problem with using <code>-q</code> switch on git commands but that only took us so far and we needed the redirect.</p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<p>Other thoughts on the build task:</p>
+<p>Other thoughts on the pipeline build task:</p>
 <ul>
-<li><p>Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?</p>
+<li><p>Too many files are checked in the pipeline build, basically everything in <strong>\docs</strong>.  Building locally however only checks in what really changed, which is correct. Why is this the case?</p>
 </li>
-<li><p>We work in Visual Studio Code, and we kept forgetting to pull first to get chnages the pipeline submitted. It's obvious, but represented a change of thinking.</p>
+<li><p>We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
+the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a <code>git pull</code> first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging.</p>
 </li>
 </ul>
 </article>

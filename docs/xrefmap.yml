@@ -175,11 +175,11 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.CategoryController.GetCategoryFieldsAsync
   nameWithType: CategoryController.GetCategoryFieldsAsync
-- uid: Scrapbook101core.Controllers.CategoryController.GetString(IHtmlContent)
+- uid: Scrapbook101core.Controllers.CategoryController.GetString(Microsoft.AspNetCore.Html.IHtmlContent)
   name: GetString(IHtmlContent)
-  href: api/Scrapbook101core.Controllers.CategoryController.html#Scrapbook101core_Controllers_CategoryController_GetString_IHtmlContent_
-  commentId: M:Scrapbook101core.Controllers.CategoryController.GetString(IHtmlContent)
-  fullName: Scrapbook101core.Controllers.CategoryController.GetString(IHtmlContent)
+  href: api/Scrapbook101core.Controllers.CategoryController.html#Scrapbook101core_Controllers_CategoryController_GetString_Microsoft_AspNetCore_Html_IHtmlContent_
+  commentId: M:Scrapbook101core.Controllers.CategoryController.GetString(Microsoft.AspNetCore.Html.IHtmlContent)
+  fullName: Scrapbook101core.Controllers.CategoryController.GetString(Microsoft.AspNetCore.Html.IHtmlContent)
   nameWithType: CategoryController.GetString(IHtmlContent)
 - uid: Scrapbook101core.Controllers.CategoryController.GetString*
   name: GetString
@@ -207,11 +207,11 @@ references:
   commentId: T:Scrapbook101core.Controllers.ItemController
   fullName: Scrapbook101core.Controllers.ItemController
   nameWithType: ItemController
-- uid: Scrapbook101core.Controllers.ItemController.#ctor(IHostingEnvironment)
+- uid: Scrapbook101core.Controllers.ItemController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)
   name: ItemController(IHostingEnvironment)
-  href: api/Scrapbook101core.Controllers.ItemController.html#Scrapbook101core_Controllers_ItemController__ctor_IHostingEnvironment_
-  commentId: M:Scrapbook101core.Controllers.ItemController.#ctor(IHostingEnvironment)
-  fullName: Scrapbook101core.Controllers.ItemController.ItemController(IHostingEnvironment)
+  href: api/Scrapbook101core.Controllers.ItemController.html#Scrapbook101core_Controllers_ItemController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_
+  commentId: M:Scrapbook101core.Controllers.ItemController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  fullName: Scrapbook101core.Controllers.ItemController.ItemController(Microsoft.AspNetCore.Hosting.IHostingEnvironment)
   nameWithType: ItemController.ItemController(IHostingEnvironment)
 - uid: Scrapbook101core.Controllers.ItemController.#ctor*
   name: ItemController
@@ -387,13 +387,13 @@ references:
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemAsync
   nameWithType: DocumentDBRepository<T>.GetItemAsync
   nameWithType.vb: DocumentDBRepository(Of T).GetItemAsync
-- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(Expression{Func{`0,System.Boolean}})
+- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
   name: GetItemsAsync(Expression<Func<T, Boolean>>)
-  href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_Expression_Func__0_System_Boolean___
-  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(Expression{Func{`0,System.Boolean}})
+  href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
   name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)))
-  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, System.Boolean>>)
-  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, System.Boolean)))
+  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>)
+  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)))
   nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>)
   nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)))
 - uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*
@@ -1454,11 +1454,11 @@ references:
   commentId: T:Scrapbook101core.Startup
   fullName: Scrapbook101core.Startup
   nameWithType: Startup
-- uid: Scrapbook101core.Startup.#ctor(IConfiguration)
+- uid: Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
   name: Startup(IConfiguration)
-  href: api/Scrapbook101core.Startup.html#Scrapbook101core_Startup__ctor_IConfiguration_
-  commentId: M:Scrapbook101core.Startup.#ctor(IConfiguration)
-  fullName: Scrapbook101core.Startup.Startup(IConfiguration)
+  href: api/Scrapbook101core.Startup.html#Scrapbook101core_Startup__ctor_Microsoft_Extensions_Configuration_IConfiguration_
+  commentId: M:Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  fullName: Scrapbook101core.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
   nameWithType: Startup.Startup(IConfiguration)
 - uid: Scrapbook101core.Startup.#ctor*
   name: Startup
@@ -1480,11 +1480,11 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Startup.Configuration
   nameWithType: Startup.Configuration
-- uid: Scrapbook101core.Startup.Configure(IApplicationBuilder,IHostingEnvironment)
+- uid: Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
   name: Configure(IApplicationBuilder, IHostingEnvironment)
-  href: api/Scrapbook101core.Startup.html#Scrapbook101core_Startup_Configure_IApplicationBuilder_IHostingEnvironment_
-  commentId: M:Scrapbook101core.Startup.Configure(IApplicationBuilder,IHostingEnvironment)
-  fullName: Scrapbook101core.Startup.Configure(IApplicationBuilder, IHostingEnvironment)
+  href: api/Scrapbook101core.Startup.html#Scrapbook101core_Startup_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Hosting_IHostingEnvironment_
+  commentId: M:Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  fullName: Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
   nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
 - uid: Scrapbook101core.Startup.Configure*
   name: Configure
@@ -1493,11 +1493,11 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Startup.Configure
   nameWithType: Startup.Configure
-- uid: Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
+- uid: Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   name: ConfigureServices(IServiceCollection)
-  href: api/Scrapbook101core.Startup.html#Scrapbook101core_Startup_ConfigureServices_IServiceCollection_
-  commentId: M:Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
-  fullName: Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
+  href: api/Scrapbook101core.Startup.html#Scrapbook101core_Startup_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   nameWithType: Startup.ConfigureServices(IServiceCollection)
 - uid: Scrapbook101core.Startup.ConfigureServices*
   name: ConfigureServices

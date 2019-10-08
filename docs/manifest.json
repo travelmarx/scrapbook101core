@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/a/1/s/docbuild",
+  "source_base_path": "C:/Users/mgelo/Documents/GitHub/scrapbook101core/docbuild",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.AppVariables.html",
-          "hash": "BPAsG85bXGXiypySc6OS7g=="
+          "hash": "bQ58u7F2BQkhCX3pq8LUnQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.CategoryController.html",
-          "hash": "zQt9Xg0FegqKICwcs0KWYg=="
+          "hash": "+CQEYMbXu+Fht935XI3pmw=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "yx5Qc/mKBmGc6zG+HXJAhQ=="
+          "hash": "R/+AKOoAU6WJYKtPQGAgLg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.html",
-          "hash": "XXb+hRaC1tEdossXQi7i7A=="
+          "hash": "zYPZdRo6TYQRq199LHaBKg=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.DocumentDBRepository-1.html",
-          "hash": "upcoWkJyJ6JXd6cJnt1jJQ=="
+          "hash": "MwVZxEVDC/D9ZMS4NwXJzQ=="
         }
       },
       "is_incremental": false,
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.GeoCodeHelper.html",
-          "hash": "CbXTXW2yfHTX7PMG+SC4aw=="
+          "hash": "PuguPl1ugOsGAG84rYLKUA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.AssetItem.html",
-          "hash": "eILL9dFz/7ISpBPyC1lyWg=="
+          "hash": "8freR1v3/xaK6YgU0Tuvlg=="
         }
       },
       "is_incremental": false,
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Category.html",
-          "hash": "0EXZIVrF+7Yj3VGGmjguaw=="
+          "hash": "coiK/ns9SPxQLKqtOV5pkg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFieldMapping.html",
-          "hash": "6YteWX8KCZFDQrg4FX5Fcg=="
+          "hash": "43WYD+5K5Ln1zkrAf4ONSw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFields.html",
-          "hash": "89MCY29quPCkIrno5k0Sug=="
+          "hash": "H1UuPbnQTQ4ynYwCMI+Weg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -129,10 +129,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItem.html",
-          "hash": "VImA5YPVXQe3gZT0ADCb5w=="
+          "hash": "VgXdPVoq/cwMq9zWmkZ/2A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItemDisplay.html",
-          "hash": "R7c6UQHOXf0Usv6n69vwdA=="
+          "hash": "9wSqcLHnPnH1p/I/LDnseQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CombinedModel.html",
-          "hash": "U3tGWjvBXtCoql1egNf/5w=="
+          "hash": "MeXJQbAseSUirALxhhu1fQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.FileItem.html",
-          "hash": "cCuEoQ7W0ScxJofrkkF+FQ=="
+          "hash": "5r7oaHKZ1a+ZeGtSQBEAKQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Item.html",
-          "hash": "Fx+1VXDti0g72eVlzwo26A=="
+          "hash": "orHGl9wKrXxcp4ER4zBsxg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.html",
-          "hash": "CVg4ist/iNuhmLaX6AR9/A=="
+          "hash": "l0k9Wyh7YbXGNyaorXjE5Q=="
         }
       },
       "is_incremental": false,
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Program.html",
-          "hash": "/meaCRL0CfeHxV3sPweElw=="
+          "hash": "1BfmWSgp2oQbBwPL5g+r7g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Scrapbook101Configuration.html",
-          "hash": "Wvfkli1XgS7hpZs4AvgK5Q=="
+          "hash": "Dk/6QWGRXDucK+cHW1+EfQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -225,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Startup.html",
-          "hash": "zUrIPyY08/wVS9Zw2q+MfA=="
+          "hash": "EpxwEoqhU442QT8N3PUClA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.html",
-          "hash": "5tmjEZ9a4co/yy7lHvRJEw=="
+          "hash": "rT2Nh6Ed3G5xi7rpyQyCNw=="
         }
       },
       "is_incremental": false,
@@ -249,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "qU+RAZQeT2t7Iw+pe7j7TQ=="
+          "hash": "DC7DkjyldKOhYrvOI04dyQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/about-this-site.html",
-          "hash": "axSycJcdsNnFx8nDEBgfIw=="
+          "hash": "jBl95hkHf1+JEo/w1ZbXew=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/azure-pipeline.html",
-          "hash": "ZOBVsDrMP1MnLNE3vYSKwg=="
+          "hash": "HuC3PADSPAs23OZbUFJJzQ=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/build-with-docfx.html",
-          "hash": "EYpqKWhgidGEb6IeY7wi8w=="
+          "hash": "KpxFuNwut+CIbhX1sMZb4A=="
         }
       },
       "is_incremental": false,
@@ -309,10 +309,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/category-document.html",
-          "hash": "htRj89VjLbVy8Ek8LrGcUQ=="
+          "hash": "/GkB8Y5L1dNgQUY9en7+Mw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -321,10 +321,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/code-discussion.html",
-          "hash": "Pri7CgGAyNpijISFzaQ37A=="
+          "hash": "svVfgvHfII/vcJUxaMz5rg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -333,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/get-started.html",
-          "hash": "cjd1ncWwJCp1k/O4W9oURw=="
+          "hash": "WNl9bMJQq0M6q1BEQh11Fw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -345,10 +345,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/handling-assets.html",
-          "hash": "j3pJsKwRE05/7NWab4Ve+g=="
+          "hash": "mggfN3JXqtNl/OQz3QWUzQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -357,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/index.html",
-          "hash": "Yl1x5xUUN9lgWiOsfUdGbg=="
+          "hash": "Piflp6UmT4BxXjGe8+pfaA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -369,10 +369,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/item-document.html",
-          "hash": "kJW8a611iVfgTXaAqzM5ag=="
+          "hash": "Sh9wFeaGeWbXsPWT4UmexA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -381,10 +381,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/next-steps.html",
-          "hash": "leiQ8Dp65SAbfCg5ubiXow=="
+          "hash": "Z0A14KKM4TRzTFFFyCibwg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -393,10 +393,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/technology-overview.html",
-          "hash": "CiLc10/8+BN0orn6jfqSqQ=="
+          "hash": "o/JchL5CkLKEhBc5zHJS5w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -505,10 +505,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "JVurC5e72DreGnvmVmohVg=="
+          "hash": "rgE7SbCH5gsDR28UNPHSSQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -527,21 +527,12 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -549,24 +540,31 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 13,
+          "total_file_count": 0,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 20,
-          "skipped_file_count": 0
+          "skipped_file_count": 16
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 13,
+          "skipped_file_count": 12
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

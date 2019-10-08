@@ -198,20 +198,19 @@ Here are approximate steps taken in the doc build scripts.
 
       * The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
       
+      * We needed to add ``git config --global user.email`` and ``git config --global user.name`` for the script to work.
+
       * Finding  the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.
 
       * The key problem we ran into was
         that we had to redirect stderr to stdout in the PowerShell script with ``$env:GIT_REDIRECT_STDERR = '2>&1'``. This was described in this [issue][redirect-issue]. We tried to attach the problem with using ``-q`` switch on git commands but that only took us so far and we needed the redirect.
 
-Other thoughts on the build task:
+Other thoughts on the pipeline build task:
 
-* Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?
+* Too many files are checked in the pipeline build, basically everything in **\docs**.  Building locally however only checks in what really changed, which is correct. Why is this the case? 
 
-error: failed to push some refs to 'https://github.com/travelmarx/scrapbook101core'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again. 
+* We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
+the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a ``git pull`` first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
