@@ -210,7 +210,8 @@ Other thoughts on the pipeline build task:
 * Too many files are checked in the pipeline build, basically everything in **\docs**.  Building locally however only checks in what really changed, which is correct. Why is this the case? 
 
 * We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
-the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a ``git pull`` first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging.
+the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a ``git pull`` first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging. Going forward, we'll work on branch when working locally.
+
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
