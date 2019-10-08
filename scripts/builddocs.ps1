@@ -4,6 +4,10 @@
 Write-Host "## Redirect stderr to stdout."
 $env:GIT_REDIRECT_STDERR = '2>&1'
 
+Write-Host "## Config username and email."
+git config --global user.email "travelmarx@live.com"
+git config --global user.name "Travelmarx"
+
 Write-Host "## Start of build script."
 Write-Host "## Script location is" $PSScriptRoot.ToString()
 try {
