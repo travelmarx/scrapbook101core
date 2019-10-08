@@ -2,6 +2,9 @@
 # A script for building Scrapbook101core docs locally.
 # Assumes docfx is available in the system.
 #
+Write-Host "## Redirect stderr to stdout."
+$env:GIT_REDIRECT_STDERR = '2>&1'
+
 Write-Host "## Start of local build script."
 Write-Host "## Script location is" $PSScriptRoot.ToString()
 
