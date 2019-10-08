@@ -31,7 +31,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AppVariables
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 20
@@ -41,18 +41,12 @@ items:
   summary: "\nDefines static variables that map to known values at application start and that \ndon&apos;t change during the application life time. These static variables mostly\nmap to the configu values in the <code>appsettings.json</code> file. For example,\nthe Document DB database name.\n"
   example: []
   syntax:
-    content: public static class AppVariables
-    content.vb: Public Module AppVariables
+    content: 'public static class AppVariables : object'
+    content.vb: >-
+      Public Module AppVariables
+          Inherits Object
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -75,7 +69,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AddTestAssets
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 22
@@ -110,7 +104,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: ApplicationName
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 23
@@ -145,7 +139,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AssetBasePath
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 24
@@ -180,7 +174,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AuthKey
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 25
@@ -215,7 +209,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: NoAssetImage
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 26
@@ -250,7 +244,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: BingMapKey
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 27
@@ -285,7 +279,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryDocumentType
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 28
@@ -320,7 +314,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CollectionId
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 29
@@ -355,7 +349,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DatabaseId
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 30
@@ -390,7 +384,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Endpoint
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 31
@@ -425,7 +419,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: ItemDocumentType
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 32
@@ -460,7 +454,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: TestCategories
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 33
@@ -495,7 +489,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: TestDocuments
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 34
@@ -530,7 +524,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryDisplayList
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 36
@@ -541,7 +535,7 @@ items:
     content: public static List<CategoryItemDisplay> CategoryDisplayList { get; set; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{Scrapbook101core.Models.CategoryItemDisplay}
+      type: List{Scrapbook101core.Models.CategoryItemDisplay}
     content.vb: Public Shared Property CategoryDisplayList As List(Of CategoryItemDisplay)
   overload: Scrapbook101core.AppVariables.CategoryDisplayList*
   modifiers.csharp:
@@ -567,7 +561,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFieldMappingList
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 37
@@ -578,7 +572,7 @@ items:
     content: public static List<CategoryFieldMapping> CategoryFieldMappingList { get; set; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{Scrapbook101core.Models.CategoryFieldMapping}
+      type: List{Scrapbook101core.Models.CategoryFieldMapping}
     content.vb: Public Shared Property CategoryFieldMappingList As List(Of CategoryFieldMapping)
   overload: Scrapbook101core.AppVariables.CategoryFieldMappingList*
   modifiers.csharp:
@@ -596,307 +590,16 @@ references:
   nameWithType: Scrapbook101core
   fullName: Scrapbook101core
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -906,21 +609,20 @@ references:
   name: CategoryDisplayList
   nameWithType: AppVariables.CategoryDisplayList
   fullName: Scrapbook101core.AppVariables.CategoryDisplayList
-- uid: System.Collections.Generic.List{Scrapbook101core.Models.CategoryItemDisplay}
-  commentId: T:System.Collections.Generic.List{Scrapbook101core.Models.CategoryItemDisplay}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
+- uid: List{Scrapbook101core.Models.CategoryItemDisplay}
+  commentId: '!:List{Scrapbook101core.Models.CategoryItemDisplay}'
+  definition: List`1
   name: List<CategoryItemDisplay>
   nameWithType: List<CategoryItemDisplay>
-  fullName: System.Collections.Generic.List<Scrapbook101core.Models.CategoryItemDisplay>
+  fullName: List<Scrapbook101core.Models.CategoryItemDisplay>
   nameWithType.vb: List(Of CategoryItemDisplay)
-  fullName.vb: System.Collections.Generic.List(Of Scrapbook101core.Models.CategoryItemDisplay)
+  fullName.vb: List(Of Scrapbook101core.Models.CategoryItemDisplay)
   name.vb: List(Of CategoryItemDisplay)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
+  - uid: List`1
     name: List
     nameWithType: List
-    fullName: System.Collections.Generic.List
+    fullName: List
     isExternal: true
   - name: <
     nameWithType: <
@@ -933,10 +635,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
+  - uid: List`1
     name: List
     nameWithType: List
-    fullName: System.Collections.Generic.List
+    fullName: List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -948,71 +650,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: List`1
   isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
+  name: List<>
+  nameWithType: List<>
+  fullName: List<>
+  nameWithType.vb: List(Of )
+  fullName.vb: List(Of )
+  name.vb: List(Of )
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
+  - uid: List`1
     name: List
     nameWithType: List
-    fullName: System.Collections.Generic.List
+    fullName: List
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
+  - uid: List`1
     name: List
     nameWithType: List
-    fullName: System.Collections.Generic.List
+    fullName: List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
 - uid: Scrapbook101core.AppVariables.CategoryFieldMappingList*
   commentId: Overload:Scrapbook101core.AppVariables.CategoryFieldMappingList
   name: CategoryFieldMappingList
   nameWithType: AppVariables.CategoryFieldMappingList
   fullName: Scrapbook101core.AppVariables.CategoryFieldMappingList
-- uid: System.Collections.Generic.List{Scrapbook101core.Models.CategoryFieldMapping}
-  commentId: T:System.Collections.Generic.List{Scrapbook101core.Models.CategoryFieldMapping}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
+- uid: List{Scrapbook101core.Models.CategoryFieldMapping}
+  commentId: '!:List{Scrapbook101core.Models.CategoryFieldMapping}'
+  definition: List`1
   name: List<CategoryFieldMapping>
   nameWithType: List<CategoryFieldMapping>
-  fullName: System.Collections.Generic.List<Scrapbook101core.Models.CategoryFieldMapping>
+  fullName: List<Scrapbook101core.Models.CategoryFieldMapping>
   nameWithType.vb: List(Of CategoryFieldMapping)
-  fullName.vb: System.Collections.Generic.List(Of Scrapbook101core.Models.CategoryFieldMapping)
+  fullName.vb: List(Of Scrapbook101core.Models.CategoryFieldMapping)
   name.vb: List(Of CategoryFieldMapping)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
+  - uid: List`1
     name: List
     nameWithType: List
-    fullName: System.Collections.Generic.List
+    fullName: List
     isExternal: true
   - name: <
     nameWithType: <
@@ -1025,10 +719,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
+  - uid: List`1
     name: List
     nameWithType: List
-    fullName: System.Collections.Generic.List
+    fullName: List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
