@@ -55,8 +55,10 @@ try {
         Write-Host "## git config core.autocrlf true"
         git config core.autocrlf true
 
-        Write-Host "## git commit -a m'message'"
+        Write-Host "## git add"
         git add docs/api/index.html
+
+        Write-Host "## git commit -a m'message'"
         git commit -q -m"[skip ci]Pipeline build check in."
 
         Write-Host "## Switch to master: git checkout master"
