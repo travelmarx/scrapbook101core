@@ -68,16 +68,16 @@ try {
         git add . --ignore-errors
 
         Write-Host "## git commit -a m'message'"
-        git commit -q -m"[skip ci]Pipeline build check in."
+        git commit -m"[skip ci]Pipeline build check in."
 
         Write-Host "## Switch to master: git checkout master"
-        git checkout master -q
+        git checkout master
 
         Write-Host "## git merge tmp"
-        git merge tmp -q
+        git merge tmp
 
         Write-Host "## git commit"
-        git push -q
+        git push
         }    
  
     Write-Host "## Build ran successfully."

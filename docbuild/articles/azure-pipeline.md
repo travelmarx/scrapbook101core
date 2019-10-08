@@ -171,7 +171,8 @@ Here are approximate steps taken in the doc build scripts.
 
 1. Update the repo, by pushing changed files in the **docs** folder to GitHub.
 
-   * Local. Using the local build script from inside of Visual Studio Code set to the master branch, we can do this:
+   * Local. Using the local build script from inside of Visual Studio Code set to the master branch, we can do 
+   something like this:
    
       ```bash
       git status
@@ -179,21 +180,28 @@ Here are approximate steps taken in the doc build scripts.
       git commit -m"Pipeline build check in."
       git push
       ```
-   * Pipeline. For the pipeline build script we are in a different situation because have a detached head. A detached head is when. See the documentation for how to [run git in scripts][git-commands]. For more information about detached head, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
+   * Pipeline. For the pipeline build script we are in a different situation because have a detached head. In a detached head situation, changes that are committed in this state are not remembered unless you create a branch and commit them.. See the documentation for how to [run git in scripts][git-commands]. For more information about detached head, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
 
-      ```bash
-      git status
-      git add -A
-      git checkout master
-      git branch tmp head
-      git merge tmp
-      git commit -m"[skip ci]Pipeline build check in."
-      git push
-      ```
+      So, the flow of git commands looks something like this:
 
-  The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build. Finding the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.
+        ```bash
+        git status
+        git add -A
+        git branch tmp
+        git checkout master
+        git merge tmp
+        git commit -m"[skip ci]Pipeline build check in."
+        git push
+        ```
 
-Troubleshoot: https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting
+      Notes:
+
+      * The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
+      
+      * Finding  the right combination of commands for the pipeline build script was the most time consuming part of setting up the pipeline.
+
+      * The key problem we ran into was
+        that we had to redirect stderr to stdout in the PowerShell script with ``$env:GIT_REDIRECT_STDERR = '2>&1'``. This was described in this [issue][redirect-issue].
 
 
 [docfx]: https://dotnet.github.io/docfx/
@@ -215,3 +223,4 @@ Troubleshoot: https://docs.microsoft.com/en-us/azure/devops/pipelines/troublesho
 [git-checkout]: https://git-scm.com/docs/git-checkout
 [git-commands]: https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands
 [troubleshooting]: https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting
+[redirect-issue]: https://github.com/dahlbyk/posh-git/issues/109
