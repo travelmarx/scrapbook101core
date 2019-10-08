@@ -220,15 +220,21 @@ So with the pipeline, we adopt this workflow.
 
 1. Authoring (code or docs) should be done on a working branch. 
 
-  * The branch can be tested locally with ``docfx --serve``.
+  * The branch can be tested locally with ``docfx --serve``. This builds docs in **docbuild\_site** folder. We do not copy those changes into **docs** folder because we don't want to check in HTML for the working branch.
+
+  * Do a ``git merge master`` to pick up changes from master.
 
 2. Push working branch changes to GitHub.
 
-  * There is no view option for GitHub pages for non-master branch. 
+  * There is no view option for GitHub pages for non-master branch, i.e., the web site https://travelmarx.github.io/scrapbook101core/index.html is based off master. Also, we haven't checked in any HTML.
+
+  * The push to the repo working branch does not kick off the pipeline, which only has a trigger on master.
 
 3. Merge working branch into master.
 
-  * This process is what would kick off the pipeline build.
+  * This process is what would kick off the pipeline build, which would then build docs that appear in **docs** folder.
+
+  * In the local working branch, ``git pull`` will pull changes to **docs**.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
