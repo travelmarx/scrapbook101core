@@ -203,6 +203,11 @@ Here are approximate steps taken in the doc build scripts.
       * The key problem we ran into was
         that we had to redirect stderr to stdout in the PowerShell script with ``$env:GIT_REDIRECT_STDERR = '2>&1'``. This was described in this [issue][redirect-issue].
 
+Other thoughts on the build task:
+
+* Too many files are checked in the pipeline build. Building locally, only checks in what really changed. Why?
+
+* We work in Visual Studio Code, and we kept forgetting to pull first to get chnages the pipeline submitted. It's obvious, but represented a change of thinking.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/

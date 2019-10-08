@@ -54,7 +54,7 @@ try {
         git status
         
         Write-Host "## git checkout -b tmp"
-        git checkout -b tmp -q
+        git checkout -b tmp
 
         Write-Host "## Check git branch to list"
         git branch
@@ -82,6 +82,6 @@ try {
  
     Write-Host "## Build ran successfully."
 }
-finally {
+catch {
     Write-Host "## Something went wrong in the build. Check the output."
 }
