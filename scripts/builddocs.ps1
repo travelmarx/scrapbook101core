@@ -58,7 +58,7 @@ try {
         Write-Host "## Location is" (Get-Location).Path
 
         Write-Host "## git add"
-        git add .\docs\api\index.html
+        git add . --ignore-errors
 
         Write-Host "## git commit -a m'message'"
         git commit -q -m"[skip ci]Pipeline build check in."
