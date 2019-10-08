@@ -55,8 +55,10 @@ try {
         Write-Host "## git config core.autocrlf true"
         git config core.autocrlf true
 
+        Write-Host "## Location is" (Get-Location).Path
+
         Write-Host "## git add"
-        git add docs/api/index.html
+        git add .\docs\api\index.html
 
         Write-Host "## git commit -a m'message'"
         git commit -q -m"[skip ci]Pipeline build check in."
