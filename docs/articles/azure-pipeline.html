@@ -256,22 +256,26 @@ the repo. When the build task on the agent went to push changes we got a message
 </li>
 </ul>
 <h2 id="revised-workflow">Revised workflow</h2>
-<p>After getting pipeline build task working against master, we realized that our workflow was a bit of mess. Granted, this is a small dev effort, but still, it could use improving.</p>
-<p>So with the pipeline, we adopted this workflow.</p>
+<p>After getting our pipeline build task working against master, we realized that our workflow was a bit of mess. Granted this is a small dev effort, but still, it could use improving.</p>
+<p>So with the pipeline in place, we adopted this workflow.</p>
 <ol>
-<li><p>Authoring (code or docs) should be done on a working branch instead of master.</p>
+<li><p>Authoring (code or docs) is done on a working branch instead of master.</p>
 <ul>
-<li><p>The branch can be tested locally with <code>docfx --serve</code>. This builds docs in <strong>docbuild_site</strong> folder. We do not copy those changes into <strong>docs</strong> folder because we don't want to check in HTML for the working branch.</p>
+<li><p>The branch can be tested locally with <code>docfx --serve</code>. This builds docs in <strong>docbuild\_site</strong> folder. We do not copy those changes into <strong>docs</strong> folder because we don't want to check in HTML for the working branch.</p>
 </li>
-<li><p>Do a <code>git merge master</code> from the working branch to pick up changes from master.</p>
+<li><p>Do a <code>git pull origin master</code> from the working branch to pick up changes from master.</p>
 </li>
 </ul>
 </li>
 <li><p>Push working branch changes to GitHub.</p>
 <ul>
-<li><p>There is no view option for GitHub pages for non-master branch, i.e., the web site <a href="https://travelmarx.github.io/scrapbook101core/index.html">https://travelmarx.github.io/scrapbook101core/index.html</a> is based off the master branch. Also, we haven't checked in any HTML.</p>
+<li><p>There is no web site view option for GitHub pages for non-master branch, i.e., the web site <a href="https://travelmarx.github.io/scrapbook101core/index.html">https://travelmarx.github.io/scrapbook101core/index.html</a> is based off the master branch. Also, we haven't checked in any HTML on the working branch.</p>
 </li>
 <li><p>The push to the repo working branch does not kick off the pipeline build, which only has a trigger on master.</p>
+<pre><code class="lang-yaml">trigger:
+- master
+pr: none
+</code></pre>
 </li>
 </ul>
 </li>
@@ -281,12 +285,7 @@ the repo. When the build task on the agent went to push changes we got a message
 </ul>
 </li>
 </ol>
-<p>In the process of working through this workflow, we realized we needed to change our pipeline config file to ignore pull requests.</p>
-<pre><code class="lang-yaml">trigger:
-- master
-pr: none
-</code></pre>
-<p>We also realized that perhaps a better workflow would have the rendered docs checked into a different repo.</p>
+<p>In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo.</p>
 </article>
           </div>
           
