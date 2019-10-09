@@ -249,7 +249,15 @@ that we had to redirect stderr to stdout in the PowerShell script with <code>$en
 </ol>
 <p>Other thoughts on the pipeline build task:</p>
 <ul>
-<li><p>Too many files are checked in the pipeline build, basically everything in <strong>\docs</strong>.  Building locally however only checks in what really changed, which is correct. Why is this the case?</p>
+<li><p>It seems like the pipline build checks in all files, basically everything in <strong>\docs</strong> even if we made a very small change.  Building locally however only checks in what really changed, which got us wondering why this is the case. Here are a couple of reasons we discovered:</p>
+<ul>
+<li><p>In the YML files in the <strong>docbuild\api</strong> folder, the <em>repo</em> tag ends with &quot;.git&quot; for locally generated files but not for pipeline built YML files.</p>
+</li>
+<li><p>Different version of DocFx cause the HTML meta tag for &quot;generator&quot; to differ.</p>
+</li>
+<li><p>The inheritance classes were not being displayed in locally generated files but it was for for pipeline built files indicating that the template was not working. A problem with templates out of sync?</p>
+</li>
+</ul>
 </li>
 <li><p>We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
 the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a <code>git pull</code> first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging. See the next section.</p>
@@ -285,7 +293,7 @@ pr: none
 </ul>
 </li>
 </ol>
-<p>In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo.</p>
+<p>In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo then we would separate web site content from code and doc source content.</p>
 </article>
           </div>
           

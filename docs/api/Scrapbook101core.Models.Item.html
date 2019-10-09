@@ -85,7 +85,7 @@
   <h6><strong>Assembly</strong>: Scrapbook101core.dll</h6>
   <h5 id="Scrapbook101core_Models_Item_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Item : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Item</code></pre>
   </div>
   <h5 id="Scrapbook101core_Models_Item_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>A Scrapbook Item object when written to the Document DB bcomes a block of JSON-formatted text.
@@ -106,7 +106,8 @@ Not all properties are required.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetPath { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;assetPath&quot;)]
+public string AssetPath { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,7 +145,8 @@ so at least one image for each Scrapbook101core is recommended.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;AssetItem&gt; Assets { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;assets&quot;)]
+public List&lt;AssetItem&gt; Assets { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,7 +158,7 @@ so at least one image for each Scrapbook101core is recommended.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Scrapbook101core.Models.AssetItem.html">AssetItem</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Scrapbook101core.Models.AssetItem.html">AssetItem</a>&gt;</td>
         <td><p>A list of assets associated with the item. Can be null, meaning no assets are associated with the item.</p>
 </td>
       </tr>
@@ -175,7 +177,9 @@ so at least one image for each Scrapbook101core is recommended.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Category { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Category is required.&quot;)]
+[JsonProperty(PropertyName = &quot;category&quot;)]
+public string Category { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -207,7 +211,8 @@ A Scrapbook101core item must be assigned to a category.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CategoryFields CategoryFields { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;categoryFields&quot;)]
+public CategoryFields CategoryFields { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -240,7 +245,8 @@ Each category has a fixed set of fields.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime DateAdded { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;dateAdded&quot;)]
+public DateTime DateAdded { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -252,7 +258,7 @@ Each category has a fixed set of fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>This value is automatically inserted by code upon initial creation of an item and then never changed.
 Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.</p>
 </td>
@@ -272,7 +278,8 @@ Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:0
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime DateUpdated { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;dateUpdated&quot;)]
+public DateTime DateUpdated { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -284,7 +291,7 @@ Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:0
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>This value is automatically inserted.
 Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.</p>
 </td>
@@ -308,7 +315,8 @@ this property equals <strong>dateAdded</strong>. When an item is edited, this pr
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Description { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;description&quot;)]
+public string Description { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -343,7 +351,8 @@ context of why the item is important. Descriptions longer than a couple hundred 
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Point GeoLocation { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;geoLocation&quot;)]
+public Point GeoLocation { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -355,7 +364,7 @@ context of why the item is important. Descriptions longer than a couple hundred 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Point</span></td>
+        <td><span class="xref">Microsoft.Azure.Documents.Spatial.Point</span></td>
         <td><p>Represents a point geometry class in the Azure Cosmos DB service.</p>
 </td>
       </tr>
@@ -379,7 +388,8 @@ converted into latitude and longitude coordinates (geocoded) to allow for more f
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;id&quot;)]
+public string Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -410,7 +420,8 @@ converted into latitude and longitude coordinates (geocoded) to allow for more f
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Location { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;location&quot;)]
+public string Location { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -445,7 +456,8 @@ Examples: &quot;Seattle, WA&quot; or &quot;101 Main St. Seattle 98103, USA&quot;
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Rating { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;rating&quot;)]
+public string Rating { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -480,7 +492,9 @@ uses a rating of 1 - 5.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Title { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Title is required.&quot;)]
+[JsonProperty(PropertyName = &quot;title&quot;)]
+public string Title { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -512,7 +526,9 @@ uses a rating of 1 - 5.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Type { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Type is required.&quot;)]
+[JsonProperty(PropertyName = &quot;type&quot;)]
+public string Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -546,7 +562,8 @@ type distinguished the item from other Document DB entries like category.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string UpdatedBy { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;updatedBy&quot;)]
+public string UpdatedBy { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">

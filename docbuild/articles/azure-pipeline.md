@@ -207,7 +207,13 @@ Here are approximate steps taken in the doc build scripts.
 
 Other thoughts on the pipeline build task:
 
-* Too many files are checked in the pipeline build, basically everything in **\docs**.  Building locally however only checks in what really changed, which is correct. Why is this the case? 
+* We observed that the pipline build checks in all files, basically everything in **\docs**, even if we made a very small change. Building locally however, we observe only checks in what really changed, which got us wondering why this is the case. Here are a couple of reasons we discovered:
+
+  * In the YML files in the **docbuild\\api** folder, the *repo* tag ends with ".git" for locally generated files but not for pipeline built YML files. I suppose we can control for this.
+
+  * Different versions of DocFx cause the HTML meta tag for "generator" to differ.
+
+  * Even after ensuring we are using the same DocFX version, there are big differences in YML code but not "minor" differences in  the rendered the HTML. Minor differences like full qualified return type. It seems the customized class template (see <xref:build-with-docfx/>) is being used in both cases. (This requires further investigation.)
 
 * We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
 the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a ``git pull`` first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging. See the next section.
@@ -240,7 +246,7 @@ So with the pipeline in place, we adopted this workflow.
 
     * This process is what kicks off the pipeline build, which then builds the HTML that appears in **docs** folder.
 
-In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo.
+In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo then we would separate web site content from code and doc source content.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
