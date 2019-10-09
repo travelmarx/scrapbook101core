@@ -1,6 +1,5 @@
 
 docbuild/_site
-docbuild/api
 .sass-cache
 Gemfile.lock
 *.gem
