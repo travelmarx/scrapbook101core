@@ -82,34 +82,25 @@ returns a list of items.</p>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Microsoft.AspNetCore.Mvc.ControllerBase</span></div>
-    <div class="level2"><span class="xref">Microsoft.AspNetCore.Mvc.Controller</span></div>
-    <div class="level3"><span class="xref">ItemController</span></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">Microsoft.AspNetCore.Mvc.Filters.IActionFilter</span></div>
-    <div><span class="xref">Microsoft.AspNetCore.Mvc.Filters.IAsyncActionFilter</span></div>
-    <div><span class="xref">Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata</span></div>
-    <div><span class="xref">System.IDisposable</span></div>
+    <div class="level1"><span class="xref">ItemController</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Scrapbook101core.Controllers.html">Scrapbook101core.Controllers</a></h6>
   <h6><strong>Assembly</strong>: Scrapbook101core.dll</h6>
   <h5 id="Scrapbook101core_Controllers_ItemController_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ItemController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class ItemController : Controller</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemController.%23ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemController__ctor_IHostingEnvironment_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemController.%23ctor(IHostingEnvironment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemController.cs/#L22">View Source</a>
   </span>
   <a id="Scrapbook101core_Controllers_ItemController__ctor_" data-uid="Scrapbook101core.Controllers.ItemController.#ctor*"></a>
-  <h4 id="Scrapbook101core_Controllers_ItemController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_" data-uid="Scrapbook101core.Controllers.ItemController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">ItemController(IHostingEnvironment)</h4>
+  <h4 id="Scrapbook101core_Controllers_ItemController__ctor_IHostingEnvironment_" data-uid="Scrapbook101core.Controllers.ItemController.#ctor(IHostingEnvironment)">ItemController(IHostingEnvironment)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -127,7 +118,7 @@ returns a list of items.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Hosting.IHostingEnvironment</span></td>
+        <td><span class="xref">IHostingEnvironment</span></td>
         <td><span class="parametername">hostingEnvironment</span></td>
         <td></td>
       </tr>
@@ -148,8 +139,7 @@ returns a list of items.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ActionName(&quot;Create&quot;)]
-public Task&lt;ActionResult&gt; CreateAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; CreateAsync()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -161,7 +151,7 @@ public Task&lt;ActionResult&gt; CreateAsync()</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -179,10 +169,7 @@ public Task&lt;ActionResult&gt; CreateAsync()</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpPost]
-[ActionName(&quot;Create&quot;)]
-[ValidateAntiForgeryToken]
-public Task&lt;ActionResult&gt; CreateAsync(CombinedModel combinedModel)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; CreateAsync(CombinedModel combinedModel)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -211,7 +198,7 @@ public Task&lt;ActionResult&gt; CreateAsync(CombinedModel combinedModel)</code><
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -229,9 +216,7 @@ public Task&lt;ActionResult&gt; CreateAsync(CombinedModel combinedModel)</code><
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpGet]
-[ActionName(&quot;Delete&quot;)]
-public Task&lt;ActionResult&gt; DeleteAsync(string id)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; DeleteAsync(string id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -260,7 +245,7 @@ public Task&lt;ActionResult&gt; DeleteAsync(string id)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -278,9 +263,7 @@ public Task&lt;ActionResult&gt; DeleteAsync(string id)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpPost]
-[ActionName(&quot;Delete&quot;)]
-public Task&lt;ActionResult&gt; DeleteConfirmedAsync([Bind(new string[]{&quot;Id&quot;})] string id)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; DeleteConfirmedAsync(string id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -309,7 +292,7 @@ public Task&lt;ActionResult&gt; DeleteConfirmedAsync([Bind(new string[]{&quot;Id
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -327,8 +310,7 @@ public Task&lt;ActionResult&gt; DeleteConfirmedAsync([Bind(new string[]{&quot;Id
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ActionName(&quot;Details&quot;)]
-public Task&lt;ActionResult&gt; DetailsAsync(string id)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; DetailsAsync(string id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -357,7 +339,7 @@ public Task&lt;ActionResult&gt; DetailsAsync(string id)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -375,10 +357,7 @@ public Task&lt;ActionResult&gt; DetailsAsync(string id)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpPost]
-[ActionName(&quot;Edit&quot;)]
-[ValidateAntiForgeryToken]
-public Task&lt;ActionResult&gt; EditAsync(CombinedModel combinedModel)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; EditAsync(CombinedModel combinedModel)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -407,7 +386,7 @@ public Task&lt;ActionResult&gt; EditAsync(CombinedModel combinedModel)</code></p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -425,9 +404,7 @@ public Task&lt;ActionResult&gt; EditAsync(CombinedModel combinedModel)</code></p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpGet]
-[ActionName(&quot;Edit&quot;)]
-public Task&lt;ActionResult&gt; EditAsync(string id)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; EditAsync(string id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -456,7 +433,7 @@ public Task&lt;ActionResult&gt; EditAsync(string id)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -474,8 +451,7 @@ public Task&lt;ActionResult&gt; EditAsync(string id)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ActionName(&quot;Index&quot;)]
-public Task&lt;ActionResult&gt; IndexAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ActionResult&gt; IndexAsync()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -487,24 +463,11 @@ public Task&lt;ActionResult&gt; IndexAsync()</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ActionResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">Microsoft.AspNetCore.Mvc.Filters.IActionFilter</span>
-  </div>
-  <div>
-      <span class="xref">Microsoft.AspNetCore.Mvc.Filters.IAsyncActionFilter</span>
-  </div>
-  <div>
-      <span class="xref">Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata</span>
-  </div>
-  <div>
-      <span class="xref">System.IDisposable</span>
-  </div>
 </article>
           </div>
           

@@ -249,13 +249,13 @@ that we had to redirect stderr to stdout in the PowerShell script with <code>$en
 </ol>
 <p>Other thoughts on the pipeline build task:</p>
 <ul>
-<li><p>It seems like the pipline build checks in all files, basically everything in <strong>\docs</strong> even if we made a very small change.  Building locally however only checks in what really changed, which got us wondering why this is the case. Here are a couple of reasons we discovered:</p>
+<li><p>We observed that the pipline build checks in all files, basically everything in <strong>\docs</strong>, even if we made a very small change. Building locally however, we observe only checks in what really changed, which got us wondering why this is the case. Here are a couple of reasons we discovered:</p>
 <ul>
-<li><p>In the YML files in the <strong>docbuild\api</strong> folder, the <em>repo</em> tag ends with &quot;.git&quot; for locally generated files but not for pipeline built YML files.</p>
+<li><p>In the YML files in the <strong>docbuild\api</strong> folder, the <em>repo</em> tag ends with &quot;.git&quot; for locally generated files but not for pipeline built YML files. I suppose we can control for this.</p>
 </li>
-<li><p>Different version of DocFx cause the HTML meta tag for &quot;generator&quot; to differ.</p>
+<li><p>Different versions of DocFx cause the HTML meta tag for &quot;generator&quot; to differ.</p>
 </li>
-<li><p>The inheritance classes were not being displayed in locally generated files but it was for for pipeline built files indicating that the template was not working. A problem with templates out of sync?</p>
+<li><p>Even after ensuring we are using the same DocFX version, there are big differences in YML code but not &quot;minor&quot; differences in  the rendered the HTML. Minor differences like full qualified return type. It seems the customized class template (see &lt;xref:build-with-docfx/&gt;) is being used in both cases. (This requires further investigation.)</p>
 </li>
 </ul>
 </li>
