@@ -214,36 +214,35 @@ the repo. When the build task on the agent went to push changes we got a message
 
 ## Revised workflow
 
-After getting pipeline build task working against master, we realized that our process was a bit of mess. Granted, this is a small team affair, but still, it could use improving. 
+After getting pipeline build task working against master, we realized that our workflow was a bit of mess. Granted, this is a small dev effort, but still, it could use improving. 
 
-So with the pipeline, we adopt this workflow.
+So with the pipeline, we adopted this workflow.
 
-1. Authoring (code or docs) should be done on a working branch. 
+1. Authoring (code or docs) should be done on a working branch instead of master. 
 
     * The branch can be tested locally with ``docfx --serve``. This builds docs in **docbuild\_site** folder. We do not copy those changes into **docs** folder because we don't want to check in HTML for the working branch.
 
-    * Do a ``git merge master`` to pick up changes from master.
+    * Do a ``git merge master`` from the working branch to pick up changes from master.
 
 1. Push working branch changes to GitHub.
 
-    * There is no view option for GitHub pages for non-master branch, i.e., the web site https://travelmarx.github.io/scrapbook101core/index.html is based off master. Also, we haven't checked in any HTML.
+    * There is no view option for GitHub pages for non-master branch, i.e., the web site https://travelmarx.github.io/scrapbook101core/index.html is based off the master branch. Also, we haven't checked in any HTML.
 
-    * The push to the repo working branch does not kick off the pipeline, which only has a trigger on master.
+    * The push to the repo working branch does not kick off the pipeline build, which only has a trigger on master.
 
 1. Merge working branch into master.
 
-    * This process is what would kick off the pipeline build, which would then build docs that appear in **docs** folder.
-
-    * In the local working branch, ``git pull`` will pull changes to **docs**.
+    * This process is what kicks off the pipeline build, which then builds the HTML that appears in **docs** folder.
 
 In the process of working through this workflow, we realized we needed to change our pipeline config file to ignore pull requests.
 
 ```yaml
 trigger:
 - master
-
 pr: none
 ```
+
+We also realized that perhaps a better workflow would have the rendered docs checked into a different repo.
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/

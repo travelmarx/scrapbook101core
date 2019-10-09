@@ -19,10 +19,10 @@
   "Scrapbook101core.Controllers": "Scrapbook101core.Controllers.yml",
   "Scrapbook101core.Controllers.CategoryController": "Scrapbook101core.Controllers.CategoryController.yml",
   "Scrapbook101core.Controllers.CategoryController.GetCategoryFieldsAsync(System.String)": "Scrapbook101core.Controllers.CategoryController.yml",
-  "Scrapbook101core.Controllers.CategoryController.GetString(IHtmlContent)": "Scrapbook101core.Controllers.CategoryController.yml",
+  "Scrapbook101core.Controllers.CategoryController.GetString(Microsoft.AspNetCore.Html.IHtmlContent)": "Scrapbook101core.Controllers.CategoryController.yml",
   "Scrapbook101core.Controllers.CategoryController.Index": "Scrapbook101core.Controllers.CategoryController.yml",
   "Scrapbook101core.Controllers.ItemController": "Scrapbook101core.Controllers.ItemController.yml",
-  "Scrapbook101core.Controllers.ItemController.#ctor(IHostingEnvironment)": "Scrapbook101core.Controllers.ItemController.yml",
+  "Scrapbook101core.Controllers.ItemController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.CreateAsync": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.CreateAsync(Scrapbook101core.Models.CombinedModel)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.DeleteAsync(System.String)": "Scrapbook101core.Controllers.ItemController.yml",
@@ -36,7 +36,7 @@
   "Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync(System.String)": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.GetItemAsync(System.String)": "Scrapbook101core.DocumentDBRepository-1.yml",
-  "Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(Expression{Func{`0,System.Boolean}})": "Scrapbook101core.DocumentDBRepository-1.yml",
+  "Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.Initialize": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync(System.String,`0)": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.GeoCodeHelper": "Scrapbook101core.GeoCodeHelper.yml",
@@ -125,8 +125,8 @@
   "Scrapbook101core.Scrapbook101Configuration.TestCategories": "Scrapbook101core.Scrapbook101Configuration.yml",
   "Scrapbook101core.Scrapbook101Configuration.TestDocuments": "Scrapbook101core.Scrapbook101Configuration.yml",
   "Scrapbook101core.Startup": "Scrapbook101core.Startup.yml",
-  "Scrapbook101core.Startup.#ctor(IConfiguration)": "Scrapbook101core.Startup.yml",
+  "Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)": "Scrapbook101core.Startup.yml",
   "Scrapbook101core.Startup.Configuration": "Scrapbook101core.Startup.yml",
-  "Scrapbook101core.Startup.Configure(IApplicationBuilder,IHostingEnvironment)": "Scrapbook101core.Startup.yml",
-  "Scrapbook101core.Startup.ConfigureServices(IServiceCollection)": "Scrapbook101core.Startup.yml"
+  "Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)": "Scrapbook101core.Startup.yml",
+  "Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": "Scrapbook101core.Startup.yml"
 }

@@ -9,7 +9,7 @@ items:
   - Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync(System.String)
   - Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync
   - Scrapbook101core.DocumentDBRepository`1.GetItemAsync(System.String)
-  - Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(Expression{Func{`0,System.Boolean}})
+  - Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
   - Scrapbook101core.DocumentDBRepository`1.Initialize
   - Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync(System.String,`0)
   langs:
@@ -23,7 +23,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DocumentDBRepository
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 45
@@ -33,15 +33,24 @@ items:
   summary: "\nDefines the methods for working with the Document DB repository. Also contains methods for initializing\na new repository if the application is configured to do so.\n"
   example: []
   syntax:
-    content: 'public static class DocumentDBRepository<T> : object where T : class'
+    content: >-
+      public static class DocumentDBRepository<T>
+
+          where T : class
     typeParameters:
     - id: T
       description: The Item class which represents a repository item.
-    content.vb: >-
-      Public Module DocumentDBRepository(Of T As Class)
-          Inherits Object
+    content.vb: Public Module DocumentDBRepository(Of T As Class)
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   nameWithType.vb: DocumentDBRepository(Of T)
   modifiers.csharp:
   - public
@@ -67,7 +76,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 52
@@ -80,7 +89,7 @@ items:
     - id: id
       type: System.String
     return:
-      type: Task{{T}}
+      type: System.Threading.Tasks.Task{{T}}
     content.vb: Public Shared Function GetItemAsync(id As String) As Task(Of T)
   overload: Scrapbook101core.DocumentDBRepository`1.GetItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).GetItemAsync(String)
@@ -91,22 +100,22 @@ items:
   - Public
   - Shared
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemAsync(System.String)
-- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(Expression{Func{`0,System.Boolean}})
-  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(Expression{Func{`0,System.Boolean}})
-  id: GetItemsAsync(Expression{Func{`0,System.Boolean}})
+- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  id: GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
   parent: Scrapbook101core.DocumentDBRepository`1
   langs:
   - csharp
   - vb
   name: GetItemsAsync(Expression<Func<T, Boolean>>)
   nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>)
-  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, System.Boolean>>)
+  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>)
   type: Method
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemsAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 72
@@ -117,9 +126,9 @@ items:
     content: public static Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
     parameters:
     - id: predicate
-      type: Expression{Func{{T},System.Boolean}}
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
     return:
-      type: Task{IEnumerable{{T}}}
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{T}}}
     content.vb: Public Shared Function GetItemsAsync(predicate As Expression(Of Func(Of T, Boolean))) As Task(Of IEnumerable(Of T))
   overload: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*
   nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)))
@@ -129,7 +138,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, System.Boolean)))
+  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)))
   name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)))
 - uid: Scrapbook101core.DocumentDBRepository`1.CreateItemAsync(`0)
   commentId: M:Scrapbook101core.DocumentDBRepository`1.CreateItemAsync(`0)
@@ -146,7 +155,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 89
@@ -159,7 +168,7 @@ items:
     - id: item
       type: '{T}'
     return:
-      type: Task{Document}
+      type: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
     content.vb: Public Shared Function CreateItemAsync(item As T) As Task(Of Document)
   overload: Scrapbook101core.DocumentDBRepository`1.CreateItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).CreateItemAsync(T)
@@ -185,7 +194,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 94
@@ -200,7 +209,7 @@ items:
     - id: item
       type: '{T}'
     return:
-      type: Task{Document}
+      type: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
     content.vb: Public Shared Function UpdateItemAsync(id As String, item As T) As Task(Of Document)
   overload: Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).UpdateItemAsync(String, T)
@@ -226,7 +235,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 99
@@ -239,7 +248,7 @@ items:
     - id: id
       type: System.String
     return:
-      type: Task
+      type: System.Threading.Tasks.Task
     content.vb: Public Shared Function DeleteItemAsync(id As String) As Task
   overload: Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).DeleteItemAsync(String)
@@ -265,7 +274,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Initialize
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 104
@@ -299,7 +308,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 212
@@ -309,7 +318,7 @@ items:
   syntax:
     content: public static Task<bool> GetCategoryListDocumentAsync()
     return:
-      type: Task{System.Boolean}
+      type: System.Threading.Tasks.Task{System.Boolean}
     content.vb: Public Shared Function GetCategoryListDocumentAsync As Task(Of Boolean)
   overload: Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync*
   nameWithType.vb: DocumentDBRepository(Of T).GetCategoryListDocumentAsync()
@@ -327,10 +336,297 @@ references:
   nameWithType: Scrapbook101core
   fullName: Scrapbook101core
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Scrapbook101core.DocumentDBRepository`1.GetItemAsync*
   commentId: Overload:Scrapbook101core.DocumentDBRepository`1.GetItemAsync
   name: GetItemAsync
@@ -339,24 +635,27 @@ references:
   nameWithType.vb: DocumentDBRepository(Of T).GetItemAsync
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemAsync
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Task{{T}}
-  commentId: '!:Task{`0}'
-  definition: Task`1
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{`0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
   name: Task<T>
   nameWithType: Task<T>
-  fullName: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
   nameWithType.vb: Task(Of T)
-  fullName.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
   name.vb: Task(Of T)
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
@@ -368,10 +667,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -382,44 +681,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Task`1
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
-  name: Task<>
-  nameWithType: Task<>
-  fullName: Task<>
-  nameWithType.vb: Task(Of )
-  fullName.vb: Task(Of )
-  name.vb: Task(Of )
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*
   commentId: Overload:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync
   name: GetItemsAsync
@@ -427,28 +733,29 @@ references:
   fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync
   nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync
-- uid: Expression{Func{{T},System.Boolean}}
-  commentId: '!:Expression{Func{`0,System.Boolean}}'
-  definition: Expression`1
+- uid: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+  commentId: T:System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}
+  parent: System.Linq.Expressions
+  definition: System.Linq.Expressions.Expression`1
   name: Expression<Func<T, Boolean>>
   nameWithType: Expression<Func<T, Boolean>>
-  fullName: Expression<Func<T, System.Boolean>>
+  fullName: System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>
   nameWithType.vb: Expression(Of Func(Of T, Boolean))
-  fullName.vb: Expression(Of Func(Of T, System.Boolean))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean))
   name.vb: Expression(Of Func(Of T, Boolean))
   spec.csharp:
-  - uid: Expression`1
+  - uid: System.Linq.Expressions.Expression`1
     name: Expression
     nameWithType: Expression
-    fullName: Expression
+    fullName: System.Linq.Expressions.Expression
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -471,18 +778,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Expression`1
+  - uid: System.Linq.Expressions.Expression`1
     name: Expression
     nameWithType: Expression
-    fullName: Expression
+    fullName: System.Linq.Expressions.Expression
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -504,28 +811,29 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Task{IEnumerable{{T}}}
-  commentId: '!:Task{IEnumerable{`0}}'
-  definition: Task`1
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{T}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
   name: Task<IEnumerable<T>>
   nameWithType: Task<IEnumerable<T>>
-  fullName: Task<IEnumerable<T>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<T>>
   nameWithType.vb: Task(Of IEnumerable(Of T))
-  fullName.vb: Task(Of IEnumerable(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of T))
   name.vb: Task(Of IEnumerable(Of T))
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -540,18 +848,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -565,45 +873,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Expression`1
-  commentId: '!:Expression`1'
+- uid: System.Linq.Expressions.Expression`1
+  commentId: T:System.Linq.Expressions.Expression`1
   isExternal: true
-  name: Expression<>
-  nameWithType: Expression<>
-  fullName: Expression<>
-  nameWithType.vb: Expression(Of )
-  fullName.vb: Expression(Of )
-  name.vb: Expression(Of )
+  name: Expression<TDelegate>
+  nameWithType: Expression<TDelegate>
+  fullName: System.Linq.Expressions.Expression<TDelegate>
+  nameWithType.vb: Expression(Of TDelegate)
+  fullName.vb: System.Linq.Expressions.Expression(Of TDelegate)
+  name.vb: Expression(Of TDelegate)
   spec.csharp:
-  - uid: Expression`1
+  - uid: System.Linq.Expressions.Expression`1
     name: Expression
     nameWithType: Expression
-    fullName: Expression
+    fullName: System.Linq.Expressions.Expression
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TDelegate
+    nameWithType: TDelegate
+    fullName: TDelegate
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Expression`1
+  - uid: System.Linq.Expressions.Expression`1
     name: Expression
     nameWithType: Expression
-    fullName: Expression
+    fullName: System.Linq.Expressions.Expression
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TDelegate
+    nameWithType: TDelegate
+    fullName: TDelegate
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Linq.Expressions
+  commentId: N:System.Linq.Expressions
+  isExternal: true
+  name: System.Linq.Expressions
+  nameWithType: System.Linq.Expressions
+  fullName: System.Linq.Expressions
 - uid: Scrapbook101core.DocumentDBRepository`1.CreateItemAsync*
   commentId: Overload:Scrapbook101core.DocumentDBRepository`1.CreateItemAsync
   name: CreateItemAsync
@@ -617,45 +931,46 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: Task{Document}
-  commentId: '!:Task{Document}'
-  definition: Task`1
+- uid: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
   name: Task<Document>
   nameWithType: Task<Document>
-  fullName: Task<Document>
+  fullName: System.Threading.Tasks.Task<Microsoft.Azure.Documents.Document>
   nameWithType.vb: Task(Of Document)
-  fullName.vb: Task(Of Document)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.Azure.Documents.Document)
   name.vb: Task(Of Document)
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Document
+  - uid: Microsoft.Azure.Documents.Document
     name: Document
     nameWithType: Document
-    fullName: Document
+    fullName: Microsoft.Azure.Documents.Document
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Document
+  - uid: Microsoft.Azure.Documents.Document
     name: Document
     nameWithType: Document
-    fullName: Document
+    fullName: Microsoft.Azure.Documents.Document
     isExternal: true
   - name: )
     nameWithType: )
@@ -678,12 +993,13 @@ references:
   fullName: Scrapbook101core.DocumentDBRepository<T>.DeleteItemAsync
   nameWithType.vb: DocumentDBRepository(Of T).DeleteItemAsync
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).DeleteItemAsync
-- uid: Task
-  commentId: '!:Task'
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: Task
+  fullName: System.Threading.Tasks.Task
 - uid: Scrapbook101core.DocumentDBRepository`1.Initialize*
   commentId: Overload:Scrapbook101core.DocumentDBRepository`1.Initialize
   name: Initialize
@@ -698,20 +1014,21 @@ references:
   fullName: Scrapbook101core.DocumentDBRepository<T>.GetCategoryListDocumentAsync
   nameWithType.vb: DocumentDBRepository(Of T).GetCategoryListDocumentAsync
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetCategoryListDocumentAsync
-- uid: Task{System.Boolean}
-  commentId: '!:Task{System.Boolean}'
-  definition: Task`1
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
   name: Task<Boolean>
   nameWithType: Task<Boolean>
-  fullName: Task<System.Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
   nameWithType.vb: Task(Of Boolean)
-  fullName.vb: Task(Of System.Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
   name.vb: Task(Of Boolean)
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
@@ -725,10 +1042,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
