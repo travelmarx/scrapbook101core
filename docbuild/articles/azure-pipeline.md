@@ -234,7 +234,12 @@ So with the pipeline in place, we adopted this workflow.
 
     * Do a ``git pull origin master`` from the working branch to pick up changes from master.
 
-1. Push working branch changes to GitHub.
+1. Push working branch changes to GitHub with
+
+    ```bash
+    git commit -a -m"Change note."
+    git push
+    ```
 
     * There is no web site view option for GitHub pages for non-master branch, i.e., the web site https://travelmarx.github.io/scrapbook101core/index.html is based off the master branch. Also, we haven't checked in any HTML on the working branch.
 
