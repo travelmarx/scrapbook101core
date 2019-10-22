@@ -6,11 +6,11 @@ title: Azure Pipeline
 
 ## Overview
 
-Our goal is to create a Azure pipeline process to build docs (and run other tasks) automatically upon check in of code. To do this, we need to look into Devops. The term is a composed of the terms development (Dev) and operations (Ops) and represents a new way of thinking about development and operation processes as tightly connected together. For more information, see [What is DevOps?][devops-def] In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a *pipeline*. A pipeline in its simplest sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests like checking quality, and create documentation with [DocFx][docfx].
+Our goal is to create a Azure pipeline process to build docs (and run other tasks) automatically upon check-in of code. To do this, we turn to *devops*. The term is a composed of the terms development (Dev) and operations (Ops) and represents a new way of thinking about development and operation processes as tightly connected together. For more information, see [What is DevOps?][devops-def] In particular, we'll be using Azure Devops, which provides ways to implement continuous integration (CI) and continuous delivery (CD) processes using a *pipeline*. A pipeline in its simplest sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests like checking quality, and create documentation with [DocFx][docfx].
 
 Our desired authoring / developer flow is:
 
-1. Code or author.
+1. Code or author content.
 
 2. Check in changes.
 
@@ -18,7 +18,7 @@ Our desired authoring / developer flow is:
 
 ## Starting setup
 
-To approach the ideal process flow described above, our first steps in devopsland went something like this:
+To approach the ideal process flow described above, our first steps in the devops world went something like this:
 
 1. Go to [Azure devops][devops].
 
@@ -28,9 +28,9 @@ To approach the ideal process flow described above, our first steps in devopslan
 
 1. Connect to GitHub, select the Scrapbook101core repo, and Run.
 
-1. Configure the pipeline as "ASP.NET Core". For more information see [Build, test, and deploy .NET Core apps][devops-core]
+1. Configure the pipeline as "ASP.NET Core". For more information, see [Build, test, and deploy .NET Core apps][devops-core].
       
-   This will create am azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge later.) The config file is at the root of the GitHub project.
+   Configuring a pipeline will create am azure-pipeline.yml file.This config file is at the root of the GitHub project.Save and run the pipeline. (You can commit directly into master or create a branch that you'll have to merge later.) 
 
     ```yaml
     trigger:
@@ -51,11 +51,11 @@ Notes:
 
 * Do I pay? There is a [free tier][freetier] Azure Dev Ops options to get started. For small tests and limited use, you probably won't pay. For more information, see [Build GitHub repositories][pipeline-github].
 
-* What happened when running a pipeline with the YML file above? The steps built the site as if you ran build in Visual Studio. 
+* What happened when running a pipeline with the YML file above? The steps built the site as if you built in Visual Studio. 
 
 * If you make a changes to any file in the repo, the build process will kick off again because the **trigger** parameter in the pipeline config file.
 
-* Under variables add **system.debug: true** to get debug information in the logs. See [troubleshooting][troubleshooting].
+* Under variables add **system.debug: true** to get debug information in the logs. See this [troubleshooting article][troubleshooting].
 
 ## Custom build task
 
@@ -152,20 +152,22 @@ After a bit of trial and error we were able to build a simplistic build script [
 ---
 **NOTE**
 
-We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script]. To run the local build script start in the root directory and run ``.\scripts\localbuilds.ps1``. We typically do this from inside of Visual Studio Code set to master branch. The information below assumes this setup.
+We also found it useful to create a local script simultaneously to test out ideas, with more or less the same commands as the script for the pipeline. The local script is [localbuild.ps1][local-build-script]. To run the local build script start in the root directory and run ``.\scripts\localbuilds.ps1`` in a PowerShell terminal window. You can do this from inside of Visual Studio Code. The information below assumes this setup.
 
 ---
 
 
-Here are approximate steps taken in the doc build scripts.
+Here is an overview of the steps taken in the doc build scripts.
 
-1. Install Chocolately with ``choco install docfx -y``. (Only in the pipeline doc build script do we do this.)
+1. Install Chocolately with ``choco install docfx -y``. 
+
+   Only in the pipeline doc build script do we do this.
 
 1. Run docfx with ``docfx metadata`` and ``docfx build``.
 
    Note that for the pipeline build, we don't need to serve the docs like we might do building locally so we don't run ``docfx --serve``. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.
 
-1. Copy all files from **docbuild\_site** to **docs**.
+1. Copy all files from **docbuild\\_site** to **docs** folder.
 
    Looking at the task log, you should see that the script path on the agent is: "D:\a\1\s". By default, code is checked out into a directory called "s". Inside the build script, we can change directory for example to: "D:\a\1\s\docbuild". For more information about directories on agents, see [Pipeline options for Git repositories][pipeline-git].
 
@@ -180,11 +182,13 @@ Here are approximate steps taken in the doc build scripts.
       git commit -m"Pipeline build check in."
       git push
       ```
-   * Pipeline. For the pipeline build script we are in a different situation because have a detached head. In a detached head situation, changes that are committed in this state are not remembered unless you create a branch and commit them.. See the documentation for how to [run git in scripts][git-commands]. For more information about detached head, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
+   * Pipeline. For the pipeline build script we are in a different situation because have a detached head. In a detached head situation, changes that are committed in this state are not remembered unless you create a branch and commit them. See the documentation for how to [run git in scripts][git-commands]. For more information about detached head, see [How to fix a detached head][detached-head] and the GitHub docs for [git-checkout][git-checkout].
 
-      So, the flow of git commands looks something like this:
+      The flow of git commands looks something like this:
 
         ```bash
+        git config --global user.email "travelmarx@live.com"
+        git config --global user.name "Travelmarx"
         git status
         git add -A
         git branch tmp
@@ -196,7 +200,7 @@ Here are approximate steps taken in the doc build scripts.
 
       Notes:
 
-      * The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build.
+      * The "[skip ci]" added to the commit message avoids the script's push from triggering the pipeline build. We don't the doc build triggering the pipeline build.
       
       * We needed to add ``git config --global user.email`` and ``git config --global user.name`` for the script to work.
 
@@ -207,7 +211,7 @@ Here are approximate steps taken in the doc build scripts.
 
 Other thoughts on the pipeline build task:
 
-* We observed that the pipline build checks in a lot of files, basically everything in **\docs**, even if we made a very small change. Building locally however, we observed tha fewer files were changed, which got us wondering why this is the case. Here are a couple of reasons we discovered:
+* We noticed that the pipline build checks in a lot of files, basically everything in **\docs**, even if we made a very small change. Building locally however, we observed tha fewer files were changed, which got us wondering why this was the case. Here are a couple of reasons we discovered:
 
   * In the YML files in the **docbuild\\api** folder, the *repo* tag ends with ".git" for locally generated files but not for pipeline built YML files. I suppose we can control for this.
 
@@ -242,13 +246,12 @@ So with the pipeline in place, we adopted this workflow.
       pr: none
       ```
 
-1. Merge working branch into master.
+1. On GitHub, merge working branch into master.
 
-    * This process is what kicks off the pipeline build, which then builds the HTML that appears in **docs** folder.
+    * This process is what kicks off the pipeline build, which then builds the HTML that appears in **docs** folder of the master branch.
 
-In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo then we would separate web site content from code and doc source content.
+In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo altogoether then we would separate web site content from code and doc source content.
 
-to be continued...
 
 [docfx]: https://dotnet.github.io/docfx/
 [devops-def]: https://azure.microsoft.com/en-us/overview/what-is-devops/
