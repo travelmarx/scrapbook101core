@@ -8,7 +8,7 @@
     <title>Azure Pipeline | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Azure Pipeline | Scrapbook101core ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.46.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -70,10 +70,10 @@
 <h1 id="pipeline-setup">Pipeline setup</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Our goal is to create a Azure pipeline process to build docs (and run other tasks) automatically upon check in of code. To do this, we need to look into Devops. The term is a composed of the terms development (Dev) and operations (Ops) and represents a new way of thinking about development and operation processes as tightly connected together. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a> In particular, we'll be using Azure Devops, which contains ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simplest sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests like checking quality, and create documentation with <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
+<p>Our goal is to create a Azure pipeline process to build docs (and run other tasks) automatically upon check-in of code. To do this, we turn to <em>devops</em>. The term is a composed of the terms development (Dev) and operations (Ops) and represents a new way of thinking about development and operation processes as tightly connected together. For more information, see <a href="https://azure.microsoft.com/en-us/overview/what-is-devops/">What is DevOps?</a> In particular, we'll be using Azure Devops, which provides ways to implement continuous integration (CI) and continuous delivery (CD) processes using a <em>pipeline</em>. A pipeline in its simplest sense is a series of tasks you want to run. In our case, we want to compile code, optionally run any tests like checking quality, and create documentation with <a href="https://dotnet.github.io/docfx/">DocFx</a>.</p>
 <p>Our desired authoring / developer flow is:</p>
 <ol>
-<li><p>Code or author.</p>
+<li><p>Code or author content.</p>
 </li>
 <li><p>Check in changes.</p>
 </li>
@@ -81,7 +81,7 @@
 </li>
 </ol>
 <h2 id="starting-setup">Starting setup</h2>
-<p>To approach the ideal process flow described above, our first steps in devopsland went something like this:</p>
+<p>To approach the ideal process flow described above, our first steps in the devops world went something like this:</p>
 <ol>
 <li><p>Go to <a href="https://dev.azure.com">Azure devops</a>.</p>
 </li>
@@ -91,8 +91,8 @@
 </li>
 <li><p>Connect to GitHub, select the Scrapbook101core repo, and Run.</p>
 </li>
-<li><p>Configure the pipeline as &quot;ASP.NET Core&quot;. For more information see <a href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">Build, test, and deploy .NET Core apps</a></p>
-<p>This will create am azure-pipeline.yml file. Save and run it. (You can commit directly into master or create a branch that you'll have to merge later.) The config file is at the root of the GitHub project.</p>
+<li><p>Configure the pipeline as &quot;ASP.NET Core&quot;. For more information, see <a href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">Build, test, and deploy .NET Core apps</a>.</p>
+<p>Configuring a pipeline will create am azure-pipeline.yml file.This config file is at the root of the GitHub project.Save and run the pipeline. (You can commit directly into master or create a branch that you'll have to merge later.)</p>
 <pre><code class="lang-yaml">trigger:
 - master
 
@@ -112,11 +112,11 @@ steps:
 <ul>
 <li><p>Do I pay? There is a <a href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free tier</a> Azure Dev Ops options to get started. For small tests and limited use, you probably won't pay. For more information, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github">Build GitHub repositories</a>.</p>
 </li>
-<li><p>What happened when running a pipeline with the YML file above? The steps built the site as if you ran build in Visual Studio.</p>
+<li><p>What happened when running a pipeline with the YML file above? The steps built the site as if you built in Visual Studio.</p>
 </li>
 <li><p>If you make a changes to any file in the repo, the build process will kick off again because the <strong>trigger</strong> parameter in the pipeline config file.</p>
 </li>
-<li><p>Under variables add <strong>system.debug: true</strong> to get debug information in the logs. See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting">troubleshooting</a>.</p>
+<li><p>Under variables add <strong>system.debug: true</strong> to get debug information in the logs. See this <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting">troubleshooting article</a>.</p>
 </li>
 </ul>
 <h2 id="custom-build-task">Custom build task</h2>
@@ -199,16 +199,17 @@ displayName: 'dotnet build $(buildConfiguration)'
 <p>After a bit of trial and error we were able to build a simplistic build script <a href="https://github.com/travelmarx/scrapbook101core/blob/master/scripts/builddocs.ps1">builddocs.ps1</a>.</p>
 <hr>
 <p><strong>NOTE</strong></p>
-<p>We also found it useful to create a local script simultaneously to test out ideas and command, with more or less the same commands as the script for the pipeline. The local script is <a href="https://github.com/travelmarx/scrapbook101core/blob/master/scripts/localbuild.ps1">localbuild.ps1</a>. To run the local build script start in the root directory and run <code>.\scripts\localbuilds.ps1</code>. We typically do this from inside of Visual Studio Code set to master branch. The information below assumes this setup.</p>
+<p>We also found it useful to create a local script simultaneously to test out ideas, with more or less the same commands as the script for the pipeline. The local script is <a href="https://github.com/travelmarx/scrapbook101core/blob/master/scripts/localbuild.ps1">localbuild.ps1</a>. To run the local build script start in the root directory and run <code>.\scripts\localbuilds.ps1</code> in a PowerShell terminal window. You can do this from inside of Visual Studio Code. The information below assumes this setup.</p>
 <hr>
-<p>Here are approximate steps taken in the doc build scripts.</p>
+<p>Here is an overview of the steps taken in the doc build scripts.</p>
 <ol>
-<li><p>Install Chocolately with <code>choco install docfx -y</code>. (Only in the pipeline doc build script do we do this.)</p>
+<li><p>Install Chocolately with <code>choco install docfx -y</code>.</p>
+<p>Only in the pipeline doc build script do we do this.</p>
 </li>
 <li><p>Run docfx with <code>docfx metadata</code> and <code>docfx build</code>.</p>
 <p>Note that for the pipeline build, we don't need to serve the docs like we might do building locally so we don't run <code>docfx --serve</code>. Also, we have to make sure we are in the right directory to run these commands so that the docfx.json file is found.</p>
 </li>
-<li><p>Copy all files from <strong>docbuild_site</strong> to <strong>docs</strong>.</p>
+<li><p>Copy all files from <strong>docbuild\_site</strong> to <strong>docs</strong> folder.</p>
 <p>Looking at the task log, you should see that the script path on the agent is: &quot;D:\a\1\s&quot;. By default, code is checked out into a directory called &quot;s&quot;. Inside the build script, we can change directory for example to: &quot;D:\a\1\s\docbuild&quot;. For more information about directories on agents, see <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git">Pipeline options for Git repositories</a>.</p>
 </li>
 <li><p>Update the repo, by pushing changed files in the <strong>docs</strong> folder to GitHub.</p>
@@ -221,9 +222,11 @@ git commit -m&quot;Pipeline build check in.&quot;
 git push
 </code></pre>
 </li>
-<li><p>Pipeline. For the pipeline build script we are in a different situation because have a detached head. In a detached head situation, changes that are committed in this state are not remembered unless you create a branch and commit them.. See the documentation for how to <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands">run git in scripts</a>. For more information about detached head, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
-<p>So, the flow of git commands looks something like this:</p>
-<pre><code class="lang-bash">git status
+<li><p>Pipeline. For the pipeline build script we are in a different situation because have a detached head. In a detached head situation, changes that are committed in this state are not remembered unless you create a branch and commit them. See the documentation for how to <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands">run git in scripts</a>. For more information about detached head, see <a href="https://stackoverflow.com/questions/10228760/fix-a-git-detached-head">How to fix a detached head</a> and the GitHub docs for <a href="https://git-scm.com/docs/git-checkout">git-checkout</a>.</p>
+<p>The flow of git commands looks something like this:</p>
+<pre><code class="lang-bash">git config --global user.email &quot;travelmarx@live.com&quot;
+git config --global user.name &quot;Travelmarx&quot;
+git status
 git add -A
 git branch tmp
 git checkout master
@@ -233,7 +236,7 @@ git push
 </code></pre>
 <p>Notes:</p>
 <ul>
-<li><p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build.</p>
+<li><p>The &quot;[skip ci]&quot; added to the commit message avoids the script's push from triggering the pipeline build. We don't the doc build triggering the pipeline build.</p>
 </li>
 <li><p>We needed to add <code>git config --global user.email</code> and <code>git config --global user.name</code> for the script to work.</p>
 </li>
@@ -249,7 +252,7 @@ that we had to redirect stderr to stdout in the PowerShell script with <code>$en
 </ol>
 <p>Other thoughts on the pipeline build task:</p>
 <ul>
-<li><p>We observed that the pipline build checks in a lot of files, basically everything in <strong>\docs</strong>, even if we made a very small change. Building locally however, we observed tha fewer files were changed, which got us wondering why this is the case. Here are a couple of reasons we discovered:</p>
+<li><p>We noticed that the pipline build checks in a lot of files, basically everything in <strong>\docs</strong>, even if we made a very small change. Building locally however, we observed tha fewer files were changed, which got us wondering why this was the case. Here are a couple of reasons we discovered:</p>
 <ul>
 <li><p>In the YML files in the <strong>docbuild\api</strong> folder, the <em>repo</em> tag ends with &quot;.git&quot; for locally generated files but not for pipeline built YML files. I suppose we can control for this.</p>
 </li>
@@ -287,14 +290,13 @@ pr: none
 </li>
 </ul>
 </li>
-<li><p>Merge working branch into master.</p>
+<li><p>On GitHub, merge working branch into master.</p>
 <ul>
-<li>This process is what kicks off the pipeline build, which then builds the HTML that appears in <strong>docs</strong> folder.</li>
+<li>This process is what kicks off the pipeline build, which then builds the HTML that appears in <strong>docs</strong> folder of the master branch.</li>
 </ul>
 </li>
 </ol>
-<p>In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo then we would separate web site content from code and doc source content.</p>
-<p>to be continued...</p>
+<p>In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo altogoether then we would separate web site content from code and doc source content.</p>
 </article>
           </div>
           
