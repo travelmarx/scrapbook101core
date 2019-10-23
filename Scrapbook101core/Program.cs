@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Scrapbook101core
@@ -40,7 +41,7 @@ namespace Scrapbook101core
             WebHost.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((builderContext, config) =>
             {
-                IHostingEnvironment env = builderContext.HostingEnvironment;
+                IWebHostEnvironment env = builderContext.HostingEnvironment;
 
                 config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             })

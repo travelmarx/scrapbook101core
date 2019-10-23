@@ -17,9 +17,9 @@ namespace Scrapbook101core.Controllers
     /// </summary>
     public class ItemController : Controller
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public ItemController(IHostingEnvironment hostingEnvironment)
+        public ItemController(IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
         }

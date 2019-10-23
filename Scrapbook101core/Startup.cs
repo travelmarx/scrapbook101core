@@ -45,7 +45,7 @@ namespace Scrapbook101core
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             //https://weblog.west-wind.com/posts/2017/Dec/12/Easy-Configuration-Binding-in-ASPNET-Core-revisited
             var config = new Scrapbook101Configuration();
@@ -58,9 +58,9 @@ namespace Scrapbook101core
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.EnvironmentName.Equals("Development"))
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -80,13 +80,12 @@ namespace Scrapbook101core
                     Path.Combine(Directory.GetCurrentDirectory(), "Assets")),
                 RequestPath = "/Assets"
             });
+            app.UseRouting();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Item}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Item}/{action=Index}/{id?}");
             });
         }
     }
