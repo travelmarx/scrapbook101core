@@ -73,6 +73,12 @@ try {
         Write-Host "## Switch to master: git checkout master"
         git checkout master
 
+        Write-Host "## Add remote: git remote add origin master url"
+        git remote add origin master https://github.com/travelmarx/scrapbook101core.git
+
+        Write-Host "## Pull from origin: git pull origin master"
+        git pull origin master
+
         Write-Host "## git merge tmp"
         git merge tmp
 
