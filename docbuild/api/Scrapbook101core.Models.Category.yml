@@ -30,12 +30,18 @@ items:
   remarks: "\nThe list of categories is read in from one document stored in the database and identified by\nan <xref href=\"Scrapbook101core.Models.Category.Id\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Scrapbook101core.Models.Category.Type\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: 'public class Category : object'
-    content.vb: >-
-      Public Class Category
-          Inherits Object
+    content: public class Category
+    content.vb: Public Class Category
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -65,12 +71,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Id { get; set; }
+    content: >-
+      [Required(ErrorMessage = "id is required.")]
+
+      public string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Id As String
+    content.vb: >-
+      <Required(ErrorMessage:="id is required.")>
+
+      Public Property Id As String
   overload: Scrapbook101core.Models.Category.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: id is required.
   modifiers.csharp:
   - public
   - get
@@ -100,12 +120,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Type { get; set; }
+    content: >-
+      [Required(ErrorMessage = "Type is required.")]
+
+      public string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Type As String
+    content.vb: >-
+      <Required(ErrorMessage:="Type is required.")>
+
+      Public Property Type As String
   overload: Scrapbook101core.Models.Category.Type*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Type is required.
   modifiers.csharp:
   - public
   - get
@@ -138,7 +172,7 @@ items:
     content: public List<CategoryItem> Categories { get; set; }
     parameters: []
     return:
-      type: List{Scrapbook101core.Models.CategoryItem}
+      type: System.Collections.Generic.List{Scrapbook101core.Models.CategoryItem}
     content.vb: Public Property Categories As List(Of CategoryItem)
   overload: Scrapbook101core.Models.Category.Categories*
   modifiers.csharp:
@@ -160,16 +194,305 @@ references:
   nameWithType: Scrapbook101core.Models
   fullName: Scrapbook101core.Models
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Scrapbook101core.Models.Category.Id*
   commentId: Overload:Scrapbook101core.Models.Category.Id
   name: Id
   nameWithType: Category.Id
   fullName: Scrapbook101core.Models.Category.Id
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -184,20 +507,21 @@ references:
   name: Categories
   nameWithType: Category.Categories
   fullName: Scrapbook101core.Models.Category.Categories
-- uid: List{Scrapbook101core.Models.CategoryItem}
-  commentId: '!:List{Scrapbook101core.Models.CategoryItem}'
-  definition: List`1
+- uid: System.Collections.Generic.List{Scrapbook101core.Models.CategoryItem}
+  commentId: T:System.Collections.Generic.List{Scrapbook101core.Models.CategoryItem}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
   name: List<CategoryItem>
   nameWithType: List<CategoryItem>
-  fullName: List<Scrapbook101core.Models.CategoryItem>
+  fullName: System.Collections.Generic.List<Scrapbook101core.Models.CategoryItem>
   nameWithType.vb: List(Of CategoryItem)
-  fullName.vb: List(Of Scrapbook101core.Models.CategoryItem)
+  fullName.vb: System.Collections.Generic.List(Of Scrapbook101core.Models.CategoryItem)
   name.vb: List(Of CategoryItem)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
@@ -210,10 +534,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -225,41 +549,48 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: List`1
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  name: List<>
-  nameWithType: List<>
-  fullName: List<>
-  nameWithType.vb: List(Of )
-  fullName.vb: List(Of )
-  name.vb: List(Of )
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

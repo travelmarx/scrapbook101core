@@ -85,7 +85,7 @@
   <h6><strong>Assembly</strong>: Scrapbook101core.dll</h6>
   <h5 id="Scrapbook101core_Models_Item_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Item : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Item</code></pre>
   </div>
   <h5 id="Scrapbook101core_Models_Item_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>A Scrapbook Item object when written to the Document DB bcomes a block of JSON-formatted text.
@@ -156,7 +156,7 @@ so at least one image for each Scrapbook101core is recommended.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Scrapbook101core.Models.AssetItem.html">AssetItem</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Scrapbook101core.Models.AssetItem.html">AssetItem</a>&gt;</td>
         <td><p>A list of assets associated with the item. Can be null, meaning no assets are associated with the item.</p>
 </td>
       </tr>
@@ -175,7 +175,8 @@ so at least one image for each Scrapbook101core is recommended.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Category { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Category is required.&quot;)]
+public string Category { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -252,7 +253,7 @@ Each category has a fixed set of fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>This value is automatically inserted by code upon initial creation of an item and then never changed.
 Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.</p>
 </td>
@@ -284,7 +285,7 @@ Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:0
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>This value is automatically inserted.
 Example: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.</p>
 </td>
@@ -480,7 +481,8 @@ uses a rating of 1 - 5.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Title { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Title is required.&quot;)]
+public string Title { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -512,7 +514,8 @@ uses a rating of 1 - 5.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Type { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Type is required.&quot;)]
+public string Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">

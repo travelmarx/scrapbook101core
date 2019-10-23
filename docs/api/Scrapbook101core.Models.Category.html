@@ -85,7 +85,7 @@
   <h6><strong>Assembly</strong>: Scrapbook101core.dll</h6>
   <h5 id="Scrapbook101core_Models_Category_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Category : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Category</code></pre>
   </div>
   <h5 id="Scrapbook101core_Models_Category_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>The list of categories is read in from one document stored in the database and identified by
@@ -118,7 +118,7 @@ an <a class="xref" href="Scrapbook101core.Models.Category.html#Scrapbook101core_
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Scrapbook101core.Models.CategoryItem.html">CategoryItem</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Scrapbook101core.Models.CategoryItem.html">CategoryItem</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -136,7 +136,8 @@ an <a class="xref" href="Scrapbook101core.Models.Category.html#Scrapbook101core_
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;id is required.&quot;)]
+public string Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -166,7 +167,8 @@ an <a class="xref" href="Scrapbook101core.Models.Category.html#Scrapbook101core_
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Type { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Type is required.&quot;)]
+public string Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">

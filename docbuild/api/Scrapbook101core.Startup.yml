@@ -5,10 +5,10 @@ items:
   id: Startup
   parent: Scrapbook101core
   children:
-  - Scrapbook101core.Startup.#ctor(IConfiguration)
+  - Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
   - Scrapbook101core.Startup.Configuration
-  - Scrapbook101core.Startup.Configure(IApplicationBuilder,IHostingEnvironment)
-  - Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
+  - Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  - Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   langs:
   - csharp
   - vb
@@ -30,28 +30,34 @@ items:
   summary: "\nConfigures services and the application&apos;s request pipeline. \nAll ASP.NET Core apps use a Startup class, which is named Startup by convention.\nFor more information, see \n<a href=\"https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.0\">App startup in ASP.NET Core</a>.\n"
   example: []
   syntax:
-    content: 'public class Startup : object'
-    content.vb: >-
-      Public Class Startup
-          Inherits Object
+    content: public class Startup
+    content.vb: Public Class Startup
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: Scrapbook101core.Startup.#ctor(IConfiguration)
-  commentId: M:Scrapbook101core.Startup.#ctor(IConfiguration)
-  id: '#ctor(IConfiguration)'
+- uid: Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
   parent: Scrapbook101core.Startup
   langs:
   - csharp
   - vb
   name: Startup(IConfiguration)
   nameWithType: Startup.Startup(IConfiguration)
-  fullName: Scrapbook101core.Startup.Startup(IConfiguration)
+  fullName: Scrapbook101core.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
   type: Constructor
   source:
     remote:
@@ -68,7 +74,7 @@ items:
     content: public Startup(IConfiguration configuration)
     parameters:
     - id: configuration
-      type: IConfiguration
+      type: Microsoft.Extensions.Configuration.IConfiguration
     content.vb: Public Sub New(configuration As IConfiguration)
   overload: Scrapbook101core.Startup.#ctor*
   modifiers.csharp:
@@ -101,7 +107,7 @@ items:
     content: public IConfiguration Configuration { get; }
     parameters: []
     return:
-      type: IConfiguration
+      type: Microsoft.Extensions.Configuration.IConfiguration
     content.vb: Public ReadOnly Property Configuration As IConfiguration
   overload: Scrapbook101core.Startup.Configuration*
   modifiers.csharp:
@@ -110,16 +116,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
-  commentId: M:Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
-  id: ConfigureServices(IServiceCollection)
+- uid: Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  id: ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   parent: Scrapbook101core.Startup
   langs:
   - csharp
   - vb
   name: ConfigureServices(IServiceCollection)
   nameWithType: Startup.ConfigureServices(IServiceCollection)
-  fullName: Scrapbook101core.Startup.ConfigureServices(IServiceCollection)
+  fullName: Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   type: Method
   source:
     remote:
@@ -136,23 +142,23 @@ items:
     content: public void ConfigureServices(IServiceCollection services)
     parameters:
     - id: services
-      type: IServiceCollection
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
     content.vb: Public Sub ConfigureServices(services As IServiceCollection)
   overload: Scrapbook101core.Startup.ConfigureServices*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Startup.Configure(IApplicationBuilder,IHostingEnvironment)
-  commentId: M:Scrapbook101core.Startup.Configure(IApplicationBuilder,IHostingEnvironment)
-  id: Configure(IApplicationBuilder,IHostingEnvironment)
+- uid: Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  commentId: M:Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
   parent: Scrapbook101core.Startup
   langs:
   - csharp
   - vb
-  name: Configure(IApplicationBuilder, IHostingEnvironment)
-  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
-  fullName: Scrapbook101core.Startup.Configure(IApplicationBuilder, IHostingEnvironment)
+  name: Configure(IApplicationBuilder, IWebHostEnvironment)
+  nameWithType: Startup.Configure(IApplicationBuilder, IWebHostEnvironment)
+  fullName: Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
   type: Method
   source:
     remote:
@@ -166,13 +172,13 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    content: public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     parameters:
     - id: app
-      type: IApplicationBuilder
+      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
     - id: env
-      type: IHostingEnvironment
-    content.vb: Public Sub Configure(app As IApplicationBuilder, env As IHostingEnvironment)
+      type: Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+    content.vb: Public Sub Configure(app As IApplicationBuilder, env As IWebHostEnvironment)
   overload: Scrapbook101core.Startup.Configure*
   modifiers.csharp:
   - public
@@ -185,20 +191,315 @@ references:
   nameWithType: Scrapbook101core
   fullName: Scrapbook101core
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Scrapbook101core.Startup.#ctor*
   commentId: Overload:Scrapbook101core.Startup.#ctor
   name: Startup
   nameWithType: Startup.Startup
   fullName: Scrapbook101core.Startup.Startup
-- uid: IConfiguration
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
   isExternal: true
   name: IConfiguration
   nameWithType: IConfiguration
-  fullName: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
 - uid: Scrapbook101core.Startup.Configuration*
   commentId: Overload:Scrapbook101core.Startup.Configuration
   name: Configuration
@@ -209,25 +510,47 @@ references:
   name: ConfigureServices
   nameWithType: Startup.ConfigureServices
   fullName: Scrapbook101core.Startup.ConfigureServices
-- uid: IServiceCollection
-  commentId: '!:IServiceCollection'
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
   isExternal: true
   name: IServiceCollection
   nameWithType: IServiceCollection
-  fullName: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
 - uid: Scrapbook101core.Startup.Configure*
   commentId: Overload:Scrapbook101core.Startup.Configure
   name: Configure
   nameWithType: Startup.Configure
   fullName: Scrapbook101core.Startup.Configure
-- uid: IApplicationBuilder
-  commentId: '!:IApplicationBuilder'
+- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
+  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
+  parent: Microsoft.AspNetCore.Builder
   isExternal: true
   name: IApplicationBuilder
   nameWithType: IApplicationBuilder
-  fullName: IApplicationBuilder
-- uid: IHostingEnvironment
+  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
+- uid: Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+  commentId: T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+  parent: Microsoft.AspNetCore.Hosting
   isExternal: true
-  name: IHostingEnvironment
-  nameWithType: IHostingEnvironment
-  fullName: IHostingEnvironment
+  name: IWebHostEnvironment
+  nameWithType: IWebHostEnvironment
+  fullName: Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+- uid: Microsoft.AspNetCore.Builder
+  commentId: N:Microsoft.AspNetCore.Builder
+  isExternal: true
+  name: Microsoft.AspNetCore.Builder
+  nameWithType: Microsoft.AspNetCore.Builder
+  fullName: Microsoft.AspNetCore.Builder
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
+  isExternal: true
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting

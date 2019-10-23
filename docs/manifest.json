@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.AppVariables.html",
-          "hash": "r48EUG2fYycLq35uLLWlfg=="
+          "hash": "MsBk3w/2/qv3FkCC6nrgfA=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.CategoryController.html",
-          "hash": "NxVwnZ0k5aTUIKITtOAu4A=="
+          "hash": "wd0e5YLF6ZWuiDGxSK9N+g=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "mb5fv9V23Zu60iE2hSK6zQ=="
+          "hash": "mjjaPw2RUYVuvTVDyjSLVQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.DocumentDBRepository-1.html",
-          "hash": "hkf5TNsI/xfYY37WX94nVA=="
+          "hash": "39+eTjaG21NIKudob650/Q=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.GeoCodeHelper.html",
-          "hash": "UVgzR5QyZ5yDEMXJlYu6ng=="
+          "hash": "5Ype2BJM41cOSx8dBRoZOQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.AssetItem.html",
-          "hash": "1ubugJga5dL9/kZd4SnC+A=="
+          "hash": "y/OK2F2zpffnuq+WPOJAgQ=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Category.html",
-          "hash": "S2J9BuNBJChzay22uHAWvg=="
+          "hash": "dBXY7DWRHHEh2V1M2PMKiw=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFieldMapping.html",
-          "hash": "N89BMUoui6g6fgW6RUdOgw=="
+          "hash": "Pal6NdpFKTsduAvtNy32mw=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFields.html",
-          "hash": "PJTkK6LH601l2RtBA5vKSA=="
+          "hash": "iexsi5Ja4NLTXxZRFyU9og=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItem.html",
-          "hash": "2cg+gtmulPE3T4+KtOMV6Q=="
+          "hash": "WuK+kjsMmGyQV3y/VeCAOw=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItemDisplay.html",
-          "hash": "476iJp2IivceU82dfkKgRw=="
+          "hash": "t/7A3uxZyPG8zquNChmf5g=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CombinedModel.html",
-          "hash": "LYoiPIZz1/jGG5HxdByU4w=="
+          "hash": "KXlOLLA7fi7ow3jV/8oZ5A=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.FileItem.html",
-          "hash": "ZK0YTMMpevt+vX7c2LVvQA=="
+          "hash": "iRH3xNo1VbwdY0f8HtohlA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Item.html",
-          "hash": "GZFM/eS+sKbnitA4J+ZdAg=="
+          "hash": "EE6Cl95SJvuZjVakVzEXag=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Program.html",
-          "hash": "csOtpXRR8RiNBHlf+xbbTA=="
+          "hash": "/4h15ulU0dAby2Vse5iqAw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Scrapbook101Configuration.html",
-          "hash": "8JStnyKt2jOo7GZuvLSpUg=="
+          "hash": "w2vz/p3HbMcspiVcJtt/TQ=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Startup.html",
-          "hash": "pz9csAOXeZbHMpUZqOvEGA=="
+          "hash": "q4ao5+0pqBYJ13WzKNwvdw=="
         }
       },
       "is_incremental": false,

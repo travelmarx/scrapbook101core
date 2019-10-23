@@ -32,12 +32,18 @@ items:
   remarks: "\nThis model combine the <xref href=\"Scrapbook101core.Models.Item\" data-throw-if-not-resolved=\"false\"></xref> class/model with \nlists of categories and lists of files that are useful for pages that require both\nthe Item class and category and file support.\n"
   example: []
   syntax:
-    content: 'public class CombinedModel : object'
-    content.vb: >-
-      Public Class CombinedModel
-          Inherits Object
+    content: public class CombinedModel
+    content.vb: Public Class CombinedModel
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -105,7 +111,7 @@ items:
     content: public List<CategoryItemDisplay> CategoryItemsForDisplay { get; set; }
     parameters: []
     return:
-      type: List{Scrapbook101core.Models.CategoryItemDisplay}
+      type: System.Collections.Generic.List{Scrapbook101core.Models.CategoryItemDisplay}
     content.vb: Public Property CategoryItemsForDisplay As List(Of CategoryItemDisplay)
   overload: Scrapbook101core.Models.CombinedModel.CategoryItemsForDisplay*
   modifiers.csharp:
@@ -140,7 +146,7 @@ items:
     content: public List<CategoryFieldMapping> CategoryFieldMappingList { get; set; }
     parameters: []
     return:
-      type: List{Scrapbook101core.Models.CategoryFieldMapping}
+      type: System.Collections.Generic.List{Scrapbook101core.Models.CategoryFieldMapping}
     content.vb: Public Property CategoryFieldMappingList As List(Of CategoryFieldMapping)
   overload: Scrapbook101core.Models.CombinedModel.CategoryFieldMappingList*
   modifiers.csharp:
@@ -175,7 +181,7 @@ items:
     content: public List<FileItem> LocalUploadFileList { get; set; }
     parameters: []
     return:
-      type: List{Scrapbook101core.Models.FileItem}
+      type: System.Collections.Generic.List{Scrapbook101core.Models.FileItem}
     content.vb: Public Property LocalUploadFileList As List(Of FileItem)
   overload: Scrapbook101core.Models.CombinedModel.LocalUploadFileList*
   modifiers.csharp:
@@ -210,7 +216,7 @@ items:
     content: public List<IFormFile> LocalHttpPostedFileList { get; set; }
     parameters: []
     return:
-      type: List{IFormFile}
+      type: System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile}
     content.vb: Public Property LocalHttpPostedFileList As List(Of IFormFile)
   overload: Scrapbook101core.Models.CombinedModel.LocalHttpPostedFileList*
   modifiers.csharp:
@@ -232,10 +238,297 @@ references:
   nameWithType: Scrapbook101core.Models
   fullName: Scrapbook101core.Models
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Scrapbook101core.Models.CombinedModel.Item*
   commentId: Overload:Scrapbook101core.Models.CombinedModel.Item
   name: Item
@@ -246,20 +539,21 @@ references:
   name: CategoryItemsForDisplay
   nameWithType: CombinedModel.CategoryItemsForDisplay
   fullName: Scrapbook101core.Models.CombinedModel.CategoryItemsForDisplay
-- uid: List{Scrapbook101core.Models.CategoryItemDisplay}
-  commentId: '!:List{Scrapbook101core.Models.CategoryItemDisplay}'
-  definition: List`1
+- uid: System.Collections.Generic.List{Scrapbook101core.Models.CategoryItemDisplay}
+  commentId: T:System.Collections.Generic.List{Scrapbook101core.Models.CategoryItemDisplay}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
   name: List<CategoryItemDisplay>
   nameWithType: List<CategoryItemDisplay>
-  fullName: List<Scrapbook101core.Models.CategoryItemDisplay>
+  fullName: System.Collections.Generic.List<Scrapbook101core.Models.CategoryItemDisplay>
   nameWithType.vb: List(Of CategoryItemDisplay)
-  fullName.vb: List(Of Scrapbook101core.Models.CategoryItemDisplay)
+  fullName.vb: System.Collections.Generic.List(Of Scrapbook101core.Models.CategoryItemDisplay)
   name.vb: List(Of CategoryItemDisplay)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
@@ -272,10 +566,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -287,63 +581,71 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: List`1
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  name: List<>
-  nameWithType: List<>
-  fullName: List<>
-  nameWithType.vb: List(Of )
-  fullName.vb: List(Of )
-  name.vb: List(Of )
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: Scrapbook101core.Models.CombinedModel.CategoryFieldMappingList*
   commentId: Overload:Scrapbook101core.Models.CombinedModel.CategoryFieldMappingList
   name: CategoryFieldMappingList
   nameWithType: CombinedModel.CategoryFieldMappingList
   fullName: Scrapbook101core.Models.CombinedModel.CategoryFieldMappingList
-- uid: List{Scrapbook101core.Models.CategoryFieldMapping}
-  commentId: '!:List{Scrapbook101core.Models.CategoryFieldMapping}'
-  definition: List`1
+- uid: System.Collections.Generic.List{Scrapbook101core.Models.CategoryFieldMapping}
+  commentId: T:System.Collections.Generic.List{Scrapbook101core.Models.CategoryFieldMapping}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
   name: List<CategoryFieldMapping>
   nameWithType: List<CategoryFieldMapping>
-  fullName: List<Scrapbook101core.Models.CategoryFieldMapping>
+  fullName: System.Collections.Generic.List<Scrapbook101core.Models.CategoryFieldMapping>
   nameWithType.vb: List(Of CategoryFieldMapping)
-  fullName.vb: List(Of Scrapbook101core.Models.CategoryFieldMapping)
+  fullName.vb: System.Collections.Generic.List(Of Scrapbook101core.Models.CategoryFieldMapping)
   name.vb: List(Of CategoryFieldMapping)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
@@ -356,10 +658,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -376,20 +678,21 @@ references:
   name: LocalUploadFileList
   nameWithType: CombinedModel.LocalUploadFileList
   fullName: Scrapbook101core.Models.CombinedModel.LocalUploadFileList
-- uid: List{Scrapbook101core.Models.FileItem}
-  commentId: '!:List{Scrapbook101core.Models.FileItem}'
-  definition: List`1
+- uid: System.Collections.Generic.List{Scrapbook101core.Models.FileItem}
+  commentId: T:System.Collections.Generic.List{Scrapbook101core.Models.FileItem}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
   name: List<FileItem>
   nameWithType: List<FileItem>
-  fullName: List<Scrapbook101core.Models.FileItem>
+  fullName: System.Collections.Generic.List<Scrapbook101core.Models.FileItem>
   nameWithType.vb: List(Of FileItem)
-  fullName.vb: List(Of Scrapbook101core.Models.FileItem)
+  fullName.vb: System.Collections.Generic.List(Of Scrapbook101core.Models.FileItem)
   name.vb: List(Of FileItem)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
@@ -402,10 +705,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -422,45 +725,46 @@ references:
   name: LocalHttpPostedFileList
   nameWithType: CombinedModel.LocalHttpPostedFileList
   fullName: Scrapbook101core.Models.CombinedModel.LocalHttpPostedFileList
-- uid: List{IFormFile}
-  commentId: '!:List{IFormFile}'
-  definition: List`1
+- uid: System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile}
+  commentId: T:System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
   name: List<IFormFile>
   nameWithType: List<IFormFile>
-  fullName: List<IFormFile>
+  fullName: System.Collections.Generic.List<Microsoft.AspNetCore.Http.IFormFile>
   nameWithType.vb: List(Of IFormFile)
-  fullName.vb: List(Of IFormFile)
+  fullName.vb: System.Collections.Generic.List(Of Microsoft.AspNetCore.Http.IFormFile)
   name.vb: List(Of IFormFile)
   spec.csharp:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: IFormFile
+  - uid: Microsoft.AspNetCore.Http.IFormFile
     name: IFormFile
     nameWithType: IFormFile
-    fullName: IFormFile
+    fullName: Microsoft.AspNetCore.Http.IFormFile
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: List`1
+  - uid: System.Collections.Generic.List`1
     name: List
     nameWithType: List
-    fullName: List
+    fullName: System.Collections.Generic.List
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: IFormFile
+  - uid: Microsoft.AspNetCore.Http.IFormFile
     name: IFormFile
     nameWithType: IFormFile
-    fullName: IFormFile
+    fullName: Microsoft.AspNetCore.Http.IFormFile
     isExternal: true
   - name: )
     nameWithType: )
