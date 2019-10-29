@@ -5,6 +5,7 @@ items:
   id: Scrapbook101core.Controllers
   children:
   - Scrapbook101core.Controllers.CategoryController
+  - Scrapbook101core.Controllers.ItemApiController
   - Scrapbook101core.Controllers.ItemController
   langs:
   - csharp
@@ -21,6 +22,11 @@ references:
   name: CategoryController
   nameWithType: CategoryController
   fullName: Scrapbook101core.Controllers.CategoryController
+- uid: Scrapbook101core.Controllers.ItemApiController
+  commentId: T:Scrapbook101core.Controllers.ItemApiController
+  name: ItemApiController
+  nameWithType: ItemApiController
+  fullName: Scrapbook101core.Controllers.ItemApiController
 - uid: Scrapbook101core.Controllers.ItemController
   commentId: T:Scrapbook101core.Controllers.ItemController
   name: ItemController

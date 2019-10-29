@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Introduction | Scrapbook101core </title>
+    <title>Web API | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Introduction | Scrapbook101core ">
+    <meta name="title" content="Web API | Scrapbook101core ">
     <meta name="generator" content="docfx 2.47.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -66,25 +66,74 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="introduction">
-<h1 id="introduction">Introduction</h1>
+            <article class="content wrap" id="_content" data-uid="web-api">
+<h1 id="web-api-in-progress">Web API (in progress)</h1>
 
-<p>This document set describes how to build a Personal Information Managment (PIM) system as discussed in the related of the blog post <a href="http://blog.travelmarx.com/2017/12/a-personal-information-management-system-introducing-scrapbook.html">A Personal Information Management System: Introducing Scrapbook</a>. In that post we describe why we built our own PIM system and we take a  high-level look at how it was built. We call our PIM system &quot;Scrapbook&quot;. This web site discusses in detail how you can create a version of Scrapbook yourself on Windows using the .NET Framework or .NET Core. In the interest of reduced complexity, we present here a simplified version we call Scrapbook101core.</p>
-<p>After building and running the code, you should have a simple Scrapbook101core site populated with ten entries and supporting assets. Note that these document pages are still a work in progress as of September 2019.</p>
-<p>This document set covers both Scrapbook101core implemented on the .NET Framework and .NET core.</p>
-<h2 id="a-brief-recap">A brief recap</h2>
-<p>The blog post referenced above discusses our reasons for creating a Scrapbook application. To summarize, in our PIM we wanted to:</p>
-<ul>
-<li>Deal with ever-increasing amounts of personal <strong>archival</strong> data, both physical and digital, in a consistent way.</li>
-<li>Capture <strong>context</strong> about data so that when we referred to our data int the future we would understood why we saved it and why it was important.</li>
-<li><strong>Find</strong> our data quickly and on-demand, for example, using natural language or a chat bot.</li>
-<li><strong>Own</strong> our data and not have it live in a social network or service that locks the format or controls our access to it.</li>
-</ul>
-<p>The way we could accomplish this was to create a custom PIM system consisting of software, programming frameworks, and cloud services working together to achieve the four principles described above.</p>
-<p>While Scrapbook101core is a pared-down version of what we described in the blog post, it has enough of the basic functionality to be a good starting point for someone interested in creating their own Scrapbook.</p>
-<h2 id="why-this-site">Why this site?</h2>
-<p>Why is Scrapbook101core documented here and not on <a href="http://blog.travelmarx.com">blog.travelmarx.com</a>? For two reasons. First, we were interested in trying out <a href="https://dotnet.github.io/docfx/">DocFx</a> for technical documentation. And second, demonstrating code and talking about it in a Blogger post is not easy for a writer or reader. Hence, this DocFx site was born.</p>
-<p>Creating this site was an odyssey into new tools and practices that we thought were interesting to document as well. If you want to know a little bit about how this site was created, see <a href="about-this-site.html">About This Site</a>.</p>
+<p>Last update: 2019-10-20</p>
+<p>What are we trying to do? We build Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use cases and ways to interact with Scrapbook101core beyond the browser.</p>
+<h2 id="first-steps">First steps</h2>
+<p>As usual, we started by following the [Web API Tutorial][webpaitut]. A lot of effort is put into creating this tutorial experiences so why not use them? And it's our old friend, the Todo List.</p>
+<p>After running the tutorial, we realized our first decision point was whether to use the same controller classes for both views (web interface) and web APIs. We decided that we wanted to separate the functionality at the risk of repeating some code.</p>
+<p>Install <a href="https://www.getpostman.com/downloads/">Postman</a>, a collaboration platform for API development that includes an easy what to construct and send HTTP requests.</p>
+<h2 id="detailed-steps">Detailed steps</h2>
+<ol>
+<li><p>Create a new ItemApiController. Keep the names similar to existing <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html">ItemController</a> but with &quot;Api&quot; added.</p>
+</li>
+<li><p>We already have an <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a> class defined, so no changes necessary there.</p>
+</li>
+<li><p>TBD: Any changes in appsettings.json?</p>
+</li>
+<li><p>TBD: Any changes in Program.cs or Startup.cs?</p>
+</li>
+</ol>
+<p>Adding scaffolding item. Easier in Visual Studio? First time through, might be easier to use Visual Studio.</p>
+<ol>
+<li><p>Add new controller.</p>
+</li>
+<li><p>Select API Controller with read/write actions. We are not using the Entity Framework.</p>
+</li>
+<li><p>A new controller is generated. Note we are inheriting from ControllerBase.</p>
+</li>
+</ol>
+<pre><code class="lang-c#">using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Scrapbook101core.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class ItemApiController : ControllerBase
+    {
+        // GET: api/ItemApi
+        [HttpGet]
+        public IEnumerable&lt;string&gt; Get()
+        {
+            return new string[] { &quot;value1&quot;, &quot;value2&quot; };
+        }
+        // GET: api/ItemApi/5
+        [HttpGet(&quot;{id}&quot;, Name = &quot;Get&quot;)]
+        public string Get(int id)
+        {
+            return &quot;value&quot;;
+        }
+        // POST: api/ItemApi
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
+        // PUT: api/ItemApi/5
+        [HttpPut(&quot;{id}&quot;)]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete(&quot;{id}&quot;)]
+        public void Delete(int id)
+        {
+        }
+    }
+}
+</code></pre>
 </article>
           </div>
           
@@ -93,7 +142,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/web-api.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

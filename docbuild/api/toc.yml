@@ -20,6 +20,8 @@
   items:
   - uid: Scrapbook101core.Controllers.CategoryController
     name: CategoryController
+  - uid: Scrapbook101core.Controllers.ItemApiController
+    name: ItemApiController
   - uid: Scrapbook101core.Controllers.ItemController
     name: ItemController
 - uid: Scrapbook101core.Models

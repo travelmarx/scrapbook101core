@@ -201,6 +201,70 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.CategoryController.Index
   nameWithType: CategoryController.Index
+- uid: Scrapbook101core.Controllers.ItemApiController
+  name: ItemApiController
+  href: api/Scrapbook101core.Controllers.ItemApiController.html
+  commentId: T:Scrapbook101core.Controllers.ItemApiController
+  fullName: Scrapbook101core.Controllers.ItemApiController
+  nameWithType: ItemApiController
+- uid: Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
+  name: Delete(Int32)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Delete_System_Int32_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
+  fullName: Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
+  nameWithType: ItemApiController.Delete(Int32)
+- uid: Scrapbook101core.Controllers.ItemApiController.Delete*
+  name: Delete
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Delete_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Delete
+  isSpec: "True"
+  fullName: Scrapbook101core.Controllers.ItemApiController.Delete
+  nameWithType: ItemApiController.Delete
+- uid: Scrapbook101core.Controllers.ItemApiController.Get
+  name: Get()
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Get
+  fullName: Scrapbook101core.Controllers.ItemApiController.Get()
+  nameWithType: ItemApiController.Get()
+- uid: Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
+  name: Get(Int32)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get_System_Int32_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
+  fullName: Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
+  nameWithType: ItemApiController.Get(Int32)
+- uid: Scrapbook101core.Controllers.ItemApiController.Get*
+  name: Get
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Get
+  isSpec: "True"
+  fullName: Scrapbook101core.Controllers.ItemApiController.Get
+  nameWithType: ItemApiController.Get
+- uid: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
+  name: Post(String)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Post_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Post(System.String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
+  nameWithType: ItemApiController.Post(String)
+- uid: Scrapbook101core.Controllers.ItemApiController.Post*
+  name: Post
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Post_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Post
+  isSpec: "True"
+  fullName: Scrapbook101core.Controllers.ItemApiController.Post
+  nameWithType: ItemApiController.Post
+- uid: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
+  name: Put(Int32, String)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_System_Int32_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32, System.String)
+  nameWithType: ItemApiController.Put(Int32, String)
+- uid: Scrapbook101core.Controllers.ItemApiController.Put*
+  name: Put
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Put
+  isSpec: "True"
+  fullName: Scrapbook101core.Controllers.ItemApiController.Put
+  nameWithType: ItemApiController.Put
 - uid: Scrapbook101core.Controllers.ItemController
   name: ItemController
   href: api/Scrapbook101core.Controllers.ItemController.html
@@ -1509,3 +1573,6 @@ references:
 - uid: technology-overview
   name: Technology Overview
   href: articles/technology-overview.html
+- uid: web-api
+  name: Web API
+  href: articles/web-api.html
