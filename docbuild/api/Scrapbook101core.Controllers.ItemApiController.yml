@@ -6,8 +6,8 @@ items:
   parent: Scrapbook101core.Controllers
   children:
   - Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
-  - Scrapbook101core.Controllers.ItemApiController.Get
   - Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
+  - Scrapbook101core.Controllers.ItemApiController.GetAsync
   - Scrapbook101core.Controllers.ItemApiController.Post(System.String)
   - Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
   langs:
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: ItemApiController
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -235,25 +235,25 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Scrapbook101core.Controllers.ItemApiController.Get
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Get
-  id: Get
+- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.GetAsync
+  id: GetAsync
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: Get()
-  nameWithType: ItemApiController.Get()
-  fullName: Scrapbook101core.Controllers.ItemApiController.Get()
+  name: GetAsync()
+  nameWithType: ItemApiController.GetAsync()
+  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync()
   type: Method
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: master
       repo: https://github.com/travelmarx/scrapbook101core
-    id: Get
+    id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -261,14 +261,14 @@ items:
     content: >-
       [HttpGet]
 
-      public IEnumerable<string> Get()
+      public Task<ActionResult<IEnumerable<Item>>> GetAsync()
     return:
-      type: System.Collections.Generic.IEnumerable{System.String}
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
     content.vb: >-
       <HttpGet>
 
-      Public Function Get As IEnumerable(Of String)
-  overload: Scrapbook101core.Controllers.ItemApiController.Get*
+      Public Function GetAsync As Task(Of ActionResult(Of IEnumerable(Of Item)))
+  overload: Scrapbook101core.Controllers.ItemApiController.GetAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
@@ -295,7 +295,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Get
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 21
+    startLine: 59
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -346,7 +346,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Post
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 28
+    startLine: 66
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -393,7 +393,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Put
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 34
+    startLine: 72
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -444,7 +444,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Delete
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 40
+    startLine: 78
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -12116,100 +12116,147 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync*
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.GetAsync
+  name: GetAsync
+  nameWithType: ItemApiController.GetAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ActionResult<IEnumerable<Item>>>
+  nameWithType: Task<ActionResult<IEnumerable<Item>>>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>>
+  nameWithType.vb: Task(Of ActionResult(Of IEnumerable(Of Item)))
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult(Of System.Collections.Generic.IEnumerable(Of Scrapbook101core.Models.Item)))
+  name.vb: Task(Of ActionResult(Of IEnumerable(Of Item)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    nameWithType: ActionResult
+    fullName: Microsoft.AspNetCore.Mvc.ActionResult
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Scrapbook101core.Models.Item
+    name: Item
+    nameWithType: Item
+    fullName: Scrapbook101core.Models.Item
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    nameWithType: ActionResult
+    fullName: Microsoft.AspNetCore.Mvc.ActionResult
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Scrapbook101core.Models.Item
+    name: Item
+    nameWithType: Item
+    fullName: Scrapbook101core.Models.Item
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: Scrapbook101core.Controllers.ItemApiController.Get*
   commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Get
   name: Get
   nameWithType: ItemApiController.Get
   fullName: Scrapbook101core.Controllers.ItemApiController.Get
-- uid: System.Collections.Generic.IEnumerable{System.String}
-  commentId: T:System.Collections.Generic.IEnumerable{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String>
-  nameWithType: IEnumerable<String>
-  fullName: System.Collections.Generic.IEnumerable<System.String>
-  nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
-  name.vb: IEnumerable(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
