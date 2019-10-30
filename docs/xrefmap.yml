@@ -220,12 +220,6 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemApiController.Delete
   nameWithType: ItemApiController.Delete
-- uid: Scrapbook101core.Controllers.ItemApiController.Get
-  name: Get()
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Get
-  fullName: Scrapbook101core.Controllers.ItemApiController.Get()
-  nameWithType: ItemApiController.Get()
 - uid: Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
   name: Get(Int32)
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get_System_Int32_
@@ -239,6 +233,19 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemApiController.Get
   nameWithType: ItemApiController.Get
+- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync
+  name: GetAsync()
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.GetAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync()
+  nameWithType: ItemApiController.GetAsync()
+- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync*
+  name: GetAsync
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.GetAsync
+  isSpec: "True"
+  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync
+  nameWithType: ItemApiController.GetAsync
 - uid: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
   name: Post(String)
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Post_System_String_
@@ -1574,5 +1581,5 @@ references:
   name: Technology Overview
   href: articles/technology-overview.html
 - uid: web-api
-  name: Web API
+  name: Creating a Web API
   href: articles/web-api.html

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Web API | Scrapbook101core </title>
+    <title>Creating a Web API | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Web API | Scrapbook101core ">
+    <meta name="title" content="Creating a Web API | Scrapbook101core ">
     <meta name="generator" content="docfx 2.47.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -90,9 +90,9 @@
 <ol>
 <li><p>Add new controller.</p>
 </li>
-<li><p>Select API Controller with read/write actions. We are not using the Entity Framework.</p>
+<li><p>Select API Controller with read/write actions. (We are not using the Entity Framework.) In the course of experimenting with adding API controllers, we ended up pulling in Microsoft.EntityFrameworkCore.SqlServer.Design and Microsoft.EntityFrameworkCore.Tools in the .csproj file</p>
 </li>
-<li><p>A new controller is generated. Note we are inheriting from ControllerBase.</p>
+<li><p>A new controller is generated. Note we are inheriting from ControllerBase. Here's the skeleton of the class:</p>
 </li>
 </ol>
 <pre><code class="lang-c#">using System.Collections.Generic;
@@ -134,6 +134,14 @@ namespace Scrapbook101core.Controllers
     }
 }
 </code></pre>
+<ol start="4">
+<li>Get the GET to work.</li>
+</ol>
+<p><a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type</a></p>
+<p><a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1</a></p>
+<p>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core	C:\Users\mgelo\Documents\GitHub\scrapbook101core\Scrapbook101core\Controllers\ItemApiController.cs	22	Active</p>
+<p>Cannot implicitly convert System.Collections.Generic.IEnumerable to Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&gt;</p>
+<p><a href="https://github.com/aspnet/Mvc/issues/8061">https://github.com/aspnet/Mvc/issues/8061</a></p>
 </article>
           </div>
           
