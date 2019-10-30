@@ -1,6 +1,6 @@
 ---
 uid: web-api
-title: Web API
+title: Creating a Web API
 ---
 # Web API (in progress)
 
@@ -30,9 +30,9 @@ Adding scaffolding item. Easier in Visual Studio? First time through, might be e
 
 1. Add new controller.
 
-2. Select API Controller with read/write actions. We are not using the Entity Framework.
+2. Select API Controller with read/write actions. (We are not using the Entity Framework.) In the course of experimenting with adding API controllers, we ended up pulling in Microsoft.EntityFrameworkCore.SqlServer.Design and Microsoft.EntityFrameworkCore.Tools in the .csproj file
 
-3. A new controller is generated. Note we are inheriting from ControllerBase.
+3. A new controller is generated. Note we are inheriting from ControllerBase. Here's the skeleton of the class:
 
 ```c#
 using System.Collections.Generic;
@@ -74,6 +74,19 @@ namespace Scrapbook101core.Controllers
     }
 }
 ```
+
+4. Get the GET to work.
+
+https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type
+
+https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&lq=1
+
+Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core	C:\Users\mgelo\Documents\GitHub\scrapbook101core\Scrapbook101core\Controllers\ItemApiController.cs	22	Active
+
+Cannot implicitly convert System.Collections.Generic.IEnumerable to Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable>
+
+https://github.com/aspnet/Mvc/issues/8061
+
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
 [postman]: https://www.getpostman.com/downloads/

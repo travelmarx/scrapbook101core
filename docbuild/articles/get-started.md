@@ -14,7 +14,7 @@ Install these components on your development or local server. This server will b
 
 Visual Studio has different workloads that can be installed. If you are running {{productName}} on ASP.NET for Windows, then you need the *ASP.NET and web development* workload. If you are running {{productName}} on ASP.NET Core, then you need the *.NET Cross-platform development workload*. For more information on workloads, see [Selecting Workloads in Visual Studio 2017][work].
 
-After installing the Cosmos DB Emulator, confirm that you can run Cosmos DB Local Emulator. You should see a screen like the following image. 
+After installing the Cosmos DB Emulator, confirm that you can run Cosmos DB Local Emulator. You should see a screen like the following image. Your primary key will be different than the one shown in the image.
 
 ![Getting samples in Cosmos DB Local Emulator](../images/where-to-get-samples.jpg "Getting samples in Cosmos DB Local Emulator")
 
@@ -28,7 +28,7 @@ Running {{productName}} locally, you can try out your ideas at no cost or risk. 
 1. Open the solution in Visual Studio. For example, open the solution file `{{productName}}.sln`.
 
 1. Customize the code as follows in the `<code>`appsettings.json` file.
-    * Enter the correct value for **AuthKey**, which you can get from the local emulator home page as show above.
+    * Enter the correct value for **AuthKey**, which you can get from the local emulator home page as show above. It's the **Primary Key**.
 
     * Enter a Bing Maps Key for **BingMapKey** if you have one; if blank, then geocoding is skipped.
 
