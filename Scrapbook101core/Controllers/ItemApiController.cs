@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Scrapbook101core.Models;
 
 namespace Scrapbook101core.Controllers
 {
@@ -11,11 +12,48 @@ namespace Scrapbook101core.Controllers
     [ApiController]
     public class ItemApiController : ControllerBase
     {
+
         // GET: api/ItemApi
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
         {
-            return new string[] { "value1", "value2" };
+            var items = await DocumentDBRepository<Item>
+                .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+            var imagePath = BuildPathList(items);
+            return items.ToList();
+        }
+
+        private List<string> BuildPathList(IEnumerable<Item> items)
+        {
+            List<string> imagePath = new List<string>();
+            foreach (var item in items)
+            {
+                string imageToDisplay = AppVariables.NoAssetImage;
+                if (!System.String.IsNullOrEmpty(item.AssetPath))
+                {
+
+                    if (item.Assets != null && item.Assets.Count != 0)
+                    {
+                        // Show first image found if one exists
+                        foreach (var asset in item.Assets)
+                        {
+                            string contentType;
+                            new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider().TryGetContentType(asset.Name, out contentType);
+                            if (contentType.StartsWith("image/"))
+                            {
+                                imageToDisplay = $"{item.AssetPath}" + "/" + asset.Name;
+                                break;
+                            }
+                        }
+                    }
+                    imagePath.Add(AppVariables.AssetBasePath + imageToDisplay);
+                }
+                else
+                {
+                    imagePath.Add(AppVariables.AssetBasePath + imageToDisplay);
+                }
+            }
+            return imagePath;
         }
 
         // GET: api/ItemApi/5
