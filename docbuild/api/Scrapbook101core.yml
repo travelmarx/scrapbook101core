@@ -6,7 +6,7 @@ items:
   children:
   - Scrapbook101core.AppVariables
   - Scrapbook101core.DocumentDBRepository`1
-  - Scrapbook101core.GeoCodeHelper
+  - Scrapbook101core.HelperClasses
   - Scrapbook101core.Program
   - Scrapbook101core.Scrapbook101Configuration
   - Scrapbook101core.Startup
@@ -61,11 +61,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Scrapbook101core.GeoCodeHelper
-  commentId: T:Scrapbook101core.GeoCodeHelper
-  name: GeoCodeHelper
-  nameWithType: GeoCodeHelper
-  fullName: Scrapbook101core.GeoCodeHelper
+- uid: Scrapbook101core.HelperClasses
+  commentId: T:Scrapbook101core.HelperClasses
+  name: HelperClasses
+  nameWithType: HelperClasses
+  fullName: Scrapbook101core.HelperClasses
 - uid: Scrapbook101core.Scrapbook101Configuration
   commentId: T:Scrapbook101core.Scrapbook101Configuration
   parent: Scrapbook101core
