@@ -72,10 +72,10 @@
 <p>Last update: 2019-10-20</p>
 <p>What are we trying to do? We build Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use cases and ways to interact with Scrapbook101core beyond the browser.</p>
 <h2 id="initial-steps">Initial steps</h2>
-<p>As usual, we started by following the [Web API Tutorial][webpaitut]. A lot of effort is put into creating this tutorial experiences so why not use them? And it's our old friend, the Todo List.</p>
+<p>As usual, we started by following the <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&amp;tabs=visual-studio">Web API Tutorial</a>. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.</p>
 <p>After running the tutorial, we realized our first decision point was whether to use the same controller classes for both views (web interface) and web APIs. We decided that we wanted to separate the functionality at the risk of repeating some code.</p>
 <p>Install <a href="https://www.getpostman.com/downloads/">Postman</a>, a collaboration platform for API development that includes an easy what to construct and send HTTP requests.</p>
-<h2 id="detailed-steps">Detailed steps</h2>
+<h2 id="create-the-controller">Create the controller</h2>
 <p>Our first step is to create a new ItemApiController. We decided to keep the controller similar to existing <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html">ItemController</a> but with &quot;Api&quot; added. We added the scaffolding item using Visual Studio.</p>
 <ol>
 <li><p>Add a new controller to the project.</p>
@@ -126,6 +126,7 @@ namespace Scrapbook101core.Controllers
     }
 }
 </code></pre>
+<h2 id="get-api">GET api</h2>
 <p>The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
 <p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
 <p>The solution was to simply use <code>.ToList</code> so that our simple GET method then became this:</p>
@@ -141,6 +142,13 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </code></pre>
 <p>Here's an example of using Postman to test the GET to return all items.</p>
 <p><img src="../images/using-postman-for-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
+<h2 id="code-the-rest">Code the rest</h2>
+<p>Method | URI | Notes
+--- | --- | ---
+GET | /api/ItemApi | Returns all items.
+GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
+DELET
+E | /api/ItemApi/GUID | Deletes the item matching the GUID.</p>
 </article>
           </div>
           

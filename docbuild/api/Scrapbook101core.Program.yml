@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Program.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Program
     path: ../Scrapbook101core/Program.cs
     startLine: 22
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Program.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Main
     path: ../Scrapbook101core/Program.cs
     startLine: 28
@@ -102,8 +102,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Program.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CreateWebHostBuilder
     path: ../Scrapbook101core/Program.cs
     startLine: 39
@@ -119,7 +119,7 @@ items:
       type: System.String[]
       description: An optional array of arguments to pass to the builder.
     return:
-      type: IWebHostBuilder
+      type: Microsoft.AspNetCore.Hosting.IWebHostBuilder
       description: ''
     content.vb: Public Shared Function CreateWebHostBuilder(args As String()) As IWebHostBuilder
   overload: Scrapbook101core.Program.CreateWebHostBuilder*
@@ -466,9 +466,16 @@ references:
   name: CreateWebHostBuilder
   nameWithType: Program.CreateWebHostBuilder
   fullName: Scrapbook101core.Program.CreateWebHostBuilder
-- uid: IWebHostBuilder
-  commentId: '!:IWebHostBuilder'
+- uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+  commentId: T:Microsoft.AspNetCore.Hosting.IWebHostBuilder
+  parent: Microsoft.AspNetCore.Hosting
   isExternal: true
   name: IWebHostBuilder
   nameWithType: IWebHostBuilder
-  fullName: IWebHostBuilder
+  fullName: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
+  isExternal: true
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting
