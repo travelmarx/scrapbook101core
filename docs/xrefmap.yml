@@ -210,32 +210,32 @@ references:
   commentId: T:Scrapbook101core.Controllers.ItemApiController
   fullName: Scrapbook101core.Controllers.ItemApiController
   nameWithType: ItemApiController
-- uid: Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
-  name: Delete(Int32)
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Delete_System_Int32_
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Delete(System.Int32)
-  nameWithType: ItemApiController.Delete(Int32)
-- uid: Scrapbook101core.Controllers.ItemApiController.Delete*
-  name: Delete
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Delete_
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Delete
+- uid: Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)
+  name: DeleteAsync(String)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DeleteAsync_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)
+  nameWithType: ItemApiController.DeleteAsync(String)
+- uid: Scrapbook101core.Controllers.ItemApiController.DeleteAsync*
+  name: DeleteAsync
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DeleteAsync_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.DeleteAsync
   isSpec: "True"
-  fullName: Scrapbook101core.Controllers.ItemApiController.Delete
-  nameWithType: ItemApiController.Delete
-- uid: Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
-  name: Get(Int32)
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get_System_Int32_
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Get(System.Int32)
-  nameWithType: ItemApiController.Get(Int32)
-- uid: Scrapbook101core.Controllers.ItemApiController.Get*
-  name: Get
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Get_
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Get
+  fullName: Scrapbook101core.Controllers.ItemApiController.DeleteAsync
+  nameWithType: ItemApiController.DeleteAsync
+- uid: Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
+  name: DetailsAsync(String)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DetailsAsync_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
+  nameWithType: ItemApiController.DetailsAsync(String)
+- uid: Scrapbook101core.Controllers.ItemApiController.DetailsAsync*
+  name: DetailsAsync
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DetailsAsync_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.DetailsAsync
   isSpec: "True"
-  fullName: Scrapbook101core.Controllers.ItemApiController.Get
-  nameWithType: ItemApiController.Get
+  fullName: Scrapbook101core.Controllers.ItemApiController.DetailsAsync
+  nameWithType: ItemApiController.DetailsAsync
 - uid: Scrapbook101core.Controllers.ItemApiController.GetAsync
   name: GetAsync()
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync

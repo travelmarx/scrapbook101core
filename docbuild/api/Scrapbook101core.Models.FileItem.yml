@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: FileItem
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 45
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Name
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 47
@@ -97,8 +97,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Path
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 48
@@ -132,8 +132,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Role
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 49
@@ -167,8 +167,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Size
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 50
