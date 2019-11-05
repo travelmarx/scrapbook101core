@@ -10,13 +10,13 @@ What are we trying to do? We build Scrapbook101core as a web interface and then 
 
 ## Initial steps
 
-As usual, we started by following the [Web API Tutorial][webpaitut]. A lot of effort is put into creating this tutorial experiences so why not use them? And it's our old friend, the Todo List.
+As usual, we started by following the [Web API Tutorial][webapitut]. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.
 
 After running the tutorial, we realized our first decision point was whether to use the same controller classes for both views (web interface) and web APIs. We decided that we wanted to separate the functionality at the risk of repeating some code.
 
 Install [Postman][postman], a collaboration platform for API development that includes an easy what to construct and send HTTP requests.
 
-## Detailed steps
+## Create the controller 
 
 Our first step is to create a new ItemApiController. We decided to keep the controller similar to existing [ItemController](xref:Scrapbook101core.Controllers.ItemController) but with "Api" added. We added the scaffolding item using Visual Studio.
 
@@ -71,10 +71,10 @@ namespace Scrapbook101core.Controllers
 }
 ```
 
+## GET api
 The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
-
 
 The solution was to simply use `.ToList` so that our simple GET method then became this:
 
@@ -93,6 +93,14 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 Here's an example of using Postman to test the GET to return all items.
 
 ![Using Postman to GET all items.](../images/using-postman-for-get.jpg "Using Postman to GET all items.")
+
+## Code the rest
+
+Method | URI | Notes
+--- | --- | ---
+GET | /api/ItemApi | Returns all items.
+GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
+DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
 
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
