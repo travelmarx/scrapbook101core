@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemApiController.html",
-          "hash": "oiVt33MhZFd0XWpE1KBYmA=="
+          "hash": "VS2JPShHGMhMe9IHVxLXgg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "qP8LDCodExJErGPcOlatQg=="
+          "hash": "R1TU8rQ29lyIgWdMd7vT/Q=="
         }
       },
       "is_incremental": false,
@@ -77,11 +77,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Scrapbook101core.GeoCodeHelper.yml",
+      "source_relative_path": "api/Scrapbook101core.HelperClasses.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Scrapbook101core.GeoCodeHelper.html",
-          "hash": "yYCzr3K82HXpQLcG6bHmZA=="
+          "relative_path": "api/Scrapbook101core.HelperClasses.html",
+          "hash": "YCcyhrTRm0L6tGIT0usHEQ=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.html",
-          "hash": "IcdB3IykPsNTfoM6ipYfJg=="
+          "hash": "k8OUhbJ6ldtsI6K9TxSzLw=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "cj/0m6pG4xP9h/b4Mjz+MQ=="
+          "hash": "JaNMuEdbqmDPoGNDCMsaTQ=="
         }
       },
       "is_incremental": false,
@@ -293,11 +293,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/add-web-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/add-web-api.html",
+          "hash": "5zQjnyAOy5Uo04RSsQC/1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/azure-pipeline.md",
       "output": {
         ".html": {
           "relative_path": "articles/azure-pipeline.html",
-          "hash": "qKUGQqkrhDMI12U0NeUuwg=="
+          "hash": "OQrNQxQSDzMtk+bgcbkFOg=="
         }
       },
       "is_incremental": false,
@@ -417,19 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "S1XGBA0qE1kobQRrJqvp9g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/web-api.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/web-api.html",
-          "hash": "d/mSeUvPNrp3ToxfSgEDVA=="
+          "hash": "s4nvDKB8VZ8HPZtGcbsE5w=="
         }
       },
       "is_incremental": false,

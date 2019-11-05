@@ -4,6 +4,9 @@ references:
 - uid: about
   name: About This Site
   href: articles/about-this-site.html
+- uid: add-web-api
+  name: Creating a Web API
+  href: articles/add-web-api.html
 - uid: azure-pipeline
   name: Azure Pipeline
   href: articles/azure-pipeline.html
@@ -510,25 +513,41 @@ references:
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).UpdateItemAsync
   nameWithType: DocumentDBRepository<T>.UpdateItemAsync
   nameWithType.vb: DocumentDBRepository(Of T).UpdateItemAsync
-- uid: Scrapbook101core.GeoCodeHelper
-  name: GeoCodeHelper
-  href: api/Scrapbook101core.GeoCodeHelper.html
-  commentId: T:Scrapbook101core.GeoCodeHelper
-  fullName: Scrapbook101core.GeoCodeHelper
-  nameWithType: GeoCodeHelper
-- uid: Scrapbook101core.GeoCodeHelper.GetGeocode(System.String)
-  name: GetGeocode(String)
-  href: api/Scrapbook101core.GeoCodeHelper.html#Scrapbook101core_GeoCodeHelper_GetGeocode_System_String_
-  commentId: M:Scrapbook101core.GeoCodeHelper.GetGeocode(System.String)
-  fullName: Scrapbook101core.GeoCodeHelper.GetGeocode(System.String)
-  nameWithType: GeoCodeHelper.GetGeocode(String)
-- uid: Scrapbook101core.GeoCodeHelper.GetGeocode*
-  name: GetGeocode
-  href: api/Scrapbook101core.GeoCodeHelper.html#Scrapbook101core_GeoCodeHelper_GetGeocode_
-  commentId: Overload:Scrapbook101core.GeoCodeHelper.GetGeocode
+- uid: Scrapbook101core.HelperClasses
+  name: HelperClasses
+  href: api/Scrapbook101core.HelperClasses.html
+  commentId: T:Scrapbook101core.HelperClasses
+  fullName: Scrapbook101core.HelperClasses
+  nameWithType: HelperClasses
+- uid: Scrapbook101core.HelperClasses.BuildPathList(System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item})
+  name: BuildPathList(IEnumerable<Item>)
+  href: api/Scrapbook101core.HelperClasses.html#Scrapbook101core_HelperClasses_BuildPathList_System_Collections_Generic_IEnumerable_Scrapbook101core_Models_Item__
+  commentId: M:Scrapbook101core.HelperClasses.BuildPathList(System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item})
+  name.vb: BuildPathList(IEnumerable(Of Item))
+  fullName: Scrapbook101core.HelperClasses.BuildPathList(System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>)
+  fullName.vb: Scrapbook101core.HelperClasses.BuildPathList(System.Collections.Generic.IEnumerable(Of Scrapbook101core.Models.Item))
+  nameWithType: HelperClasses.BuildPathList(IEnumerable<Item>)
+  nameWithType.vb: HelperClasses.BuildPathList(IEnumerable(Of Item))
+- uid: Scrapbook101core.HelperClasses.BuildPathList*
+  name: BuildPathList
+  href: api/Scrapbook101core.HelperClasses.html#Scrapbook101core_HelperClasses_BuildPathList_
+  commentId: Overload:Scrapbook101core.HelperClasses.BuildPathList
   isSpec: "True"
-  fullName: Scrapbook101core.GeoCodeHelper.GetGeocode
-  nameWithType: GeoCodeHelper.GetGeocode
+  fullName: Scrapbook101core.HelperClasses.BuildPathList
+  nameWithType: HelperClasses.BuildPathList
+- uid: Scrapbook101core.HelperClasses.GetGeocode(System.String)
+  name: GetGeocode(String)
+  href: api/Scrapbook101core.HelperClasses.html#Scrapbook101core_HelperClasses_GetGeocode_System_String_
+  commentId: M:Scrapbook101core.HelperClasses.GetGeocode(System.String)
+  fullName: Scrapbook101core.HelperClasses.GetGeocode(System.String)
+  nameWithType: HelperClasses.GetGeocode(String)
+- uid: Scrapbook101core.HelperClasses.GetGeocode*
+  name: GetGeocode
+  href: api/Scrapbook101core.HelperClasses.html#Scrapbook101core_HelperClasses_GetGeocode_
+  commentId: Overload:Scrapbook101core.HelperClasses.GetGeocode
+  isSpec: "True"
+  fullName: Scrapbook101core.HelperClasses.GetGeocode
+  nameWithType: HelperClasses.GetGeocode
 - uid: Scrapbook101core.Models
   name: Scrapbook101core.Models
   href: api/Scrapbook101core.Models.html
@@ -1580,6 +1599,3 @@ references:
 - uid: technology-overview
   name: Technology Overview
   href: articles/technology-overview.html
-- uid: web-api
-  name: Creating a Web API
-  href: articles/web-api.html

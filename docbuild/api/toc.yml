@@ -7,8 +7,8 @@
   - uid: Scrapbook101core.DocumentDBRepository`1
     name: DocumentDBRepository<T>
     name.vb: DocumentDBRepository(Of T)
-  - uid: Scrapbook101core.GeoCodeHelper
-    name: GeoCodeHelper
+  - uid: Scrapbook101core.HelperClasses
+    name: HelperClasses
   - uid: Scrapbook101core.Program
     name: Program
   - uid: Scrapbook101core.Scrapbook101Configuration
