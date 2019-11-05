@@ -74,7 +74,7 @@ try {
         git checkout master
 
         Write-Host "## Add remote: git remote add origin master url"
-        git remote add origin master https://github.com/travelmarx/scrapbook101core.git
+        git remote add origin https://github.com/travelmarx/scrapbook101core.git
 
         Write-Host "## Pull from origin: git pull origin master"
         git pull origin master
@@ -82,7 +82,7 @@ try {
         Write-Host "## git merge tmp"
         git merge tmp
 
-        Write-Host "## git commit"
+        Write-Host "## git push"
         git push
         }    
  
