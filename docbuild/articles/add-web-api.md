@@ -71,7 +71,7 @@ namespace Scrapbook101core.Controllers
 }
 ```
 
-## GET api
+## GET method
 The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
@@ -94,14 +94,13 @@ Here's an example of using Postman to test the GET to return all items.
 
 ![Using Postman to GET all items.](../images/using-postman-to-get.jpg "Using Postman to GET all items.")
 
-## Code the rest
+## All methods
 
 Method | URI | Notes
 --- | --- | ---
 GET | /api/ItemApi | Returns all items.
 GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
-DELET
-E | /api/ItemApi/GUID | Deletes the item matching the GUID.
+DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
 
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
