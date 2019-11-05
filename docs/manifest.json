@@ -292,12 +292,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/add-web-api.md",
       "output": {
         ".html": {
           "relative_path": "articles/add-web-api.html",
-          "hash": "5zQjnyAOy5Uo04RSsQC/1g=="
+          "hash": "3qgV+Gpxk2AuAI8spYhJAw=="
         }
       },
       "is_incremental": false,

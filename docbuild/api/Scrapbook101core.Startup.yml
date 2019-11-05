@@ -7,7 +7,7 @@ items:
   children:
   - Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
   - Scrapbook101core.Startup.Configuration
-  - Scrapbook101core.Startup.Configure(IApplicationBuilder,IWebHostEnvironment)
+  - Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
   - Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   langs:
   - csharp
@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Startup
     path: ../Scrapbook101core/Startup.cs
     startLine: 22
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: .ctor
     path: ../Scrapbook101core/Startup.cs
     startLine: 24
@@ -95,8 +95,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Configuration
     path: ../Scrapbook101core/Startup.cs
     startLine: 29
@@ -130,8 +130,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: ConfigureServices
     path: ../Scrapbook101core/Startup.cs
     startLine: 32
@@ -149,22 +149,22 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Startup.Configure(IApplicationBuilder,IWebHostEnvironment)
-  commentId: M:Scrapbook101core.Startup.Configure(IApplicationBuilder,IWebHostEnvironment)
-  id: Configure(IApplicationBuilder,IWebHostEnvironment)
+- uid: Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  commentId: M:Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
+  id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
   parent: Scrapbook101core.Startup
   langs:
   - csharp
   - vb
   name: Configure(IApplicationBuilder, IWebHostEnvironment)
   nameWithType: Startup.Configure(IApplicationBuilder, IWebHostEnvironment)
-  fullName: Scrapbook101core.Startup.Configure(IApplicationBuilder, IWebHostEnvironment)
+  fullName: Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IWebHostEnvironment)
   type: Method
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Configure
     path: ../Scrapbook101core/Startup.cs
     startLine: 60
@@ -175,9 +175,9 @@ items:
     content: public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     parameters:
     - id: app
-      type: IApplicationBuilder
+      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
     - id: env
-      type: IWebHostEnvironment
+      type: Microsoft.AspNetCore.Hosting.IWebHostEnvironment
     content.vb: Public Sub Configure(app As IApplicationBuilder, env As IWebHostEnvironment)
   overload: Scrapbook101core.Startup.Configure*
   modifiers.csharp:
@@ -528,14 +528,29 @@ references:
   name: Configure
   nameWithType: Startup.Configure
   fullName: Scrapbook101core.Startup.Configure
-- uid: IApplicationBuilder
-  commentId: '!:IApplicationBuilder'
+- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
+  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
+  parent: Microsoft.AspNetCore.Builder
   isExternal: true
   name: IApplicationBuilder
   nameWithType: IApplicationBuilder
-  fullName: IApplicationBuilder
-- uid: IWebHostEnvironment
+  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
+- uid: Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+  commentId: T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+  parent: Microsoft.AspNetCore.Hosting
   isExternal: true
   name: IWebHostEnvironment
   nameWithType: IWebHostEnvironment
-  fullName: IWebHostEnvironment
+  fullName: Microsoft.AspNetCore.Hosting.IWebHostEnvironment
+- uid: Microsoft.AspNetCore.Builder
+  commentId: N:Microsoft.AspNetCore.Builder
+  isExternal: true
+  name: Microsoft.AspNetCore.Builder
+  nameWithType: Microsoft.AspNetCore.Builder
+  fullName: Microsoft.AspNetCore.Builder
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
+  isExternal: true
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting

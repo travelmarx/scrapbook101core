@@ -29,8 +29,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFields
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 47
@@ -72,8 +72,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: this[]
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 52
@@ -112,8 +112,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Artist
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 59
@@ -147,8 +147,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Author
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 62
@@ -182,8 +182,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: BirthDate
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 65
@@ -217,8 +217,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Director
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 68
@@ -252,8 +252,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Genre
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 71
@@ -287,8 +287,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Highlight
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 74
@@ -322,8 +322,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Location
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 77
@@ -357,8 +357,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Lodging
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 80
@@ -392,8 +392,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Synopsis
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 83
@@ -427,8 +427,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Theme
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 86
@@ -462,8 +462,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Type
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 89
@@ -497,8 +497,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Who
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 92
@@ -532,8 +532,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Year
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 95
