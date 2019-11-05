@@ -71,28 +71,29 @@ namespace Scrapbook101core.Controllers
 }
 ```
 
-4. The next step was to get the GET action to work.
+The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
 
-    This step seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
-
-        Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core	C:\Users\mgelo\Documents\GitHub\scrapbook101core\Scrapbook101core\Controllers\ItemApiController.cs	22	Active
+*Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
 
 
-    The solution was to simply use `.ToList` so that our simple GET method then became this:
+The solution was to simply use `.ToList` so that our simple GET method then became this:
 
-    ```c#
-    // GET: api/ItemApi
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
-    {
-        var items = await DocumentDBRepository<Item>
-            .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
-        var imagePath = BuildPathList(items);
-        return items.ToList();
-    }
-    ```
+```c#
+// GET: api/ItemApi
+[HttpGet]
+public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
+{
+    var items = await DocumentDBRepository<Item>
+        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+    var imagePath = HelperClasses.BuildPathList(items);
+    return items.ToList();
+}
+```
 
-    It looks similar to the GET action for our view controller but simpler.
+Here's an example of using Postman to test the GET to return all items.
+
+![Using Postman to GET all items.](../images/using-postman-for-get.jpg "Using Postman to GET all items.")
+
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
 [postman]: https://www.getpostman.com/downloads/

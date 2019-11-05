@@ -28,7 +28,7 @@
   "Scrapbook101core.Controllers.ItemApiController.Post(System.String)": "Scrapbook101core.Controllers.ItemApiController.yml",
   "Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)": "Scrapbook101core.Controllers.ItemApiController.yml",
   "Scrapbook101core.Controllers.ItemController": "Scrapbook101core.Controllers.ItemController.yml",
-  "Scrapbook101core.Controllers.ItemController.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)": "Scrapbook101core.Controllers.ItemController.yml",
+  "Scrapbook101core.Controllers.ItemController.#ctor(IWebHostEnvironment)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.CreateAsync": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.CreateAsync(Scrapbook101core.Models.CombinedModel)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.DeleteAsync(System.String)": "Scrapbook101core.Controllers.ItemController.yml",
@@ -134,6 +134,6 @@
   "Scrapbook101core.Startup": "Scrapbook101core.Startup.yml",
   "Scrapbook101core.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)": "Scrapbook101core.Startup.yml",
   "Scrapbook101core.Startup.Configuration": "Scrapbook101core.Startup.yml",
-  "Scrapbook101core.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)": "Scrapbook101core.Startup.yml",
+  "Scrapbook101core.Startup.Configure(IApplicationBuilder,IWebHostEnvironment)": "Scrapbook101core.Startup.yml",
   "Scrapbook101core.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": "Scrapbook101core.Startup.yml"
 }
