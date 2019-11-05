@@ -92,7 +92,7 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 
 Here's an example of using Postman to test the GET to return all items.
 
-![Using Postman to GET all items.](../images/using-postman-for-get.jpg "Using Postman to GET all items.")
+![Using Postman to GET all items.](../images/using-postman-to-get.jpg "Using Postman to GET all items.")
 
 ## Code the rest
 
