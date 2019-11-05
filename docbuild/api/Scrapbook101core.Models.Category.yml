@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Category
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 13
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Id
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 15
@@ -71,12 +71,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Id { get; set; }
+    content: >-
+      [Required(ErrorMessage = "id is required.")]
+
+      public string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Id As String
+    content.vb: >-
+      <Required(ErrorMessage:="id is required.")>
+
+      Public Property Id As String
   overload: Scrapbook101core.Models.Category.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: id is required.
   modifiers.csharp:
   - public
   - get
@@ -97,8 +111,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Type
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 19
@@ -106,12 +120,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Type { get; set; }
+    content: >-
+      [Required(ErrorMessage = "Type is required.")]
+
+      public string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Type As String
+    content.vb: >-
+      <Required(ErrorMessage:="Type is required.")>
+
+      Public Property Type As String
   overload: Scrapbook101core.Models.Category.Type*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Type is required.
   modifiers.csharp:
   - public
   - get
@@ -132,8 +160,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Categories
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 23

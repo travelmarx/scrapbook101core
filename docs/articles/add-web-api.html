@@ -126,11 +126,8 @@ namespace Scrapbook101core.Controllers
     }
 }
 </code></pre>
-<ol start="4">
-<li><p>The next step was to get the GET action to work.</p>
-<p>This step seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
-<pre><code> Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core	C:\Users\mgelo\Documents\GitHub\scrapbook101core\Scrapbook101core\Controllers\ItemApiController.cs	22	Active
-</code></pre>
+<p>The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
+<p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
 <p>The solution was to simply use <code>.ToList</code> so that our simple GET method then became this:</p>
 <pre><code class="lang-c#">// GET: api/ItemApi
 [HttpGet]
@@ -138,13 +135,12 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 {
     var items = await DocumentDBRepository&lt;Item&gt;
         .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
-    var imagePath = BuildPathList(items);
+    var imagePath = HelperClasses.BuildPathList(items);
     return items.ToList();
 }
 </code></pre>
-<p>It looks similar to the GET action for our view controller but simpler.</p>
-</li>
-</ol>
+<p>Here's an example of using Postman to test the GET to return all items.</p>
+<p><img src="../images/using-postman-for-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
 </article>
           </div>
           
