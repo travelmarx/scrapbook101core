@@ -100,7 +100,8 @@ Method | URI | Notes
 --- | --- | ---
 GET | /api/ItemApi | Returns all items.
 GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
-DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
+DELET
+E | /api/ItemApi/GUID | Deletes the item matching the GUID.
 
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
