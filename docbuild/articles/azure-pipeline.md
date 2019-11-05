@@ -232,7 +232,7 @@ So with the pipeline in place, we adopted this workflow.
 
     * The branch can be tested locally with ``docfx --serve``. This builds docs in **docbuild\\_site** folder. We do not copy those changes into **docs** folder because we don't want to check in HTML for the working branch.
 
-    * Do a ``git pull origin master`` from the working branch to pick up changes from master.
+    * Run ``git pull origin master`` from the working branch to pick up changes from master.
 
 1. Push working branch changes to GitHub with
 

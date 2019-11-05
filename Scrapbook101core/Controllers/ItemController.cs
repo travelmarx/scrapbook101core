@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.StaticFiles;
 using Scrapbook101core.Models;
 
 namespace Scrapbook101core.Controllers
@@ -28,41 +27,8 @@ namespace Scrapbook101core.Controllers
         public async Task<ActionResult> IndexAsync()
         {
             var items = await DocumentDBRepository<Item>.GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
-            ViewBag.imagePath = BuildPathList(items);
+            ViewBag.imagePath = HelperClasses.BuildPathList(items);
             return View(items);
-        }
-
-        private List<string> BuildPathList(IEnumerable<Item> items)
-        {
-            List<string> imagePath = new List<string>();
-            foreach (var item in items)
-            {
-                string imageToDisplay = AppVariables.NoAssetImage;
-                if (!System.String.IsNullOrEmpty(item.AssetPath))
-                {
-
-                    if (item.Assets != null && item.Assets.Count != 0)
-                    {
-                        // Show first image found if one exists
-                        foreach (var asset in item.Assets)
-                        {
-                            string contentType;
-                            new FileExtensionContentTypeProvider().TryGetContentType(asset.Name, out contentType);
-                            if (contentType.StartsWith("image/"))
-                            {
-                                imageToDisplay = $"{item.AssetPath}" + "/" + asset.Name;
-                                break;
-                            }
-                        }
-                    }
-                    imagePath.Add(AppVariables.AssetBasePath + imageToDisplay);
-                }
-                else
-                {
-                    imagePath.Add(AppVariables.AssetBasePath + imageToDisplay);
-                }
-            }
-            return imagePath;
         }
 
         [ActionName("Details")]
@@ -112,7 +78,7 @@ namespace Scrapbook101core.Controllers
             // Get geocode from Bing if applicable - see web.config
             if (AppVariables.BingMapKey.Length > 0)
             {
-                double[] coord = await GeoCodeHelper.GetGeocode(combinedModel.Item.Location);
+                double[] coord = await HelperClasses.GetGeocode(combinedModel.Item.Location);
                 if (coord[0] != 0)
                 {
                     combinedModel.Item.GeoLocation = new Microsoft.Azure.Documents.Spatial.Point(coord[1], coord[0]);

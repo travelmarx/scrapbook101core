@@ -14,8 +14,6 @@
   href: next-steps.md
 - name: Handling Assets
   href: handling-assets.md
-- name: Creating a Web API
-  href: web-api.md
 - name: About This Site
   href: about-this-site.md
   items:
@@ -23,3 +21,5 @@
     href: build-with-docfx.md
   - name: Azure Pipeline
     href: azure-pipeline.md
+  - name: Adding a Web API
+    href: add-web-api.md
