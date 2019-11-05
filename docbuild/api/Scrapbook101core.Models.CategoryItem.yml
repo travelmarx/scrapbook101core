@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryItem
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 31
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Name
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 33
@@ -70,12 +70,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Name { get; set; }
+    content: >-
+      [Required(ErrorMessage = "Name is required.")]
+
+      public string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Name As String
+    content.vb: >-
+      <Required(ErrorMessage:="Name is required.")>
+
+      Public Property Name As String
   overload: Scrapbook101core.Models.CategoryItem.Name*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Name is required.
   modifiers.csharp:
   - public
   - get
@@ -96,8 +110,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Description
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 37
@@ -131,8 +145,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFields
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 40
