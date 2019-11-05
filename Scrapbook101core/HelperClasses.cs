@@ -15,6 +15,9 @@
         /// <summary>
         /// Returns paths for images to display for a list of Scrapbook101core items. 
         /// </summary>
+        /// <remarks>
+        /// For each Scrapbook101core item, one image is found or the default image is used.
+        /// </remarks>
         /// <param name="items">A list of Scrapbook101core items to get the qualified path.</param>
         /// <returns></returns>
         public static System.Collections.Generic.List<string> BuildPathList(IEnumerable<Item> items)

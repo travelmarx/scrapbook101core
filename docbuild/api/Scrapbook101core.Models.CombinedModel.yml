@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CombinedModel
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 13
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Item
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 15
@@ -99,8 +99,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryItemsForDisplay
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 17
@@ -134,8 +134,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFieldMappingList
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 18
@@ -169,8 +169,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: LocalUploadFileList
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 19
@@ -204,8 +204,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: LocalHttpPostedFileList
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 20
@@ -216,7 +216,7 @@ items:
     content: public List<IFormFile> LocalHttpPostedFileList { get; set; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile}
+      type: System.Collections.Generic.List{IFormFile}
     content.vb: Public Property LocalHttpPostedFileList As List(Of IFormFile)
   overload: Scrapbook101core.Models.CombinedModel.LocalHttpPostedFileList*
   modifiers.csharp:
@@ -725,15 +725,15 @@ references:
   name: LocalHttpPostedFileList
   nameWithType: CombinedModel.LocalHttpPostedFileList
   fullName: Scrapbook101core.Models.CombinedModel.LocalHttpPostedFileList
-- uid: System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile}
-  commentId: T:System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile}
+- uid: System.Collections.Generic.List{IFormFile}
+  commentId: T:System.Collections.Generic.List{IFormFile}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   name: List<IFormFile>
   nameWithType: List<IFormFile>
-  fullName: System.Collections.Generic.List<Microsoft.AspNetCore.Http.IFormFile>
+  fullName: System.Collections.Generic.List<IFormFile>
   nameWithType.vb: List(Of IFormFile)
-  fullName.vb: System.Collections.Generic.List(Of Microsoft.AspNetCore.Http.IFormFile)
+  fullName.vb: System.Collections.Generic.List(Of IFormFile)
   name.vb: List(Of IFormFile)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
@@ -744,10 +744,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Microsoft.AspNetCore.Http.IFormFile
+  - uid: IFormFile
     name: IFormFile
     nameWithType: IFormFile
-    fullName: Microsoft.AspNetCore.Http.IFormFile
+    fullName: IFormFile
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -761,10 +761,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Microsoft.AspNetCore.Http.IFormFile
+  - uid: IFormFile
     name: IFormFile
     nameWithType: IFormFile
-    fullName: Microsoft.AspNetCore.Http.IFormFile
+    fullName: IFormFile
     isExternal: true
   - name: )
     nameWithType: )
