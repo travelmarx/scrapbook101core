@@ -7,12 +7,21 @@ using Scrapbook101core.Models;
 
 namespace Scrapbook101core.Controllers
 {
+    /// <summary>
+    /// Defines the Web API controller that handles HTTP verbs like GET, PUT, POST, and DELETE.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ItemApiController : ControllerBase
     {
 
-        // GET: api/ItemApi
+        /// <summary>
+        /// Returns all the items in Scrapbook101.
+        /// </summary>
+        /// <remarks>
+        /// Specify the HTTP GET verb and the URI baseURI/api/ItemApi.
+        /// </remarks>
+        /// <returns>JSON representing of all items.</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
         {
@@ -23,6 +32,14 @@ namespace Scrapbook101core.Controllers
         }
 
         // GET: api/ItemApi/GUID
+        /// <summary>
+        /// Return the item matching the specified GUID.
+        /// </summary>
+        /// <remarks>
+        /// Specify the HTTP GET verb and the URI "baseURI/api/ItemApi/GUID".
+        /// </remarks>
+        /// <param name="id">The GUID of the item to return.</param>
+        /// <returns>JSON representing the specified item.</returns>
         [HttpGet("{id}", Name = "Details")]
         public async Task<ActionResult<Item>> DetailsAsync(string id)
         {
@@ -30,19 +47,66 @@ namespace Scrapbook101core.Controllers
             return item;
         }
 
-        // POST: api/ItemApi
+        /// <summary>
+        /// Creates a new Scrapbook101core item.
+        /// </summary>
+        /// <remarks>
+        /// Specify the HTTP POST verb, the URI "baseURI/api/ItemApi", and the item details in the request body.
+        /// </remarks>
+        /// <param name="value">JSON representing the item.</param>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async void PostAsync([FromBody] Item value)
         {
+            Item newItem = new Item()
+            {
+                // Item properties that are auto-generated.
+                DateAdded = System.DateTime.UtcNow,
+                DateUpdated = System.DateTime.UtcNow,
+                UpdatedBy = value.Location ?? "travelmarx",
+                GeoLocation = null,
+                Assets = null,
+                Id = null   // Set to null so on insert CosmosDB sets the GUID.
+            };
+
+            // Get geocode from Bing if applicable - see web.config
+            if (AppVariables.BingMapKey.Length > 0)
+            {
+                double[] coord = await HelperClasses.GetGeocode(value.Location);
+                if (coord[0] != 0)
+                {
+                    newItem.GeoLocation = new Microsoft.Azure.Documents.Spatial.Point(coord[1], coord[0]);
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                await DocumentDBRepository<Item>.CreateItemAsync(newItem);
+                Accepted();
+            }
         }
 
-        // PUT: api/ItemApi/5
+        /// <summary>
+        /// Updates an existing Scrapbook101core item.
+        /// </summary>
+        /// <remarks>
+        /// Specify the HTTP PUT verb, the URI "baseURI/api/ItemApi/GUID", and the items details in the request body.
+        /// </remarks>
+        /// <param name="id">The GUID of the item to update.</param>
+        /// <param name="value">JSON representing the item to update.</param>
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/ApiWithActions/GUID
+        /// <summary>
+        /// Deletes the item matching the specified GUID.
+        /// </summary>
+        /// <remarks>
+        /// Specify the HTTP verb DELETE and the URI "baseURI/api/ItemApi/GUID".
+        /// </remarks>
+        /// <param name="id">The GUID of the item to delete.</param>
         [HttpDelete("{id}", Name = "Delete")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

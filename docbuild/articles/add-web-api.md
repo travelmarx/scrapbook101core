@@ -87,11 +87,11 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 }
 ```
 
-Note that we made the method asynchronous. What's important to also note is what are are not handling:
+Note that we made the method asynchronous. Also note what are are not handling:
 
-* paging (return page token); currently we just return everything
+* Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.
 
-* an indication of the base URL to access assets
+* Base URL. Ther is no indication of which base URL to access assets. We could have a another API member whose job it is to return just that base URL or it could be returned as part of the results.
 
 Here's an example of using Postman to test the GET to return all items.
 
@@ -105,6 +105,8 @@ Method | URI | Notes
 GET | /api/ItemApi | Returns all items.
 GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
 DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
+POST | /api/ItemApi | Creates a new item with the parameters of the item in the request body.
+PUT | /api/ItemApi/GUID | Updates an existing item with the parameters of the item in the request body.
 
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
