@@ -126,7 +126,7 @@ namespace Scrapbook101core.Controllers
     }
 }
 </code></pre>
-<h2 id="get-api">GET api</h2>
+<h2 id="get-method">GET method</h2>
 <p>The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
 <p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
 <p>The solution was to simply use <code>.ToList</code> so that our simple GET method then became this:</p>
@@ -141,14 +141,34 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 }
 </code></pre>
 <p>Here's an example of using Postman to test the GET to return all items.</p>
-<p><img src="../images/using-postman-for-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
-<h2 id="code-the-rest">Code the rest</h2>
-<p>Method | URI | Notes
---- | --- | ---
-GET | /api/ItemApi | Returns all items.
-GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
-DELET
-E | /api/ItemApi/GUID | Deletes the item matching the GUID.</p>
+<p><img src="../images/using-postman-to-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
+<h2 id="all-methods">All methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>URI</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/api/ItemApi</td>
+<td>Returns all items.</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/api/ItemApi/GUID</td>
+<td>Returns the details for the specified item matching the GUID.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/api/ItemApi/GUID</td>
+<td>Deletes the item matching the GUID.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

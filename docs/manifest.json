@@ -292,15 +292,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "articles/add-web-api.md",
       "output": {
         ".html": {
           "relative_path": "articles/add-web-api.html",
-          "hash": "BXR9/u3UjQrZhGiWJYZXPg=="
+          "hash": "HoJyFz+mM/sN5O36XaZOBw=="
         }
       },
       "is_incremental": false,
@@ -510,6 +507,17 @@
       "output": {
         "resource": {
           "relative_path": "images/scrapbook101-running.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/using-postman-to-get.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/using-postman-to-get.jpg"
         }
       },
       "is_incremental": false,
