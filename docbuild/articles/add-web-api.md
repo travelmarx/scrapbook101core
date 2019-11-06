@@ -2,33 +2,29 @@
 uid: add-web-api
 title: Creating a Web API
 ---
-# Adding a Web API (in progress)
+# Adding a Web API
 
-Last update: 2019-10-20
+Last update: 2019-11-05
 
-What are we trying to do? We build Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use cases and ways to interact with Scrapbook101core beyond the browser.
+What are we trying to do? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.
 
 ## Initial steps
 
-As usual, we started by following the [Web API Tutorial][webapitut]. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.
+As usual, we started by following a tutorial: [Web API Tutorial][webapitut]. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.
 
 After running the tutorial, we realized our first decision point was whether to use the same controller classes for both views (web interface) and web APIs. We decided that we wanted to separate the functionality at the risk of repeating some code.
 
-Install [Postman][postman], a collaboration platform for API development that includes an easy what to construct and send HTTP requests.
+Another initial step was to install [Postman][postman], a collaboration platform for API development that includes an easy what to construct and send HTTP requests.
 
 ## Create the controller 
 
-Our first step is to create a new ItemApiController. We decided to keep the controller similar to existing [ItemController](xref:Scrapbook101core.Controllers.ItemController) but with "Api" added. We added the scaffolding item using Visual Studio.
+Our next step is to create a new controller called [ItemApiController](xref:Scrapbook101core.Controllers.ItemApiController). We decided to keep the controller name similar to existing [ItemController](xref:Scrapbook101core.Controllers.ItemController) but with "Api" added. We added the controller using scaffolding in Visual Studio, i.e., just added it following the menus:
 
-1. Add a new controller to the project.
+1. Select the **Controllers** folder, right click and select **Add** > **Controller**.
 
 1. Select API Controller with read/write actions. (We are not using the Entity Framework.) In the course of experimenting with adding API controllers, we ended up pulling in Microsoft.EntityFrameworkCore.SqlServer.Design and Microsoft.EntityFrameworkCore.Tools in the .csproj file
 
-1. A new controller is generated. Note we are inheriting from ControllerBase. Here's the skeleton of the class:
-
-We already have an [Item](xref:Scrapbook101core.Models.Item) class defined, so no changes necessary there. And there were no initial changes needed in appsettings.json, Program.cs or Startup.cs.
-
-The controller after running the scaffolding looks like this:
+1. A new controller .cs file is generated. Note we are inheriting from ControllerBase. Here's the skeleton of the class:
 
 ```c#
 using System.Collections.Generic;
@@ -72,7 +68,8 @@ namespace Scrapbook101core.Controllers
 ```
 
 ## GET method
-The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
+
+After createing the skeleton controller, we needed to get one method working and the simplest to get working is the GET method that returns items. This task seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
 
@@ -90,17 +87,26 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 }
 ```
 
+Note that we made the method asynchronous. Also note what are are not handling:
+
+* Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.
+
+* Base URL. Ther is no indication of which base URL to access assets. We could have a another API member whose job it is to return just that base URL or it could be returned as part of the results.
+
 Here's an example of using Postman to test the GET to return all items.
 
 ![Using Postman to GET all items.](../images/using-postman-to-get.jpg "Using Postman to GET all items.")
 
 ## All methods
 
+
 Method | URI | Notes
 --- | --- | ---
 GET | /api/ItemApi | Returns all items.
 GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
 DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
+POST | /api/ItemApi | Creates a new item with the parameters of the item in the request body.
+PUT | /api/ItemApi/GUID | Updates an existing item with the parameters of the item in the request body.
 
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
