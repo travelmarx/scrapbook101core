@@ -8,7 +8,7 @@ items:
   - Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)
   - Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
   - Scrapbook101core.Controllers.ItemApiController.GetAsync
-  - Scrapbook101core.Controllers.ItemApiController.Post(System.String)
+  - Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
   - Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
   langs:
   - csharp
@@ -24,10 +24,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: ItemApiController
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nDefines the Web API controller that handles HTTP verbs like GET, PUT, POST, and DELETE.\n"
+  example: []
   syntax:
     content: >-
       [Route("api/[controller]")]
@@ -253,10 +255,13 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 15
+    startLine: 24
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nReturns all the items in Scrapbook101.\n"
+  remarks: "\nSpecify the HTTP GET verb and the URI baseURI/api/ItemApi.\n"
+  example: []
   syntax:
     content: >-
       [HttpGet]
@@ -264,6 +269,7 @@ items:
       public Task<ActionResult<IEnumerable<Item>>> GetAsync()
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
+      description: JSON representing of all items.
     content.vb: >-
       <HttpGet>
 
@@ -295,10 +301,13 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 25
+    startLine: 42
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nReturn the item matching the specified GUID.\n"
+  remarks: "\nSpecify the HTTP GET verb and the URI &quot;baseURI/api/ItemApi/GUID&quot;.\n"
+  example: []
   syntax:
     content: >-
       [HttpGet("{id}", Name = "Details")]
@@ -307,8 +316,10 @@ items:
     parameters:
     - id: id
       type: System.String
+      description: The GUID of the item to return.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{Scrapbook101core.Models.Item}}
+      description: JSON representing the specified item.
     content.vb: >-
       <HttpGet("{id}", Name:="Details")>
 
@@ -328,36 +339,44 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Post(System.String)
-  id: Post(System.String)
+- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
+  id: PostAsync(Scrapbook101core.Models.Item)
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: Post(String)
-  nameWithType: ItemApiController.Post(String)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
+  name: PostAsync(Item)
+  nameWithType: ItemApiController.PostAsync(Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
   type: Method
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: master
       repo: https://github.com/travelmarx/scrapbook101core
-    id: Post
+    id: PostAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 33
+    startLine: 56
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nCreates a new Scrapbook101core item.\n"
+  remarks: "\nSpecify the HTTP POST verb, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n"
+  example: []
   syntax:
     content: >-
       [HttpPost]
 
-      public void Post([FromBody] string value)
+      [ProducesResponseType(202)]
+
+      [ProducesResponseType(400)]
+
+      public void PostAsync([FromBody] Item value)
     parameters:
     - id: value
-      type: System.String
+      type: Scrapbook101core.Models.Item
+      description: JSON representing the item.
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -365,12 +384,26 @@ items:
     content.vb: >-
       <HttpPost>
 
-      Public Sub Post(value As String)
-  overload: Scrapbook101core.Controllers.ItemApiController.Post*
+      <ProducesResponseType(202)>
+
+      <ProducesResponseType(400)>
+
+      Public Sub PostAsync(value As Item)
+  overload: Scrapbook101core.Controllers.ItemApiController.PostAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
     arguments: []
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 202
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 400
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -393,10 +426,13 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Put
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 39
+    startLine: 97
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nUpdates an existing Scrapbook101core item.\n"
+  remarks: "\nSpecify the HTTP PUT verb, the URI &quot;baseURI/api/ItemApi/GUID&quot;, and the items details in the request body.\n"
+  example: []
   syntax:
     content: >-
       [HttpPut("{id}")]
@@ -405,8 +441,10 @@ items:
     parameters:
     - id: id
       type: System.Int32
+      description: The GUID of the item to update.
     - id: value
       type: System.String
+      description: JSON representing the item to update.
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -444,10 +482,13 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 45
+    startLine: 109
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nDeletes the item matching the specified GUID.\n"
+  remarks: "\nSpecify the HTTP verb DELETE and the URI &quot;baseURI/api/ItemApi/GUID&quot;.\n"
+  example: []
   syntax:
     content: >-
       [HttpDelete("{id}", Name = "Delete")]
@@ -462,6 +503,7 @@ items:
     parameters:
     - id: id
       type: System.String
+      description: The GUID of the item to delete.
     content.vb: >-
       <HttpDelete("{id}", Name:="Delete")>
 
@@ -12359,11 +12401,22 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Scrapbook101core.Controllers.ItemApiController.Post*
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Post
-  name: Post
-  nameWithType: ItemApiController.Post
-  fullName: Scrapbook101core.Controllers.ItemApiController.Post
+- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync*
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PostAsync
+  name: PostAsync
+  nameWithType: ItemApiController.PostAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
+- uid: Scrapbook101core.Models.Item
+  commentId: T:Scrapbook101core.Models.Item
+  parent: Scrapbook101core.Models
+  name: Item
+  nameWithType: Item
+  fullName: Scrapbook101core.Models.Item
+- uid: Scrapbook101core.Models
+  commentId: N:Scrapbook101core.Models
+  name: Scrapbook101core.Models
+  nameWithType: Scrapbook101core.Models
+  fullName: Scrapbook101core.Models
 - uid: Scrapbook101core.Controllers.ItemApiController.Put*
   commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Put
   name: Put
