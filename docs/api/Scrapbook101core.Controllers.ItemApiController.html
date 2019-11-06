@@ -73,7 +73,8 @@
   
   <h1 id="Scrapbook101core_Controllers_ItemApiController" data-uid="Scrapbook101core.Controllers.ItemApiController" class="text-break">Class ItemApiController
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Defines the Web API controller that handles HTTP verbs like GET, PUT, POST, and DELETE.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -96,11 +97,12 @@ public class ItemApiController : ControllerBase</code></pre>
     <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController_DeleteAsync_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L46">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L110">View Source</a>
   </span>
   <a id="Scrapbook101core_Controllers_ItemApiController_DeleteAsync_" data-uid="Scrapbook101core.Controllers.ItemApiController.DeleteAsync*"></a>
   <h4 id="Scrapbook101core_Controllers_ItemApiController_DeleteAsync_System_String_" data-uid="Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)">DeleteAsync(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Deletes the item matching the specified GUID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -123,20 +125,25 @@ public void DeleteAsync(string id)</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>The GUID of the item to delete.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Scrapbook101core_Controllers_ItemApiController_DeleteAsync_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify the HTTP verb DELETE and the URI &quot;baseURI/api/ItemApi/GUID&quot;.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController_DetailsAsync_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L26">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L43">View Source</a>
   </span>
   <a id="Scrapbook101core_Controllers_ItemApiController_DetailsAsync_" data-uid="Scrapbook101core.Controllers.ItemApiController.DetailsAsync*"></a>
   <h4 id="Scrapbook101core_Controllers_ItemApiController_DetailsAsync_System_String_" data-uid="Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)">DetailsAsync(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Return the item matching the specified GUID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -156,7 +163,8 @@ public Task&lt;ActionResult&lt;Item&gt;&gt; DetailsAsync(string id)</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>The GUID of the item to return.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -171,20 +179,25 @@ public Task&lt;ActionResult&lt;Item&gt;&gt; DetailsAsync(string id)</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&lt;<a class="xref" href="Scrapbook101core.Models.Item.html">Item</a>&gt;&gt;</td>
-        <td></td>
+        <td><p>JSON representing the specified item.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Scrapbook101core_Controllers_ItemApiController_DetailsAsync_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify the HTTP GET verb and the URI &quot;baseURI/api/ItemApi/GUID&quot;.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController_GetAsync.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController.GetAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L16">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L25">View Source</a>
   </span>
   <a id="Scrapbook101core_Controllers_ItemApiController_GetAsync_" data-uid="Scrapbook101core.Controllers.ItemApiController.GetAsync*"></a>
   <h4 id="Scrapbook101core_Controllers_ItemApiController_GetAsync" data-uid="Scrapbook101core.Controllers.ItemApiController.GetAsync">GetAsync()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns all the items in Scrapbook101.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -202,25 +215,32 @@ public Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()</code>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.ActionResult</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Scrapbook101core.Models.Item.html">Item</a>&gt;&gt;&gt;</td>
-        <td></td>
+        <td><p>JSON representing of all items.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Scrapbook101core_Controllers_ItemApiController_GetAsync_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify the HTTP GET verb and the URI baseURI/api/ItemApi.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController_Post_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController.Post(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L34">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L57">View Source</a>
   </span>
-  <a id="Scrapbook101core_Controllers_ItemApiController_Post_" data-uid="Scrapbook101core.Controllers.ItemApiController.Post*"></a>
-  <h4 id="Scrapbook101core_Controllers_ItemApiController_Post_System_String_" data-uid="Scrapbook101core.Controllers.ItemApiController.Post(System.String)">Post(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Scrapbook101core_Controllers_ItemApiController_PostAsync_" data-uid="Scrapbook101core.Controllers.ItemApiController.PostAsync*"></a>
+  <h4 id="Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_" data-uid="Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)">PostAsync(Item)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Scrapbook101core item.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpPost]
-public void Post([FromBody] string value)</code></pre>
+[ProducesResponseType(202)]
+[ProducesResponseType(400)]
+public void PostAsync([FromBody] Item value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -233,22 +253,27 @@ public void Post([FromBody] string value)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Scrapbook101core.Models.Item.html">Item</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>JSON representing the item.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify the HTTP POST verb, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController_Put_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController.Put(System.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L40">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L98">View Source</a>
   </span>
   <a id="Scrapbook101core_Controllers_ItemApiController_Put_" data-uid="Scrapbook101core.Controllers.ItemApiController.Put*"></a>
   <h4 id="Scrapbook101core_Controllers_ItemApiController_Put_System_Int32_System_String_" data-uid="Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)">Put(Int32, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates an existing Scrapbook101core item.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -268,15 +293,20 @@ public void Put(int id, [FromBody] string value)</code></pre>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>The GUID of the item to update.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>JSON representing the item to update.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Scrapbook101core_Controllers_ItemApiController_Put_System_Int32_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify the HTTP PUT verb, the URI &quot;baseURI/api/ItemApi/GUID&quot;, and the items details in the request body.</p>
+</div>
 </article>
           </div>
           
@@ -288,7 +318,7 @@ public void Put(int id, [FromBody] string value)</code></pre>
                     <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_Controllers_ItemApiController.md&amp;value=---%0Auid%3A%20Scrapbook101core.Controllers.ItemApiController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Controllers/ItemApiController.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

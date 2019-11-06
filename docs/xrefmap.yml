@@ -249,19 +249,19 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync
   nameWithType: ItemApiController.GetAsync
-- uid: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
-  name: Post(String)
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Post_System_String_
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Post(System.String)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Post(System.String)
-  nameWithType: ItemApiController.Post(String)
-- uid: Scrapbook101core.Controllers.ItemApiController.Post*
-  name: Post
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Post_
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Post
+- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
+  name: PostAsync(Item)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
+  nameWithType: ItemApiController.PostAsync(Item)
+- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync*
+  name: PostAsync
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PostAsync
   isSpec: "True"
-  fullName: Scrapbook101core.Controllers.ItemApiController.Post
-  nameWithType: ItemApiController.Post
+  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
+  nameWithType: ItemApiController.PostAsync
 - uid: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
   name: Put(Int32, String)
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_System_Int32_System_String_

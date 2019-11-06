@@ -25,7 +25,7 @@
   "Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)": "Scrapbook101core.Controllers.ItemApiController.yml",
   "Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)": "Scrapbook101core.Controllers.ItemApiController.yml",
   "Scrapbook101core.Controllers.ItemApiController.GetAsync": "Scrapbook101core.Controllers.ItemApiController.yml",
-  "Scrapbook101core.Controllers.ItemApiController.Post(System.String)": "Scrapbook101core.Controllers.ItemApiController.yml",
+  "Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)": "Scrapbook101core.Controllers.ItemApiController.yml",
   "Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)": "Scrapbook101core.Controllers.ItemApiController.yml",
   "Scrapbook101core.Controllers.ItemController": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)": "Scrapbook101core.Controllers.ItemController.yml",

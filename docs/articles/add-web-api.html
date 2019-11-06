@@ -67,26 +67,24 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="add-web-api">
-<h1 id="adding-a-web-api-in-progress">Adding a Web API (in progress)</h1>
+<h1 id="adding-a-web-api">Adding a Web API</h1>
 
-<p>Last update: 2019-10-20</p>
-<p>What are we trying to do? We build Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use cases and ways to interact with Scrapbook101core beyond the browser.</p>
+<p>Last update: 2019-11-05</p>
+<p>What are we trying to do? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.</p>
 <h2 id="initial-steps">Initial steps</h2>
-<p>As usual, we started by following the <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&amp;tabs=visual-studio">Web API Tutorial</a>. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.</p>
+<p>As usual, we started by following a tutorial: <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&amp;tabs=visual-studio">Web API Tutorial</a>. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.</p>
 <p>After running the tutorial, we realized our first decision point was whether to use the same controller classes for both views (web interface) and web APIs. We decided that we wanted to separate the functionality at the risk of repeating some code.</p>
-<p>Install <a href="https://www.getpostman.com/downloads/">Postman</a>, a collaboration platform for API development that includes an easy what to construct and send HTTP requests.</p>
+<p>Another initial step was to install <a href="https://www.getpostman.com/downloads/">Postman</a>, a collaboration platform for API development that includes an easy what to construct and send HTTP requests.</p>
 <h2 id="create-the-controller">Create the controller</h2>
-<p>Our first step is to create a new ItemApiController. We decided to keep the controller similar to existing <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html">ItemController</a> but with &quot;Api&quot; added. We added the scaffolding item using Visual Studio.</p>
+<p>Our next step is to create a new controller called <a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html">ItemApiController</a>. We decided to keep the controller name similar to existing <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html">ItemController</a> but with &quot;Api&quot; added. We added the controller using scaffolding in Visual Studio, i.e., just added it following the menus:</p>
 <ol>
-<li><p>Add a new controller to the project.</p>
+<li><p>Select the <strong>Controllers</strong> folder, right click and select <strong>Add</strong> &gt; <strong>Controller</strong>.</p>
 </li>
 <li><p>Select API Controller with read/write actions. (We are not using the Entity Framework.) In the course of experimenting with adding API controllers, we ended up pulling in Microsoft.EntityFrameworkCore.SqlServer.Design and Microsoft.EntityFrameworkCore.Tools in the .csproj file</p>
 </li>
-<li><p>A new controller is generated. Note we are inheriting from ControllerBase. Here's the skeleton of the class:</p>
+<li><p>A new controller .cs file is generated. Note we are inheriting from ControllerBase. Here's the skeleton of the class:</p>
 </li>
 </ol>
-<p>We already have an <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a> class defined, so no changes necessary there. And there were no initial changes needed in appsettings.json, Program.cs or Startup.cs.</p>
-<p>The controller after running the scaffolding looks like this:</p>
 <pre><code class="lang-c#">using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
@@ -127,7 +125,7 @@ namespace Scrapbook101core.Controllers
 }
 </code></pre>
 <h2 id="get-method">GET method</h2>
-<p>The next step was to get the GET action to work. This step seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
+<p>After createing the skeleton controller, we needed to get one method working and the simplest to get working is the GET method that returns items. This task seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
 <p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
 <p>The solution was to simply use <code>.ToList</code> so that our simple GET method then became this:</p>
 <pre><code class="lang-c#">// GET: api/ItemApi
@@ -140,6 +138,13 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
     return items.ToList();
 }
 </code></pre>
+<p>Note that we made the method asynchronous. Also note what are are not handling:</p>
+<ul>
+<li><p>Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.</p>
+</li>
+<li><p>Base URL. Ther is no indication of which base URL to access assets. We could have a another API member whose job it is to return just that base URL or it could be returned as part of the results.</p>
+</li>
+</ul>
 <p>Here's an example of using Postman to test the GET to return all items.</p>
 <p><img src="../images/using-postman-to-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
 <h2 id="all-methods">All methods</h2>
@@ -166,6 +171,16 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 <td>DELETE</td>
 <td>/api/ItemApi/GUID</td>
 <td>Deletes the item matching the GUID.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/api/ItemApi</td>
+<td>Creates a new item with the parameters of the item in the request body.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/api/ItemApi/GUID</td>
+<td>Updates an existing item with the parameters of the item in the request body.</td>
 </tr>
 </tbody>
 </table>
