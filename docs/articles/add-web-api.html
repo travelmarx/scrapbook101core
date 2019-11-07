@@ -67,7 +67,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="add-web-api">
-<h1 id="adding-a-web-api">Adding a Web API</h1>
+<h1 id="add-a-web-api">Add a Web API</h1>
 
 <p>Last update: 2019-11-05</p>
 <p>What are we trying to do? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.</p>
@@ -127,7 +127,7 @@ namespace Scrapbook101core.Controllers
 <h2 id="get-method">GET method</h2>
 <p>After createing the skeleton controller, we needed to get one method working and the simplest to get working is the GET method that returns items. This task seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
 <p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
-<p>The solution was to simply use <code>.ToList</code> so that our simple GET method then became this:</p>
+<p>The solution was to simply use <code>.ToList</code> so that our first take on coding the GET method then became this:</p>
 <pre><code class="lang-c#">// GET: api/ItemApi
 [HttpGet]
 public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
@@ -136,9 +136,36 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
         .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
     var imagePath = HelperClasses.BuildPathList(items);
     return items.ToList();
+</code></pre>
+<p>After a some more experimentation and reading, the GET method action became this:</p>
+<pre><code class="lang-c#">/// &lt;summary&gt;
+/// Returns all the items in Scrapbook101.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// Specify the HTTP GET method and the URI baseURI/api/ItemApi.
+/// &lt;/remarks&gt;
+/// &lt;returns&gt;JSON representing of all items.&lt;/returns&gt;
+[HttpGet]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status404NotFound)]
+public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
+{
+    try
+    {
+        var items = await DocumentDBRepository&lt;Item&gt;
+            .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
+        var imagePath = HelperClasses.BuildPathList(items);
+        return Ok(items.ToList());
+    }
+    catch
+    {
+        return NotFound();
+    }
 }
 </code></pre>
-<p>Note that we made the method asynchronous. Also note what are are not handling:</p>
+<p>Note that in both versions of the GET action, we made the method asynchronous, and that we are using <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">ActionResult</a> instead of IActionResult. The action's return type is inferred from the <code>T</code> in the <code>ActionResult&lt;T&gt;</code>.</p>
+<p>In the second version of the GET action, we added <code>ProducesResponseType</code> attribute for &quot;200 OK&quot; and &quot;404 Not Found&quot; responses as well as their corresponding methods <code>Ok()</code> and <code>NotFound()</code>.</p>
+<p>Here's what we are not handling in the GET action:</p>
 <ul>
 <li><p>Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.</p>
 </li>
@@ -187,6 +214,7 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </tr>
 </tbody>
 </table>
+<p>For more information about HTTP methods, see the <a href="https://restfulapi.net/http-methods/">REST API Tutorial</a>.</p>
 </article>
           </div>
           

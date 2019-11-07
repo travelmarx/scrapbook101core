@@ -28,7 +28,7 @@ items:
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
-  summary: "\nDefines the Web API controller that handles HTTP verbs like GET, PUT, POST, and DELETE.\n"
+  summary: "\nDefines the Web API controller that handles HTTP methods GET, PUT, POST, and DELETE.\n"
   example: []
   syntax:
     content: >-
@@ -260,11 +260,15 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nReturns all the items in Scrapbook101.\n"
-  remarks: "\nSpecify the HTTP GET verb and the URI baseURI/api/ItemApi.\n"
+  remarks: "\nSpecify the HTTP GET method and the URI baseURI/api/ItemApi.\n"
   example: []
   syntax:
     content: >-
       [HttpGet]
+
+      [ProducesResponseType(200)]
+
+      [ProducesResponseType(404)]
 
       public Task<ActionResult<IEnumerable<Item>>> GetAsync()
     return:
@@ -273,12 +277,26 @@ items:
     content.vb: >-
       <HttpGet>
 
+      <ProducesResponseType(200)>
+
+      <ProducesResponseType(404)>
+
       Public Function GetAsync As Task(Of ActionResult(Of IEnumerable(Of Item)))
   overload: Scrapbook101core.Controllers.ItemApiController.GetAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
     arguments: []
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 404
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -301,12 +319,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 42
+    startLine: 51
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nReturn the item matching the specified GUID.\n"
-  remarks: "\nSpecify the HTTP GET verb and the URI &quot;baseURI/api/ItemApi/GUID&quot;.\n"
+  remarks: "\nSpecify the HTTP GET method and the URI &quot;baseURI/api/ItemApi/GUID&quot;.\n"
   example: []
   syntax:
     content: >-
@@ -357,12 +375,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: PostAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 56
+    startLine: 65
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nCreates a new Scrapbook101core item.\n"
-  remarks: "\nSpecify the HTTP POST verb, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n"
+  remarks: "\nSpecify the HTTP POST method, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n"
   example: []
   syntax:
     content: >-
@@ -426,12 +444,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Put
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 97
+    startLine: 106
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nUpdates an existing Scrapbook101core item.\n"
-  remarks: "\nSpecify the HTTP PUT verb, the URI &quot;baseURI/api/ItemApi/GUID&quot;, and the items details in the request body.\n"
+  remarks: "\nSpecify the HTTP PUT method, the URI &quot;baseURI/api/ItemApi/GUID&quot;, and the items details in the request body.\n"
   example: []
   syntax:
     content: >-
@@ -482,12 +500,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 109
+    startLine: 118
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nDeletes the item matching the specified GUID.\n"
-  remarks: "\nSpecify the HTTP verb DELETE and the URI &quot;baseURI/api/ItemApi/GUID&quot;.\n"
+  remarks: "\nSpecify the HTTP method DELETE and the URI &quot;baseURI/api/ItemApi/GUID&quot;.\n"
   example: []
   syntax:
     content: >-
