@@ -8,7 +8,7 @@ using Scrapbook101core.Models;
 namespace Scrapbook101core.Controllers
 {
     /// <summary>
-    /// Defines the Web API controller that handles HTTP verbs like GET, PUT, POST, and DELETE.
+    /// Defines the Web API controller that handles HTTP methods GET, PUT, POST, and DELETE.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -19,16 +19,25 @@ namespace Scrapbook101core.Controllers
         /// Returns all the items in Scrapbook101.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP GET verb and the URI baseURI/api/ItemApi.
+        /// Specify the HTTP GET method and the URI baseURI/api/ItemApi.
         /// </remarks>
         /// <returns>JSON representing of all items.</returns>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
         {
-            var items = await DocumentDBRepository<Item>
-                .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
-            var imagePath = HelperClasses.BuildPathList(items);
-            return items.ToList();
+            try
+            {
+                var items = await DocumentDBRepository<Item>
+                    .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+                var imagePath = HelperClasses.BuildPathList(items);
+                return Ok(items.ToList());
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
 
         // GET: api/ItemApi/GUID
@@ -36,7 +45,7 @@ namespace Scrapbook101core.Controllers
         /// Return the item matching the specified GUID.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP GET verb and the URI "baseURI/api/ItemApi/GUID".
+        /// Specify the HTTP GET method and the URI "baseURI/api/ItemApi/GUID".
         /// </remarks>
         /// <param name="id">The GUID of the item to return.</param>
         /// <returns>JSON representing the specified item.</returns>
@@ -51,7 +60,7 @@ namespace Scrapbook101core.Controllers
         /// Creates a new Scrapbook101core item.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP POST verb, the URI "baseURI/api/ItemApi", and the item details in the request body.
+        /// Specify the HTTP POST method, the URI "baseURI/api/ItemApi", and the item details in the request body.
         /// </remarks>
         /// <param name="value">JSON representing the item.</param>
         [HttpPost]
@@ -91,7 +100,7 @@ namespace Scrapbook101core.Controllers
         /// Updates an existing Scrapbook101core item.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP PUT verb, the URI "baseURI/api/ItemApi/GUID", and the items details in the request body.
+        /// Specify the HTTP PUT method, the URI "baseURI/api/ItemApi/GUID", and the items details in the request body.
         /// </remarks>
         /// <param name="id">The GUID of the item to update.</param>
         /// <param name="value">JSON representing the item to update.</param>
@@ -104,7 +113,7 @@ namespace Scrapbook101core.Controllers
         /// Deletes the item matching the specified GUID.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP verb DELETE and the URI "baseURI/api/ItemApi/GUID".
+        /// Specify the HTTP method DELETE and the URI "baseURI/api/ItemApi/GUID".
         /// </remarks>
         /// <param name="id">The GUID of the item to delete.</param>
         [HttpDelete("{id}", Name = "Delete")]
