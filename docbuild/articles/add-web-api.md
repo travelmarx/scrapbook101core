@@ -94,7 +94,7 @@ This worked, but was just the start. After some more experimentation and reading
 /// Returns all the items in Scrapbook101.
 /// </summary>
 /// <remarks>
-/// Specify the HTTP GET method and the URI baseURI/api/ItemApi.
+/// Specify the HTTP GET method and the URI "baseURI/api/ItemApi".
 /// </remarks>
 /// <returns>JSON representing of all items.</returns>
 [HttpGet]
