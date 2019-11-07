@@ -260,7 +260,7 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nReturns all the items in Scrapbook101.\n"
-  remarks: "\nSpecify the HTTP GET method and the URI baseURI/api/ItemApi.\n"
+  remarks: "\nSpecify the HTTP GET method and the URI &quot;baseURI/api/ItemApi&quot;.\n"
   example: []
   syntax:
     content: >-
