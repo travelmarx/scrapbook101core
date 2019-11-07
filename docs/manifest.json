@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemApiController.html",
-          "hash": "Yv+O6FGILfuuq0RKnmAorA=="
+          "hash": "caI6aZvW1QmmFmqk6PrIRQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.html",
-          "hash": "saL/1yjy5zvo+wLELeRYGg=="
+          "hash": "cB38UfUTfXjxU8LlSZsgsQ=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/add-web-api.html",
-          "hash": "mZuMrJem2+bT0CUKRirsgA=="
+          "hash": "cb3GdF8kpIO5Tph7N60wqA=="
         }
       },
       "is_incremental": false,
@@ -570,6 +570,13 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -587,13 +594,6 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 21,
-          "skipped_file_count": 0
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
