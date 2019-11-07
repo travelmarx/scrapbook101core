@@ -2,7 +2,7 @@
 uid: add-web-api
 title: Creating a Web API
 ---
-# Adding a Web API
+# Add a Web API
 
 Last update: 2019-11-05
 
@@ -73,7 +73,7 @@ After createing the skeleton controller, we needed to get one method working and
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
 
-The solution was to simply use `.ToList` so that our simple GET method then became this:
+The solution was to simply use `.ToList` so that our first take on coding the GET method then became this:
 
 ```c#
 // GET: api/ItemApi
@@ -84,10 +84,42 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
         .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
     var imagePath = HelperClasses.BuildPathList(items);
     return items.ToList();
+```
+
+After a some more experimentation and reading, the GET method action became this:
+
+```c#
+/// <summary>
+/// Returns all the items in Scrapbook101.
+/// </summary>
+/// <remarks>
+/// Specify the HTTP GET method and the URI baseURI/api/ItemApi.
+/// </remarks>
+/// <returns>JSON representing of all items.</returns>
+[HttpGet]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status404NotFound)]
+public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
+{
+    try
+    {
+        var items = await DocumentDBRepository<Item>
+            .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+        var imagePath = HelperClasses.BuildPathList(items);
+        return Ok(items.ToList());
+    }
+    catch
+    {
+        return NotFound();
+    }
 }
 ```
 
-Note that we made the method asynchronous. Also note what are are not handling:
+Note that in both versions of the GET action, we made the method asynchronous, and that we are using [ActionResult][actionresult] instead of IActionResult. The action's return type is inferred from the `T` in the `ActionResult<T>`.
+
+In the second version of the GET action, we added `ProducesResponseType` attribute for "200 OK" and "404 Not Found" responses as well as their corresponding methods `Ok()` and `NotFound()`.
+
+Here's what we are not handling in the GET action:
 
 * Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.
 
@@ -111,10 +143,11 @@ DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
 POST | /api/ItemApi | Creates a new item with the parameters of the item in the request body.
 PUT | /api/ItemApi/GUID | Updates an existing item with the parameters of the item in the request body.
 
+For more information about HTTP methods, see the [REST API Tutorial][resttut].
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
 [postman]: https://www.getpostman.com/downloads/
 [actionresult]: https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type
 [converterr]: https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&lq=1
 [git8061]: https://github.com/aspnet/Mvc/issues/8061
-
+[resttut]: https://restfulapi.net/http-methods/
