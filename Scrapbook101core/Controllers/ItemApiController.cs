@@ -19,7 +19,7 @@ namespace Scrapbook101core.Controllers
         /// Returns all the items in Scrapbook101.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP GET method and the URI baseURI/api/ItemApi.
+        /// Specify the HTTP GET method and the URI "baseURI/api/ItemApi".
         /// </remarks>
         /// <returns>JSON representing of all items.</returns>
         [HttpGet]
