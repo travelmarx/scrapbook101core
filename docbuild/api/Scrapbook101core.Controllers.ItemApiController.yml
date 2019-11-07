@@ -24,7 +24,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: ItemApiController
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -255,7 +255,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -319,7 +319,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 51
+    startLine: 52
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -375,22 +375,22 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: PostAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 65
+    startLine: 68
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nCreates a new Scrapbook101core item.\n"
-  remarks: "\nSpecify the HTTP POST method, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n"
+  remarks: "\nSpecify the HTTP POST method, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n\nDo not specify the item ID as it will be auto-assigned when saved.\n"
   example: []
   syntax:
     content: >-
       [HttpPost]
 
-      [ProducesResponseType(202)]
+      [ProducesResponseType(200)]
 
       [ProducesResponseType(400)]
 
-      public void PostAsync([FromBody] Item value)
+      public Task<ActionResult<string>> PostAsync([FromBody] Item value)
     parameters:
     - id: value
       type: Scrapbook101core.Models.Item
@@ -399,14 +399,16 @@ items:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
     content.vb: >-
       <HttpPost>
 
-      <ProducesResponseType(202)>
+      <ProducesResponseType(200)>
 
       <ProducesResponseType(400)>
 
-      Public Sub PostAsync(value As Item)
+      Public Function PostAsync(value As Item) As Task(Of ActionResult(Of String))
   overload: Scrapbook101core.Controllers.ItemApiController.PostAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
@@ -416,7 +418,7 @@ items:
     ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
     arguments:
     - type: System.Int32
-      value: 202
+      value: 200
   - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
     ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
     arguments:
@@ -444,7 +446,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Put
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 106
+    startLine: 116
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -500,7 +502,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 118
+    startLine: 128
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -12430,6 +12432,72 @@ references:
   name: Item
   nameWithType: Item
   fullName: Scrapbook101core.Models.Item
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ActionResult<String>>
+  nameWithType: Task<ActionResult<String>>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<System.String>>
+  nameWithType.vb: Task(Of ActionResult(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult(Of System.String))
+  name.vb: Task(Of ActionResult(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    nameWithType: ActionResult
+    fullName: Microsoft.AspNetCore.Mvc.ActionResult
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    nameWithType: ActionResult
+    fullName: Microsoft.AspNetCore.Mvc.ActionResult
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Scrapbook101core.Models
   commentId: N:Scrapbook101core.Models
   name: Scrapbook101core.Models
