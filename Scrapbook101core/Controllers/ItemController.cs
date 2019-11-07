@@ -74,6 +74,7 @@ namespace Scrapbook101core.Controllers
             combinedModel.Item.GeoLocation = null;
             combinedModel.Item.Assets = null;
             combinedModel.Item.Id = null; // Set to null so on insert CosmosDB sets GUID.
+            combinedModel.Item.Type = AppVariables.ItemDocumentType;
 
             // Get geocode from Bing if applicable - see web.config
             if (AppVariables.BingMapKey.Length > 0)
