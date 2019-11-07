@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Documents;
 using Scrapbook101core.Models;
 
 namespace Scrapbook101core.Controllers
@@ -61,21 +62,26 @@ namespace Scrapbook101core.Controllers
         /// </summary>
         /// <remarks>
         /// Specify the HTTP POST method, the URI "baseURI/api/ItemApi", and the item details in the request body.
+        /// 
+        /// Do not specify the item ID as it will be auto-assigned when saved.
         /// </remarks>
         /// <param name="value">JSON representing the item.</param>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async void PostAsync([FromBody] Item value)
+        public async Task<ActionResult<string>> PostAsync([FromBody] Item value)
         {
             Item newItem = new Item()
             {
                 // Item properties that are auto-generated.
+                Type = AppVariables.ItemDocumentType,
                 DateAdded = System.DateTime.UtcNow,
                 DateUpdated = System.DateTime.UtcNow,
-                UpdatedBy = value.Location ?? "travelmarx",
+                UpdatedBy = value.UpdatedBy ?? "travelmarx",
                 GeoLocation = null,
-                Assets = null,
+                Title = value.Title,
+                Description = value.Description,
+                Assets = value.Assets,
                 Id = null   // Set to null so on insert CosmosDB sets the GUID.
             };
 
@@ -91,8 +97,12 @@ namespace Scrapbook101core.Controllers
 
             if (ModelState.IsValid)
             {
-                await DocumentDBRepository<Item>.CreateItemAsync(newItem);
-                Accepted();
+                Document created = await DocumentDBRepository<Item>.CreateItemAsync(newItem);
+                return Ok(created.Id);
+            }
+            else
+            {
+                return BadRequest("Item not created.");
             }
         }
 
