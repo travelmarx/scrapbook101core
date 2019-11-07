@@ -91,6 +91,8 @@ Note that we made the method asynchronous. Also note what are are not handling:
 
 * Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.
 
+* Security. If this were a protected Web API, we'd be looking for an authorization token.
+
 * Base URL. Ther is no indication of which base URL to access assets. We could have a another API member whose job it is to return just that base URL or it could be returned as part of the results.
 
 Here's an example of using Postman to test the GET to return all items.
@@ -99,6 +101,7 @@ Here's an example of using Postman to test the GET to return all items.
 
 ## All methods
 
+All of these methods are defined in <xref:Scrapbook101core.Controllers.ItemApiController>.
 
 Method | URI | Notes
 --- | --- | ---
