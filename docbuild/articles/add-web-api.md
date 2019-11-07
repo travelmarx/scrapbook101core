@@ -87,7 +87,7 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 }
 ```
 
-After a some more experimentation and reading, the GET method action became this:
+This worked, but was just the start. After some more experimentation and reading, the GET method action became this:
 
 ```c#
 /// <summary>
