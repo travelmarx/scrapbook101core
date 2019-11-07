@@ -84,6 +84,7 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
         .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
     var imagePath = HelperClasses.BuildPathList(items);
     return items.ToList();
+}
 ```
 
 After a some more experimentation and reading, the GET method action became this:
