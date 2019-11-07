@@ -136,8 +136,9 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
         .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
     var imagePath = HelperClasses.BuildPathList(items);
     return items.ToList();
+}
 </code></pre>
-<p>After a some more experimentation and reading, the GET method action became this:</p>
+<p>This worked, but was just the start. After some more experimentation and reading, the GET method action became this:</p>
 <pre><code class="lang-c#">/// &lt;summary&gt;
 /// Returns all the items in Scrapbook101.
 /// &lt;/summary&gt;
