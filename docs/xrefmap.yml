@@ -262,12 +262,12 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
   nameWithType: ItemApiController.PostAsync
-- uid: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
-  name: Put(Int32, String)
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_System_Int32_System_String_
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32, System.String)
-  nameWithType: ItemApiController.Put(Int32, String)
+- uid: Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
+  name: Put(String, String)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_System_String_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.Put(System.String, System.String)
+  nameWithType: ItemApiController.Put(String, String)
 - uid: Scrapbook101core.Controllers.ItemApiController.Put*
   name: Put
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_
