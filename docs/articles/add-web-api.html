@@ -127,18 +127,18 @@ namespace Scrapbook101core.Controllers
 <h2 id="get-method">GET method</h2>
 <p>After createing the skeleton controller, we needed to get one method working and the simplest to get working is the GET method that returns items. This task seemed easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
 <p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
-<p>The solution was to simply use <code>.ToList</code> so that our first take on coding the GET method then became this:</p>
-<pre><code class="lang-c#">// GET: api/ItemApi
-[HttpGet]
-public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
-{
-    var items = await DocumentDBRepository&lt;Item&gt;
-        .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
-    var imagePath = HelperClasses.BuildPathList(items);
-    return items.ToList();
-}
-</code></pre>
-<p>This worked, but was just the start. After some more experimentation and reading, the GET method action became this:</p>
+<p>The solution was to simply use <code>.ToList</code> on the items returned. A simplified and final or more full-featured version are shown below.</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_tabid-1" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Final GET action</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_tabid-2" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-2" data-tab="tabid-2" tabindex="-1">Simplified GET action</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_tabid-1" role="tabpanel" data-tab="tabid-1">
+
 <pre><code class="lang-c#">/// &lt;summary&gt;
 /// Returns all the items in Scrapbook101.
 /// &lt;/summary&gt;
@@ -164,6 +164,22 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
     }
 }
 </code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-c#">// GET: api/ItemApi
+[HttpGet]
+public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
+{
+    var items = await DocumentDBRepository&lt;Item&gt;
+        .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
+    var imagePath = HelperClasses.BuildPathList(items);
+    return items.ToList();
+}
+</code></pre>
+</section>
+</div>
+<br>
 <p>Note that in both versions of the GET action, we made the method asynchronous, and that we are using <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">ActionResult</a> instead of IActionResult. The action's return type is inferred from the <code>T</code> in the <code>ActionResult&lt;T&gt;</code>.</p>
 <p>In the second version of the GET action, we added <code>ProducesResponseType</code> attribute for &quot;200 OK&quot; and &quot;404 Not Found&quot; responses as well as their corresponding methods <code>Ok()</code> and <code>NotFound()</code>.</p>
 <p>Here's what we are not handling in the GET action:</p>
@@ -177,12 +193,34 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </ul>
 <p>Here's an example of using Postman to test the GET to return all items.</p>
 <p><img src="../images/using-postman-to-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
+<h2 id="post-method">POST method</h2>
+<p>See the <a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_">PostAsync(Item)</a> method for the code handling the POST method. The minimal JSON body required for POST is:</p>
+<pre><code class="lang-json">{
+    &quot;category&quot;: &quot;Museum&quot;,
+    &quot;title&quot;: &quot;Test Museum&quot;,
+    &quot;type&quot;: &quot;scrapbook101Item&quot;
+}
+</code></pre>
+<p>The <a class="xref" href="../api/Scrapbook101core.Models.Item.html">Item</a> class defines the required attributes. If any of those attributes are not specified, then a 400 response is returned. For example, for not specifying the Type.</p>
+<pre><code class="lang-json">{
+    &quot;type&quot;: &quot;https://tools.ietf.org/html/rfc7231#section-6.5.1&quot;,
+    &quot;title&quot;: &quot;One or more validation errors occurred.&quot;,
+    &quot;status&quot;: 400,
+    &quot;traceId&quot;: &quot;|575802c9-4a00edbb2ae13494.&quot;,
+    &quot;errors&quot;: {
+        &quot;Type&quot;: [
+            &quot;Type is required.&quot;
+        ]
+    }
+}
+</code></pre>
 <h2 id="all-methods">All methods</h2>
 <p>All of these methods are defined in <a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html">ItemApiController</a>.</p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
+<th>Code</th>
 <th>URI</th>
 <th>Notes</th>
 </tr>
@@ -190,28 +228,33 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 <tbody>
 <tr>
 <td>GET</td>
+<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync">GetAsync()</a></td>
 <td>/api/ItemApi</td>
 <td>Returns all items.</td>
 </tr>
 <tr>
 <td>GET</td>
+<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DetailsAsync_System_String_">DetailsAsync(String)</a></td>
 <td>/api/ItemApi/GUID</td>
-<td>Returns the details for the specified item matching the GUID.</td>
+<td>Returns the details for the specified item matching GUID.</td>
 </tr>
 <tr>
 <td>DELETE</td>
+<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DeleteAsync_System_String_">DeleteAsync(String)</a></td>
 <td>/api/ItemApi/GUID</td>
-<td>Deletes the item matching the GUID.</td>
+<td>Deletes the item matching GUID.</td>
 </tr>
 <tr>
 <td>POST</td>
+<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_">PostAsync(Item)</a></td>
 <td>/api/ItemApi</td>
-<td>Creates a new item with the parameters of the item in the request body.</td>
+<td>Creates a new item with the properties of the item in the request body as JSON.</td>
 </tr>
 <tr>
 <td>PUT</td>
+<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_Put_System_String_System_String_">Put(String, String)</a></td>
 <td>/api/ItemApi/GUID</td>
-<td>Updates an existing item with the parameters of the item in the request body.</td>
+<td>Updates an existing item with the properties of the item in the request body as JSON.</td>
 </tr>
 </tbody>
 </table>

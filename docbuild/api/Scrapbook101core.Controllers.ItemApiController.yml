@@ -9,7 +9,7 @@ items:
   - Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
   - Scrapbook101core.Controllers.ItemApiController.GetAsync
   - Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  - Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
+  - Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
   langs:
   - csharp
   - vb
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: ItemApiController
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -255,7 +255,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -319,7 +319,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -375,12 +375,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: PostAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 68
+    startLine: 72
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
   summary: "\nCreates a new Scrapbook101core item.\n"
-  remarks: "\nSpecify the HTTP POST method, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n\nDo not specify the item ID as it will be auto-assigned when saved.\n"
+  remarks: "\nSpecify the HTTP POST method, the URI &quot;baseURI/api/ItemApi&quot;, and the item details in the request body.\n\nRequired fields are determined by the Required attribute used in the <xref href=\"Scrapbook101core.Models.Item\" data-throw-if-not-resolved=\"false\"></xref> class definition. \nNot specifying a required item results in an 400 response.\nAt least the Title, Type, and Category of the item must be specified.\nDo not specify the item ID as it will be auto-assigned when saved.\n"
   example: []
   syntax:
     content: >-
@@ -428,16 +428,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Put(System.Int32,System.String)
-  id: Put(System.Int32,System.String)
+- uid: Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
+  id: Put(System.String,System.String)
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: Put(Int32, String)
-  nameWithType: ItemApiController.Put(Int32, String)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Put(System.Int32, System.String)
+  name: Put(String, String)
+  nameWithType: ItemApiController.Put(String, String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.Put(System.String, System.String)
   type: Method
   source:
     remote:
@@ -446,7 +446,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Put
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 116
+    startLine: 124
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -457,10 +457,10 @@ items:
     content: >-
       [HttpPut("{id}")]
 
-      public void Put(int id, [FromBody] string value)
+      public void Put(string id, [FromBody] string value)
     parameters:
     - id: id
-      type: System.Int32
+      type: System.String
       description: The GUID of the item to update.
     - id: value
       type: System.String
@@ -472,7 +472,7 @@ items:
     content.vb: >-
       <HttpPut("{id}")>
 
-      Public Sub Put(id As Integer, value As String)
+      Public Sub Put(id As String, value As String)
   overload: Scrapbook101core.Controllers.ItemApiController.Put*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
@@ -502,7 +502,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 128
+    startLine: 136
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -12421,17 +12421,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync*
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PostAsync
-  name: PostAsync
-  nameWithType: ItemApiController.PostAsync
-  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
 - uid: Scrapbook101core.Models.Item
   commentId: T:Scrapbook101core.Models.Item
   parent: Scrapbook101core.Models
   name: Item
   nameWithType: Item
   fullName: Scrapbook101core.Models.Item
+- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync*
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PostAsync
+  name: PostAsync
+  nameWithType: ItemApiController.PostAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
 - uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
   commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
   parent: System.Threading.Tasks
@@ -12508,13 +12508,6 @@ references:
   name: Put
   nameWithType: ItemApiController.Put
   fullName: Scrapbook101core.Controllers.ItemApiController.Put
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
 - uid: Scrapbook101core.Controllers.ItemApiController.DeleteAsync*
   commentId: Overload:Scrapbook101core.Controllers.ItemApiController.DeleteAsync
   name: DeleteAsync
