@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -63,6 +64,9 @@ namespace Scrapbook101core.Controllers
         /// <remarks>
         /// Specify the HTTP POST method, the URI "baseURI/api/ItemApi", and the item details in the request body.
         /// 
+        /// Required fields are determined by the Required attribute used in the <see cref="Scrapbook101core.Models.Item"/> class definition. 
+        /// Not specifying a required item results in an 400 response.
+        /// At least the Title, Type, and Category of the item must be specified.
         /// Do not specify the item ID as it will be auto-assigned when saved.
         /// </remarks>
         /// <param name="value">JSON representing the item.</param>
@@ -73,16 +77,20 @@ namespace Scrapbook101core.Controllers
         {
             Item newItem = new Item()
             {
-                // Item properties that are auto-generated.
-                Type = AppVariables.ItemDocumentType,
+                Id = null,   // Set to null so on insert CosmosDB sets the GUID.
+                Type = value.Type,
+                Category = value.Category,
+                Title = value.Title,
+                Location = value.Location ?? "",
                 DateAdded = System.DateTime.UtcNow,
                 DateUpdated = System.DateTime.UtcNow,
                 UpdatedBy = value.UpdatedBy ?? "travelmarx",
                 GeoLocation = null,
-                Title = value.Title,
                 Description = value.Description,
-                Assets = value.Assets,
-                Id = null   // Set to null so on insert CosmosDB sets the GUID.
+                AssetPath = value.AssetPath ?? null,
+                Assets = value.Assets ?? null,
+                CategoryFields = value.CategoryFields ?? null,
+                Rating = value.Rating ?? null
             };
 
             // Get geocode from Bing if applicable - see web.config
@@ -115,7 +123,7 @@ namespace Scrapbook101core.Controllers
         /// <param name="id">The GUID of the item to update.</param>
         /// <param name="value">JSON representing the item to update.</param>
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(string id, [FromBody] string value)
         {
         }
 

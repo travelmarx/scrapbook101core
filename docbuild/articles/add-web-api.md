@@ -73,21 +73,10 @@ After createing the skeleton controller, we needed to get one method working and
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
 
-The solution was to simply use `.ToList` so that our first take on coding the GET method then became this:
+The solution was to simply use `.ToList` on the items returned. A simplified and final or more full-featured version are shown below.
 
-```c#
-// GET: api/ItemApi
-[HttpGet]
-public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
-{
-    var items = await DocumentDBRepository<Item>
-        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
-    var imagePath = HelperClasses.BuildPathList(items);
-    return items.ToList();
-}
-```
 
-This worked, but was just the start. After some more experimentation and reading, the GET method action became this:
+# [Final GET action](#tab/tabid-1)
 
 ```c#
 /// <summary>
@@ -116,6 +105,23 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 }
 ```
 
+# [Simplified GET action](#tab/tabid-2)
+
+```c#
+// GET: api/ItemApi
+[HttpGet]
+public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
+{
+    var items = await DocumentDBRepository<Item>
+        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+    var imagePath = HelperClasses.BuildPathList(items);
+    return items.ToList();
+}
+```
+
+***
+<br/>
+
 Note that in both versions of the GET action, we made the method asynchronous, and that we are using [ActionResult][actionresult] instead of IActionResult. The action's return type is inferred from the `T` in the `ActionResult<T>`.
 
 In the second version of the GET action, we added `ProducesResponseType` attribute for "200 OK" and "404 Not Found" responses as well as their corresponding methods `Ok()` and `NotFound()`.
@@ -132,17 +138,47 @@ Here's an example of using Postman to test the GET to return all items.
 
 ![Using Postman to GET all items.](../images/using-postman-to-get.jpg "Using Postman to GET all items.")
 
+
+## POST method
+
+See the <xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)> method for the code handling the POST method. The minimal JSON body required for POST is:
+
+```json
+{
+    "category": "Museum",
+    "title": "Test Museum",
+    "type": "scrapbook101Item"
+}
+```
+
+The <xref:Scrapbook101core.Models.Item> class defines the required attributes. If any of those attributes are not specified, then a 400 response is returned. For example, for not specifying the Type.
+
+```json
+{
+    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+    "title": "One or more validation errors occurred.",
+    "status": 400,
+    "traceId": "|575802c9-4a00edbb2ae13494.",
+    "errors": {
+        "Type": [
+            "Type is required."
+        ]
+    }
+}
+```
+
+
 ## All methods
 
 All of these methods are defined in <xref:Scrapbook101core.Controllers.ItemApiController>.
 
-Method | URI | Notes
---- | --- | ---
-GET | /api/ItemApi | Returns all items.
-GET | /api/ItemApi/GUID | Returns the details for the specified item matching the GUID.
-DELETE | /api/ItemApi/GUID | Deletes the item matching the GUID.
-POST | /api/ItemApi | Creates a new item with the parameters of the item in the request body.
-PUT | /api/ItemApi/GUID | Updates an existing item with the parameters of the item in the request body.
+Method | Code | URI | Notes
+--- | --- | --- | ---
+GET | <xref:Scrapbook101core.Controllers.ItemApiController.GetAsync> | /api/ItemApi | Returns all items.
+GET | <xref:Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)> | /api/ItemApi/GUID | Returns the details for the specified item matching GUID.
+DELETE | <xref:Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)> | /api/ItemApi/GUID | Deletes the item matching GUID.
+POST | <xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)> | /api/ItemApi | Creates a new item with the properties of the item in the request body as JSON.
+PUT | <xref:Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)> | /api/ItemApi/GUID | Updates an existing item with the properties of the item in the request body as JSON.
 
 For more information about HTTP methods, see the [REST API Tutorial][resttut].
 
