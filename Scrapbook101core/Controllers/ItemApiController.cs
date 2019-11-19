@@ -123,8 +123,49 @@ namespace Scrapbook101core.Controllers
         /// <param name="id">The GUID of the item to update.</param>
         /// <param name="value">JSON representing the item to update.</param>
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] string value)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<string>> PutAsync(string id, [FromBody] Item value)
         {
+            var originalItem = await DocumentDBRepository<Item>.GetItemAsync(id);
+
+            Item updatedItem = new Item()
+            {
+                Id = id,
+                Type = originalItem.Type,
+                Category = value.Category,
+                Title = value.Title ?? originalItem.Title,
+                Location = value.Location ?? originalItem.Location,
+                DateAdded = originalItem.DateAdded,
+                DateUpdated = System.DateTime.UtcNow,
+                UpdatedBy = value.UpdatedBy ?? originalItem.UpdatedBy,
+                GeoLocation = null,
+                Description = value.Description ?? originalItem.Description,
+                AssetPath = value.AssetPath ?? originalItem.AssetPath,
+                Assets = value.Assets ?? originalItem.Assets,
+                CategoryFields = value.CategoryFields ?? originalItem.CategoryFields,
+                Rating = value.Rating ?? originalItem.Rating
+            };
+
+            // Get geocode from Bing if applicable - see web.config
+            if (AppVariables.BingMapKey.Length > 0)
+            {
+                double[] coord = await HelperClasses.GetGeocode(value.Location);
+                if (coord[0] != 0)
+                {
+                    updatedItem.GeoLocation = new Microsoft.Azure.Documents.Spatial.Point(coord[1], coord[0]);
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                await DocumentDBRepository<Item>.UpdateItemAsync(id, updatedItem);
+                return Ok("Item updated.");
+            }
+            else
+            {
+                return BadRequest("Item not updated.");
+            }
         }
 
         /// <summary>

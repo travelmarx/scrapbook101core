@@ -4,9 +4,9 @@ title: Creating a Web API
 ---
 # Add a Web API
 
-Last update: 2019-11-05
+Last update: 2019-11-12
 
-What are we trying to do? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other use ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.
+What are we trying to do by adding a Web API? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.
 
 ## Initial steps
 
@@ -69,7 +69,7 @@ namespace Scrapbook101core.Controllers
 
 ## GET method
 
-After createing the skeleton controller, we needed to get one method working and the simplest to get working is the GET method that returns items. This task seemed easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
+After creating the skeleton controller, we decided to get one method working and the simplest to get working is the GET method that returns items. This task seems easy but was a little tricky. We needed to read up on [Action return types][actionresult] and get some help on an implicit conversion error below [here][converterr] and [here][git8061]. The error was this::
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
 
@@ -124,15 +124,15 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 
 Note that in both versions of the GET action, we made the method asynchronous, and that we are using [ActionResult][actionresult] instead of IActionResult. The action's return type is inferred from the `T` in the `ActionResult<T>`.
 
-In the second version of the GET action, we added `ProducesResponseType` attribute for "200 OK" and "404 Not Found" responses as well as their corresponding methods `Ok()` and `NotFound()`.
+In the final version of the GET action, we added `ProducesResponseType` attribute for "200 OK" and "404 Not Found" responses as well as their corresponding methods `Ok()` and `NotFound()`.
 
 Here's what we are not handling in the GET action:
 
-* Paging. We should return a fixed number of items with a paging token to use for subsequent request. Instead, we currently return everything.
+* Paging. We should return a fixed number of items with a paging token to use for a subsequent request. Instead, we currently return everything.
 
-* Security. If this were a protected Web API, we'd be looking for an authorization token.
+* Security. If this were a protected Web API, we'd be looking for an authorization token in the request.
 
-* Base URL. Ther is no indication of which base URL to access assets. We could have a another API member whose job it is to return just that base URL or it could be returned as part of the results.
+* Base URL. There is no indication of which base URL to use to access assets. We could have another API call/method whose job it is to return just that base URL or it could be returned as part of the results of the GET method.
 
 Here's an example of using Postman to test the GET to return all items.
 
@@ -151,7 +151,7 @@ See the <xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook
 }
 ```
 
-The <xref:Scrapbook101core.Models.Item> class defines the required attributes. If any of those attributes are not specified, then a 400 response is returned. For example, for not specifying the Type.
+The <xref:Scrapbook101core.Models.Item> class defines the required attributes. If any of those attributes are not specified, then a 400 response is returned. For example, the error for not specifying the type filed is:
 
 ```json
 {
@@ -167,6 +167,43 @@ The <xref:Scrapbook101core.Models.Item> class defines the required attributes. I
 }
 ```
 
+Note that the POST method creates an object and returns the GUID in the response.
+
+The POST method, like the GET method, has some key functionality left out:
+
+* Security. If this were a protected Web API, we'd be looking for an authorization token in the request.
+
+* Assets. There is no provision for uploading or linking to a new assets. It is assumed the asset already exists in the base assets folder location.
+
+## PUT method
+
+See the <xref:Scrapbook101core.Controllers.ItemApiController.PutAsync(Scrapbook101core.Models.Item)> method for the code handling the PUT method. The minimal JSON body required for PUT is:
+
+```json
+{
+    "category": "Museum",
+    "title": "Test Museum",
+    "type": "scrapbook101Item"
+}
+```
+
+Here's an error example of specifying wrong field type for the rating field.
+
+```json
+{
+    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+    "title": "One or more validation errors occurred.",
+    "status": 400,
+    "traceId": "|18e03c00-4d95bfbf6dc4cf23.",
+    "errors": {
+        "$.rating": [
+            "The JSON value could not be converted to System.String. Path: $.rating | LineNumber: 4 | BytePositionInLine: 15."
+        ]
+    }
+}
+```
+
+For item properties not specified in the JSON body of the request, the original item values are used.
 
 ## All methods
 
