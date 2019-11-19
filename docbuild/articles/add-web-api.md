@@ -219,9 +219,16 @@ PUT | <xref:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.Strin
 
 For more information about HTTP methods, see the [REST API Tutorial][resttut].
 
+
+## Set up Swagger
+
+[Swagger][swagger] generates useful documentation and help pages for Web APIs. It provides benefits such as interactive documentation, client SDK generation, and API discoverability.
+
+
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
 [postman]: https://www.getpostman.com/downloads/
 [actionresult]: https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type
 [converterr]: https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&lq=1
 [git8061]: https://github.com/aspnet/Mvc/issues/8061
 [resttut]: https://restfulapi.net/http-methods/
+[swagger]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.0
