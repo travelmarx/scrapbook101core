@@ -9,7 +9,7 @@ items:
   - Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
   - Scrapbook101core.Controllers.ItemApiController.GetAsync
   - Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  - Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
+  - Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
   langs:
   - csharp
   - vb
@@ -428,23 +428,23 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.Put(System.String,System.String)
-  id: Put(System.String,System.String)
+- uid: Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
+  id: PutAsync(System.String,Scrapbook101core.Models.Item)
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: Put(String, String)
-  nameWithType: ItemApiController.Put(String, String)
-  fullName: Scrapbook101core.Controllers.ItemApiController.Put(System.String, System.String)
+  name: PutAsync(String, Item)
+  nameWithType: ItemApiController.PutAsync(String, Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String, Scrapbook101core.Models.Item)
   type: Method
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: master
       repo: https://github.com/travelmarx/scrapbook101core
-    id: Put
+    id: PutAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 124
   assemblies:
@@ -457,29 +457,49 @@ items:
     content: >-
       [HttpPut("{id}")]
 
-      public void Put(string id, [FromBody] string value)
+      [ProducesResponseType(200)]
+
+      [ProducesResponseType(400)]
+
+      public Task<ActionResult<string>> PutAsync(string id, [FromBody] Item value)
     parameters:
     - id: id
       type: System.String
       description: The GUID of the item to update.
     - id: value
-      type: System.String
+      type: Scrapbook101core.Models.Item
       description: JSON representing the item to update.
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
     content.vb: >-
       <HttpPut("{id}")>
 
-      Public Sub Put(id As String, value As String)
-  overload: Scrapbook101core.Controllers.ItemApiController.Put*
+      <ProducesResponseType(200)>
+
+      <ProducesResponseType(400)>
+
+      Public Function PutAsync(id As String, value As Item) As Task(Of ActionResult(Of String))
+  overload: Scrapbook101core.Controllers.ItemApiController.PutAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
     arguments:
     - type: System.String
       value: '{id}'
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 400
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -502,7 +522,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 136
+    startLine: 177
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -12503,11 +12523,11 @@ references:
   name: Scrapbook101core.Models
   nameWithType: Scrapbook101core.Models
   fullName: Scrapbook101core.Models
-- uid: Scrapbook101core.Controllers.ItemApiController.Put*
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.Put
-  name: Put
-  nameWithType: ItemApiController.Put
-  fullName: Scrapbook101core.Controllers.ItemApiController.Put
+- uid: Scrapbook101core.Controllers.ItemApiController.PutAsync*
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PutAsync
+  name: PutAsync
+  nameWithType: ItemApiController.PutAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.PutAsync
 - uid: Scrapbook101core.Controllers.ItemApiController.DeleteAsync*
   commentId: Overload:Scrapbook101core.Controllers.ItemApiController.DeleteAsync
   name: DeleteAsync
