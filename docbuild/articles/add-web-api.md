@@ -224,6 +224,7 @@ For more information about HTTP methods, see the [REST API Tutorial][resttut].
 
 [Swagger][swagger] generates useful documentation and help pages for Web APIs. It provides benefits such as interactive documentation, client SDK generation, and API discoverability.
 
+Following, the [instructions][swashbuckle] for installing Swashbuckle.AspNetCore, open source project for generating Swagger documents for ASP.NET Core Web APIs.
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
 [postman]: https://www.getpostman.com/downloads/
@@ -232,3 +233,4 @@ For more information about HTTP methods, see the [REST API Tutorial][resttut].
 [git8061]: https://github.com/aspnet/Mvc/issues/8061
 [resttut]: https://restfulapi.net/http-methods/
 [swagger]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.0
+[shashbuckle]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.0&tabs=visual-studio
