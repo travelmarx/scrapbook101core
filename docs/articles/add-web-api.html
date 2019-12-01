@@ -131,13 +131,56 @@ namespace Scrapbook101core.Controllers
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_tabid-1" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Final GET action</a>
+<a href="#tabpanel_CeZOj-G++Q_tabid-1" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">GET with search</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_tabid-2" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-2" data-tab="tabid-2" tabindex="-1">Simplified GET action</a>
+<a href="#tabpanel_CeZOj-G++Q_tabid-2" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-2" data-tab="tabid-2" tabindex="-1">GET with no search</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_tabid-3" role="tab" aria-controls="tabpanel_CeZOj-G++Q_tabid-3" data-tab="tabid-3" tabindex="-1">GET basic</a>
 </li>
 </ul>
 <section id="tabpanel_CeZOj-G++Q_tabid-1" role="tabpanel" data-tab="tabid-1">
+
+<pre><code class="lang-c#">/// &lt;summary&gt;
+/// Returns Scrapbook101 items whose title or body matches filter. If filter is omitted, all items are returned.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// Specify the HTTP GET method and the URI &quot;baseURI/api/ItemApi?filter=filter&quot;.
+/// &lt;/remarks&gt;
+/// &lt;param name=&quot;filter&quot;&gt;Optional string to find in titles and descriptions.&lt;/param&gt;
+/// &lt;returns&gt;JSON representing of all matching items.&lt;/returns&gt;
+[HttpGet]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status404NotFound)]
+public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync([FromQuery] string filter)
+{
+    try
+    {
+        if (String.IsNullOrEmpty(filter))
+        {
+            var items = await DocumentDBRepository&lt;Item&gt;
+                .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType);
+            var imagePath = HelperClasses.BuildPathList(items);
+            return Ok(items.ToList());
+        }
+        else
+        {
+            var items = await DocumentDBRepository&lt;Item&gt;
+                .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType
+                    &amp;&amp; (item.Title.Contains(filter.ToLower()) || item.Description.Contains(filter.ToLower())));
+            var imagePath = HelperClasses.BuildPathList(items);
+            return Ok(items.ToList());
+        }
+    }
+    catch
+    {
+        return NotFound();
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-c#">/// &lt;summary&gt;
 /// Returns all the items in Scrapbook101.
@@ -165,7 +208,7 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 }
 </code></pre>
 </section>
-<section id="tabpanel_CeZOj-G++Q_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_CeZOj-G++Q_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
 
 <pre><code class="lang-c#">// GET: api/ItemApi
 [HttpGet]
@@ -180,8 +223,9 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </section>
 </div>
 <br>
-<p>Note that in both versions of the GET action, we made the method asynchronous, and that we are using <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">ActionResult</a> instead of IActionResult. The action's return type is inferred from the <code>T</code> in the <code>ActionResult&lt;T&gt;</code>.</p>
-<p>In the final version of the GET action, we added <code>ProducesResponseType</code> attribute for &quot;200 OK&quot; and &quot;404 Not Found&quot; responses as well as their corresponding methods <code>Ok()</code> and <code>NotFound()</code>.</p>
+<p>We started with the &quot;GET basic&quot; code, then moved to the &quot;GET with no search&quot;, and finally the &quot;GET with search&quot;.</p>
+<p>Note that in all versions of the GET action, we made the method asynchronous, and that we are using <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">ActionResult</a> instead of IActionResult. The action's return type is inferred from the <code>T</code> in the <code>ActionResult&lt;T&gt;</code>.</p>
+<p>In the version of the GET action with search, we added <code>ProducesResponseType</code> attribute for &quot;200 OK&quot; and &quot;404 Not Found&quot; responses as well as their corresponding methods <code>Ok()</code> and <code>NotFound()</code>.</p>
 <p>Here's what we are not handling in the GET action:</p>
 <ul>
 <li><p>Paging. We should return a fixed number of items with a paging token to use for a subsequent request. Instead, we currently return everything.</p>
@@ -194,7 +238,7 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 <p>Here's an example of using Postman to test the GET to return all items.</p>
 <p><img src="../images/using-postman-to-get.jpg" alt="Using Postman to GET all items." title="Using Postman to GET all items."></p>
 <h2 id="post-method">POST method</h2>
-<p>See the <a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_">PostAsync(Item)</a> method for the code handling the POST method. The minimal JSON body required for POST is:</p>
+<p>See the &lt;xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)&gt; method for the code handling the POST method. The minimal JSON body required for POST is:</p>
 <pre><code class="lang-json">{
     &quot;category&quot;: &quot;Museum&quot;,
     &quot;title&quot;: &quot;Test Museum&quot;,
@@ -223,7 +267,7 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </li>
 </ul>
 <h2 id="put-method">PUT method</h2>
-<p>See the <a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PutAsync_System_String_Scrapbook101core_Models_Item_">PutAsync(String, Item)</a> method for the code handling the PUT method. The minimal JSON body required for PUT is:</p>
+<p>See the &lt;xref:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)&gt; method for the code handling the PUT method. The minimal JSON body required for PUT is:</p>
 <pre><code class="lang-json">{
     &quot;category&quot;: &quot;Museum&quot;,
     &quot;title&quot;: &quot;Test Museum&quot;,
@@ -258,9 +302,9 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 <tbody>
 <tr>
 <td>GET</td>
-<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync">GetAsync()</a></td>
-<td>/api/ItemApi</td>
-<td>Returns all items.</td>
+<td>&lt;xref:Scrapbook101core.Controllers.ItemAPIController.GetAsync(System.String)&gt;</td>
+<td>/api/ItemApi?filter=filter</td>
+<td>Returns items where filter whose title or description matches &quot;filter&quot;. If filter isn't specified return maximum number of items.</td>
 </tr>
 <tr>
 <td>GET</td>
@@ -276,13 +320,13 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </tr>
 <tr>
 <td>POST</td>
-<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_">PostAsync(Item)</a></td>
+<td>&lt;xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)&gt;</td>
 <td>/api/ItemApi</td>
 <td>Creates a new item with the properties of the item in the request body as JSON.</td>
 </tr>
 <tr>
 <td>PUT</td>
-<td><a class="xref" href="../api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PutAsync_System_String_Scrapbook101core_Models_Item_">PutAsync(String, Item)</a></td>
+<td>&lt;xref:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)&gt;</td>
 <td>/api/ItemApi/GUID</td>
 <td>Updates an existing item with the properties of the item in the request body as JSON.</td>
 </tr>
@@ -291,6 +335,7 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 <p>For more information about HTTP methods, see the <a href="https://restfulapi.net/http-methods/">REST API Tutorial</a>.</p>
 <h2 id="set-up-swagger">Set up Swagger</h2>
 <p><a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.0">Swagger</a> generates useful documentation and help pages for Web APIs. It provides benefits such as interactive documentation, client SDK generation, and API discoverability.</p>
+<p>Following, the [instructions][swashbuckle] for installing Swashbuckle.AspNetCore, open source project for generating Swagger documents for ASP.NET Core Web APIs.</p>
 </article>
           </div>
           

@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemApiController.html",
-          "hash": "gtLq4zQYU2uVqd8WYHU70g=="
+          "hash": "8b/u7lC/1V9QB7C7eZnU/g=="
         }
       },
       "is_incremental": false,
@@ -292,12 +292,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/add-web-api.md",
       "output": {
         ".html": {
           "relative_path": "articles/add-web-api.html",
-          "hash": "8dy3+dlW4bi3oy3y3dVAQQ=="
+          "hash": "B75wRSMHnTz9pjDHk2tEeg=="
         }
       },
       "is_incremental": false,

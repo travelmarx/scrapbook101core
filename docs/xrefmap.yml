@@ -210,6 +210,19 @@ references:
   commentId: T:Scrapbook101core.Controllers.ItemApiController
   fullName: Scrapbook101core.Controllers.ItemApiController
   nameWithType: ItemApiController
+- uid: Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
+  name: CreateAsync(Item)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_CreateAsync_Scrapbook101core_Models_Item_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
+  nameWithType: ItemApiController.CreateAsync(Item)
+- uid: Scrapbook101core.Controllers.ItemApiController.CreateAsync*
+  name: CreateAsync
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_CreateAsync_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.CreateAsync
+  isSpec: "True"
+  fullName: Scrapbook101core.Controllers.ItemApiController.CreateAsync
+  nameWithType: ItemApiController.CreateAsync
 - uid: Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)
   name: DeleteAsync(String)
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_DeleteAsync_System_String_
@@ -236,12 +249,12 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemApiController.DetailsAsync
   nameWithType: ItemApiController.DetailsAsync
-- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync
-  name: GetAsync()
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.GetAsync
-  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync()
-  nameWithType: ItemApiController.GetAsync()
+- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
+  name: GetAsync(String)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
+  nameWithType: ItemApiController.GetAsync(String)
 - uid: Scrapbook101core.Controllers.ItemApiController.GetAsync*
   name: GetAsync
   href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_GetAsync_
@@ -249,32 +262,19 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync
   nameWithType: ItemApiController.GetAsync
-- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  name: PostAsync(Item)
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_Scrapbook101core_Models_Item_
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  nameWithType: ItemApiController.PostAsync(Item)
-- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync*
-  name: PostAsync
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PostAsync_
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PostAsync
+- uid: Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)
+  name: UpdateAsync(String, Item)
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_UpdateAsync_System_String_Scrapbook101core_Models_Item_
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String, Scrapbook101core.Models.Item)
+  nameWithType: ItemApiController.UpdateAsync(String, Item)
+- uid: Scrapbook101core.Controllers.ItemApiController.UpdateAsync*
+  name: UpdateAsync
+  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_UpdateAsync_
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.UpdateAsync
   isSpec: "True"
-  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
-  nameWithType: ItemApiController.PostAsync
-- uid: Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
-  name: PutAsync(String, Item)
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PutAsync_System_String_Scrapbook101core_Models_Item_
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
-  fullName: Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String, Scrapbook101core.Models.Item)
-  nameWithType: ItemApiController.PutAsync(String, Item)
-- uid: Scrapbook101core.Controllers.ItemApiController.PutAsync*
-  name: PutAsync
-  href: api/Scrapbook101core.Controllers.ItemApiController.html#Scrapbook101core_Controllers_ItemApiController_PutAsync_
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PutAsync
-  isSpec: "True"
-  fullName: Scrapbook101core.Controllers.ItemApiController.PutAsync
-  nameWithType: ItemApiController.PutAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.UpdateAsync
+  nameWithType: ItemApiController.UpdateAsync
 - uid: Scrapbook101core.Controllers.ItemController
   name: ItemController
   href: api/Scrapbook101core.Controllers.ItemController.html

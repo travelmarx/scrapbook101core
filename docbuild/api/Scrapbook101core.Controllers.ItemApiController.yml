@@ -5,11 +5,11 @@ items:
   id: ItemApiController
   parent: Scrapbook101core.Controllers
   children:
+  - Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
   - Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)
   - Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)
-  - Scrapbook101core.Controllers.ItemApiController.GetAsync
-  - Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  - Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
+  - Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
+  - Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)
   langs:
   - csharp
   - vb
@@ -237,16 +237,16 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.GetAsync
-  id: GetAsync
+- uid: Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
+  id: GetAsync(System.String)
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: GetAsync()
-  nameWithType: ItemApiController.GetAsync()
-  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync()
+  name: GetAsync(String)
+  nameWithType: ItemApiController.GetAsync(String)
+  fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)
   type: Method
   source:
     remote:
@@ -255,12 +255,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
-  summary: "\nReturns all the items in Scrapbook101.\n"
-  remarks: "\nSpecify the HTTP GET method and the URI &quot;baseURI/api/ItemApi&quot;.\n"
+  summary: "\nReturns Scrapbook101 items whose title or body matches filter. If filter is omitted, all items are returned.\n"
+  remarks: "\nSpecify the HTTP GET method and the URI &quot;baseURI/api/ItemApi?filter=filter&quot;.\n"
   example: []
   syntax:
     content: >-
@@ -270,10 +270,18 @@ items:
 
       [ProducesResponseType(404)]
 
-      public Task<ActionResult<IEnumerable<Item>>> GetAsync()
+      public Task<ActionResult<IEnumerable<Item>>> GetAsync([FromQuery] string filter)
+    parameters:
+    - id: filter
+      type: System.String
+      description: Optional string to find in titles and descriptions.
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+        arguments: []
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
-      description: JSON representing of all items.
+      description: JSON representing of all matching items.
     content.vb: >-
       <HttpGet>
 
@@ -281,7 +289,7 @@ items:
 
       <ProducesResponseType(404)>
 
-      Public Function GetAsync As Task(Of ActionResult(Of IEnumerable(Of Item)))
+      Public Function GetAsync(filter As String) As Task(Of ActionResult(Of IEnumerable(Of Item)))
   overload: Scrapbook101core.Controllers.ItemApiController.GetAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
@@ -319,7 +327,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 53
+    startLine: 65
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -357,25 +365,25 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
-  id: PostAsync(Scrapbook101core.Models.Item)
+- uid: Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
+  id: CreateAsync(Scrapbook101core.Models.Item)
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: PostAsync(Item)
-  nameWithType: ItemApiController.PostAsync(Item)
-  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)
+  name: CreateAsync(Item)
+  nameWithType: ItemApiController.CreateAsync(Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)
   type: Method
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: master
       repo: https://github.com/travelmarx/scrapbook101core
-    id: PostAsync
+    id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 72
+    startLine: 84
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -384,13 +392,13 @@ items:
   example: []
   syntax:
     content: >-
-      [HttpPost]
+      [HttpPost(Name = "Create")]
 
       [ProducesResponseType(200)]
 
       [ProducesResponseType(400)]
 
-      public Task<ActionResult<string>> PostAsync([FromBody] Item value)
+      public Task<ActionResult<string>> CreateAsync([FromBody] Item value)
     parameters:
     - id: value
       type: Scrapbook101core.Models.Item
@@ -402,18 +410,22 @@ items:
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
     content.vb: >-
-      <HttpPost>
+      <HttpPost(Name:="Create")>
 
       <ProducesResponseType(200)>
 
       <ProducesResponseType(400)>
 
-      Public Function PostAsync(value As Item) As Task(Of ActionResult(Of String))
-  overload: Scrapbook101core.Controllers.ItemApiController.PostAsync*
+      Public Function CreateAsync(value As Item) As Task(Of ActionResult(Of String))
+  overload: Scrapbook101core.Controllers.ItemApiController.CreateAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
     arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: Create
   - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
     ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
     arguments:
@@ -428,25 +440,25 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
-  commentId: M:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)
-  id: PutAsync(System.String,Scrapbook101core.Models.Item)
+- uid: Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)
+  commentId: M:Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)
+  id: UpdateAsync(System.String,Scrapbook101core.Models.Item)
   parent: Scrapbook101core.Controllers.ItemApiController
   langs:
   - csharp
   - vb
-  name: PutAsync(String, Item)
-  nameWithType: ItemApiController.PutAsync(String, Item)
-  fullName: Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String, Scrapbook101core.Models.Item)
+  name: UpdateAsync(String, Item)
+  nameWithType: ItemApiController.UpdateAsync(String, Item)
+  fullName: Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String, Scrapbook101core.Models.Item)
   type: Method
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: master
       repo: https://github.com/travelmarx/scrapbook101core
-    id: PutAsync
+    id: UpdateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 124
+    startLine: 136
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -455,13 +467,13 @@ items:
   example: []
   syntax:
     content: >-
-      [HttpPut("{id}")]
+      [HttpPut("{id}", Name = "Update")]
 
       [ProducesResponseType(200)]
 
       [ProducesResponseType(400)]
 
-      public Task<ActionResult<string>> PutAsync(string id, [FromBody] Item value)
+      public Task<ActionResult<string>> UpdateAsync(string id, [FromBody] Item value)
     parameters:
     - id: id
       type: System.String
@@ -476,20 +488,24 @@ items:
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
     content.vb: >-
-      <HttpPut("{id}")>
+      <HttpPut("{id}", Name:="Update")>
 
       <ProducesResponseType(200)>
 
       <ProducesResponseType(400)>
 
-      Public Function PutAsync(id As String, value As Item) As Task(Of ActionResult(Of String))
-  overload: Scrapbook101core.Controllers.ItemApiController.PutAsync*
+      Public Function UpdateAsync(id As String, value As Item) As Task(Of ActionResult(Of String))
+  overload: Scrapbook101core.Controllers.ItemApiController.UpdateAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
     arguments:
     - type: System.String
       value: '{id}'
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: Update
   - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
     ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
     arguments:
@@ -522,7 +538,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 177
+    startLine: 189
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -12234,6 +12250,13 @@ references:
   name: GetAsync
   nameWithType: ItemApiController.GetAsync
   fullName: Scrapbook101core.Controllers.ItemApiController.GetAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
   commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{Scrapbook101core.Models.Item}}}
   parent: System.Threading.Tasks
@@ -12370,13 +12393,6 @@ references:
   name: DetailsAsync
   nameWithType: ItemApiController.DetailsAsync
   fullName: Scrapbook101core.Controllers.ItemApiController.DetailsAsync
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{Scrapbook101core.Models.Item}}
   commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{Scrapbook101core.Models.Item}}
   parent: System.Threading.Tasks
@@ -12447,11 +12463,11 @@ references:
   name: Item
   nameWithType: Item
   fullName: Scrapbook101core.Models.Item
-- uid: Scrapbook101core.Controllers.ItemApiController.PostAsync*
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PostAsync
-  name: PostAsync
-  nameWithType: ItemApiController.PostAsync
-  fullName: Scrapbook101core.Controllers.ItemApiController.PostAsync
+- uid: Scrapbook101core.Controllers.ItemApiController.CreateAsync*
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.CreateAsync
+  name: CreateAsync
+  nameWithType: ItemApiController.CreateAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.CreateAsync
 - uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
   commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.String}}
   parent: System.Threading.Tasks
@@ -12523,11 +12539,11 @@ references:
   name: Scrapbook101core.Models
   nameWithType: Scrapbook101core.Models
   fullName: Scrapbook101core.Models
-- uid: Scrapbook101core.Controllers.ItemApiController.PutAsync*
-  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.PutAsync
-  name: PutAsync
-  nameWithType: ItemApiController.PutAsync
-  fullName: Scrapbook101core.Controllers.ItemApiController.PutAsync
+- uid: Scrapbook101core.Controllers.ItemApiController.UpdateAsync*
+  commentId: Overload:Scrapbook101core.Controllers.ItemApiController.UpdateAsync
+  name: UpdateAsync
+  nameWithType: ItemApiController.UpdateAsync
+  fullName: Scrapbook101core.Controllers.ItemApiController.UpdateAsync
 - uid: Scrapbook101core.Controllers.ItemApiController.DeleteAsync*
   commentId: Overload:Scrapbook101core.Controllers.ItemApiController.DeleteAsync
   name: DeleteAsync
