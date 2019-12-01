@@ -256,8 +256,8 @@ Method | Code | URI | Notes
 GET | <xref:Scrapbook101core.Controllers.ItemApiController.GetAsync(System.String)> | /api/ItemApi?filter=filter | Returns items where filter whose title or description matches "filter". If filter isn't specified return maximum number of items.
 GET | <xref:Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)> | /api/ItemApi/GUID | Returns the details for the specified item matching GUID.
 DELETE | <xref:Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)> | /api/ItemApi/GUID | Deletes the item matching GUID.
-POST | <xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)> | /api/ItemApi | Creates a new item with the properties of the item in the request body as JSON.
-PUT | <xref:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)> | /api/ItemApi/GUID | Updates an existing item with the properties of the item in the request body as JSON.
+POST | <xref:Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)> | /api/ItemApi | Creates a new item with the properties of the item in the request body as JSON.
+PUT | <xref:Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)> | /api/ItemApi/GUID | Updates an existing item with the properties of the item in the request body as JSON.
 
 For more information about HTTP methods, see the [REST API Tutorial][resttut].
 
