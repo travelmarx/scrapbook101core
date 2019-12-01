@@ -255,7 +255,7 @@ So with the pipeline in place, we adopted this workflow.
 
     * This process is what kicks off the pipeline build, which then builds the HTML that appears in **docs** folder of the master branch.
 
-In the process of working through this workflow, realized that perhaps a better workflow would be to render HTML docs checked into a different repo altogoether then we would separate web site content from code and doc source content.
+In the process of working through this workflow, we realized that perhaps a better workflow would be to render HTML docs checked into a different repo altogoether and then we would cleanly separate web site content from code and doc source content.
 
 
 [docfx]: https://dotnet.github.io/docfx/
