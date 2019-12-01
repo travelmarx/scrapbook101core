@@ -43,7 +43,8 @@ namespace Scrapbook101core.Controllers
                 {
                     var items = await DocumentDBRepository<Item>
                         .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType
-                            && (item.Title.Contains(filter.ToLower()) || item.Description.Contains(filter.ToLower())));
+                            && (item.Title.Contains(filter.ToLower())
+                            || item.Description.Contains(filter.ToLower())));
                     var imagePath = HelperClasses.BuildPathList(items);
                     return Ok(items.ToList());
                 }
