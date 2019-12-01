@@ -18,23 +18,35 @@ namespace Scrapbook101core.Controllers
     {
 
         /// <summary>
-        /// Returns all the items in Scrapbook101.
+        /// Returns Scrapbook101 items whose title or body matches filter. If filter is omitted, all items are returned.
         /// </summary>
         /// <remarks>
-        /// Specify the HTTP GET method and the URI "baseURI/api/ItemApi".
+        /// Specify the HTTP GET method and the URI "baseURI/api/ItemApi?filter=filter".
         /// </remarks>
-        /// <returns>JSON representing of all items.</returns>
+        /// <param name="filter">Optional string to find in titles and descriptions.</param>
+        /// <returns>JSON representing of all matching items.</returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
+        public async Task<ActionResult<IEnumerable<Item>>> GetAsync([FromQuery] string filter)
         {
             try
             {
-                var items = await DocumentDBRepository<Item>
-                    .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
-                var imagePath = HelperClasses.BuildPathList(items);
-                return Ok(items.ToList());
+                if (String.IsNullOrEmpty(filter))
+                {
+                    var items = await DocumentDBRepository<Item>
+                        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+                    var imagePath = HelperClasses.BuildPathList(items);
+                    return Ok(items.ToList());
+                }
+                else
+                {
+                    var items = await DocumentDBRepository<Item>
+                        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType
+                            && (item.Title.Contains(filter.ToLower()) || item.Description.Contains(filter.ToLower())));
+                    var imagePath = HelperClasses.BuildPathList(items);
+                    return Ok(items.ToList());
+                }
             }
             catch
             {
@@ -70,10 +82,10 @@ namespace Scrapbook101core.Controllers
         /// Do not specify the item ID as it will be auto-assigned when saved.
         /// </remarks>
         /// <param name="value">JSON representing the item.</param>
-        [HttpPost]
+        [HttpPost(Name = "Create")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<string>> PostAsync([FromBody] Item value)
+        public async Task<ActionResult<string>> CreateAsync([FromBody] Item value)
         {
             Item newItem = new Item()
             {
@@ -122,10 +134,10 @@ namespace Scrapbook101core.Controllers
         /// </remarks>
         /// <param name="id">The GUID of the item to update.</param>
         /// <param name="value">JSON representing the item to update.</param>
-        [HttpPut("{id}")]
+        [HttpPut("{id}", Name = "Update")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<string>> PutAsync(string id, [FromBody] Item value)
+        public async Task<ActionResult<string>> UpdateAsync(string id, [FromBody] Item value)
         {
             var originalItem = await DocumentDBRepository<Item>.GetItemAsync(id);
 

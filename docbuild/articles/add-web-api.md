@@ -75,8 +75,48 @@ After creating the skeleton controller, we decided to get one method working and
 
 The solution was to simply use `.ToList` on the items returned. A simplified and final or more full-featured version are shown below.
 
+# [GET with search](#tab/tabid-1)
 
-# [Final GET action](#tab/tabid-1)
+```c#
+/// <summary>
+/// Returns Scrapbook101 items whose title or body matches filter. If filter is omitted, all items are returned.
+/// </summary>
+/// <remarks>
+/// Specify the HTTP GET method and the URI "baseURI/api/ItemApi?filter=filter".
+/// </remarks>
+/// <param name="filter">Optional string to find in titles and descriptions.</param>
+/// <returns>JSON representing of all matching items.</returns>
+[HttpGet]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status404NotFound)]
+public async Task<ActionResult<IEnumerable<Item>>> GetAsync([FromQuery] string filter)
+{
+    try
+    {
+        if (String.IsNullOrEmpty(filter))
+        {
+            var items = await DocumentDBRepository<Item>
+                .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+            var imagePath = HelperClasses.BuildPathList(items);
+            return Ok(items.ToList());
+        }
+        else
+        {
+            var items = await DocumentDBRepository<Item>
+                .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType
+                    && (item.Title.Contains(filter.ToLower()) || item.Description.Contains(filter.ToLower())));
+            var imagePath = HelperClasses.BuildPathList(items);
+            return Ok(items.ToList());
+        }
+    }
+    catch
+    {
+        return NotFound();
+    }
+}
+```
+
+# [GET with no search](#tab/tabid-2)
 
 ```c#
 /// <summary>
@@ -105,7 +145,7 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 }
 ```
 
-# [Simplified GET action](#tab/tabid-2)
+# [GET basic](#tab/tabid-3)
 
 ```c#
 // GET: api/ItemApi
@@ -122,9 +162,11 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 ***
 <br/>
 
-Note that in both versions of the GET action, we made the method asynchronous, and that we are using [ActionResult][actionresult] instead of IActionResult. The action's return type is inferred from the `T` in the `ActionResult<T>`.
+We started with the "GET basic" code, then moved to the "GET with no search", and finally the "GET with search".
 
-In the final version of the GET action, we added `ProducesResponseType` attribute for "200 OK" and "404 Not Found" responses as well as their corresponding methods `Ok()` and `NotFound()`.
+Note that in all versions of the GET action, we made the method asynchronous, and that we are using [ActionResult][actionresult] instead of IActionResult. The action's return type is inferred from the `T` in the `ActionResult<T>`.
+
+In the version of the GET action with search, we added `ProducesResponseType` attribute for "200 OK" and "404 Not Found" responses as well as their corresponding methods `Ok()` and `NotFound()`.
 
 Here's what we are not handling in the GET action:
 
@@ -211,7 +253,7 @@ All of these methods are defined in <xref:Scrapbook101core.Controllers.ItemApiCo
 
 Method | Code | URI | Notes
 --- | --- | --- | ---
-GET | <xref:Scrapbook101core.Controllers.ItemApiController.GetAsync> | /api/ItemApi | Returns all items.
+GET | <xref:Scrapbook101core.Controllers.ItemAPIController.GetAsync(System.String)> | /api/ItemApi?filter=filter | Returns items where filter whose title or description matches "filter". If filter isn't specified return maximum number of items.
 GET | <xref:Scrapbook101core.Controllers.ItemApiController.DetailsAsync(System.String)> | /api/ItemApi/GUID | Returns the details for the specified item matching GUID.
 DELETE | <xref:Scrapbook101core.Controllers.ItemApiController.DeleteAsync(System.String)> | /api/ItemApi/GUID | Deletes the item matching GUID.
 POST | <xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)> | /api/ItemApi | Creates a new item with the properties of the item in the request body as JSON.
@@ -224,6 +266,7 @@ For more information about HTTP methods, see the [REST API Tutorial][resttut].
 
 [Swagger][swagger] generates useful documentation and help pages for Web APIs. It provides benefits such as interactive documentation, client SDK generation, and API discoverability.
 
+Following, the [instructions][swashbuckle] for installing Swashbuckle.AspNetCore, open source project for generating Swagger documents for ASP.NET Core Web APIs.
 
 [webapitut]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&tabs=visual-studio
 [postman]: https://www.getpostman.com/downloads/
@@ -232,3 +275,4 @@ For more information about HTTP methods, see the [REST API Tutorial][resttut].
 [git8061]: https://github.com/aspnet/Mvc/issues/8061
 [resttut]: https://restfulapi.net/http-methods/
 [swagger]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.0
+[shashbuckle]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.0&tabs=visual-studio
