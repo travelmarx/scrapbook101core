@@ -73,7 +73,9 @@ After creating the skeleton controller, we decided to get one method working and
 
 *Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>' to 'Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<Scrapbook101core.Models.Item>>'	Scrapbook101core*
 
-The solution was to simply use `.ToList` on the items returned. A simplified and final or more full-featured version are shown below.
+The solution was to simply use `.ToList` on the items returned. 
+
+Below, we show three versions of the GET action. We started with "GET basic", then moved to the "GET with no search", and finally arrived at "GET with search".
 
 # [GET with search](#tab/tabid-1)
 
@@ -161,8 +163,6 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync()
 
 ***
 <br/>
-
-We started with the "GET basic" code, then moved to the "GET with no search", and finally the "GET with search".
 
 Note that in all versions of the GET action, we made the method asynchronous, and that we are using [ActionResult][actionresult] instead of IActionResult. The action's return type is inferred from the `T` in the `ActionResult<T>`.
 
