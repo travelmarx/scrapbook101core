@@ -127,7 +127,8 @@ namespace Scrapbook101core.Controllers
 <h2 id="get-method">GET method</h2>
 <p>After creating the skeleton controller, we decided to get one method working and the simplest to get working is the GET method that returns items. This task seems easy but was a little tricky. We needed to read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">Action return types</a> and get some help on an implicit conversion error below <a href="https://stackoverflow.com/questions/50383193/cannot-implicitly-convert-type-to-actionresultt?noredirect=1&amp;lq=1">here</a> and <a href="https://github.com/aspnet/Mvc/issues/8061">here</a>. The error was this::</p>
 <p><em>Cannot implicitly convert type 'System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;' to 'Microsoft.AspNetCore.Mvc.ActionResult&lt;System.Collections.Generic.IEnumerable&lt;Scrapbook101core.Models.Item&gt;&gt;'	Scrapbook101core</em></p>
-<p>The solution was to simply use <code>.ToList</code> on the items returned. A simplified and final or more full-featured version are shown below.</p>
+<p>The solution was to simply use <code>.ToList</code> on the items returned.</p>
+<p>Below, we show three versions of the GET action. We started with &quot;GET basic&quot;, then moved to the &quot;GET with no search&quot;, and finally arrived at &quot;GET with search&quot;.</p>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
@@ -223,7 +224,6 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync()
 </section>
 </div>
 <br>
-<p>We started with the &quot;GET basic&quot; code, then moved to the &quot;GET with no search&quot;, and finally the &quot;GET with search&quot;.</p>
 <p>Note that in all versions of the GET action, we made the method asynchronous, and that we are using <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1#actionresultt-type">ActionResult</a> instead of IActionResult. The action's return type is inferred from the <code>T</code> in the <code>ActionResult&lt;T&gt;</code>.</p>
 <p>In the version of the GET action with search, we added <code>ProducesResponseType</code> attribute for &quot;200 OK&quot; and &quot;404 Not Found&quot; responses as well as their corresponding methods <code>Ok()</code> and <code>NotFound()</code>.</p>
 <p>Here's what we are not handling in the GET action:</p>
