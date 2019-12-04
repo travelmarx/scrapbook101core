@@ -22,7 +22,7 @@ This site was created with [DocFx][docfx]. How is this site different from our [
     
     The DocFx process pushes the HTML files it has created and we are not relying on Jekyll to build HTML for us.
 
-How we got to this point is described in the following pages. This page describes just the DocFx part. Subsequent pages describe the Azure pipeline.
+How we got to this point is described in the following articles. This articles describes just the DocFx part. Subsequent articles describe the Azure pipeline.
 
 ## Initial steps
 
@@ -103,20 +103,20 @@ we pointed to {{productName}} code just to see what would happen and it built fi
 
 Starting with the [advanced walkthrough][awalk] as guidance, we did the following as a test:
 
-1. See what templates are available with `docfx template list`. We are interested in the default template.
+1. Explore what templates are available with `docfx template list`. We are interested in the default template.
 
 1. Export the default template with `docfx export default`. 
     * This will created a folder called **_exported_templates**.  Either add this to .gitignore or delete after done.
 
-1. In our **\docbuild** folder create a **templates\cust-template** folder.
+1. In our **\docbuild** folder, create a **templates\cust-template** folder.
 
-1. Decide to change the footer template of the site to add the name of our site. So in **_exported_templates\default\partials** copy the footer.tmpl.partial file to **docbuild\templates\cust-template\partials**.
+1. Change the footer template of the site to add the name of our site. So in **_exported_templates\default\partials** copy the footer.tmpl.partial file to **docbuild\templates\cust-template\partials**.
 
 1. Edit the footer.tmpl.partial file to add "{{productName}}".
     * The .templ is a Mustache template file used by [renderers][renderers].
     * In this simple case, it's obvious where to add the extra text "{{productName}}"
 
-1. In the **build** key of docfx.json reference the custom template.
+1. In the **build** key of docfx.json file, reference the custom template.
    
    ```
     "template": [
@@ -138,7 +138,7 @@ The goal is to removed the inherited members section as shown below:
 
 1. Find the correct template **_exported_templates\default\partials\class.header.tmpl.partial** and copy to corresponding folder in **\cust-templates**.
 
-2. Edit out the inherited members part:
+2. Edit out the inherited members part. This is the part removed:
 
     ```
     {{#inheritedMembers.0}}
@@ -163,7 +163,7 @@ The goal is to removed the inherited members section as shown below:
 
 ### Links and cross references via UID. 
 
-For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:Scrapbook101core.Models.Item>. Or we can change the text for the API link as so [The Item Class](xref:Scrapbook101core.Models.Item). Here's the [help page][linkhelp] on linking.
+For example, here is a link to <xref:code-discussion> file using its UID. Here is a link to a class in the API documentation using its UID: <xref:Scrapbook101core.Models.Item>. Or, we can change the text for the API link as so [The Item Class](xref:Scrapbook101core.Models.Item). Here's the [help page][linkhelp] on linking.
 
 Here are those links in markdown:
 
@@ -173,7 +173,7 @@ Here are those links in markdown:
 [The Item Class](xref:Scrapbook101core.Models.Item)
 ```
 
-How to link to a code file?  Here's an full qualified path link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/{{productName}}/appsettings.json). Is there another way to do it?
+How to link to a code file?  Here's an full qualified path link: [appsettings.json](https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json). Is there another way to do it?
 
 
 ### Specify site title
@@ -184,11 +184,11 @@ In the docfx.json file, under the **build** key, specify this:
 "globalMetadata" : { "_appTitle": "{{productName}}" },
 ```
 
-which will add this text to the title of every page, as viewed in browser tab. The _appTitle is added to the UID of each page, so for the "Get Started" page, the title is "Get Started | {{productName}}". For more information on reservied metadata you can use, see [reserved metadata][metadata].
+which will add this text to the browser title of every page. The _appTitle is added to the UID of each page, so for the "Get Started" page, the title is "Get Started | {{productName}}". For more information on reservied metadata you can use, see [reserved metadata][metadata].
 
 ### Add a global variable
 
-Our goal is to add a global variable to represent the site/product name "{{productName}}" so that in conceptual markdown files we could just put `{{productName}}` and have the build process substitute the correct value.
+Our goal is to add a global variable to represent the site/product name "{{productName}}" so that in conceptual markdown files we could just put `&#123;&#123;productName&#125;&#125;` and have the build process substitute the correct value.
 
 Here's how we achieved it. (It may not be the most elegant way.)
 
@@ -201,7 +201,7 @@ Here's how we achieved it. (It may not be the most elegant way.)
 
 1. Start with some simple experiments adding JavaScript code to the conceptual.extension.js file and always rebuilding.
 
-    1. For example, in the `exports.postTransform` function add code to confirm you can see the warning line in the output when you run `docfx --serve`.
+    a. For example, in the `exports.postTransform` function add code to confirm you can see the warning line in the output when you run `docfx --serve`.
 
         ```javascript
         exports.postTransform = function (model) {
@@ -210,7 +210,7 @@ Here's how we achieved it. (It may not be the most elegant way.)
         }
         ```
 
-    1. Next, take a look at what the model is with:
+    b. Next, take a look at what the model is with:
 
         ```javascript
         exports.postTransform = function (model) {
@@ -233,7 +233,7 @@ Here's how we achieved it. (It may not be the most elegant way.)
 
         From this output, you can see what you can access in the model.
 
-1. In the docfx.json file put thisunder the "build" key:
+1. In the docfx.json file put this under the "build" key:
 
     ```json
     "globalMetadata" : { "_appTitle": "{{productName}}", "productName": "Scrapbook101core" },
