@@ -69,7 +69,7 @@
             <article class="content wrap" id="_content" data-uid="add-web-api">
 <h1 id="add-a-web-api">Add a Web API</h1>
 
-<p>Last update: 2019-11-12</p>
+<p>Last update: 2019-12-04</p>
 <p>What are we trying to do by adding a Web API? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.</p>
 <h2 id="initial-steps">Initial steps</h2>
 <p>As usual, we started by following a tutorial: <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0&amp;tabs=visual-studio">Web API Tutorial</a>. A lot of effort goes into creating this type of tutorial experience, so why not use it? And it's our old friend, the Todo List.</p>
@@ -169,7 +169,8 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync([F
         {
             var items = await DocumentDBRepository&lt;Item&gt;
                 .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType
-                    &amp;&amp; (item.Title.Contains(filter.ToLower()) || item.Description.Contains(filter.ToLower())));
+                    &amp;&amp; (item.Title.Contains(filter.ToLower()) 
+                    || item.Description.Contains(filter.ToLower())));
             var imagePath = HelperClasses.BuildPathList(items);
             return Ok(items.ToList());
         }
