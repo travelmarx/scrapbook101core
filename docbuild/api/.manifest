@@ -36,7 +36,7 @@
   "Scrapbook101core.Controllers.ItemController.DetailsAsync(System.String)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.EditAsync(Scrapbook101core.Models.CombinedModel)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.Controllers.ItemController.EditAsync(System.String)": "Scrapbook101core.Controllers.ItemController.yml",
-  "Scrapbook101core.Controllers.ItemController.IndexAsync": "Scrapbook101core.Controllers.ItemController.yml",
+  "Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)": "Scrapbook101core.Controllers.ItemController.yml",
   "Scrapbook101core.DocumentDBRepository`1": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.CreateItemAsync(`0)": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync(System.String)": "Scrapbook101core.DocumentDBRepository-1.yml",
