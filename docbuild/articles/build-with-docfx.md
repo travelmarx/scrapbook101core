@@ -6,13 +6,23 @@ title: Build with DocFX
 
 ## Overview
 
-This site was created with [DocFx][docfx]. How is this site different from our [GitHub pages site][site1] for Scrapbook101? 
+This site was created with [DocFx][docfx]. How is this site different from our [GitHub pages site][site1] for Scrapbook101? Here's how:
 
-* This site parses comments from code (under [Scrapbook101core][cide]) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
+* This DocFx site parses comments from code (under [Scrapbook101core][c0de]) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
 
-* In the previous [site][site1], we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a **\docs** folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the HTML for the [site][site1].
+* In the previous [site][site1], we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a **\docs** folder, which we defined as a GitHub pages website. On the server, the Jekyll process would kick off automatically and create the HTML for the [site][site1].
 
-* This site relies only on DocFx. We still work offline (currently), run DocFx to produce the website with both conceptual and API documentation, and then push to Github **\docs** folder. The difference with our Jekyll site is that here we are pushing the HTML files and are not relying on Jekyll to build HTML for us.
+* This DocFx site relies only on DocFx. The process here is this:
+
+    1. Edit locally in a working branch. This includes doc and code changes.
+    1. Optionally run DocFx locally to test changes in both conceptual and API documentation. 
+    1. Push .md and code changes to Github remote version of local working branch. 
+    1. On GitHub create a pull request to merge working branch into master branch.
+    1. An Azure pipeline is setup to on change in the master branch build the docs into the **\docs** folder of the master branch. For the master branch the **\docs** branch is designated as the source of GitHub pages.
+    
+    The DocFx process pushes the HTML files it has created and we are not relying on Jekyll to build HTML for us.
+
+How we got to this point is described in the following pages. This page describes just the DocFx part. Subsequent pages describe the Azure pipeline.
 
 ## Initial steps
 
