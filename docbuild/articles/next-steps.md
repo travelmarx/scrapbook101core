@@ -14,22 +14,31 @@ If the intent of your {{productName}} implementation is to allow only certain ac
 
 ## Searching
 
-The search functionality implemented in {{productName}} allows searching titles for a string fragment. The code to do
-this is in the `ItemController.cs` file's `SearchAsync` method, which uses [LINQ][linq]:
+The search functionality implemented in {{productName}} allows searching titles and descriptions for a string fragment. The code to do this is in the `ItemController.cs` file's `IndexAsync` method, which uses [LINQ][linq]:
 
 ```C#
-var items = await DocumentDBRepository<Item>.GetItemsAsync(
-    item => item.Type == AppVariables.ItemDocumentType
-    && item.Title.ToLower().Contains(searchString.ToLower()));
+        [ActionName("Index")]
+        public async Task<ActionResult> IndexAsync(string filter)
+        {
+            if (String.IsNullOrEmpty(filter))
+            {
+                var items = await DocumentDBRepository<Item>.GetItemsAsync(
+                    item => item.Type == AppVariables.ItemDocumentType);
+                ViewBag.imagePath = HelperClasses.BuildPathList(items);
+                return View(items);
+            }
+            else
+            {
+                var items = await DocumentDBRepository<Item>.GetItemsAsync(
+                    item => item.Type == AppVariables.ItemDocumentType
+                    && (item.Title.ToLower().Contains(filter.ToLower()))
+                    || (item.Description.ToLower().Contains(filter.ToLower())));
+                ViewBag.imagePath = HelperClasses.BuildPathList(items);
+                return View(items);
+            }
+        }
 ```
-The included functionality is basic but can be expanded to include searching the **description**, **location**, and **dateAdded** fields. For example, to search both the **title** and the **description**, you could use
-
-```C#
-var items = await DocumentDBRepository<Item>.GetItemsAsync(
-    item => item.Type == AppVariables.ItemDocumentType
-    && (item.Title.ToLower().Contains(searchString.ToLower())
-    || item.Description.ToLower().Contains(searchString.ToLower())));
-```
+The included functionality is basic but can be expanded to include searching other fields like **location** and **dateAdded** or any search logic needed for your application.
 
 ## Styling
 

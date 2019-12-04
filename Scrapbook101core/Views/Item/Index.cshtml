@@ -17,9 +17,9 @@
                 <label class="form-control-sm">
                     Search:
                 </label>
-                @using (Html.BeginForm("Search", "Item", FormMethod.Get, new { @id = "indexform", @class = "inline-form float-right" }))
+                @using (Html.BeginForm("Index", "Item", FormMethod.Get, new { @id = "indexform", @class = "inline-form float-right" }))
                 {
-                    @Html.TextBox("searchString", null, new { @id = "Textbox_Search", @class = "form-control-sm" })
+                    @Html.TextBox("filter", null, new { @id = "Textbox_Search", @class = "form-control-sm" })
                     <button type="submit" class="btn btn-sm form-control-sm ml-1" accesskey="S">Search</button>
                 }
             </div>

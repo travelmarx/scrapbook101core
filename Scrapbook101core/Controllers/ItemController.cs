@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -24,11 +25,24 @@ namespace Scrapbook101core.Controllers
         }
 
         [ActionName("Index")]
-        public async Task<ActionResult> IndexAsync()
+        public async Task<ActionResult> IndexAsync(string filter)
         {
-            var items = await DocumentDBRepository<Item>.GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
-            ViewBag.imagePath = HelperClasses.BuildPathList(items);
-            return View(items);
+            if (String.IsNullOrEmpty(filter))
+            {
+                var items = await DocumentDBRepository<Item>.GetItemsAsync(
+                    item => item.Type == AppVariables.ItemDocumentType);
+                ViewBag.imagePath = HelperClasses.BuildPathList(items);
+                return View(items);
+            }
+            else
+            {
+                var items = await DocumentDBRepository<Item>.GetItemsAsync(
+                    item => item.Type == AppVariables.ItemDocumentType
+                    && (item.Title.ToLower().Contains(filter.ToLower()))
+                    || (item.Description.ToLower().Contains(filter.ToLower())));
+                ViewBag.imagePath = HelperClasses.BuildPathList(items);
+                return View(items);
+            }
         }
 
         [ActionName("Details")]
