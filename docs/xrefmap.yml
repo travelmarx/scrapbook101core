@@ -371,12 +371,12 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Controllers.ItemController.EditAsync
   nameWithType: ItemController.EditAsync
-- uid: Scrapbook101core.Controllers.ItemController.IndexAsync
-  name: IndexAsync()
-  href: api/Scrapbook101core.Controllers.ItemController.html#Scrapbook101core_Controllers_ItemController_IndexAsync
-  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync
-  fullName: Scrapbook101core.Controllers.ItemController.IndexAsync()
-  nameWithType: ItemController.IndexAsync()
+- uid: Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
+  name: IndexAsync(String)
+  href: api/Scrapbook101core.Controllers.ItemController.html#Scrapbook101core_Controllers_ItemController_IndexAsync_System_String_
+  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
+  fullName: Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
+  nameWithType: ItemController.IndexAsync(String)
 - uid: Scrapbook101core.Controllers.ItemController.IndexAsync*
   name: IndexAsync
   href: api/Scrapbook101core.Controllers.ItemController.html#Scrapbook101core_Controllers_ItemController_IndexAsync_
