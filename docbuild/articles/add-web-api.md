@@ -184,7 +184,7 @@ Here's an example of using Postman to test the GET to return all items.
 
 ## POST method
 
-See the <xref:Scrapbook101core.Controllers.ItemApiController.PostAsync(Scrapbook101core.Models.Item)> method for the code handling the POST method. The minimal JSON body required for POST is:
+See the <xref:Scrapbook101core.Controllers.ItemApiController.CreateAsync(Scrapbook101core.Models.Item)> method for the code handling the POST method. The minimal JSON body required for POST is:
 
 ```json
 {
@@ -220,7 +220,7 @@ The POST method, like the GET method, has some key functionality left out:
 
 ## PUT method
 
-See the <xref:Scrapbook101core.Controllers.ItemApiController.PutAsync(System.String,Scrapbook101core.Models.Item)> method for the code handling the PUT method. The minimal JSON body required for PUT is:
+See the <xref:Scrapbook101core.Controllers.ItemApiController.UpdateAsync(System.String,Scrapbook101core.Models.Item)> method for the code handling the PUT method. The minimal JSON body required for PUT is:
 
 ```json
 {
