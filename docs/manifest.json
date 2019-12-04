@@ -300,7 +300,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/add-web-api.html",
-          "hash": "tp5r3H2gOszFcmxALflt1Q=="
+          "hash": "/wVmO2ZtV8nt3cwRb2Nf8A=="
         }
       },
       "is_incremental": false,
@@ -324,7 +324,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/build-with-docfx.html",
-          "hash": "zSuVI7NZ80t5IHgBgDaLAw=="
+          "hash": "fq3OPyACiNNrk3UXpabTOw=="
         }
       },
       "is_incremental": false,

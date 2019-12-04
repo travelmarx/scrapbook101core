@@ -70,15 +70,24 @@
 <h1 id="build-with-docfx">Build With DocFX</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This site was created with <a href="https://dotnet.github.io/docfx/">DocFx</a>. How is this site different from our <a href="https://travelmarx.github.io/scrapbook101/">GitHub pages site</a> for Scrapbook101?</p>
+<p>This site was created with <a href="https://dotnet.github.io/docfx/">DocFx</a>. How is this site different from our <a href="https://travelmarx.github.io/scrapbook101/">GitHub pages site</a> for Scrapbook101? Here's how:</p>
 <ul>
-<li><p>This site parses comments from code (under [Scrapbook101core][cide]) and creates API documentation together with conceptual content (under <strong>\articles</strong>). The conceptual documentation from the GitHub pages site was reused here with few changes.</p>
+<li><p>This DocFx site parses comments from code (under [Scrapbook101core][c0de]) and creates API documentation together with conceptual content (under <strong>\articles</strong>). The conceptual documentation from the GitHub pages site was reused here with few changes.</p>
 </li>
-<li><p>In the previous <a href="https://travelmarx.github.io/scrapbook101/">site</a>, we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a <strong>\docs</strong> folder, which we defined as a GitHub pages website. There, the Jekyll process would kick off automatically and create the HTML for the <a href="https://travelmarx.github.io/scrapbook101/">site</a>.</p>
+<li><p>In the previous <a href="https://travelmarx.github.io/scrapbook101/">site</a>, we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a <strong>\docs</strong> folder, which we defined as a GitHub pages website. On the server, the Jekyll process would kick off automatically and create the HTML for the <a href="https://travelmarx.github.io/scrapbook101/">site</a>.</p>
 </li>
-<li><p>This site relies only on DocFx. We still work offline (currently), run DocFx to produce the website with both conceptual and API documentation, and then push to Github <strong>\docs</strong> folder. The difference with our Jekyll site is that here we are pushing the HTML files and are not relying on Jekyll to build HTML for us.</p>
+<li><p>This DocFx site relies only on DocFx. The process here is this:</p>
+<ol>
+<li>Edit locally in a working branch. This includes doc and code changes.</li>
+<li>Optionally run DocFx locally to test changes in both conceptual and API documentation.</li>
+<li>Push .md and code changes to Github remote version of local working branch.</li>
+<li>On GitHub create a pull request to merge working branch into master branch.</li>
+<li>An Azure pipeline is setup to on change in the master branch build the docs into the <strong>\docs</strong> folder of the master branch. For the master branch the <strong>\docs</strong> branch is designated as the source of GitHub pages.</li>
+</ol>
+<p>The DocFx process pushes the HTML files it has created and we are not relying on Jekyll to build HTML for us.</p>
 </li>
 </ul>
+<p>How we got to this point is described in the following pages. This page describes just the DocFx part. Subsequent pages describe the Azure pipeline.</p>
 <h2 id="initial-steps">Initial steps</h2>
 <p>We started by running <code>docfx init</code> to create a simple documentation website. We played around with that for a bit, following the <a href="https://dotnet.github.io/docfx/tutorial/walkthrough/walkthrough_overview.html">walkthroughs</a>.</p>
 <p>After that initial simple documentation website, we started reading up on using <a href="https://dotnet.github.io/docfx/spec/triple_slash_comments_spec.html">C# XML documentation</a>.</p>
