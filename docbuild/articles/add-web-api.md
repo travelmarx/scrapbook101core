@@ -4,8 +4,6 @@ title: Creating a Web API
 ---
 # Add a Web API
 
-Last update: 2019-12-04
-
 What are we trying to do by adding a Web API? We built Scrapbook101core as a web interface and then decided we wanted to create a web API to handle HTTP requests. The web API allows for other ways to interact with Scrapbook101core beyond the browser. This page describes some of the steps we went through to add a Web API to an existing ASP.NET core web site.
 
 ## Initial steps
