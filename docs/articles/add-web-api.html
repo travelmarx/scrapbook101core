@@ -168,8 +168,8 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Item&gt;&gt;&gt; GetAsync([F
         {
             var items = await DocumentDBRepository&lt;Item&gt;
                 .GetItemsAsync(item =&gt; item.Type == AppVariables.ItemDocumentType
-                    &amp;&amp; (item.Title.Contains(filter.ToLower()) 
-                    || item.Description.Contains(filter.ToLower())));
+                    &amp;&amp; (item.Title.ToLower().Contains(filter.ToLower()) 
+                    || item.Description.ToLower().Contains(filter.ToLower())));
             var imagePath = HelperClasses.BuildPathList(items);
             return Ok(items.ToList());
         }
