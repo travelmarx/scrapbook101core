@@ -13,7 +13,7 @@ items:
   - Scrapbook101core.Controllers.ItemController.DetailsAsync(System.String)
   - Scrapbook101core.Controllers.ItemController.EditAsync(Scrapbook101core.Models.CombinedModel)
   - Scrapbook101core.Controllers.ItemController.EditAsync(System.String)
-  - Scrapbook101core.Controllers.ItemController.IndexAsync
+  - Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
   langs:
   - csharp
   - vb
@@ -28,11 +28,11 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: ItemController
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
-  summary: "\nIn the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input involving\nitem operations. The most important method is the\n<xref href=\"Scrapbook101core.Controllers.ItemController.IndexAsync\" data-throw-if-not-resolved=\"false\"></xref>, which\nreturns a list of items.\n"
+  summary: "\nIn the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input involving\nitem operations. The most important method is the\n<xref href=\"Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)\" data-throw-if-not-resolved=\"false\"></xref>, which\nreturns a list of items.\n"
   example: []
   syntax:
     content: 'public class ItemController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
@@ -270,7 +270,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: .ctor
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -285,16 +285,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Controllers.ItemController.IndexAsync
-  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync
-  id: IndexAsync
+- uid: Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
+  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
+  id: IndexAsync(System.String)
   parent: Scrapbook101core.Controllers.ItemController
   langs:
   - csharp
   - vb
-  name: IndexAsync()
-  nameWithType: ItemController.IndexAsync()
-  fullName: Scrapbook101core.Controllers.ItemController.IndexAsync()
+  name: IndexAsync(String)
+  nameWithType: ItemController.IndexAsync(String)
+  fullName: Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
   type: Method
   source:
     remote:
@@ -303,7 +303,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: IndexAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -311,13 +311,16 @@ items:
     content: >-
       [ActionName("Index")]
 
-      public Task<ActionResult> IndexAsync()
+      public Task<ActionResult> IndexAsync(string filter)
+    parameters:
+    - id: filter
+      type: System.String
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
     content.vb: >-
       <ActionName("Index")>
 
-      Public Function IndexAsync As Task(Of ActionResult)
+      Public Function IndexAsync(filter As String) As Task(Of ActionResult)
   overload: Scrapbook101core.Controllers.ItemController.IndexAsync*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.ActionNameAttribute
@@ -347,7 +350,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 33
+    startLine: 47
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -394,7 +397,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 47
+    startLine: 61
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -438,7 +441,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 64
+    startLine: 78
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -499,7 +502,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 122
+    startLine: 136
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -553,7 +556,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 147
+    startLine: 161
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -614,7 +617,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 171
+    startLine: 185
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -668,7 +671,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteConfirmedAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 189
+    startLine: 203
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -705,8 +708,8 @@ items:
   modifiers.vb:
   - Public
 references:
-- uid: Scrapbook101core.Controllers.ItemController.IndexAsync
-  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync
+- uid: Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
+  commentId: M:Scrapbook101core.Controllers.ItemController.IndexAsync(System.String)
   isExternal: true
 - uid: Scrapbook101core.Controllers
   commentId: N:Scrapbook101core.Controllers
@@ -13282,6 +13285,13 @@ references:
   name: IndexAsync
   nameWithType: ItemController.IndexAsync
   fullName: Scrapbook101core.Controllers.ItemController.IndexAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
   commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
   parent: System.Threading.Tasks
@@ -13376,13 +13386,6 @@ references:
   name: DetailsAsync
   nameWithType: ItemController.DetailsAsync
   fullName: Scrapbook101core.Controllers.ItemController.DetailsAsync
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: Scrapbook101core.Controllers.ItemController.CreateAsync*
   commentId: Overload:Scrapbook101core.Controllers.ItemController.CreateAsync
   name: CreateAsync

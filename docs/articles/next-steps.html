@@ -74,18 +74,29 @@
 <p><em>Authentication</em> is verifying the identify of a person or device (an account in general). Scrapbook101core does not have authentication implemented, but it can be added. This is especially important when running live. For example, you can add code to allow users to sign in with <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-google">Google</a>, <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-facebook">Facebook</a>, <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-microsoft">Microsoft</a> accounts as well as by other means. Even if your Scrapbook101core implementation is open, tracking who makes and edits entries is useful. This can be done by capturing the associated email or user name and using that in the <strong>updatedBy</strong> field in the <a href="item-document.html">item-document</a>.</p>
 <p>If the intent of your Scrapbook101core implementation is to allow only certain accounts access, then you need to additionally set up <em>Authorization</em>, that is, associating privileges to specific accounts. In fact, you should never store personal information (be it with Scrapbook101core or any other means) without authentication and authorization in place. For an overview of security in ASP.NET Core, see <a href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/introduction?view=aspnetcore-2.2">Introduction to authorization in ASP.NET Core</a>. The approaches discussed there could be useful when running locally. When running as a web service such as in Microsoft Azure, see <a href="https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to">Advanced usage of authentication and authorization in Azure App Service</a>.</p>
 <h2 id="searching">Searching</h2>
-<p>The search functionality implemented in Scrapbook101core allows searching titles for a string fragment. The code to do
-this is in the <code>ItemController.cs</code> file's <code>SearchAsync</code> method, which uses <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq">LINQ</a>:</p>
-<pre><code class="lang-C#">var items = await DocumentDBRepository&lt;Item&gt;.GetItemsAsync(
-    item =&gt; item.Type == AppVariables.ItemDocumentType
-    &amp;&amp; item.Title.ToLower().Contains(searchString.ToLower()));
+<p>The search functionality implemented in Scrapbook101core allows searching titles and descriptions for a string fragment. The code to do this is in the <code>ItemController.cs</code> file's <code>IndexAsync</code> method, which uses <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq">LINQ</a>:</p>
+<pre><code class="lang-C#">        [ActionName(&quot;Index&quot;)]
+        public async Task&lt;ActionResult&gt; IndexAsync(string filter)
+        {
+            if (String.IsNullOrEmpty(filter))
+            {
+                var items = await DocumentDBRepository&lt;Item&gt;.GetItemsAsync(
+                    item =&gt; item.Type == AppVariables.ItemDocumentType);
+                ViewBag.imagePath = HelperClasses.BuildPathList(items);
+                return View(items);
+            }
+            else
+            {
+                var items = await DocumentDBRepository&lt;Item&gt;.GetItemsAsync(
+                    item =&gt; item.Type == AppVariables.ItemDocumentType
+                    &amp;&amp; (item.Title.ToLower().Contains(filter.ToLower()))
+                    || (item.Description.ToLower().Contains(filter.ToLower())));
+                ViewBag.imagePath = HelperClasses.BuildPathList(items);
+                return View(items);
+            }
+        }
 </code></pre>
-<p>The included functionality is basic but can be expanded to include searching the <strong>description</strong>, <strong>location</strong>, and <strong>dateAdded</strong> fields. For example, to search both the <strong>title</strong> and the <strong>description</strong>, you could use</p>
-<pre><code class="lang-C#">var items = await DocumentDBRepository&lt;Item&gt;.GetItemsAsync(
-    item =&gt; item.Type == AppVariables.ItemDocumentType
-    &amp;&amp; (item.Title.ToLower().Contains(searchString.ToLower())
-    || item.Description.ToLower().Contains(searchString.ToLower())));
-</code></pre>
+<p>The included functionality is basic but can be expanded to include searching other fields like <strong>location</strong> and <strong>dateAdded</strong> or any search logic needed for your application.</p>
 <h2 id="styling">Styling</h2>
 <p>The create, delete, update, and edit pages (under the <code>Views\Item</code> folder) are currently minimally styled. They can be improved and rearranged as needed. For example in the edit page, the <strong>description</strong> field can be customized for long or short descriptions and fields that can't or shouldn't be changed (like <strong>id</strong> and <strong>type</strong>) can be removed from the form.</p>
 <p>In contrast to the CRUD pages, the Scrapbook101core main page (<code>Views\Item\Index.cshtml</code>) is styled more. We use <a href="https://getbootstrap.com">Bootstrap</a> to demonstrate a possible visual representation of Scrapbook101core items. Specifically, Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/">cards</a> structure is used which shows one asset image if it exists or else show a default image as specified in the configuration file (either <code>web.config</code> or <code>appsettings.json</code>) along with a snippet of the title and description of the item.</p>
