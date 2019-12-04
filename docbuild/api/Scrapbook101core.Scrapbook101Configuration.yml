@@ -30,8 +30,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Scrapbook101Configuration
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 10
@@ -73,8 +73,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Current
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 12
@@ -106,8 +106,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: .ctor
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 14
@@ -136,8 +136,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AddTestAssets
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 19
@@ -171,8 +171,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ApplicationName
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 20
@@ -206,8 +206,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetBasePath
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 21
@@ -241,8 +241,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AuthKey
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 22
@@ -276,8 +276,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: BingMapKey
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 23
@@ -311,8 +311,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryDocumentType
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 24
@@ -346,8 +346,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CollectionId
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 25
@@ -381,8 +381,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DatabaseId
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 26
@@ -416,8 +416,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Endpoint
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 27
@@ -451,8 +451,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemDocumentType
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 28
@@ -486,8 +486,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: NoAssetImage
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 29
@@ -521,8 +521,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestCategories
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 30
@@ -556,8 +556,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestDocuments
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 31

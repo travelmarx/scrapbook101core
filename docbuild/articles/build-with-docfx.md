@@ -188,7 +188,7 @@ which will add this text to the browser title of every page. The _appTitle is ad
 
 ### Add a global variable
 
-Our goal is to add a global variable to represent the site/product name "{{productName}}" so that in conceptual markdown files we could just put `&#123;&#123;productName&#125;&#125;` and have the build process substitute the correct value.
+Our goal is to add a global variable to represent the site/product name "{{productName}}" so that in conceptual markdown files we could just put &#123; &#123; productName &#125; &#125; and have the build process substitute the correct value.
 
 Here's how we achieved it. (It may not be the most elegant way.)
 

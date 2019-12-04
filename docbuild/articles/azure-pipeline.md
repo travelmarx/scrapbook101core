@@ -222,7 +222,7 @@ Other thoughts on the pipeline build task:
 * We ran into the (obvious in retrospect) problem where a pipeline build kicked off and in the meanwhile we updated
 the repo. When the build task on the agent went to push changes we got a message about failing to push because the remote contained work that isn't local, suggesting a ``git pull`` first. The two processes accessing and making changes to the repo (local Visual Studio Code and the pipeline) are both using the master branch which isn't the correct way to do it. We should be working on branches and then merging. See the next section.
 
-## Revised workflow
+## Final workflow
 
 After getting our pipeline build task working against master, we realized that our workflow was a bit of mess. Granted this is a small dev effort, but still, it could use improving. 
 
