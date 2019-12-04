@@ -29,8 +29,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Item
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 15
@@ -73,8 +73,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Assets
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 20
@@ -110,8 +110,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AssetPath
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 33
@@ -148,8 +148,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Category
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 40
@@ -158,13 +158,27 @@ items:
   namespace: Scrapbook101core.Models
   example: []
   syntax:
-    content: public string Category { get; set; }
+    content: >-
+      [Required(ErrorMessage = "Category is required.")]
+
+      public string Category { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nOne of the category values described in the <xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class.\nA Scrapbook101core item must be assigned to a category.\n"
-    content.vb: Public Property Category As String
+    content.vb: >-
+      <Required(ErrorMessage:="Category is required.")>
+
+      Public Property Category As String
   overload: Scrapbook101core.Models.Item.Category*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Category is required.
   modifiers.csharp:
   - public
   - get
@@ -185,8 +199,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFields
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 49
@@ -222,8 +236,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DateAdded
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 56
@@ -259,8 +273,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DateUpdated
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 67
@@ -297,8 +311,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Description
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 77
@@ -335,8 +349,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GeoLocation
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 88
@@ -349,7 +363,7 @@ items:
     content: public Point GeoLocation { get; set; }
     parameters: []
     return:
-      type: Microsoft.Azure.Documents.Spatial.Point
+      type: Point
       description: "\nRepresents a point geometry class in the Azure Cosmos DB service.\n"
     content.vb: Public Property GeoLocation As Point
   overload: Scrapbook101core.Models.Item.GeoLocation*
@@ -373,8 +387,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Id
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 94
@@ -410,8 +424,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Location
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 104
@@ -448,8 +462,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Rating
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 114
@@ -486,8 +500,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: UpdatedBy
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 124
@@ -524,8 +538,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Title
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 130
@@ -534,13 +548,27 @@ items:
   namespace: Scrapbook101core.Models
   example: []
   syntax:
-    content: public string Title { get; set; }
+    content: >-
+      [Required(ErrorMessage = "Title is required.")]
+
+      public string Title { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nA descriptive title for the Scrapbook101core item. For example, if item is a book, use all or part of the book title.\n"
-    content.vb: Public Property Title As String
+    content.vb: >-
+      <Required(ErrorMessage:="Title is required.")>
+
+      Public Property Title As String
   overload: Scrapbook101core.Models.Item.Title*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Title is required.
   modifiers.csharp:
   - public
   - get
@@ -561,8 +589,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Type
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 141
@@ -573,12 +601,26 @@ items:
   remarks: "\nThe value of the an item type is read from the appsettings.json file. For example, &quot;scrapbook101Item&quot;. The\ntype distinguished the item from other Document DB entries like category.\n"
   example: []
   syntax:
-    content: public string Type { get; set; }
+    content: >-
+      [Required(ErrorMessage = "Type is required.")]
+
+      public string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Type As String
+    content.vb: >-
+      <Required(ErrorMessage:="Type is required.")>
+
+      Public Property Type As String
   overload: Scrapbook101core.Models.Item.Type*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Type is required.
   modifiers.csharp:
   - public
   - get
@@ -1035,19 +1077,12 @@ references:
   name: GeoLocation
   nameWithType: Item.GeoLocation
   fullName: Scrapbook101core.Models.Item.GeoLocation
-- uid: Microsoft.Azure.Documents.Spatial.Point
-  commentId: T:Microsoft.Azure.Documents.Spatial.Point
-  parent: Microsoft.Azure.Documents.Spatial
+- uid: Point
+  commentId: '!:Point'
   isExternal: true
   name: Point
   nameWithType: Point
-  fullName: Microsoft.Azure.Documents.Spatial.Point
-- uid: Microsoft.Azure.Documents.Spatial
-  commentId: N:Microsoft.Azure.Documents.Spatial
-  isExternal: true
-  name: Microsoft.Azure.Documents.Spatial
-  nameWithType: Microsoft.Azure.Documents.Spatial
-  fullName: Microsoft.Azure.Documents.Spatial
+  fullName: Point
 - uid: Scrapbook101core.Models.Item.Id*
   commentId: Overload:Scrapbook101core.Models.Item.Id
   name: Id
