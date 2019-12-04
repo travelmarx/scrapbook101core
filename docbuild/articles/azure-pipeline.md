@@ -263,6 +263,8 @@ So with the pipeline in place, we adopted this workflow.
       git push origin master
       ```
 
+      After running this locally, switch back to the working branch to avoid making chanages in master.
+
 In the process of working through this workflow, we realized that perhaps a better workflow would be to render HTML docs checked into a different repo altogoether and then we would cleanly separate web site content from code and doc source content.
 
 
