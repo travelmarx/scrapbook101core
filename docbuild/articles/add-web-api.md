@@ -104,8 +104,8 @@ public async Task<ActionResult<IEnumerable<Item>>> GetAsync([FromQuery] string f
         {
             var items = await DocumentDBRepository<Item>
                 .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType
-                    && (item.Title.Contains(filter.ToLower()) 
-                    || item.Description.Contains(filter.ToLower())));
+                    && (item.Title.ToLower().Contains(filter.ToLower()) 
+                    || item.Description.ToLower().Contains(filter.ToLower())));
             var imagePath = HelperClasses.BuildPathList(items);
             return Ok(items.ToList());
         }
