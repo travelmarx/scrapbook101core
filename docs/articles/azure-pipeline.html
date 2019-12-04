@@ -295,7 +295,14 @@ pr: none
 </li>
 <li><p>On GitHub, merge working branch into master.</p>
 <ul>
-<li>This process is what kicks off the pipeline build, which then builds the HTML that appears in <strong>docs</strong> folder of the master branch.</li>
+<li><p>This process is what kicks off the pipeline build, which then builds the HTML that appears in <strong>docs</strong> folder of the master branch.</p>
+</li>
+<li><p>To do the GitHub merge locally if desired, use these commands (assuming master and working branches):</p>
+<pre><code class="lang-bsh">git checkout master
+git merge working
+git push origin master
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
