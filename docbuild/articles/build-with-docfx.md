@@ -129,6 +129,14 @@ Starting with the [advanced walkthrough][awalk] as guidance, we did the followin
 
 Perhaps a simpler way to make this change would habe been to specify the _appFooter as globalMetadata. See the [below](build-with-docfx.md#specify-site-title) for changing _appTitle.
 
+To add custom CSS:
+
+1. Create a **style** folder in the **cust-template** folder.
+
+1. Create a main.css file and put in your custom CSS.
+
+Beyond these basics, you can get a "theme" (called Templates and Plugins) from here: https://dotnet.github.io/docfx/templates-and-plugins/templates-dashboard.html. How these themes work follows what we describe above.
+
 ### Tweak reference template
 
 The goal is to removed the inherited members section as shown below:

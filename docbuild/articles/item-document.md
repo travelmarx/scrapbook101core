@@ -61,13 +61,13 @@ Fields not marked as <u>Required</u> are not required.
         <dt>name</dt>
         <dd>The name of the asset.
         <p>
-            <strong>Format</strong>: A string, e.g., "Folder.jpg".
+            <u>Format</u>: A string, e.g., "Folder.jpg".
         </p>
         </dd>
         <dt>size</dt>
         <dd>The size in bytes of the asset.
         <p>
-            <strong>Format</strong>: A number, e.g., 20056.
+            <u>Format</u>: A number, e.g., 20056.
         </p>
         </dd>
     </dl>
