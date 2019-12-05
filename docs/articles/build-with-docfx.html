@@ -206,6 +206,14 @@ we pointed to Scrapbook101core code just to see what would happen and it built f
 </li>
 </ol>
 <p>Perhaps a simpler way to make this change would habe been to specify the _appFooter as globalMetadata. See the <a href="build-with-docfx.html#specify-site-title">below</a> for changing _appTitle.</p>
+<p>To add custom CSS:</p>
+<ol>
+<li><p>Create a <strong>style</strong> folder in the <strong>cust-template</strong> folder.</p>
+</li>
+<li><p>Create a main.css file and put in your custom CSS.</p>
+</li>
+</ol>
+<p>Beyond these basics, you can get a &quot;theme&quot; (called Templates and Plugins) from here: <a href="https://dotnet.github.io/docfx/templates-and-plugins/templates-dashboard.html">https://dotnet.github.io/docfx/templates-and-plugins/templates-dashboard.html</a>. How these themes work follows what we describe above.</p>
 <h3 id="tweak-reference-template">Tweak reference template</h3>
 <p>The goal is to removed the inherited members section as shown below:</p>
 <p><img src="../images/class-inherited-members-default.jpg" alt="Class inherited members default" title="Class inherited members default"></p>

@@ -71,10 +71,10 @@
 
 <p>After following the steps in <a href="get-started.html">Get Started</a>, you may be wondering what's next. There are many directions you can go in depending on what you are trying to do. Below, we present a few ideas of what to think about next including security, improved search and styling, and paging.</p>
 <h2 id="security">Security</h2>
-<p><em>Authentication</em> is verifying the identify of a person or device (an account in general). Scrapbook101core does not have authentication implemented, but it can be added. This is especially important when running live. For example, you can add code to allow users to sign in with <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-google">Google</a>, <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-facebook">Facebook</a>, <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-microsoft">Microsoft</a> accounts as well as by other means. Even if your Scrapbook101core implementation is open, tracking who makes and edits entries is useful. This can be done by capturing the associated email or user name and using that in the <strong>updatedBy</strong> field in the <a href="item-document.html">item-document</a>.</p>
-<p>If the intent of your Scrapbook101core implementation is to allow only certain accounts access, then you need to additionally set up <em>Authorization</em>, that is, associating privileges to specific accounts. In fact, you should never store personal information (be it with Scrapbook101core or any other means) without authentication and authorization in place. For an overview of security in ASP.NET Core, see <a href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/introduction?view=aspnetcore-2.2">Introduction to authorization in ASP.NET Core</a>. The approaches discussed there could be useful when running locally. When running as a web service such as in Microsoft Azure, see <a href="https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to">Advanced usage of authentication and authorization in Azure App Service</a>.</p>
+<p><em>Authentication</em> is verifying the identify of a person or device (an account in general). Scrapbook101core does not have authentication implemented, but it can be added. This is especially important when running live. For example, you can add code to allow users to sign in with <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-google">Google</a>, <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-facebook">Facebook</a>, or <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-microsoft">Microsoft</a> accounts as well as by other means. Even if your Scrapbook101core implementation is open, tracking who makes and edits entries is useful. This can be done by capturing the associated email or user name and using that in the <strong>updatedBy</strong> field in the <a href="item-document.html">item-document</a>.</p>
+<p>If the intent of your Scrapbook101core implementation is to allow access to only certain accounts, then you need to additionally set up <em>Authorization</em>, that is, associating privileges to specific accounts. In fact, you should never store personal information (be it with Scrapbook101core or any other means) without authentication and authorization in place. For an overview of security in ASP.NET Core, see <a href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/introduction?view=aspnetcore-2.2">Introduction to authorization in ASP.NET Core</a>. The approaches discussed there could be useful when running locally. When running as a web service such as in Microsoft Azure, see <a href="https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to">Advanced usage of authentication and authorization in Azure App Service</a>.</p>
 <h2 id="searching">Searching</h2>
-<p>The search functionality implemented in Scrapbook101core allows searching titles and descriptions for a string fragment. The code to do this is in the <code>ItemController.cs</code> file's <code>IndexAsync</code> method, which uses <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq">LINQ</a>:</p>
+<p>The search functionality implemented in Scrapbook101core allows searching titles and descriptions for a string fragment. The code to do this is in the <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html"><code>ItemController</code></a> class <code>IndexAsync</code> method, which uses <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq">LINQ</a>:</p>
 <pre><code class="lang-C#">[ActionName(&quot;Index&quot;)]
 public async Task&lt;ActionResult&gt; IndexAsync(string filter)
 {
@@ -96,39 +96,19 @@ public async Task&lt;ActionResult&gt; IndexAsync(string filter)
     }
 }
 </code></pre>
-<p>The included functionality is basic but can be expanded to include searching other fields like <strong>location</strong> and <strong>dateAdded</strong> or any search logic needed for your application.</p>
+<p>If <code>filter</code> is provided, then it is used, otherwise, all items are returned. This is basic functionality that can be expanded to include searching other fields like <strong>location</strong> and <strong>dateAdded</strong> or any search logic needed for your application.</p>
 <h2 id="styling">Styling</h2>
 <p>The create, delete, update, and edit pages (under the <code>Views\Item</code> folder) are currently minimally styled. They can be improved and rearranged as needed. For example in the edit page, the <strong>description</strong> field can be customized for long or short descriptions and fields that can't or shouldn't be changed (like <strong>id</strong> and <strong>type</strong>) can be removed from the form.</p>
-<p>In contrast to the CRUD pages, the Scrapbook101core main page (<code>Views\Item\Index.cshtml</code>) is styled more. We use <a href="https://getbootstrap.com">Bootstrap</a> to demonstrate a possible visual representation of Scrapbook101core items. Specifically, Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/">cards</a> structure is used which shows one asset image if it exists or else show a default image as specified in the configuration file (either <code>web.config</code> or <code>appsettings.json</code>) along with a snippet of the title and description of the item.</p>
-<ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" href="#styling1" role="tab" data-toggle="tab">ASP.NET MVC</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#styling2" role="tab" data-toggle="tab">ASP.NET Core</a>
-  </li>
-</ul>
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane aspnetmvc active" id="styling1">
-    <p class="single">
-    All the scripts for styling are injected in <code>Views\Shared\__Layout.cshtml</code>. 
-    A more practical approach is to bundle
-    the scripts together and include them in the <code>App_Start\BundleConfig.cs</code>.
-    </p>
-  </div>
-  <div role="tabpanel" class="tab-pane aspnetcore" id="styling2">
-    <p class="single">
-    All the scripts for styling are injected in <code>Views\Shared\__LayoutScrapbook.cshtml</code>. A more practical approach is to bundle the scripts together and include them using a tool such as 
-    <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier">Bundle & Minifier</a> or <a href="https://www.nuget.org/packages/BuildBundlerMinifier/">BuildBundleMinifier</a>.
-    </p>
-  </div>
-</div>
+<p>In contrast to the CRUD pages, the Scrapbook101core main page (<a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Views/Item/Index.cshtml"><code>Views\Item\Index.cshtml</code></a>) is styled more. We use <a href="https://getbootstrap.com">Bootstrap</a> to demonstrate a possible visual representation of Scrapbook101core items. Specifically, Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/">cards</a> structure is used which shows one asset image if it exists or else show a default image as specified in the <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json"><code>appsettings.json</code></a> configuration along with a snippet of the title and description of the item.</p>
+<p>All the scripts for styling are injected in <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Views/Shared/_LayoutScrapbook.cshtml"><code>Views\Shared\__LayoutScrapbook.cshtml</code></a>. A more practical approach is to bundle the scripts together and include them using a tool such as <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier">Bundle &amp; Minifier</a> or <a href="https://www.nuget.org/packages/BuildBundlerMinifier/">BuildBundleMinifer</a>.</p>
 <h2 id="paging">Paging</h2>
-<p>Paging is not currently implemented for Scrapbook101core. Paging features can be added by modifying the search results in the <code>ItemController.cs</code> file where results are returned in the <code>SearchAsync</code> method and returned to <code>Views\Item\Index.cshtml</code>.</p>
-<p>Our experience running our personal version of Scrapbook with over 6000 entries and without paging is that we don't miss not having the functionality. We show one page of results for a search. If we don't find what we want, we make the search more precise or change the number of results displayed. This is sufficient for most of the searches we make so that we haven't felt the need to implement paging. Takeaway message: don't implement paging until you have other more important features like security and searching in place first.</p>
+<p>Paging is not currently implemented for Scrapbook101core. Paging features can be added by modifying the search results in the
+<a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html"><code>ItemController</code></a> class <code>IndexAsync</code> method and returned to <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Views/Item/Index.cshtml"><code>Views\Item\Index.cshtml</code></a>.</p>
+<p>Our experience running our personal version of Scrapbook with over 7000 entries and without paging is that we rarely miss not having paging functionality. We show one page of results for a search, with the number shown being configurable, e.g., at 50 items. If we don't find what we want, we make the search more precise or change the number of results displayed. This is sufficient for most of the searches we make so that we haven't felt the need to implement paging. The takeaway message is this: don't implement paging until you have other more important features like security and searching in place first.</p>
 <h2 id="import-data">Import data</h2>
 <p>If you ran Scrapbook101core locally and start to add entries and then decide to go-live, you can transfer your local data to your on-line data-store using the <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/import-data">Azure Cosmos DB Data Migration tool</a>. When using the migration tool, be sure to correctly set the <strong>Connection String</strong> and <strong>Collection</strong> fields. For example, after running the Scrapbook101core code you should have a database &quot;Scrapbook101&quot; with a collection &quot;Items&quot;. These values are used in the migration tool as shown in the following screenshot.</p>
 <p><img src="../images/documentDB-data-migration-tool-connection.png" alt="Document DB Data Migration Tool Connection" title="Document DB Data Migration Tool Connection"></p>
+<p>If you have external data that you want to import into Scrapbook101core to seed the database, you can similarly use this import tool.</p>
 </article>
           </div>
           

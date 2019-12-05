@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/build-with-docfx.html",
-          "hash": "VE1xT5HQH+CyG6a6rRUK8w=="
+          "hash": "5mSIyIUP/61V9lJWmfER6A=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/category-document.html",
-          "hash": "meDN6KdaSSas+dvpg6909g=="
+          "hash": "qVsNemwdakUXiofK4FSGxA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/item-document.html",
-          "hash": "X4s967HnUvC6Ammwu+2eUw=="
+          "hash": "TrF03ZUMujtEUabwzloFmQ=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/next-steps.html",
-          "hash": "PxumsSmdcHvDa7/ajOiV9A=="
+          "hash": "um0apLO4HBKPMXGskqARgg=="
         }
       },
       "is_incremental": false,
