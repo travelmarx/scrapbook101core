@@ -6,7 +6,7 @@ title: Category Document
 
 In the [technology overview][tn] section, we briefly discussed the ideas behind a document-oriented database and how it is used in {{productName}}. In this section we describe one of the two key document types stored in the document-oriented database, the category document.
 
-Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents {{productName}} categories. From this prototype document, a the code class `Category.cs` is defined in our Visual Studio project representing this category document.
+Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents {{productName}} categories. From this prototype document, a class [`Category`](xref:Scrapbook101core.Models.Category)is defined in our Visual Studio project representing this category document.
 
 ## Overview
 
