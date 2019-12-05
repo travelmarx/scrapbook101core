@@ -1,0 +1,25 @@
+/* definition lists */
+
+.deflist li
+{
+  list-style: none;
+}
+.deflist ul
+{
+  margin: 4px;
+}
+.deflist p
+{
+  padding-top: 10px;
+}
+.inset
+{
+  margin-left: 15px;
+}
+.subdeflist
+{
+  margin-left: 15px;
+}
+
+
+
