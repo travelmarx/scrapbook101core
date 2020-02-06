@@ -27,12 +27,14 @@ Running {{productName}} locally, you can try out your ideas at no cost or risk. 
 
 1. Open the solution in Visual Studio. For example, open the solution file `{{productName}}.sln`.
 
-1. Customize the code as follows in the `<code>`appsettings.json` file.
+1. Customize the code as follows in the `appsettings.json` file.
     * Enter the correct value for **AuthKey**, which you can get from the local emulator home page as show above. It's the **Primary Key**.
 
     * Enter a Bing Maps Key for **BingMapKey** if you have one; if blank, then geocoding is skipped.
 
     * Set the value for **AddTestAssets** to `true` to write test assets or `false` not to write them.
+
+    * The **testCategories** and **testItems** keys are set to use test dataset 1. Any other dataset available in the **\Assets** folder can be used, however both keys should use the same dataset.
 
   There are other `appsettings.json` settings you can change, but the three above are the enough to get started. For information on running locally for the ASP.NET MVC version of this project (called Scrapbook101), see <https://travelmarx.github.io/scrapbook101/get-started#run-local>.
 
