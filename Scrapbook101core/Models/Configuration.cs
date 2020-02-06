@@ -29,6 +29,6 @@ namespace Scrapbook101core
         public string ItemDocumentType { get; set; }
         public string NoAssetImage { get; set; }
         public string TestCategories { get; set; }
-        public string TestDocuments { get; set; }
+        public string TestItems { get; set; }
     }
 }

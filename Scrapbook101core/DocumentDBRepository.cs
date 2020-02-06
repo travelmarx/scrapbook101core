@@ -32,7 +32,7 @@ namespace Scrapbook101core
         public static readonly string Endpoint = Scrapbook101Configuration.Current.Endpoint;
         public static readonly string ItemDocumentType = Scrapbook101Configuration.Current.ItemDocumentType;
         public static readonly string TestCategories = Scrapbook101Configuration.Current.TestCategories;
-        public static readonly string TestDocuments = Scrapbook101Configuration.Current.TestDocuments;
+        public static readonly string TestItems = Scrapbook101Configuration.Current.TestItems;
 
         public static List<CategoryItemDisplay> CategoryDisplayList { get; set; }
         public static List<CategoryFieldMapping> CategoryFieldMappingList { get; set; }
@@ -184,7 +184,7 @@ namespace Scrapbook101core
 
         private static async Task InsertTestItemDocumentsAsync()
         {
-            JObject books = JObject.Parse(File.ReadAllText(AppVariables.TestDocuments));
+            JObject books = JObject.Parse(File.ReadAllText(AppVariables.TestItems));
             dynamic results = Newtonsoft.Json.JsonConvert.DeserializeObject(books.ToString());
             foreach (var result in results.testItems)
             {
