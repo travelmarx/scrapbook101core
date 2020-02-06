@@ -147,12 +147,12 @@ references:
   commentId: F:Scrapbook101core.AppVariables.TestCategories
   fullName: Scrapbook101core.AppVariables.TestCategories
   nameWithType: AppVariables.TestCategories
-- uid: Scrapbook101core.AppVariables.TestDocuments
-  name: TestDocuments
-  href: api/Scrapbook101core.AppVariables.html#Scrapbook101core_AppVariables_TestDocuments
-  commentId: F:Scrapbook101core.AppVariables.TestDocuments
-  fullName: Scrapbook101core.AppVariables.TestDocuments
-  nameWithType: AppVariables.TestDocuments
+- uid: Scrapbook101core.AppVariables.TestItems
+  name: TestItems
+  href: api/Scrapbook101core.AppVariables.html#Scrapbook101core_AppVariables_TestItems
+  commentId: F:Scrapbook101core.AppVariables.TestItems
+  fullName: Scrapbook101core.AppVariables.TestItems
+  nameWithType: AppVariables.TestItems
 - uid: Scrapbook101core.Controllers
   name: Scrapbook101core.Controllers
   href: api/Scrapbook101core.Controllers.html
@@ -1564,19 +1564,19 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Scrapbook101Configuration.TestCategories
   nameWithType: Scrapbook101Configuration.TestCategories
-- uid: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  name: TestDocuments
-  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestDocuments
-  commentId: P:Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  fullName: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  nameWithType: Scrapbook101Configuration.TestDocuments
-- uid: Scrapbook101core.Scrapbook101Configuration.TestDocuments*
-  name: TestDocuments
-  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestDocuments_
-  commentId: Overload:Scrapbook101core.Scrapbook101Configuration.TestDocuments
+- uid: Scrapbook101core.Scrapbook101Configuration.TestItems
+  name: TestItems
+  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestItems
+  commentId: P:Scrapbook101core.Scrapbook101Configuration.TestItems
+  fullName: Scrapbook101core.Scrapbook101Configuration.TestItems
+  nameWithType: Scrapbook101Configuration.TestItems
+- uid: Scrapbook101core.Scrapbook101Configuration.TestItems*
+  name: TestItems
+  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestItems_
+  commentId: Overload:Scrapbook101core.Scrapbook101Configuration.TestItems
   isSpec: "True"
-  fullName: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  nameWithType: Scrapbook101Configuration.TestDocuments
+  fullName: Scrapbook101core.Scrapbook101Configuration.TestItems
+  nameWithType: Scrapbook101Configuration.TestItems
 - uid: Scrapbook101core.Startup
   name: Startup
   href: api/Scrapbook101core.Startup.html

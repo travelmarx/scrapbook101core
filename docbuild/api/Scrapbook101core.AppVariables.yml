@@ -19,7 +19,7 @@ items:
   - Scrapbook101core.AppVariables.ItemDocumentType
   - Scrapbook101core.AppVariables.NoAssetImage
   - Scrapbook101core.AppVariables.TestCategories
-  - Scrapbook101core.AppVariables.TestDocuments
+  - Scrapbook101core.AppVariables.TestItems
   langs:
   - csharp
   - vb
@@ -480,33 +480,33 @@ items:
   - Public
   - Shared
   - ReadOnly
-- uid: Scrapbook101core.AppVariables.TestDocuments
-  commentId: F:Scrapbook101core.AppVariables.TestDocuments
-  id: TestDocuments
+- uid: Scrapbook101core.AppVariables.TestItems
+  commentId: F:Scrapbook101core.AppVariables.TestItems
+  id: TestItems
   parent: Scrapbook101core.AppVariables
   langs:
   - csharp
   - vb
-  name: TestDocuments
-  nameWithType: AppVariables.TestDocuments
-  fullName: Scrapbook101core.AppVariables.TestDocuments
+  name: TestItems
+  nameWithType: AppVariables.TestItems
+  fullName: Scrapbook101core.AppVariables.TestItems
   type: Field
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: master
       repo: https://github.com/travelmarx/scrapbook101core
-    id: TestDocuments
+    id: TestItems
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 34
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public static readonly string TestDocuments
+    content: public static readonly string TestItems
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly TestDocuments As String
+    content.vb: Public Shared ReadOnly TestItems As String
   modifiers.csharp:
   - public
   - static
