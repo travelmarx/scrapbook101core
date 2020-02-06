@@ -110,7 +110,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: GetGeocode
     path: ../Scrapbook101core/HelperClasses.cs
-    startLine: 64
+    startLine: 63
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core

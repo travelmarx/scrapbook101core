@@ -8,6 +8,9 @@ items:
   - Scrapbook101core.Models.CategoryFields.Artist
   - Scrapbook101core.Models.CategoryFields.Author
   - Scrapbook101core.Models.CategoryFields.BirthDate
+  - Scrapbook101core.Models.CategoryFields.BirthPlace
+  - Scrapbook101core.Models.CategoryFields.DeathDate
+  - Scrapbook101core.Models.CategoryFields.DeathPlace
   - Scrapbook101core.Models.CategoryFields.Director
   - Scrapbook101core.Models.CategoryFields.Genre
   - Scrapbook101core.Models.CategoryFields.Highlight
@@ -203,6 +206,111 @@ items:
   - set
   modifiers.vb:
   - Public
+- uid: Scrapbook101core.Models.CategoryFields.BirthPlace
+  commentId: P:Scrapbook101core.Models.CategoryFields.BirthPlace
+  id: BirthPlace
+  parent: Scrapbook101core.Models.CategoryFields
+  langs:
+  - csharp
+  - vb
+  name: BirthPlace
+  nameWithType: CategoryFields.BirthPlace
+  fullName: Scrapbook101core.Models.CategoryFields.BirthPlace
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: BirthPlace
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 68
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string BirthPlace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property BirthPlace As String
+  overload: Scrapbook101core.Models.CategoryFields.BirthPlace*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.CategoryFields.DeathDate
+  commentId: P:Scrapbook101core.Models.CategoryFields.DeathDate
+  id: DeathDate
+  parent: Scrapbook101core.Models.CategoryFields
+  langs:
+  - csharp
+  - vb
+  name: DeathDate
+  nameWithType: CategoryFields.DeathDate
+  fullName: Scrapbook101core.Models.CategoryFields.DeathDate
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: DeathDate
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 71
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string DeathDate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DeathDate As String
+  overload: Scrapbook101core.Models.CategoryFields.DeathDate*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.CategoryFields.DeathPlace
+  commentId: P:Scrapbook101core.Models.CategoryFields.DeathPlace
+  id: DeathPlace
+  parent: Scrapbook101core.Models.CategoryFields
+  langs:
+  - csharp
+  - vb
+  name: DeathPlace
+  nameWithType: CategoryFields.DeathPlace
+  fullName: Scrapbook101core.Models.CategoryFields.DeathPlace
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: DeathPlace
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 74
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string DeathPlace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DeathPlace As String
+  overload: Scrapbook101core.Models.CategoryFields.DeathPlace*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Scrapbook101core.Models.CategoryFields.Director
   commentId: P:Scrapbook101core.Models.CategoryFields.Director
   id: Director
@@ -221,7 +329,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Director
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 68
+    startLine: 77
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -256,7 +364,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Genre
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 71
+    startLine: 80
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -291,7 +399,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Highlight
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 74
+    startLine: 83
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -326,7 +434,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Location
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 77
+    startLine: 86
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -361,7 +469,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Lodging
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 80
+    startLine: 89
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -396,7 +504,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Synopsis
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 83
+    startLine: 92
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -431,7 +539,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Theme
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 86
+    startLine: 95
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -466,7 +574,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Type
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 89
+    startLine: 98
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -501,7 +609,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Who
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 92
+    startLine: 101
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -536,7 +644,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Year
     path: ../Scrapbook101core/Models/Category.cs
-    startLine: 95
+    startLine: 104
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
@@ -878,6 +986,21 @@ references:
   name: BirthDate
   nameWithType: CategoryFields.BirthDate
   fullName: Scrapbook101core.Models.CategoryFields.BirthDate
+- uid: Scrapbook101core.Models.CategoryFields.BirthPlace*
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.BirthPlace
+  name: BirthPlace
+  nameWithType: CategoryFields.BirthPlace
+  fullName: Scrapbook101core.Models.CategoryFields.BirthPlace
+- uid: Scrapbook101core.Models.CategoryFields.DeathDate*
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.DeathDate
+  name: DeathDate
+  nameWithType: CategoryFields.DeathDate
+  fullName: Scrapbook101core.Models.CategoryFields.DeathDate
+- uid: Scrapbook101core.Models.CategoryFields.DeathPlace*
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.DeathPlace
+  name: DeathPlace
+  nameWithType: CategoryFields.DeathPlace
+  fullName: Scrapbook101core.Models.CategoryFields.DeathPlace
 - uid: Scrapbook101core.Models.CategoryFields.Director*
   commentId: Overload:Scrapbook101core.Models.CategoryFields.Director
   name: Director
