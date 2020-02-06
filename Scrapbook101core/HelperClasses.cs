@@ -34,8 +34,7 @@
                         // Show first image found if one exists
                         foreach (var asset in item.Assets)
                         {
-                            string contentType;
-                            new FileExtensionContentTypeProvider().TryGetContentType(asset.Name, out contentType);
+                            new FileExtensionContentTypeProvider().TryGetContentType(asset.Name, out string contentType);
                             if (contentType.StartsWith("image/"))
                             {
                                 imageToDisplay = $"{item.AssetPath}" + "/" + asset.Name;

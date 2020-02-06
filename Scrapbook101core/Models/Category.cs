@@ -66,6 +66,15 @@
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthDate")]
         public string BirthDate { get; set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthPlace")]
+        public string BirthPlace { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deathDate")]
+        public string DeathDate { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deathPlace")]
+        public string DeathPlace { get; set; }
+
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "director")]
         public string Director { get; set; }
 

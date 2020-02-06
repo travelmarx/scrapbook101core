@@ -40,11 +40,16 @@
         int j = 0;
         foreach (var item in Model)
         {
+            int borderRadius = 0;
             string imagePath = ViewBag.imagePath[j];
             string title = item.Title;
             string detailLink = "/Item/Details?id=" + item.Id;
             string bodyText = "";
             string mouseOverText = "";
+            if (item.Category == "People") 
+            {
+                borderRadius = 50;
+            }
             if (item.Description != null && item.Description.Length > 0)
             {
                 bodyText = (item.Description.Length > 120) ? item.Description.Substring(0, 120) + "..." : item.Description;
@@ -55,7 +60,8 @@
                 <div class="card-body p-0" style="max-width:220px; min-height:220px">
                     <p>
                         <a href="@detailLink">
-                            <img src="@imagePath" alt="@title" title="@title" width="220" height="220" style="object-fit:scale-down; background-color: silver">
+                            <img src="@imagePath" alt="@title" title="@title" width="220" height="220"
+                                 style="object-fit:scale-down; background-color: silver; border-radius: @borderRadius%">
                         </a>
                     </p>
                     <strong>@title</strong>
