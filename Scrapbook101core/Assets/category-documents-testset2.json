@@ -1,0 +1,63 @@
+{
+  "id": "49916d87-e565-4220-8806-b9e60c867ae6",
+  "type": "scrapbook101Categories",
+  "categories": [
+    {
+      "name": "Book",
+      "categoryInfo": "Book",
+      "categoryFields": {
+        "author": "Author name.",
+        "genre": "Genre.",
+        "pubYear": "Year published.",
+        "synopsis": "Short description.",
+        "theme": "Topic or themes."
+      }
+    },
+    {
+      "name": "Event",
+      "categoryInfo": "A gathering, party, celebration.",
+      "categoryFields": {
+        "location": "Joe Smith's house, restaurant name.",
+        "people": "A list of people who were there.",
+        "type": "[dinner, lunch, brunch, party, wedding, festival]"
+      }
+    },
+    {
+      "name": "Film",
+      "categoryInfo": "Movie, documentary, series.",
+      "categoryFields": {
+        "director": "Director name.",
+        "genre": "Genre",
+        "releaseYear": "Release year.",
+        "synopsis": "Short description."
+      }
+    },
+    {
+      "name": "Museum",
+      "categoryInfo": "A musuem, site.",
+      "categoryFields": {
+        "highlight": "Highlight."
+      }
+    },
+    {
+      "name": "People",
+      "categoryInfo": "Friend, family, contact, group, historical figure.",
+      "categoryFields": {
+        "birthDate": "yyyy-mm-dd",
+        "deathDate": "yyyy-mm-dd",
+        "location:": "Where the person lives/lived predominantly. If historical figure, where born.",
+        "type": "[family, friend, contact, group, historical]"
+      }
+    },
+    {
+      "name": "Performance",
+      "categoryInfo": "Theater, concert, play, live performance.",
+      "categoryFields": {
+        "artist": "Composer, author, or artist.",
+        "location": "Venue, theater name.",
+        "synopsis": "Brief one sentence overview.",
+        "type": "[theater, theatre, concert, play, ballet, opera, dance]"
+      }
+    }
+  ]
+}
