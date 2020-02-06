@@ -753,6 +753,45 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Models.CategoryFields.BirthDate
   nameWithType: CategoryFields.BirthDate
+- uid: Scrapbook101core.Models.CategoryFields.BirthPlace
+  name: BirthPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_BirthPlace
+  commentId: P:Scrapbook101core.Models.CategoryFields.BirthPlace
+  fullName: Scrapbook101core.Models.CategoryFields.BirthPlace
+  nameWithType: CategoryFields.BirthPlace
+- uid: Scrapbook101core.Models.CategoryFields.BirthPlace*
+  name: BirthPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_BirthPlace_
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.BirthPlace
+  isSpec: "True"
+  fullName: Scrapbook101core.Models.CategoryFields.BirthPlace
+  nameWithType: CategoryFields.BirthPlace
+- uid: Scrapbook101core.Models.CategoryFields.DeathDate
+  name: DeathDate
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathDate
+  commentId: P:Scrapbook101core.Models.CategoryFields.DeathDate
+  fullName: Scrapbook101core.Models.CategoryFields.DeathDate
+  nameWithType: CategoryFields.DeathDate
+- uid: Scrapbook101core.Models.CategoryFields.DeathDate*
+  name: DeathDate
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathDate_
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.DeathDate
+  isSpec: "True"
+  fullName: Scrapbook101core.Models.CategoryFields.DeathDate
+  nameWithType: CategoryFields.DeathDate
+- uid: Scrapbook101core.Models.CategoryFields.DeathPlace
+  name: DeathPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathPlace
+  commentId: P:Scrapbook101core.Models.CategoryFields.DeathPlace
+  fullName: Scrapbook101core.Models.CategoryFields.DeathPlace
+  nameWithType: CategoryFields.DeathPlace
+- uid: Scrapbook101core.Models.CategoryFields.DeathPlace*
+  name: DeathPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathPlace_
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.DeathPlace
+  isSpec: "True"
+  fullName: Scrapbook101core.Models.CategoryFields.DeathPlace
+  nameWithType: CategoryFields.DeathPlace
 - uid: Scrapbook101core.Models.CategoryFields.Director
   name: Director
   href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_Director

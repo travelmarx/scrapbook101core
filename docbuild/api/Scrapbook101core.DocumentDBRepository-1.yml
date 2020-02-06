@@ -310,7 +310,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 212
+    startLine: 218
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
