@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "hjkKAKpgFVNMJpiM7kkS2g=="
+          "hash": "heB28IlLAbe8EM7pJGHK2A=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Startup.html",
-          "hash": "Dk86IUE7acZiGeQcdcvxxw=="
+          "hash": "omnSN4nguf5jF3ZQ3JurMA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/item-document.html",
-          "hash": "0BhU/diWLqAXMvhcccPCCQ=="
+          "hash": "fkmJXKcto8eKbdFfEElUNA=="
         }
       },
       "is_incremental": false,
