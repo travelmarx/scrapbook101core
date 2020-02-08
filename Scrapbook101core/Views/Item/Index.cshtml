@@ -67,9 +67,8 @@
                     <strong>@title</strong>
                     <p class="card-text" style="font-size: smaller">
                         <span title="@mouseOverText">@bodyText</span>
-                        <i>@Html.ActionLink("Edit", "edit", new { id = item.Id })</i>, <i>@Html.ActionLink("Delete", "delete", new { id = item.Id })</i>
+                        @Html.ActionLink("Details", "details", new { id = item.Id }) | @Html.ActionLink("Edit", "edit", new { id = item.Id })
                     </p>
-
                 </div>
             </div>
             j = j + 1;

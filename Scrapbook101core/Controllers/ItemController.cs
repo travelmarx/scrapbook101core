@@ -101,13 +101,10 @@ namespace Scrapbook101core.Controllers
             }
 
             // Check for local upoads - the LocalHttpPostedFileBaseList object contains the streams
-            if (combinedModel.LocalHttpPostedFileList?[0] != null && combinedModel.LocalHttpPostedFileList.Count() > 0)
+            if (combinedModel.LocalUploadFileList?[0] != null && combinedModel.LocalUploadFileList.Count() > 0)
             {
-                int indx = 0;
-                foreach (var file in combinedModel.LocalHttpPostedFileList)
+                foreach (var file in combinedModel.LocalUploadFileList)
                 {
-                    FileItem currFile = combinedModel.LocalUploadFileList[indx];
-
                     if (combinedModel.Item.Assets == null || combinedModel.Item.Assets.Count() == 0)
                     {
                         combinedModel.Item.Assets = new List<AssetItem>();
@@ -116,10 +113,9 @@ namespace Scrapbook101core.Controllers
                     combinedModel.Item.Assets.Add(
                         new AssetItem
                         {
-                            Name = currFile.Name,
-                            Size = currFile.Size
+                            Name = file.Name,
+                            Size = file.Size
                         });
-                    indx++;
                 }
                 // Add sorted items
                 combinedModel.Item.Assets = combinedModel.Item.Assets.OrderBy(a => a.Name).ToList();
@@ -165,7 +161,7 @@ namespace Scrapbook101core.Controllers
         public async Task<ActionResult> EditAsync(CombinedModel combinedModel)
         {
             // Deal with any files checked for removal.
-            bool existFilesToRemove = HttpContext.Request.Headers.TryGetValue("FilesToRemove", out var filesToRemove);
+            bool existFilesToRemove = HttpContext.Request.Form.TryGetValue("FilesToRemove", out var filesToRemove);
 
             if (existFilesToRemove)
             {
@@ -173,6 +169,26 @@ namespace Scrapbook101core.Controllers
                 {
                     combinedModel.Item.Assets.Remove(new AssetItem() { Name = file, Size = "n/a" });
                 }
+            }
+            // Check for local upoads - the LocalHttpPostedFileBaseList object contains the streams
+            if (combinedModel.LocalUploadFileList?[0] != null && combinedModel.LocalUploadFileList.Count() > 0)
+            {
+                foreach (var file in combinedModel.LocalUploadFileList)
+                {
+                    if (combinedModel.Item.Assets == null || combinedModel.Item.Assets.Count() == 0)
+                    {
+                        combinedModel.Item.Assets = new List<AssetItem>();
+                    }
+
+                    combinedModel.Item.Assets.Add(
+                        new AssetItem
+                        {
+                            Name = file.Name,
+                            Size = file.Size
+                        });
+                }
+                // Add sorted items
+                combinedModel.Item.Assets = combinedModel.Item.Assets.OrderBy(a => a.Name).ToList();
             }
             if (ModelState.IsValid)
             {

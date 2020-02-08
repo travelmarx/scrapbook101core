@@ -4,122 +4,146 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+    <div>
+        @Html.ActionLink("Details", "Details", new { id = Model.Item.Id }) |
+        Edit |
+        <a asp-action="Delete" asp-route-id="@Model.Item.Id">Delete</a> | 
+        <a asp-action="Index">Back to List</a>
+    </div>
 
-<h4>Item</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-10">
         <form asp-action="Edit">
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Item.Id" class="control-label"></label>
-                <input asp-for="Item.Id" class="form-control" readonly/>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.Type" class="control-label"></label>
-                <input asp-for="Item.Type" class="form-control" readonly/>
-            </div>
-            <hr />
-            <div class="form-group">
-                <label asp-for="Item.AssetPath" class="control-label"></label>
-                <input asp-for="Item.AssetPath" class="form-control" />
-                <span asp-validation-for="Item.AssetPath" class="text-danger"></span>
-            </div>
-
-            <div class="form-group second-level-json">
-                <label asp-for="Item.Assets" class="control-label"></label>
-                <div class="col-md-10">
+            <dl class="sbs">
+                <dt>
+                    <label asp-for="Item.Id" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Id" class="form-control col-md-8" readonly />
+                </dd>
+                <dt>
+                    <label asp-for="Item.Title" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Title" class="form-control col-md-8" />
+                    <span asp-validation-for="Item.Title" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Category" class="control-label"></label>
+                </dt>
+                <dd>
+                    <select asp-for="Item.Category" class="form-control col-md-8"
+                            asp-items="@(new SelectList(Model.CategoryItemsForDisplay,"Id","Name", Model.CategoryItemsForDisplay[0]))">
+                    </select>
+                    <span asp-validation-for="Item.Category" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.AssetPath" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.AssetPath" class="form-control col-md-8" />
+                    <span asp-validation-for="Item.AssetPath" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Assets" class="control-label"></label>
+                </dt>
+                <dd>
                     @{
                         if (Model.Item.Assets != null)
                         {
                             int i = 0;
                             foreach (var asset in Model.Item.Assets)
                             {
-                                <input asp-for="Item.Assets[i].Name" class="form-control" readonly />
-                                <input asp-for="Item.Assets[i].Size" class="form-control" readonly />
+                                <input asp-for="Item.Assets[i].Name" class="form-control col-md-4" readonly style="display:inline" />
+                                <input asp-for="Item.Assets[i].Size" class="form-control col-md-4" readonly style="display:inline" />
                                 <input type='checkbox' name='FilesToRemove' value='@asset.Name' />
                                 <span>Delete</span>
                                 i++;
                             }
                         }
                     }
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.Category" class="control-label"></label>
-                <select asp-for="Item.Category" asp-items="@(new SelectList(Model.CategoryItemsForDisplay,"Id","Name", Model.CategoryItemsForDisplay[0]))"></select>
-                <span asp-validation-for="Item.Category" class="text-danger"></span>
-            </div>
-
-            <div class="form-group second-level-json">
-                <div class="col-md-10" id="categoryFieldsContainer">
-                    @{
-                        var activeFields = Model.CategoryFieldMappingList.First(x => string.Compare(x.Name, Model.Item.Category, true) == 0).ActiveFields;
-                        foreach (var field in activeFields)
-                        {
-                            string val = "";
-                            if (Model.Item.CategoryFields != null)
+                    <div id="FileList"></div>
+                    <input type="file" name="LocalHttpPostedFileList" id="LocalHttpPostedFileList" multiple style="display:none" />
+                    <input type="button" value="Add local files" onclick="document.getElementById('LocalHttpPostedFileList').click();" class="btn btn-default" style="display:inline" />
+                </dd>
+                <dt>
+                    <label asp-for="Item.Category" class="control-label"></label>
+                </dt>
+                <dd>
+                    <div class="col-md-10" id="categoryFieldsContainer">
+                        @{
+                            var activeFields = Model.CategoryFieldMappingList.First(x => string.Compare(x.Name, Model.Item.Category, true) == 0).ActiveFields;
+                            foreach (var field in activeFields)
                             {
-                                val = Model.Item.CategoryFields[field] == null ? "" : Model.Item.CategoryFields[field].ToString();
+                                string val = "";
+                                if (Model.Item.CategoryFields != null)
+                                {
+                                    val = Model.Item.CategoryFields[field] == null ? "" : Model.Item.CategoryFields[field].ToString();
+                                }
+                                <label asp-for="Item.CategoryFields[field]" style="color:blue; display:inline"></label>
+                                <input asp-for="Item.CategoryFields[field]" class="form-control" value="@val"/>
                             }
-                            <label asp-for="Item.CategoryFields[field]" style="color:blue"></label>
-                            <label asp-for="Item.CategoryFields[field]" class="form-control"></label>
-                            <br/>
                         }
-                    }
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.DateAdded" class="control-label"></label>
-                <input asp-for="Item.DateAdded" class="form-control" readonly />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.DateUpdated" class="control-label"></label>
-                <input asp-for="Item.DateUpdated" class="form-control" readonly/>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.Description" class="control-label"></label>
-                <input asp-for="Item.Description" class="form-control" />
-                <span asp-validation-for="Item.Description" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.Location" class="control-label"></label>
-                <input asp-for="Item.Location" class="form-control" />
-                <span asp-validation-for="Item.Location" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.Rating" class="control-label"></label>
-                <input asp-for="Item.Rating" class="form-control" />
-                <span asp-validation-for="Item.Rating" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.UpdatedBy" class="control-label"></label>
-                <input asp-for="Item.UpdatedBy" class="form-control" readonly />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.Title" class="control-label"></label>
-                <input asp-for="Item.Title" class="form-control" />
-                <span asp-validation-for="Item.Title" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+                    </div>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Description" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Description" class="form-control" />
+                    <span asp-validation-for="Item.Description" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Location" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Location" class="form-control" />
+                    <span asp-validation-for="Item.Location" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Rating" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Rating" class="form-control" />
+                    <span asp-validation-for="Item.Rating" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.DateAdded" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.DateAdded" class="form-control" readonly />
+                </dd>
+                <dt>
+                    <label asp-for="Item.DateUpdated" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.DateUpdated" class="form-control" readonly style="display:inline" />
+                    <i>Updated when changes are submitted.</i>
+                </dd>
+                <dt>
+                    <label asp-for="Item.UpdatedBy" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.UpdatedBy" class="form-control" readonly />
+                </dd>
+                <dt>
+                    <label asp-for="Item.Type" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Type" class="form-control" readonly style="display:inline" />
+                    <i>Value is specified in appsettings.json file.</i>
+                </dd>
+            </dl>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
@@ -137,6 +161,42 @@
                     /* data is the pure html returned from action method, load it to your page */
                     $('#categoryFieldsContainer').html(data);
                 });
+            });
+        });
+        $(document).ready(function () {
+            $("#localFilesToUpload").click(function () {
+                this.value = null;
+            });
+            $("#LocalHttpPostedFileList").change(function () {
+                var baseName = "LocalUploadFileList"; // name of expected model structure that tracks renames
+                var files = document.getElementById('LocalHttpPostedFileList').files;
+                if (files.length > 0) {
+                    for (i = 0; i < files.length; i++) {
+                        $('<input>').attr({
+                            //type: 'hidden',
+                            id: baseName + '_' + i + '__Name',
+                            name: baseName + '[' + i + '].Name',
+                            value: files[i].name,
+                            style: 'border:none; width: 40%'
+                        }).appendTo('#FileList');
+                        $('<input>').attr({
+                            //type: 'hidden',
+                            id: baseName + '_' + i + '__Size',
+                            name: baseName + '[' + i + '].Size',
+                            value: files[i].size,
+                            readonly: true,
+                            style: 'border:none; width: 10%'
+                        }).appendTo('#FileList');
+                        $('<input>').attr({
+                            type: 'hidden',
+                            id: baseName + '_' + i + '__Path',
+                            name: baseName + '[' + i + '].Path',
+                            value: files[i].name,  // not a true path, not used for local uploads
+                            style: 'width: 5%'
+                        }).appendTo('#FileList');
+                        $('<br/>').appendTo('#FileList');
+                    }
+                }
             });
         });
     </script>

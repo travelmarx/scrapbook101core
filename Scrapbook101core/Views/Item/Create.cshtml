@@ -4,92 +4,117 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<div>
+    Create | 
+    <a asp-action="Index">Back to List</a>
+</div>
 
-<h4>Item</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-10">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Item.Id" class="control-label"></label>
-                <input asp-for="Item.Id" class="form-control" readonly />
-                <i>Value auto-generated on create.</i>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.Type" class="control-label"></label>
-                <input asp-for="Item.Type" class="form-control" readonly />
-            </div>
-            <hr />
-            <div class="form-group">
-                <label asp-for="Item.AssetPath" class="control-label"></label>
-                <input asp-for="Item.AssetPath" class="form-control" />
-                <span asp-validation-for="Item.AssetPath" class="text-danger"></span>
-            </div>
-            <div class="form-group second-level-json">
-                <label asp-for="Item.Assets" class="control-label"></label>
-                <div class="col-md-10">
-                    <div id="FileList"></div>
-                    <input type="file" name="LocalHttpPostedFileList" id="LocalHttpPostedFileList" multiple style="display:none" />
-                    <input type="button" value="Add local files" onclick="document.getElementById('LocalHttpPostedFileList').click();" class="btn btn-default" style="display:inline" />
-                    <hr />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Item.Category" class="control-label"></label>
-                <select asp-for="Item.Category" asp-items="@(new SelectList(Model.CategoryItemsForDisplay,"Id","Name", Model.CategoryItemsForDisplay[0]))"></select>
-                <span asp-validation-for="Item.Category" class="text-danger"></span>
-            </div>
-            <div class="form-group second-level-json">
-                @Html.LabelFor(model => model.Item.CategoryFields, htmlAttributes: new { @class = "control-label col-md-2 cust-control-label" })
-                <div id="categoryFieldsContainer" class="col-md-10"></div>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.DateAdded" class="control-label"></label>
-                <input asp-for="Item.DateAdded" class="form-control" readonly />
-                <i>Value will be update to reflect actual create time.</i>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.DateUpdated" class="control-label"></label>
-                <input asp-for="Item.DateUpdated" class="form-control" readonly />
-                <i>Value wil be updated to reflect actual create time.</i>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.Description" class="control-label"></label>
-                <input asp-for="Item.Description" class="form-control" />
-                <span asp-validation-for="Item.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.Location" class="control-label"></label>
-                <input asp-for="Item.Location" class="form-control" />
-                <span asp-validation-for="Item.Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.Rating" class="control-label"></label>
-                <input asp-for="Item.Rating" class="form-control" />
-                <span asp-validation-for="Item.Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.UpdatedBy" class="control-label"></label>
-                <input asp-for="Item.UpdatedBy" class="form-control" />
-                <span asp-validation-for="Item.UpdatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.Title" class="control-label"></label>
-                <input asp-for="Item.Title" class="form-control" />
-                <span asp-validation-for="Item.Title" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <dl class="sbs">
+                <dt>
+                    <label asp-for="Item.Id" class="control-label"></label>
+                </dt>
+                <dd>
+                    <!-- <input asp-for="Item.Id" class="form-control col-md-8" readonly style="display:inline" /> -->
+                    <i>Auto-generated on create.</i>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Title" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Title" class="form-control col-md-8" />
+                    <span asp-validation-for="Item.Title" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Category" class="control-label"></label>
+                </dt>
+                <dd>
+                    <select asp-for="Item.Category" class="form-control col-md-8"
+                            asp-items="@(new SelectList(Model.CategoryItemsForDisplay,"Id","Name", Model.CategoryItemsForDisplay[0]))">
+                    </select>
+                    <span asp-validation-for="Item.Category" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.AssetPath" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.AssetPath" class="form-control col-md-8" />
+                    <span asp-validation-for="Item.AssetPath" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Assets" class="control-label"></label>
+                </dt>
+                <dd>
+                    <div id="FileList"></div>
+                    <input type="file" name="LocalHttpPostedFileList" id="LocalHttpPostedFileList" multiple style="display:none" />
+                    <input type="button" value="Add local files" onclick="document.getElementById('LocalHttpPostedFileList').click();" class="btn btn-default" style="display:inline" />
+                </dd>
+                <dt>
+                    <label asp-for="Item.CategoryFields" class="control-label"></label>
+                </dt>
+                <dd>
+                    <div id="categoryFieldsContainer" class="col-md-8"></div>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Description" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Description" class="form-control col-md-8" />
+                    <span asp-validation-for="Item.Description" class="text-danger"></span>
+
+                </dd>
+                <dt>
+                    <label asp-for="Item.Location" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Location" class="form-control col-md-8" />
+                    <span asp-validation-for="Item.Location" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Rating" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Rating" class="form-control" />
+                    <span asp-validation-for="Item.Rating" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.DateAdded" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.DateAdded" class="form-control" readonly style="display:inline"/>
+                    <i>Auto-generated on create.</i>
+                </dd>
+                <dt>
+                    <label asp-for="Item.DateUpdated" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.DateUpdated" class="form-control" readonly style="display:inline" />
+                    <i>Auto-generated on create.</i>
+                </dd>
+                <dt>
+                    <label asp-for="Item.UpdatedBy" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.UpdatedBy" class="form-control" />
+                    <span asp-validation-for="Item.UpdatedBy" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="Item.Type" class="control-label"></label>
+                </dt>
+                <dd>
+                    <input asp-for="Item.Type" class="form-control" readonly style="display:inline" />
+                    <i>Value is specified in appsettings.json file.</i>
+                </dd>
+            </dl>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

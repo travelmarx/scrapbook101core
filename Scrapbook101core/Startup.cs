@@ -31,6 +31,10 @@ namespace Scrapbook101core
             // Add functionality to inject IOptions<T>
             services.AddOptions();
 
+            // Add functionality to enable build-time compilation of razor pages
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
+
             // Add our Config object so it can be injected
             services.Configure<Scrapbook101Configuration>(Configuration.GetSection("Scrapbook101Config"));
 

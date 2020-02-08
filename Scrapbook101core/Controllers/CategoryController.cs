@@ -40,7 +40,7 @@ namespace Scrapbook101core.Controllers
                 builder2.MergeAttribute("value", "");
                 builder2.MergeAttribute("class", "form-control");
 
-                buildString.Append(GetString(builder1) + GetString(builder2) + "<br/>");
+                buildString.Append(GetString(builder1) + GetString(builder2));
             }
             return buildString.ToString();
         }
