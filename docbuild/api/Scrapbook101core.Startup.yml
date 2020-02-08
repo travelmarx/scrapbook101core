@@ -167,7 +167,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: Configure
     path: ../Scrapbook101core/Startup.cs
-    startLine: 62
+    startLine: 66
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
