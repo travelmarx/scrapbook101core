@@ -15,7 +15,7 @@ namespace Scrapbook101core
     /// <summary>
     /// Defines static variables that map to known values at application start and that 
     /// don't change during the application life time. These static variables mostly
-    /// map to the configu values in the <c>appsettings.json</c> file. For example,
+    /// map to the configuration values in the <c>appsettings.json</c> file. For example,
     /// the Document DB database name.
     /// </summary>
     public static class AppVariables
@@ -39,10 +39,11 @@ namespace Scrapbook101core
     }
 
     /// <summary>
-    /// Defines the methods for working with the Document DB repository. Also contains methods for initializing
+    /// Defines the methods for working with the Document DB repository such as creating initial database and
+    /// collection, and creating, updating, and deleting items. Also contains methods for initializing
     /// a new repository if the application is configured to do so.
     /// </summary>
-    /// <typeparam name="T">The Item class which represents a repository item.</typeparam>
+    /// <typeparam name="T">The see cref="Scrapbook101core.Models.Item"/> class which represents a repository item.</typeparam>
     public static class DocumentDBRepository<T> where T : class
     {
         private static readonly string DatabaseId = AppVariables.DatabaseId;
@@ -70,12 +71,19 @@ namespace Scrapbook101core
             }
         }
 
-        public static async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
+        /// <summary>
+        /// Returns items from the Document DB repository based on the prediction and keySelector.
+        /// </summary>
+        /// <param name="predicate">An expression satisfying the "where" clause.</param>
+        /// <param name="keySelector">An expression indicating how results are to be sorted.</param>
+        /// <returns>A list of items satisfying the search criteria.</returns>
+        public static async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, DateTime>> keySelector)
         {
             IDocumentQuery<T> query = client.CreateDocumentQuery<T>(
                 UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId),
                 new FeedOptions { MaxItemCount = -1 })
                 .Where(predicate)
+                .OrderByDescending(keySelector)
                 .AsDocumentQuery();
 
             List<T> results = new List<T>();

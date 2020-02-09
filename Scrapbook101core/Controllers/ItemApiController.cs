@@ -35,7 +35,8 @@ namespace Scrapbook101core.Controllers
                 if (String.IsNullOrEmpty(filter))
                 {
                     var items = await DocumentDBRepository<Item>
-                        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType);
+                        .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType,
+                        item => item.DateAdded);
                     var imagePath = HelperClasses.BuildPathList(items);
                     return Ok(items.ToList());
                 }
@@ -44,7 +45,8 @@ namespace Scrapbook101core.Controllers
                     var items = await DocumentDBRepository<Item>
                         .GetItemsAsync(item => item.Type == AppVariables.ItemDocumentType
                             && (item.Title.ToLower().Contains(filter.ToLower()))
-                            || (item.Description.ToLower().Contains(filter.ToLower())));
+                            || (item.Description.ToLower().Contains(filter.ToLower())),
+                            item => item.DateAdded);
                     var imagePath = HelperClasses.BuildPathList(items);
                     return Ok(items.ToList());
                 }
