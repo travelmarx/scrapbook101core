@@ -24,13 +24,21 @@ namespace Scrapbook101core.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
+        /// <summary>
+        /// Returns items based that contain the specified string. Note that for demonstration, the functionality
+        /// is purposely limited. The string could also be found in description field. Similarly, more parameters
+        /// can be added to expand the possibility of the searches.
+        /// </summary>
+        /// <param name="filter">A string to find in titles.</param>
+        /// <returns>A list of matching items</returns>
         [ActionName("Index")]
         public async Task<ActionResult> IndexAsync(string filter)
         {
             if (String.IsNullOrEmpty(filter))
             {
                 var items = await DocumentDBRepository<Item>.GetItemsAsync(
-                    item => item.Type == AppVariables.ItemDocumentType);
+                    item => item.Type == AppVariables.ItemDocumentType,
+                    item => item.DateAdded);
                 ViewBag.imagePath = HelperClasses.BuildPathList(items);
                 return View(items);
             }
@@ -39,7 +47,8 @@ namespace Scrapbook101core.Controllers
                 var items = await DocumentDBRepository<Item>.GetItemsAsync(
                     item => item.Type == AppVariables.ItemDocumentType
                     && (item.Title.ToLower().Contains(filter.ToLower()))
-                    || (item.Description.ToLower().Contains(filter.ToLower())));
+                    || (item.Description.ToLower().Contains(filter.ToLower())),
+                    item => item.DateAdded);
                 ViewBag.imagePath = HelperClasses.BuildPathList(items);
                 return View(items);
             }

@@ -46,10 +46,12 @@ Here's what happened on startup:
 
 1. In the document store, a database named **Scrapbook101** was created with a collection named **Items**.
 
-1. A [category document][cat] was created and stored in the document store. The category information was read from the file `Assets/categories-document.json`.
+1. A [category document][cat] was created and stored in the document store. The category information was read from the file `Assets/category-documents-testset1.json`.
 
 1. If the configuration option **AddTestAssets** to create test assets was set to `true` in 
-    `appsettings.json`, then test items were added to the document store as well. They were read from the file `Assets/categories-document.json`.
+    `appsettings.json`, then test items were added to the document store as well. They were read from the file `Assets/item-documents-testset1.json`.
+
+The initial presentation of items is based on the **DateAdded** field, with most recent displayed first. This is an arbitrary choice and can be changed in the [`ItemController`](xref:Scrapbook101core.Controllers.ItemController) class `IndexAsync` method.
 
 For information on what happened on startup for the ASP.NET MVC version of this project (called Scrapbook101), see <https://travelmarx.github.io/scrapbook101/get-started#run-local>.
 
