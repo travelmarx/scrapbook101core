@@ -327,7 +327,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 66
+    startLine: 68
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -383,7 +383,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 85
+    startLine: 87
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -458,7 +458,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: UpdateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 137
+    startLine: 139
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -538,7 +538,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
-    startLine: 190
+    startLine: 192
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers

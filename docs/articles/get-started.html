@@ -107,12 +107,13 @@
 <ol>
 <li><p>In the document store, a database named <strong>Scrapbook101</strong> was created with a collection named <strong>Items</strong>.</p>
 </li>
-<li><p>A <a href="category-document.html">category document</a> was created and stored in the document store. The category information was read from the file <code>Assets/categories-document.json</code>.</p>
+<li><p>A <a href="category-document.html">category document</a> was created and stored in the document store. The category information was read from the file <code>Assets/category-documents-testset1.json</code>.</p>
 </li>
 <li><p>If the configuration option <strong>AddTestAssets</strong> to create test assets was set to <code>true</code> in
-<code>appsettings.json</code>, then test items were added to the document store as well. They were read from the file <code>Assets/categories-document.json</code>.</p>
+<code>appsettings.json</code>, then test items were added to the document store as well. They were read from the file <code>Assets/item-documents-testset1.json</code>.</p>
 </li>
 </ol>
+<p>The initial presentation of items is based on the <strong>DateAdded</strong> field, with most recent displayed first. This is an arbitrary choice and can be changed in the <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html"><code>ItemController</code></a> class <code>IndexAsync</code> method.</p>
 <p>For information on what happened on startup for the ASP.NET MVC version of this project (called Scrapbook101), see <a href="https://travelmarx.github.io/scrapbook101/get-started#run-local">https://travelmarx.github.io/scrapbook101/get-started#run-local</a>.</p>
 <h2 id="create-an-item">Create an item</h2>
 <p>At this point, you can start working with Scrapbook101core items with CRUD (create, read, update, delete) operations. The home page is https://localhost:port#/ or https://localhost:port#/Item/Index.</p>

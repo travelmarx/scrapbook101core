@@ -303,10 +303,12 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: IndexAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 26
+    startLine: 33
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
+  summary: "\nReturns items based that contain the specified string. Note that for demonstration, the functionality\nis purposely limited. The string could also be found in description field. Similarly, more parameters\ncan be added to expand the possibility of the searches.\n"
+  example: []
   syntax:
     content: >-
       [ActionName("Index")]
@@ -315,8 +317,10 @@ items:
     parameters:
     - id: filter
       type: System.String
+      description: A string to find in titles.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
+      description: A list of matching items
     content.vb: >-
       <ActionName("Index")>
 
@@ -350,7 +354,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 47
+    startLine: 56
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -397,7 +401,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 61
+    startLine: 70
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -441,7 +445,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 78
+    startLine: 87
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -502,7 +506,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 132
+    startLine: 141
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -556,7 +560,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 157
+    startLine: 166
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -617,7 +621,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 201
+    startLine: 210
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers
@@ -671,7 +675,7 @@ items:
       repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteConfirmedAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
-    startLine: 219
+    startLine: 228
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core.Controllers

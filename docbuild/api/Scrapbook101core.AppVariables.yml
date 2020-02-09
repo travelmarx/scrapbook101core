@@ -38,7 +38,7 @@ items:
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
-  summary: "\nDefines static variables that map to known values at application start and that \ndon&apos;t change during the application life time. These static variables mostly\nmap to the configu values in the <code>appsettings.json</code> file. For example,\nthe Document DB database name.\n"
+  summary: "\nDefines static variables that map to known values at application start and that \ndon&apos;t change during the application life time. These static variables mostly\nmap to the configuration values in the <code>appsettings.json</code> file. For example,\nthe Document DB database name.\n"
   example: []
   syntax:
     content: public static class AppVariables
