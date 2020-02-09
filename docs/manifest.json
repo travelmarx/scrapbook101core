@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.AppVariables.html",
-          "hash": "h30Yrb2JKE4400s3N0+uSA=="
+          "hash": "pRwaJ5hn/6qca3f0iGXpTQ=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemApiController.html",
-          "hash": "X2Bhce3NCPg4jF+Fgvj73Q=="
+          "hash": "GiSHJRTqKpX7n6xK29CLiQ=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "heB28IlLAbe8EM7pJGHK2A=="
+          "hash": "jp+y7EgJyAEMR4Vb/2ulBg=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.DocumentDBRepository-1.html",
-          "hash": "Slt7KeaPSHbJK/KkvD6LDw=="
+          "hash": "mnAe27dbzLdXbiivceOXxw=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Startup.html",
-          "hash": "omnSN4nguf5jF3ZQ3JurMA=="
+          "hash": "9B1qgAyD6PDatR3WK9diiA=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.html",
-          "hash": "Iml7WHCkt3hA/Pl39XyGsQ=="
+          "hash": "eBvHTdXUnrotYMYiBXNHKg=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/category-document.html",
-          "hash": "g4wLWgGX+i2WnPVKfjsVgQ=="
+          "hash": "62iHqSqPTmkLzPH5Ns97XA=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/get-started.html",
-          "hash": "QawLlyVyGzmlv8A/u68a7A=="
+          "hash": "IDcxASEKWWu5+BkkfOGGig=="
         }
       },
       "is_incremental": false,

@@ -461,15 +461,15 @@ references:
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemAsync
   nameWithType: DocumentDBRepository<T>.GetItemAsync
   nameWithType.vb: DocumentDBRepository(Of T).GetItemAsync
-- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  name: GetItemsAsync(Expression<Func<T, Boolean>>)
-  href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
-  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)))
-  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>)
-  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)))
-  nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>)
-  nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)))
+- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
+  name: GetItemsAsync(Expression<Func<T, Boolean>>, Expression<Func<T, DateTime>>)
+  href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_DateTime___
+  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
+  name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)), Expression(Of Func(Of T, DateTime)))
+  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>, System.Linq.Expressions.Expression<System.Func<T, System.DateTime>>)
+  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of T, System.DateTime)))
+  nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>, Expression<Func<T, DateTime>>)
+  nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)), Expression(Of Func(Of T, DateTime)))
 - uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*
   name: GetItemsAsync
   href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_

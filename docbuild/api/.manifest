@@ -42,7 +42,7 @@
   "Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync(System.String)": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.GetItemAsync(System.String)": "Scrapbook101core.DocumentDBRepository-1.yml",
-  "Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})": "Scrapbook101core.DocumentDBRepository-1.yml",
+  "Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.Initialize": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync(System.String,`0)": "Scrapbook101core.DocumentDBRepository-1.yml",
   "Scrapbook101core.HelperClasses": "Scrapbook101core.HelperClasses.yml",
