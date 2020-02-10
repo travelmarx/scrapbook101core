@@ -23,7 +23,8 @@ public async Task<ActionResult> IndexAsync(string filter)
     if (String.IsNullOrEmpty(filter))
     {
         var items = await DocumentDBRepository<Item>.GetItemsAsync(
-            item => item.Type == AppVariables.ItemDocumentType);
+            item => item.Type == AppVariables.ItemDocumentType,
+            item => item.DateAdded);
         ViewBag.imagePath = HelperClasses.BuildPathList(items);
         return View(items);
     }
@@ -32,14 +33,15 @@ public async Task<ActionResult> IndexAsync(string filter)
         var items = await DocumentDBRepository<Item>.GetItemsAsync(
             item => item.Type == AppVariables.ItemDocumentType
             && (item.Title.ToLower().Contains(filter.ToLower()))
-            || (item.Description.ToLower().Contains(filter.ToLower())));
+            || (item.Description.ToLower().Contains(filter.ToLower())),
+            item => item.DateAdded);
         ViewBag.imagePath = HelperClasses.BuildPathList(items);
         return View(items);
     }
 }
 ```
 
-If `filter` is provided, then it is used, otherwise, all items are returned. This is basic functionality that can be expanded to include searching other fields like **location** and **dateAdded** or any search logic needed for your application.
+If `filter` is provided, then it is used, otherwise, all items are returned. This is basic functionality that can be expanded to include searching other fields like **location** and **assetPath** or any search logic needed for your application. In the code snippet above, items are returned ordered by **dateAdded**.
 
 ## Styling
 
