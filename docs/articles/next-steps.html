@@ -81,7 +81,8 @@ public async Task&lt;ActionResult&gt; IndexAsync(string filter)
     if (String.IsNullOrEmpty(filter))
     {
         var items = await DocumentDBRepository&lt;Item&gt;.GetItemsAsync(
-            item =&gt; item.Type == AppVariables.ItemDocumentType);
+            item =&gt; item.Type == AppVariables.ItemDocumentType,
+            item =&gt; item.DateAdded);
         ViewBag.imagePath = HelperClasses.BuildPathList(items);
         return View(items);
     }
@@ -90,13 +91,14 @@ public async Task&lt;ActionResult&gt; IndexAsync(string filter)
         var items = await DocumentDBRepository&lt;Item&gt;.GetItemsAsync(
             item =&gt; item.Type == AppVariables.ItemDocumentType
             &amp;&amp; (item.Title.ToLower().Contains(filter.ToLower()))
-            || (item.Description.ToLower().Contains(filter.ToLower())));
+            || (item.Description.ToLower().Contains(filter.ToLower())),
+            item =&gt; item.DateAdded);
         ViewBag.imagePath = HelperClasses.BuildPathList(items);
         return View(items);
     }
 }
 </code></pre>
-<p>If <code>filter</code> is provided, then it is used, otherwise, all items are returned. This is basic functionality that can be expanded to include searching other fields like <strong>location</strong> and <strong>dateAdded</strong> or any search logic needed for your application.</p>
+<p>If <code>filter</code> is provided, then it is used, otherwise, all items are returned. This is basic functionality that can be expanded to include searching other fields like <strong>location</strong> and <strong>assetPath</strong> or any search logic needed for your application. In the code snippet above, items are returned ordered by <strong>dateAdded</strong>.</p>
 <h2 id="styling">Styling</h2>
 <p>The create, delete, update, and edit pages (under the <code>Views\Item</code> folder) are currently minimally styled. They can be improved and rearranged as needed. For example in the edit page, the <strong>description</strong> field can be customized for long or short descriptions and fields that can't or shouldn't be changed (like <strong>id</strong> and <strong>type</strong>) can be removed from the form.</p>
 <p>In contrast to the CRUD pages, the Scrapbook101core main page (<a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/Views/Item/Index.cshtml"><code>Views\Item\Index.cshtml</code></a>) is styled more. We use <a href="https://getbootstrap.com">Bootstrap</a> to demonstrate a possible visual representation of Scrapbook101core items. Specifically, Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/">cards</a> structure is used which shows one asset image if it exists or else show a default image as specified in the <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/appsettings.json"><code>appsettings.json</code></a> configuration along with a snippet of the title and description of the item.</p>
