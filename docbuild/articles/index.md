@@ -8,7 +8,9 @@ This document set describes how to build a Personal Information Managment (PIM) 
 
 After building and running the code, you should have a simple {{productName}} site populated with test entries and supporting assets. These document pages are still a work in progress. The footer of each page contains the last doc build date.
 
-This document set covers both {{productName}} implemented on the .NET Framework and .NET core.
+This document set covers both {{productName}} implemented on the .NET Framework and .NET core, with an emphasis on the latter.
+
+Okay, where's the code?  It's in the GitHub repository: https://github.com/travelmarx/scrapbook101core.
 
 ## A brief recap
 
