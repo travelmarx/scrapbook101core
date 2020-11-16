@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryItemDisplay
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 26
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Id
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 28
@@ -96,8 +96,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 29
@@ -131,8 +131,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryInfo
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 30

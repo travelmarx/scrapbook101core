@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemApiController
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 14
@@ -251,8 +251,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 27
@@ -323,8 +323,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 68
@@ -379,8 +379,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 87
@@ -454,8 +454,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 139
@@ -534,8 +534,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 192
