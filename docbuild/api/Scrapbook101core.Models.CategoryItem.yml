@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryItem
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 31
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Name
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 33
@@ -110,8 +110,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Description
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 37
@@ -145,8 +145,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFields
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 40
