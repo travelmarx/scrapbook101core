@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DocumentDBRepository
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 46
@@ -74,8 +74,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 53
@@ -113,8 +113,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetItemsAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 79
@@ -160,8 +160,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CreateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 97
@@ -199,8 +199,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: UpdateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 102
@@ -240,8 +240,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 107
@@ -279,8 +279,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Initialize
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 112
@@ -313,8 +313,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 226

@@ -24,8 +24,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: ItemController
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 17
@@ -266,8 +266,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: .ctor
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 21
@@ -299,8 +299,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: IndexAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 33
@@ -350,8 +350,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 56
@@ -397,8 +397,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 70
@@ -441,8 +441,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 87
@@ -502,8 +502,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 141
@@ -556,8 +556,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 166
@@ -617,8 +617,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 210
@@ -671,8 +671,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteConfirmedAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 228

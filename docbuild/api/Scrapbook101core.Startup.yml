@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Startup
     path: ../Scrapbook101core/Startup.cs
     startLine: 18
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: .ctor
     path: ../Scrapbook101core/Startup.cs
     startLine: 20
@@ -95,8 +95,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Configuration
     path: ../Scrapbook101core/Startup.cs
     startLine: 25
@@ -130,8 +130,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: ConfigureServices
     path: ../Scrapbook101core/Startup.cs
     startLine: 28
@@ -163,8 +163,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Startup.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Configure
     path: ../Scrapbook101core/Startup.cs
     startLine: 68
