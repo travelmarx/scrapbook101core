@@ -494,8 +494,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: TestItems
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 34
