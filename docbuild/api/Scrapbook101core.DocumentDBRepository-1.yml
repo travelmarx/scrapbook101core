@@ -9,7 +9,7 @@ items:
   - Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync(System.String)
   - Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync
   - Scrapbook101core.DocumentDBRepository`1.GetItemAsync(System.String)
-  - Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  - Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
   - Scrapbook101core.DocumentDBRepository`1.Initialize
   - Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync(System.String,`0)
   langs:
@@ -22,15 +22,15 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DocumentDBRepository
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
-  summary: "\nDefines the methods for working with the Document DB repository. Also contains methods for initializing\na new repository if the application is configured to do so.\n"
+  summary: "\nDefines the methods for working with the Document DB repository such as creating initial database and\ncollection, and creating, updating, and deleting items. Also contains methods for initializing\na new repository if the application is configured to do so.\n"
   example: []
   syntax:
     content: >-
@@ -38,7 +38,7 @@ items:
           where T : class
     typeParameters:
     - id: T
-      description: The Item class which represents a repository item.
+      description: The see cref=&quot;Scrapbook101core.Models.Item&quot;/> class which represents a repository item.
     content.vb: Public Module DocumentDBRepository(Of T As Class)
   inheritance:
   - System.Object
@@ -74,11 +74,11 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -99,46 +99,53 @@ items:
   - Public
   - Shared
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemAsync(System.String)
-- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  id: GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
+  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
+  id: GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
   parent: Scrapbook101core.DocumentDBRepository`1
   langs:
   - csharp
   - vb
-  name: GetItemsAsync(Expression<Func<T, Boolean>>)
-  nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>)
-  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>)
+  name: GetItemsAsync(Expression<Func<T, Boolean>>, Expression<Func<T, DateTime>>)
+  nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>, Expression<Func<T, DateTime>>)
+  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>, System.Linq.Expressions.Expression<System.Func<T, System.DateTime>>)
   type: Method
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemsAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 72
+    startLine: 79
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
+  summary: "\nReturns items from the Document DB repository based on the prediction and keySelector.\n"
+  example: []
   syntax:
-    content: public static Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
+    content: public static Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, DateTime>> keySelector)
     parameters:
     - id: predicate
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: An expression satisfying the &quot;where&quot; clause.
+    - id: keySelector
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.DateTime}}
+      description: An expression indicating how results are to be sorted.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{T}}}
-    content.vb: Public Shared Function GetItemsAsync(predicate As Expression(Of Func(Of T, Boolean))) As Task(Of IEnumerable(Of T))
+      description: A list of items satisfying the search criteria.
+    content.vb: Public Shared Function GetItemsAsync(predicate As Expression(Of Func(Of T, Boolean)), keySelector As Expression(Of Func(Of T, Date))) As Task(Of IEnumerable(Of T))
   overload: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*
-  nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)))
+  nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)), Expression(Of Func(Of T, DateTime)))
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)))
-  name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)))
+  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of T, System.DateTime)))
+  name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)), Expression(Of Func(Of T, DateTime)))
 - uid: Scrapbook101core.DocumentDBRepository`1.CreateItemAsync(`0)
   commentId: M:Scrapbook101core.DocumentDBRepository`1.CreateItemAsync(`0)
   id: CreateItemAsync(`0)
@@ -153,11 +160,11 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 89
+    startLine: 97
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -192,11 +199,11 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 94
+    startLine: 102
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -233,11 +240,11 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 99
+    startLine: 107
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -272,11 +279,11 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Initialize
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 104
+    startLine: 112
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -306,11 +313,11 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
-    startLine: 212
+    startLine: 226
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
@@ -803,6 +810,84 @@ references:
     name: Boolean
     nameWithType: Boolean
     fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Linq.Expressions.Expression{System.Func{{T},System.DateTime}}
+  commentId: T:System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}}
+  parent: System.Linq.Expressions
+  definition: System.Linq.Expressions.Expression`1
+  name: Expression<Func<T, DateTime>>
+  nameWithType: Expression<Func<T, DateTime>>
+  fullName: System.Linq.Expressions.Expression<System.Func<T, System.DateTime>>
+  nameWithType.vb: Expression(Of Func(Of T, DateTime))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of T, System.DateTime))
+  name.vb: Expression(Of Func(Of T, DateTime))
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: )
     nameWithType: )
