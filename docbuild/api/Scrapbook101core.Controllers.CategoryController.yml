@@ -32,7 +32,9 @@ items:
     content: 'public class CategoryController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
       Public Class CategoryController
+
           Inherits Controller
+
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
   - System.Object

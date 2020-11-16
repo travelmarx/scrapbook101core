@@ -220,8 +220,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: BirthPlace
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 68
@@ -255,8 +255,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeathDate
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 71
@@ -290,8 +290,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeathPlace
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 74

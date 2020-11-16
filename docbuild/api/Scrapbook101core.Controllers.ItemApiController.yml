@@ -43,6 +43,7 @@ items:
       <ApiController>
 
       Public Class ItemApiController
+
           Inherits ControllerBase
   inheritance:
   - System.Object

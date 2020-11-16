@@ -35,6 +35,7 @@ items:
   syntax:
     content: >-
       public static class DocumentDBRepository<T>
+
           where T : class
     typeParameters:
     - id: T
