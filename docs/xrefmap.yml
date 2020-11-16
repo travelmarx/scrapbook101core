@@ -147,12 +147,12 @@ references:
   commentId: F:Scrapbook101core.AppVariables.TestCategories
   fullName: Scrapbook101core.AppVariables.TestCategories
   nameWithType: AppVariables.TestCategories
-- uid: Scrapbook101core.AppVariables.TestDocuments
-  name: TestDocuments
-  href: api/Scrapbook101core.AppVariables.html#Scrapbook101core_AppVariables_TestDocuments
-  commentId: F:Scrapbook101core.AppVariables.TestDocuments
-  fullName: Scrapbook101core.AppVariables.TestDocuments
-  nameWithType: AppVariables.TestDocuments
+- uid: Scrapbook101core.AppVariables.TestItems
+  name: TestItems
+  href: api/Scrapbook101core.AppVariables.html#Scrapbook101core_AppVariables_TestItems
+  commentId: F:Scrapbook101core.AppVariables.TestItems
+  fullName: Scrapbook101core.AppVariables.TestItems
+  nameWithType: AppVariables.TestItems
 - uid: Scrapbook101core.Controllers
   name: Scrapbook101core.Controllers
   href: api/Scrapbook101core.Controllers.html
@@ -461,15 +461,15 @@ references:
   fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemAsync
   nameWithType: DocumentDBRepository<T>.GetItemAsync
   nameWithType.vb: DocumentDBRepository(Of T).GetItemAsync
-- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  name: GetItemsAsync(Expression<Func<T, Boolean>>)
-  href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
-  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)))
-  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>)
-  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)))
-  nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>)
-  nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)))
+- uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
+  name: GetItemsAsync(Expression<Func<T, Boolean>>, Expression<Func<T, DateTime>>)
+  href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_DateTime___
+  commentId: M:Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})
+  name.vb: GetItemsAsync(Expression(Of Func(Of T, Boolean)), Expression(Of Func(Of T, DateTime)))
+  fullName: Scrapbook101core.DocumentDBRepository<T>.GetItemsAsync(System.Linq.Expressions.Expression<System.Func<T, System.Boolean>>, System.Linq.Expressions.Expression<System.Func<T, System.DateTime>>)
+  fullName.vb: Scrapbook101core.DocumentDBRepository(Of T).GetItemsAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of T, System.DateTime)))
+  nameWithType: DocumentDBRepository<T>.GetItemsAsync(Expression<Func<T, Boolean>>, Expression<Func<T, DateTime>>)
+  nameWithType.vb: DocumentDBRepository(Of T).GetItemsAsync(Expression(Of Func(Of T, Boolean)), Expression(Of Func(Of T, DateTime)))
 - uid: Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*
   name: GetItemsAsync
   href: api/Scrapbook101core.DocumentDBRepository-1.html#Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_
@@ -753,6 +753,45 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Models.CategoryFields.BirthDate
   nameWithType: CategoryFields.BirthDate
+- uid: Scrapbook101core.Models.CategoryFields.BirthPlace
+  name: BirthPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_BirthPlace
+  commentId: P:Scrapbook101core.Models.CategoryFields.BirthPlace
+  fullName: Scrapbook101core.Models.CategoryFields.BirthPlace
+  nameWithType: CategoryFields.BirthPlace
+- uid: Scrapbook101core.Models.CategoryFields.BirthPlace*
+  name: BirthPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_BirthPlace_
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.BirthPlace
+  isSpec: "True"
+  fullName: Scrapbook101core.Models.CategoryFields.BirthPlace
+  nameWithType: CategoryFields.BirthPlace
+- uid: Scrapbook101core.Models.CategoryFields.DeathDate
+  name: DeathDate
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathDate
+  commentId: P:Scrapbook101core.Models.CategoryFields.DeathDate
+  fullName: Scrapbook101core.Models.CategoryFields.DeathDate
+  nameWithType: CategoryFields.DeathDate
+- uid: Scrapbook101core.Models.CategoryFields.DeathDate*
+  name: DeathDate
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathDate_
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.DeathDate
+  isSpec: "True"
+  fullName: Scrapbook101core.Models.CategoryFields.DeathDate
+  nameWithType: CategoryFields.DeathDate
+- uid: Scrapbook101core.Models.CategoryFields.DeathPlace
+  name: DeathPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathPlace
+  commentId: P:Scrapbook101core.Models.CategoryFields.DeathPlace
+  fullName: Scrapbook101core.Models.CategoryFields.DeathPlace
+  nameWithType: CategoryFields.DeathPlace
+- uid: Scrapbook101core.Models.CategoryFields.DeathPlace*
+  name: DeathPlace
+  href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_DeathPlace_
+  commentId: Overload:Scrapbook101core.Models.CategoryFields.DeathPlace
+  isSpec: "True"
+  fullName: Scrapbook101core.Models.CategoryFields.DeathPlace
+  nameWithType: CategoryFields.DeathPlace
 - uid: Scrapbook101core.Models.CategoryFields.Director
   name: Director
   href: api/Scrapbook101core.Models.CategoryFields.html#Scrapbook101core_Models_CategoryFields_Director
@@ -1525,19 +1564,19 @@ references:
   isSpec: "True"
   fullName: Scrapbook101core.Scrapbook101Configuration.TestCategories
   nameWithType: Scrapbook101Configuration.TestCategories
-- uid: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  name: TestDocuments
-  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestDocuments
-  commentId: P:Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  fullName: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  nameWithType: Scrapbook101Configuration.TestDocuments
-- uid: Scrapbook101core.Scrapbook101Configuration.TestDocuments*
-  name: TestDocuments
-  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestDocuments_
-  commentId: Overload:Scrapbook101core.Scrapbook101Configuration.TestDocuments
+- uid: Scrapbook101core.Scrapbook101Configuration.TestItems
+  name: TestItems
+  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestItems
+  commentId: P:Scrapbook101core.Scrapbook101Configuration.TestItems
+  fullName: Scrapbook101core.Scrapbook101Configuration.TestItems
+  nameWithType: Scrapbook101Configuration.TestItems
+- uid: Scrapbook101core.Scrapbook101Configuration.TestItems*
+  name: TestItems
+  href: api/Scrapbook101core.Scrapbook101Configuration.html#Scrapbook101core_Scrapbook101Configuration_TestItems_
+  commentId: Overload:Scrapbook101core.Scrapbook101Configuration.TestItems
   isSpec: "True"
-  fullName: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  nameWithType: Scrapbook101Configuration.TestDocuments
+  fullName: Scrapbook101core.Scrapbook101Configuration.TestItems
+  nameWithType: Scrapbook101Configuration.TestItems
 - uid: Scrapbook101core.Startup
   name: Startup
   href: api/Scrapbook101core.Startup.html

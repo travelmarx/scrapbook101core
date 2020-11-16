@@ -8,7 +8,7 @@
     <title>Category Document | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Category Document | Scrapbook101core ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -70,10 +70,10 @@
 <h1 id="category-document">Category Document</h1>
 
 <p>In the <a href="technology-overview.html">technology overview</a> section, we briefly discussed the ideas behind a document-oriented database and how it is used in Scrapbook101core. In this section we describe one of the two key document types stored in the document-oriented database, the category document.</p>
-<p>Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents Scrapbook101core categories. From this prototype document, a class <a class="xref" href="../api/Scrapbook101core.Models.Category.html"><code>Category</code></a>is defined in our Visual Studio project representing this category document.</p>
+<p>Our design approach is model-first approach meaning we start with a prototype category document in JSON that represents Scrapbook101core categories. From this prototype document, a class <a class="xref" href="../api/Scrapbook101core.Models.Category.html"><code>Category</code></a> is defined in our Visual Studio project representing this category document.</p>
 <h2 id="overview">Overview</h2>
 <p>This Scrapbook101core category document defines the types of categories that items can belong to (via the <strong>category</strong> field). It is one of the two document types (distinguished by the <strong>type</strong> field) stored in the document-oriented datastore. The other is the <a href="item-document.html">Item Document</a>. The data store will contain many item documents and one category document.</p>
-<p>The categories used in Scrapbook101core are: Book, Event, Film, Museum, People, and Performance. This reduced number of categories was selected to make the code easier to work with and describe. In the version of Scrapbook described in the related <a href="http://blog.travelmarx.com/2017/12/a-personal-information-management-system-introducing-scrapbook.html">blog post</a> over 20 categories are used.</p>
+<p>The categories used in Scrapbook101core are: Book, Event, Film, Museum, People, and Performance. This reduced number of categories was selected to make the code easier to work with and describe. In the version of Scrapbook described in the related <a href="http://blog.travelmarx.com/2017/12/a-personal-information-management-system-introducing-scrapbook.html">blog post</a> over 20 categories are used. The version of categories described here match what is given in <code>Assets/category-documents-testset1.json</code>.</p>
 <p>Each category has a <strong>name</strong>, <strong>description</strong>, and one or more associated <strong>categoryFields</strong>.</p>
 <pre><code class="lang-json">{
     &quot;id&quot;: &quot;GUID&quot;,
@@ -143,9 +143,11 @@
 <dl class="deflist">
     <dt>categoryFields</dt>
     <dd>Data fields specific to the category. In this implementation of Scrapbook101core item, the following keys are supported
-    <strong>artist</strong>, <strong>author</strong>, <strong>birthDate</strong>, <strong>director</strong>, 
+    <strong>artist</strong>, <strong>author</strong>, <strong>birthDate</strong>, <strong>birthPlace</strong>,
+    <strong>deathDate</strong>, <strong>deathPlace</strong>, <strong>director</strong>, 
     <strong>genre</strong>, <strong>highlight</strong>, <strong>location</strong>, 
-    <strong>synopsis</strong>, <strong>theme</strong>, <strong>type</strong> <strong>who</strong>, and <strong>year</strong>. The keys are not required. If specified, their values are strings.
+    <strong>synopsis</strong>, <strong>theme</strong>, <strong>type</strong> <strong>who</strong>, and <strong>year</strong>. The keys are not required. If specified, their values are strings. This list may not contain all values used. See the 
+    <a href="https://travelmarx.github.io/scrapbook101core/api/Scrapbook101core.Models.CategoryFields.html">CategoryFields class</a> file for a list of all fields.
     <br><br>
     Which keys are used depends on the category chosen for the Scrapbook101core item. If <i>null</i>, no keys are stored for the item.
     <p class="inset">
@@ -190,7 +192,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/category-document.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/docbuild/articles/category-document.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

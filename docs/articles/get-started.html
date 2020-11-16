@@ -8,7 +8,7 @@
     <title>Get Started | Scrapbook101core </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Get Started | Scrapbook101core ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,13 +87,15 @@
 </li>
 <li><p>Open the solution in Visual Studio. For example, open the solution file <code>Scrapbook101core.sln</code>.</p>
 </li>
-<li><p>Customize the code as follows in the <code>&lt;code&gt;</code>appsettings.json` file.</p>
+<li><p>Customize the code as follows in the <code>appsettings.json</code> file.</p>
 <ul>
 <li><p>Enter the correct value for <strong>AuthKey</strong>, which you can get from the local emulator home page as show above. It's the <strong>Primary Key</strong>.</p>
 </li>
 <li><p>Enter a Bing Maps Key for <strong>BingMapKey</strong> if you have one; if blank, then geocoding is skipped.</p>
 </li>
 <li><p>Set the value for <strong>AddTestAssets</strong> to <code>true</code> to write test assets or <code>false</code> not to write them.</p>
+</li>
+<li><p>The <strong>testCategories</strong> and <strong>testItems</strong> keys are set to use test dataset 1. Any other dataset available in the <strong>\Assets</strong> folder can be used, however both keys should use the same dataset.</p>
 </li>
 </ul>
 </li>
@@ -105,12 +107,13 @@
 <ol>
 <li><p>In the document store, a database named <strong>Scrapbook101</strong> was created with a collection named <strong>Items</strong>.</p>
 </li>
-<li><p>A <a href="category-document.html">category document</a> was created and stored in the document store. The category information was read from the file <code>Assets/categories-document.json</code>.</p>
+<li><p>A <a href="category-document.html">category document</a> was created and stored in the document store. The category information was read from the file <code>Assets/category-documents-testset1.json</code>.</p>
 </li>
 <li><p>If the configuration option <strong>AddTestAssets</strong> to create test assets was set to <code>true</code> in
-<code>appsettings.json</code>, then test items were added to the document store as well. They were read from the file <code>Assets/categories-document.json</code>.</p>
+<code>appsettings.json</code>, then test items were added to the document store as well. They were read from the file <code>Assets/item-documents-testset1.json</code>.</p>
 </li>
 </ol>
+<p>The initial presentation of items is based on the <strong>DateAdded</strong> field, with most recent displayed first. This is an arbitrary choice and can be changed in the <a class="xref" href="../api/Scrapbook101core.Controllers.ItemController.html"><code>ItemController</code></a> class <code>IndexAsync</code> method.</p>
 <p>For information on what happened on startup for the ASP.NET MVC version of this project (called Scrapbook101), see <a href="https://travelmarx.github.io/scrapbook101/get-started#run-local">https://travelmarx.github.io/scrapbook101/get-started#run-local</a>.</p>
 <h2 id="create-an-item">Create an item</h2>
 <p>At this point, you can start working with Scrapbook101core items with CRUD (create, read, update, delete) operations. The home page is https://localhost:port#/ or https://localhost:port#/Item/Index.</p>
@@ -145,7 +148,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/docbuild/articles/get-started.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/docbuild/articles/get-started.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

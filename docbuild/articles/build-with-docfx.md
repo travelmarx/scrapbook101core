@@ -8,7 +8,7 @@ title: Build with DocFX
 
 This site was created with [DocFx][docfx]. How is this site different from our [GitHub pages site][site1] for Scrapbook101? Here's how:
 
-* This DocFx site parses comments from code (under [Scrapbook101core][c0de]) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
+* This DocFx site parses comments from code (under [Scrapbook101core][code]) and creates API documentation together with conceptual content (under **\articles**). The conceptual documentation from the GitHub pages site was reused here with few changes. 
 
 * In the previous [site][site1], we used Jekyll to create the website, which contained only conceptual content. We used Jekyll to run local builds and then pushed the .md files to GitHub into a **\docs** folder, which we defined as a GitHub pages website. On the server, the Jekyll process would kick off automatically and create the HTML for the [site][site1].
 
@@ -303,6 +303,8 @@ which renders as:
 ## Next steps
 
 The next step was to investigate Azure devops. This is discussed in the article <xref:azure-pipeline>.
+
+Eventually, the **\docs** folder will be used to host the content used in [GitHub Pages](https://pages.github.com/). In the repo settings configure Github Pages.
 
 ## References
 

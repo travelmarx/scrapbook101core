@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DocumentDBRepository&lt;T&gt;
    | Scrapbook101core ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="Scrapbook101core_DocumentDBRepository_1" data-uid="Scrapbook101core.DocumentDBRepository`1" class="text-break">Class DocumentDBRepository&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Defines the methods for working with the Document DB repository. Also contains methods for initializing
+  <div class="markdown level0 summary"><p>Defines the methods for working with the Document DB repository such as creating initial database and
+collection, and creating, updating, and deleting items. Also contains methods for initializing
 a new repository if the application is configured to do so.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -100,7 +101,7 @@ a new repository if the application is configured to do so.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>The Item class which represents a repository item.</p>
+        <td><p>The see cref=&quot;Scrapbook101core.Models.Item&quot;/&gt; class which represents a repository item.</p>
 </td>
       </tr>
     </tbody>
@@ -109,10 +110,10 @@ a new repository if the application is configured to do so.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_CreateItemAsync__0_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.CreateItemAsync(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_CreateItemAsync__0_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.CreateItemAsync(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L90">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L98">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_CreateItemAsync_" data-uid="Scrapbook101core.DocumentDBRepository`1.CreateItemAsync*"></a>
   <h4 id="Scrapbook101core_DocumentDBRepository_1_CreateItemAsync__0_" data-uid="Scrapbook101core.DocumentDBRepository`1.CreateItemAsync(`0)">CreateItemAsync(T)</h4>
@@ -156,10 +157,10 @@ a new repository if the application is configured to do so.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_DeleteItemAsync_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.DeleteItemAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_DeleteItemAsync_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.DeleteItemAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L100">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L108">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_DeleteItemAsync_" data-uid="Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync*"></a>
   <h4 id="Scrapbook101core_DocumentDBRepository_1_DeleteItemAsync_System_String_" data-uid="Scrapbook101core.DocumentDBRepository`1.DeleteItemAsync(System.String)">DeleteItemAsync(String)</h4>
@@ -203,10 +204,10 @@ a new repository if the application is configured to do so.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_GetCategoryListDocumentAsync.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.GetCategoryListDocumentAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_GetCategoryListDocumentAsync.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.GetCategoryListDocumentAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L213">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L227">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_GetCategoryListDocumentAsync_" data-uid="Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync*"></a>
   <h4 id="Scrapbook101core_DocumentDBRepository_1_GetCategoryListDocumentAsync" data-uid="Scrapbook101core.DocumentDBRepository`1.GetCategoryListDocumentAsync">GetCategoryListDocumentAsync()</h4>
@@ -233,10 +234,10 @@ a new repository if the application is configured to do so.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_GetItemAsync_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.GetItemAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_GetItemAsync_System_String_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.GetItemAsync(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L53">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L54">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_GetItemAsync_" data-uid="Scrapbook101core.DocumentDBRepository`1.GetItemAsync*"></a>
   <h4 id="Scrapbook101core_DocumentDBRepository_1_GetItemAsync_System_String_" data-uid="Scrapbook101core.DocumentDBRepository`1.GetItemAsync(System.String)">GetItemAsync(String)</h4>
@@ -280,18 +281,19 @@ a new repository if the application is configured to do so.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.GetItemsAsync(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_DateTime___.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.GetItemsAsync(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.DateTime%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L73">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L80">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_" data-uid="Scrapbook101core.DocumentDBRepository`1.GetItemsAsync*"></a>
-  <h4 id="Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___" data-uid="Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">GetItemsAsync(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Scrapbook101core_DocumentDBRepository_1_GetItemsAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_DateTime___" data-uid="Scrapbook101core.DocumentDBRepository`1.GetItemsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">GetItemsAsync(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Expression&lt;Func&lt;T, DateTime&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns items from the Document DB repository based on the prediction and keySelector.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IEnumerable&lt;T&gt;&gt; GetItemsAsync(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;IEnumerable&lt;T&gt;&gt; GetItemsAsync(Expression&lt;Func&lt;T, bool&gt;&gt; predicate, Expression&lt;Func&lt;T, DateTime&gt;&gt; keySelector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -306,7 +308,14 @@ a new repository if the application is configured to do so.</p>
       <tr>
         <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
-        <td></td>
+        <td><p>An expression satisfying the &quot;where&quot; clause.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.DateTime</span>&gt;&gt;</td>
+        <td><span class="parametername">keySelector</span></td>
+        <td><p>An expression indicating how results are to be sorted.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -321,16 +330,17 @@ a new repository if the application is configured to do so.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
-        <td></td>
+        <td><p>A list of items satisfying the search criteria.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_Initialize.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_Initialize.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L105">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L113">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_Initialize_" data-uid="Scrapbook101core.DocumentDBRepository`1.Initialize*"></a>
   <h4 id="Scrapbook101core_DocumentDBRepository_1_Initialize" data-uid="Scrapbook101core.DocumentDBRepository`1.Initialize">Initialize()</h4>
@@ -342,10 +352,10 @@ a new repository if the application is configured to do so.</p>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_UpdateItemAsync_System_String__0_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.UpdateItemAsync(System.String%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1_UpdateItemAsync_System_String__0_.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601.UpdateItemAsync(System.String%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L95">View Source</a>
+    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L103">View Source</a>
   </span>
   <a id="Scrapbook101core_DocumentDBRepository_1_UpdateItemAsync_" data-uid="Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync*"></a>
   <h4 id="Scrapbook101core_DocumentDBRepository_1_UpdateItemAsync_System_String__0_" data-uid="Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync(System.String,`0)">UpdateItemAsync(String, T)</h4>
@@ -400,10 +410,10 @@ a new repository if the application is configured to do so.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/travelmarx/scrapbook101core/new/master/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/travelmarx/scrapbook101core/new/working/apiSpec/new?filename=Scrapbook101core_DocumentDBRepository_1.md&amp;value=---%0Auid%3A%20Scrapbook101core.DocumentDBRepository%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/travelmarx/scrapbook101core/blob/master/Scrapbook101core/DocumentDBRepository.cs/#L46" class="contribution-link">View Source</a>
+                    <a href="https://github.com/travelmarx/scrapbook101core/blob/working/Scrapbook101core/DocumentDBRepository.cs/#L47" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
