@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFieldMapping
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 36
@@ -60,8 +60,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 38
@@ -95,8 +95,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/CombinedModel.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ActiveFields
     path: ../Scrapbook101core/Models/CombinedModel.cs
     startLine: 39

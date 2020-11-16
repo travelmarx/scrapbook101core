@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/a/1/s/docbuild",
+  "source_base_path": "C:/Users/mgelo/Documents/GitHub/scrapbook101core/docbuild",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.AppVariables.html",
-          "hash": "P2al2M4twzNncbYG4f/cHA=="
+          "hash": "nuaRwQYdC6ghOqLnNaqOLQ=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.CategoryController.html",
-          "hash": "qcmqXFkHwrplTGFw7HUsHg=="
+          "hash": "0FF7kxEADlnYOsZuU9xTuw=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemApiController.html",
-          "hash": "0egHeR1D+UezuRJqftkJMg=="
+          "hash": "TGeo4KhJKzo13HYlQN3stw=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.ItemController.html",
-          "hash": "V3ftT31OnbW0+Nuaz7OvFw=="
+          "hash": "5/RfoZmbnR3cpdAvw7O04Q=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Controllers.html",
-          "hash": "xIrmnRkuQ+5LJ7nXDqTj5w=="
+          "hash": "kClIJpHfMKBLjd3zjHUTuw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.DocumentDBRepository-1.html",
-          "hash": "IyOpKZKZQF46mX0+ZBZmjA=="
+          "hash": "TTHN7Lm+fYKYwIH7h5+uFA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.HelperClasses.html",
-          "hash": "IQXwaGl28JA3MPzWMuC/tw=="
+          "hash": "ij6jB1xWgP2i2MAueGOX+w=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.AssetItem.html",
-          "hash": "BIsFzE7JiatcRXLzXYjcAg=="
+          "hash": "Od28Gt8DpIzCvai89/np3w=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Category.html",
-          "hash": "fjvOugUmsrCs/La+NOTZkQ=="
+          "hash": "H5G15XoshKfrmjFg20ptZQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFieldMapping.html",
-          "hash": "qKyZLyZO5aX7vxm3PeZ76w=="
+          "hash": "b6pAUpgE+tCP4PnJpSDe+w=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryFields.html",
-          "hash": "c24ISl5uqS8frvCwnRvUHA=="
+          "hash": "SSl56Q/MPVCARz7NBrmfFQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItem.html",
-          "hash": "Yekw7R0Ep9nv+hOJ8eR+qA=="
+          "hash": "UDWndE6bdb84kU+uIzAZYg=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CategoryItemDisplay.html",
-          "hash": "ai44nmMhRqN0Dfez//pBbA=="
+          "hash": "PBDhvlDzO3aHh2ts+s/LHw=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.CombinedModel.html",
-          "hash": "QxO1YVj4CeZJLjpP5QVslw=="
+          "hash": "Ml18JZzBmK6jzj2Bk3rxLw=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.FileItem.html",
-          "hash": "0KRCJAsEFZdr97WDdFbu7Q=="
+          "hash": "ushxAaUgu0+JRymVl1acHQ=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.Item.html",
-          "hash": "FLj/vnjfOnNP7FjOHymZiQ=="
+          "hash": "CdjviExVn6GAh1ugog9Xmw=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Models.html",
-          "hash": "dADuoBBcpBeXpqWx9yMrUw=="
+          "hash": "2cxD0elDlNhsHdm/X3jjEA=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Program.html",
-          "hash": "d+L1ro0OZWMnHZ77BOd6iw=="
+          "hash": "ZhDxSAIAvTlWQtBLKitpKg=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Scrapbook101Configuration.html",
-          "hash": "dWYO/8EelEvByUZoKMl8GQ=="
+          "hash": "1KYT/emsP2jn170ZetL4vg=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.Startup.html",
-          "hash": "4hop6/BO0OxTmFjlKbWoNw=="
+          "hash": "zP+qCrBQezMFmgdBtf48Dg=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Scrapbook101core.html",
-          "hash": "XXbZaj6br3d718vk+ozUoQ=="
+          "hash": "ENHX3hQ0us+yjh+3NsmL5Q=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "8zu+lG8tAqRp5nYC016bAQ=="
+          "hash": "jvXIgQYnAIhXqT+dhse+mw=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/about-this-site.html",
-          "hash": "5RsQ7xRfKhIxaONCceLBUQ=="
+          "hash": "86LLgVewH1VixgUSNhCHqw=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/add-web-api.html",
-          "hash": "kFTjhFnaDSWICa9PCYAIkg=="
+          "hash": "iSsj+RTl42f2kkiOsMR/kQ=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/azure-pipeline.html",
-          "hash": "tk9lICBT7oZwU7DZGjNuOA=="
+          "hash": "w7fZiqW9ukmwDzeupW2u+g=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/build-with-docfx.html",
-          "hash": "5mSIyIUP/61V9lJWmfER6A=="
+          "hash": "7lOL9/AunGErmSzzc0WL+w=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/category-document.html",
-          "hash": "qVsNemwdakUXiofK4FSGxA=="
+          "hash": "wff4cp2XTpwB6H4ofaPISg=="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/code-discussion.html",
-          "hash": "aU+/5T+wgieOBs5+MIZNTw=="
+          "hash": "khnWlsxhodrT+QncL3piUw=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/get-started.html",
-          "hash": "YvOsShCkk77zU3Ndp7LtEg=="
+          "hash": "/ljbA1yRLbrTPejmO0CIiw=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/handling-assets.html",
-          "hash": "gm6poy+UzBCwx4qt5jRFgQ=="
+          "hash": "arg5kCRatIHfKXzsJXG/IA=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/index.html",
-          "hash": "aObdbZRL45f2HCxqh171MA=="
+          "hash": "XwOLExwGj10A110PoCinmw=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/item-document.html",
-          "hash": "TrF03ZUMujtEUabwzloFmQ=="
+          "hash": "EGPBiAFH9oumUJo5pRL4ww=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/next-steps.html",
-          "hash": "um0apLO4HBKPMXGskqARgg=="
+          "hash": "uDot+j3e4xORNAXFP4bmVg=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/technology-overview.html",
-          "hash": "VMOaZhSJ/gIIxA+nxeoz/w=="
+          "hash": "IFvbVIWqBaCJHU7G2p7Y6g=="
         }
       },
       "is_incremental": false,
@@ -540,7 +540,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "/htDk9O7eWJ215a5+eiVVg=="
+          "hash": "uadVL0sOENg28AKvTLdzNg=="
         }
       },
       "is_incremental": false,
@@ -563,20 +563,13 @@
     {
       "status": {
         "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "details": "Cannot build incrementally because docfx version changed from 2.45.1.0 to 2.51.0.0.",
         "incrementalPhase": "build",
         "total_file_count": 0,
         "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "full_build_reason_code": "DocfxVersionChanged"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
@@ -595,13 +588,20 @@
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

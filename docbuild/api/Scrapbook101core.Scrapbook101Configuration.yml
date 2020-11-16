@@ -19,7 +19,7 @@ items:
   - Scrapbook101core.Scrapbook101Configuration.ItemDocumentType
   - Scrapbook101core.Scrapbook101Configuration.NoAssetImage
   - Scrapbook101core.Scrapbook101Configuration.TestCategories
-  - Scrapbook101core.Scrapbook101Configuration.TestDocuments
+  - Scrapbook101core.Scrapbook101Configuration.TestItems
   langs:
   - csharp
   - vb
@@ -30,8 +30,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Scrapbook101Configuration
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 10
@@ -73,8 +73,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Current
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 12
@@ -106,8 +106,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: .ctor
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 14
@@ -136,8 +136,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AddTestAssets
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 19
@@ -171,8 +171,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ApplicationName
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 20
@@ -206,8 +206,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetBasePath
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 21
@@ -241,8 +241,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AuthKey
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 22
@@ -276,8 +276,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: BingMapKey
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 23
@@ -311,8 +311,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryDocumentType
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 24
@@ -346,8 +346,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CollectionId
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 25
@@ -381,8 +381,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DatabaseId
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 26
@@ -416,8 +416,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Endpoint
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 27
@@ -451,8 +451,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemDocumentType
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 28
@@ -486,8 +486,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: NoAssetImage
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 29
@@ -521,8 +521,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestCategories
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 30
@@ -542,35 +542,35 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  commentId: P:Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  id: TestDocuments
+- uid: Scrapbook101core.Scrapbook101Configuration.TestItems
+  commentId: P:Scrapbook101core.Scrapbook101Configuration.TestItems
+  id: TestItems
   parent: Scrapbook101core.Scrapbook101Configuration
   langs:
   - csharp
   - vb
-  name: TestDocuments
-  nameWithType: Scrapbook101Configuration.TestDocuments
-  fullName: Scrapbook101core.Scrapbook101Configuration.TestDocuments
+  name: TestItems
+  nameWithType: Scrapbook101Configuration.TestItems
+  fullName: Scrapbook101core.Scrapbook101Configuration.TestItems
   type: Property
   source:
     remote:
       path: Scrapbook101core/Models/Configuration.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
-    id: TestDocuments
+      branch: working
+      repo: https://github.com/travelmarx/scrapbook101core.git
+    id: TestItems
     path: ../Scrapbook101core/Models/Configuration.cs
     startLine: 31
   assemblies:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public string TestDocuments { get; set; }
+    content: public string TestItems { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property TestDocuments As String
-  overload: Scrapbook101core.Scrapbook101Configuration.TestDocuments*
+    content.vb: Public Property TestItems As String
+  overload: Scrapbook101core.Scrapbook101Configuration.TestItems*
   modifiers.csharp:
   - public
   - get
@@ -960,8 +960,8 @@ references:
   name: TestCategories
   nameWithType: Scrapbook101Configuration.TestCategories
   fullName: Scrapbook101core.Scrapbook101Configuration.TestCategories
-- uid: Scrapbook101core.Scrapbook101Configuration.TestDocuments*
-  commentId: Overload:Scrapbook101core.Scrapbook101Configuration.TestDocuments
-  name: TestDocuments
-  nameWithType: Scrapbook101Configuration.TestDocuments
-  fullName: Scrapbook101core.Scrapbook101Configuration.TestDocuments
+- uid: Scrapbook101core.Scrapbook101Configuration.TestItems*
+  commentId: Overload:Scrapbook101core.Scrapbook101Configuration.TestItems
+  name: TestItems
+  nameWithType: Scrapbook101Configuration.TestItems
+  fullName: Scrapbook101core.Scrapbook101Configuration.TestItems
