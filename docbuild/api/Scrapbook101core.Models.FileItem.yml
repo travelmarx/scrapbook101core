@@ -1,0 +1,515 @@
+### YamlMime:ManagedReference
+items:
+- uid: Scrapbook101core.Models.FileItem
+  commentId: T:Scrapbook101core.Models.FileItem
+  id: FileItem
+  parent: Scrapbook101core.Models
+  children:
+  - Scrapbook101core.Models.FileItem.Name
+  - Scrapbook101core.Models.FileItem.Path
+  - Scrapbook101core.Models.FileItem.Role
+  - Scrapbook101core.Models.FileItem.Size
+  langs:
+  - csharp
+  - vb
+  name: FileItem
+  nameWithType: FileItem
+  fullName: Scrapbook101core.Models.FileItem
+  type: Class
+  source:
+    remote:
+      path: Scrapbook101core/Models/CombinedModel.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: FileItem
+    path: ../Scrapbook101core/Models/CombinedModel.cs
+    startLine: 45
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  summary: "\nRepresents a file asset that uploaded locally.\n"
+  example: []
+  syntax:
+    content: public class FileItem
+    content.vb: Public Class FileItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Scrapbook101core.Models.FileItem.Name
+  commentId: P:Scrapbook101core.Models.FileItem.Name
+  id: Name
+  parent: Scrapbook101core.Models.FileItem
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: FileItem.Name
+  fullName: Scrapbook101core.Models.FileItem.Name
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/CombinedModel.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: Name
+    path: ../Scrapbook101core/Models/CombinedModel.cs
+    startLine: 47
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Scrapbook101core.Models.FileItem.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.FileItem.Path
+  commentId: P:Scrapbook101core.Models.FileItem.Path
+  id: Path
+  parent: Scrapbook101core.Models.FileItem
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: FileItem.Path
+  fullName: Scrapbook101core.Models.FileItem.Path
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/CombinedModel.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: Path
+    path: ../Scrapbook101core/Models/CombinedModel.cs
+    startLine: 48
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string Path { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Path As String
+  overload: Scrapbook101core.Models.FileItem.Path*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.FileItem.Role
+  commentId: P:Scrapbook101core.Models.FileItem.Role
+  id: Role
+  parent: Scrapbook101core.Models.FileItem
+  langs:
+  - csharp
+  - vb
+  name: Role
+  nameWithType: FileItem.Role
+  fullName: Scrapbook101core.Models.FileItem.Role
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/CombinedModel.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: Role
+    path: ../Scrapbook101core/Models/CombinedModel.cs
+    startLine: 49
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string Role { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Role As String
+  overload: Scrapbook101core.Models.FileItem.Role*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.FileItem.Size
+  commentId: P:Scrapbook101core.Models.FileItem.Size
+  id: Size
+  parent: Scrapbook101core.Models.FileItem
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: FileItem.Size
+  fullName: Scrapbook101core.Models.FileItem.Size
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/CombinedModel.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: Size
+    path: ../Scrapbook101core/Models/CombinedModel.cs
+    startLine: 50
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string Size { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Size As String
+  overload: Scrapbook101core.Models.FileItem.Size*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Scrapbook101core.Models
+  commentId: N:Scrapbook101core.Models
+  name: Scrapbook101core.Models
+  nameWithType: Scrapbook101core.Models
+  fullName: Scrapbook101core.Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Scrapbook101core.Models.FileItem.Name*
+  commentId: Overload:Scrapbook101core.Models.FileItem.Name
+  name: Name
+  nameWithType: FileItem.Name
+  fullName: Scrapbook101core.Models.FileItem.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Scrapbook101core.Models.FileItem.Path*
+  commentId: Overload:Scrapbook101core.Models.FileItem.Path
+  name: Path
+  nameWithType: FileItem.Path
+  fullName: Scrapbook101core.Models.FileItem.Path
+- uid: Scrapbook101core.Models.FileItem.Role*
+  commentId: Overload:Scrapbook101core.Models.FileItem.Role
+  name: Role
+  nameWithType: FileItem.Role
+  fullName: Scrapbook101core.Models.FileItem.Role
+- uid: Scrapbook101core.Models.FileItem.Size*
+  commentId: Overload:Scrapbook101core.Models.FileItem.Size
+  name: Size
+  nameWithType: FileItem.Size
+  fullName: Scrapbook101core.Models.FileItem.Size

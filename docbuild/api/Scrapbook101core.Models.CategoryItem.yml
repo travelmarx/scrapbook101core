@@ -1,0 +1,502 @@
+### YamlMime:ManagedReference
+items:
+- uid: Scrapbook101core.Models.CategoryItem
+  commentId: T:Scrapbook101core.Models.CategoryItem
+  id: CategoryItem
+  parent: Scrapbook101core.Models
+  children:
+  - Scrapbook101core.Models.CategoryItem.CategoryFields
+  - Scrapbook101core.Models.CategoryItem.Description
+  - Scrapbook101core.Models.CategoryItem.Name
+  langs:
+  - csharp
+  - vb
+  name: CategoryItem
+  nameWithType: CategoryItem
+  fullName: Scrapbook101core.Models.CategoryItem
+  type: Class
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: CategoryItem
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 31
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  summary: "\nDefines one category inside the <xref href=\"Scrapbook101core.Models.Category.Categories\" data-throw-if-not-resolved=\"false\"></xref> list of the\n<xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public class CategoryItem
+    content.vb: Public Class CategoryItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Scrapbook101core.Models.CategoryItem.Name
+  commentId: P:Scrapbook101core.Models.CategoryItem.Name
+  id: Name
+  parent: Scrapbook101core.Models.CategoryItem
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CategoryItem.Name
+  fullName: Scrapbook101core.Models.CategoryItem.Name
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: Name
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 33
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: >-
+      [Required(ErrorMessage = "Name is required.")]
+
+      public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required(ErrorMessage:="Name is required.")>
+
+      Public Property Name As String
+  overload: Scrapbook101core.Models.CategoryItem.Name*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Name is required.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.CategoryItem.Description
+  commentId: P:Scrapbook101core.Models.CategoryItem.Description
+  id: Description
+  parent: Scrapbook101core.Models.CategoryItem
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: CategoryItem.Description
+  fullName: Scrapbook101core.Models.CategoryItem.Description
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: Description
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 37
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: Scrapbook101core.Models.CategoryItem.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Scrapbook101core.Models.CategoryItem.CategoryFields
+  commentId: P:Scrapbook101core.Models.CategoryItem.CategoryFields
+  id: CategoryFields
+  parent: Scrapbook101core.Models.CategoryItem
+  langs:
+  - csharp
+  - vb
+  name: CategoryFields
+  nameWithType: CategoryItem.CategoryFields
+  fullName: Scrapbook101core.Models.CategoryItem.CategoryFields
+  type: Property
+  source:
+    remote:
+      path: Scrapbook101core/Models/Category.cs
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
+    id: CategoryFields
+    path: ../Scrapbook101core/Models/Category.cs
+    startLine: 40
+  assemblies:
+  - Scrapbook101core
+  namespace: Scrapbook101core.Models
+  syntax:
+    content: public CategoryFields CategoryFields { get; set; }
+    parameters: []
+    return:
+      type: Scrapbook101core.Models.CategoryFields
+    content.vb: Public Property CategoryFields As CategoryFields
+  overload: Scrapbook101core.Models.CategoryItem.CategoryFields*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Scrapbook101core.Models.Category.Categories
+  commentId: P:Scrapbook101core.Models.Category.Categories
+  isExternal: true
+- uid: Scrapbook101core.Models.Category
+  commentId: T:Scrapbook101core.Models.Category
+  name: Category
+  nameWithType: Category
+  fullName: Scrapbook101core.Models.Category
+- uid: Scrapbook101core.Models
+  commentId: N:Scrapbook101core.Models
+  name: Scrapbook101core.Models
+  nameWithType: Scrapbook101core.Models
+  fullName: Scrapbook101core.Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Scrapbook101core.Models.CategoryItem.Name*
+  commentId: Overload:Scrapbook101core.Models.CategoryItem.Name
+  name: Name
+  nameWithType: CategoryItem.Name
+  fullName: Scrapbook101core.Models.CategoryItem.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Scrapbook101core.Models.CategoryItem.Description*
+  commentId: Overload:Scrapbook101core.Models.CategoryItem.Description
+  name: Description
+  nameWithType: CategoryItem.Description
+  fullName: Scrapbook101core.Models.CategoryItem.Description
+- uid: Scrapbook101core.Models.CategoryItem.CategoryFields*
+  commentId: Overload:Scrapbook101core.Models.CategoryItem.CategoryFields
+  name: CategoryFields
+  nameWithType: CategoryItem.CategoryFields
+  fullName: Scrapbook101core.Models.CategoryItem.CategoryFields
+- uid: Scrapbook101core.Models.CategoryFields
+  commentId: T:Scrapbook101core.Models.CategoryFields
+  parent: Scrapbook101core.Models
+  name: CategoryFields
+  nameWithType: CategoryFields
+  fullName: Scrapbook101core.Models.CategoryFields

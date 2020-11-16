@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryController
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 13
@@ -262,8 +262,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Index
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 15
@@ -294,8 +294,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetCategoryFieldsAsync
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 21
@@ -348,8 +348,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetString
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 47

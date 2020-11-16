@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AssetItem
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 150
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Name
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 152
@@ -102,8 +102,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Size
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 155
@@ -137,8 +137,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 158
@@ -172,8 +172,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 163
@@ -210,8 +210,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetHashCode
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 170
@@ -245,8 +245,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Item.cs
-      branch: working
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      branch: master
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CompareTo
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 174
