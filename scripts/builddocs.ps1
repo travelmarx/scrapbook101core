@@ -70,14 +70,14 @@ try {
         Write-Host "## git commit -a m'message'"
         git commit -m"[skip ci]Pipeline build check in."
 
-        Write-Host "## Switch to master: git checkout master"
-        git checkout master
+        Write-Host "## Switch to main: git checkout main"
+        git checkout main
 
-        Write-Host "## Add remote: git remote add origin master url"
+        Write-Host "## Add remote: git remote add origin main url"
         git remote add origin https://github.com/travelmarx/scrapbook101core.git
 
-        Write-Host "## Pull from origin: git pull origin master"
-        git pull origin master
+        Write-Host "## Pull from origin: git pull origin main"
+        git pull origin main
 
         Write-Host "## git merge tmp"
         git merge tmp
