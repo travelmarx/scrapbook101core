@@ -35,6 +35,7 @@ items:
     content: 'public class AssetItem : IComparable<AssetItem>'
     content.vb: >-
       Public Class AssetItem
+
           Implements IComparable(Of AssetItem)
   inheritance:
   - System.Object
