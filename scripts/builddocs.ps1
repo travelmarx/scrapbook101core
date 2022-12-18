@@ -1,6 +1,8 @@
 #
-# A script for building Scrapbook101core docs in an Azure pipeline.
+# A script for building Scrapbook101core docs in a GitHub Actions Workflow.
+# See the .github\workflows folder
 #
+
 Write-Host "## Redirect stderr to stdout."
 $env:GIT_REDIRECT_STDERR = '2>&1'
 
