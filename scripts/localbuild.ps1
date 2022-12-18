@@ -1,5 +1,7 @@
 ﻿#
 # A script for building Scrapbook101core docs locally.
+# Start in PowerShell.
+#
 # Assumes docfx is available in the system.
 # https://dotnet.github.io/docfx/
 #
