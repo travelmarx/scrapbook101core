@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - none
+  workflow_dispatch:
+env:
+  buildConfiguration: Release
+  system.debug: true
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: true
+        clean: true
+    - run: git ls-files
+      shell: cmd
+    - name: PowerShell builddocs.ps1 task
+      run: .\scripts\builddocs.ps1
+      shell: pwsh
+    - name: dotnet build ${{ env.buildConfiguration }}
+      run: dotnet build --configuration ${{ env.buildConfiguration }}
