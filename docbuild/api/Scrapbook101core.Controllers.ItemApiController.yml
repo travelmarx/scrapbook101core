@@ -21,7 +21,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: ItemApiController
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 14
@@ -252,7 +252,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 27
@@ -325,7 +325,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 68
@@ -382,7 +382,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 87
@@ -458,7 +458,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: UpdateAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 139
@@ -539,7 +539,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/ItemApiController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemApiController.cs
     startLine: 192
