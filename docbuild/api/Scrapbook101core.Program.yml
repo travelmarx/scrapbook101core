@@ -18,7 +18,7 @@ items:
     remote:
       path: Scrapbook101core/Program.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Program
     path: ../Scrapbook101core/Program.cs
     startLine: 22
@@ -62,7 +62,7 @@ items:
     remote:
       path: Scrapbook101core/Program.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Main
     path: ../Scrapbook101core/Program.cs
     startLine: 28
@@ -103,7 +103,7 @@ items:
     remote:
       path: Scrapbook101core/Program.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateWebHostBuilder
     path: ../Scrapbook101core/Program.cs
     startLine: 39

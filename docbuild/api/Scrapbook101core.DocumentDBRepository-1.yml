@@ -23,7 +23,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DocumentDBRepository
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 46
@@ -35,6 +35,7 @@ items:
   syntax:
     content: >-
       public static class DocumentDBRepository<T>
+
           where T : class
     typeParameters:
     - id: T
@@ -75,7 +76,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 53
@@ -115,7 +116,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemsAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 79
@@ -163,7 +164,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 97
@@ -176,7 +177,7 @@ items:
     - id: item
       type: '{T}'
     return:
-      type: System.Threading.Tasks.Task{Document}
+      type: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
     content.vb: Public Shared Function CreateItemAsync(item As T) As Task(Of Document)
   overload: Scrapbook101core.DocumentDBRepository`1.CreateItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).CreateItemAsync(T)
@@ -203,7 +204,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 102
@@ -218,7 +219,7 @@ items:
     - id: item
       type: '{T}'
     return:
-      type: System.Threading.Tasks.Task{Document}
+      type: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
     content.vb: Public Shared Function UpdateItemAsync(id As String, item As T) As Task(Of Document)
   overload: Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).UpdateItemAsync(String, T)
@@ -245,7 +246,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 107
@@ -285,7 +286,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Initialize
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 112
@@ -319,7 +320,7 @@ items:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 226
@@ -1021,15 +1022,15 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: System.Threading.Tasks.Task{Document}
-  commentId: T:System.Threading.Tasks.Task{Document}
+- uid: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   name: Task<Document>
   nameWithType: Task<Document>
-  fullName: System.Threading.Tasks.Task<Document>
+  fullName: System.Threading.Tasks.Task<Microsoft.Azure.Documents.Document>
   nameWithType.vb: Task(Of Document)
-  fullName.vb: System.Threading.Tasks.Task(Of Document)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.Azure.Documents.Document)
   name.vb: Task(Of Document)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -1040,10 +1041,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Document
+  - uid: Microsoft.Azure.Documents.Document
     name: Document
     nameWithType: Document
-    fullName: Document
+    fullName: Microsoft.Azure.Documents.Document
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1057,10 +1058,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Document
+  - uid: Microsoft.Azure.Documents.Document
     name: Document
     nameWithType: Document
-    fullName: Document
+    fullName: Microsoft.Azure.Documents.Document
     isExternal: true
   - name: )
     nameWithType: )
