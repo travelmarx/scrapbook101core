@@ -1,7 +1,12 @@
 ﻿#
 # A script for building Scrapbook101core docs locally.
 # Assumes docfx is available in the system.
+# https://dotnet.github.io/docfx/
 #
+# Issues with permissions running the script, see:
+# See https://learn.microsoft.com/powershell/module
+# /microsoft.powershell.core/about/about_execution_policies
+
 Write-Host "## Redirect stderr to stdout."
 $env:GIT_REDIRECT_STDERR = '2>&1'
 
