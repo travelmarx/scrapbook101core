@@ -70,7 +70,7 @@ try {
         git add . --ignore-errors
 
         Write-Host "## git commit -a m'message'"
-        git commit -m"[skip ci]Pipeline build check in."
+        git commit -m"[skip ci]Action build check in."
 
         Write-Host "## Switch to main: git checkout main"
         git checkout main
