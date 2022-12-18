@@ -19,6 +19,8 @@
   items:
   - name: Build with DocFX
     href: build-with-docfx.md
+  - name: GitHub Actions
+    href: github-actions.md
   - name: Azure Pipeline
     href: azure-pipeline.md
   - name: Add a Web API
