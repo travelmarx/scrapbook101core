@@ -19,7 +19,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryController
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 13
@@ -32,9 +32,7 @@ items:
     content: 'public class CategoryController : Controller, IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable'
     content.vb: >-
       Public Class CategoryController
-
           Inherits Controller
-
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
   - System.Object
@@ -263,7 +261,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Index
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 15
@@ -295,7 +293,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetCategoryFieldsAsync
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 21
@@ -349,7 +347,7 @@ items:
     remote:
       path: Scrapbook101core/Controllers/CategoryController.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetString
     path: ../Scrapbook101core/Controllers/CategoryController.cs
     startLine: 47
