@@ -48,7 +48,7 @@ try {
         Write-Host "## Checking in changes."
         git status
         git add .
-        git commit -m"Local build check in."
+        git commit -m"Local build check in. [skip ci]"
         git push
     }
  
