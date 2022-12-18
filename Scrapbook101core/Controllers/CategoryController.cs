@@ -8,8 +8,8 @@ using System.Text.Encodings.Web;
 namespace Scrapbook101core.Controllers
 {
     /// <summary>
-    /// In the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input involving
-    /// category operations.
+    /// In the Model-View-Controller pattern, the controller processes the input. In this case, it is all the input
+    /// involving category operations.
     /// </summary>
     public class CategoryController : Controller
     {
