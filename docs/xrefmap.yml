@@ -22,6 +22,9 @@ references:
 - uid: get-started
   name: Get Started
   href: articles/get-started.html
+- uid: github-actions
+  name: GitHub Actions
+  href: articles/github-actions.html
 - uid: handling-assets
   name: Handling Assets
   href: articles/handling-assets.html

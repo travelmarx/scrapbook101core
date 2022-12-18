@@ -106,7 +106,8 @@ an <a class="xref" href="Scrapbook101core.Models.Category.html#Scrapbook101core_
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;CategoryItem&gt; Categories { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;categories&quot;)]
+public List&lt;CategoryItem&gt; Categories { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -137,6 +138,7 @@ an <a class="xref" href="Scrapbook101core.Models.Category.html#Scrapbook101core_
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;id is required.&quot;)]
+[JsonProperty(PropertyName = &quot;id&quot;)]
 public string Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -168,6 +170,7 @@ public string Id { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required(ErrorMessage = &quot;Type is required.&quot;)]
+[JsonProperty(PropertyName = &quot;type&quot;)]
 public string Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>

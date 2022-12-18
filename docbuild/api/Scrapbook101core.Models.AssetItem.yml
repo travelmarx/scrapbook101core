@@ -22,7 +22,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetItem
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 150
@@ -67,7 +67,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 152
@@ -75,12 +75,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Name { get; set; }
+    content: >-
+      [JsonProperty(PropertyName = "name")]
+
+      public string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Name As String
+    content.vb: >-
+      <JsonProperty(PropertyName:="name")>
+
+      Public Property Name As String
   overload: Scrapbook101core.Models.AssetItem.Name*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: PropertyName
+      type: System.String
+      value: name
   modifiers.csharp:
   - public
   - get
@@ -102,7 +116,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Size
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 155
@@ -110,12 +124,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Size { get; set; }
+    content: >-
+      [JsonProperty(PropertyName = "size")]
+
+      public string Size { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Size As String
+    content.vb: >-
+      <JsonProperty(PropertyName:="size")>
+
+      Public Property Size As String
   overload: Scrapbook101core.Models.AssetItem.Size*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: PropertyName
+      type: System.String
+      value: size
   modifiers.csharp:
   - public
   - get
@@ -137,7 +165,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 158
@@ -172,7 +200,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Equals
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 163
@@ -210,7 +238,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetHashCode
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 170
@@ -245,7 +273,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CompareTo
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 174
