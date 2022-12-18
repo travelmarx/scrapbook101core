@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DocumentDBRepository
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 46
@@ -74,8 +74,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 53
@@ -83,7 +83,7 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public static Task<T> GetItemAsync(string id)
+    content: public static async Task<T> GetItemAsync(string id)
     parameters:
     - id: id
       type: System.String
@@ -95,6 +95,7 @@ items:
   modifiers.csharp:
   - public
   - static
+  - async
   modifiers.vb:
   - Public
   - Shared
@@ -113,8 +114,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetItemsAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 79
@@ -124,7 +125,7 @@ items:
   summary: "\nReturns items from the Document DB repository based on the prediction and keySelector.\n"
   example: []
   syntax:
-    content: public static Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, DateTime>> keySelector)
+    content: public static async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, DateTime>> keySelector)
     parameters:
     - id: predicate
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
@@ -141,6 +142,7 @@ items:
   modifiers.csharp:
   - public
   - static
+  - async
   modifiers.vb:
   - Public
   - Shared
@@ -160,8 +162,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 97
@@ -169,18 +171,19 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public static Task<Document> CreateItemAsync(T item)
+    content: public static async Task<Document> CreateItemAsync(T item)
     parameters:
     - id: item
       type: '{T}'
     return:
-      type: System.Threading.Tasks.Task{Document}
+      type: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
     content.vb: Public Shared Function CreateItemAsync(item As T) As Task(Of Document)
   overload: Scrapbook101core.DocumentDBRepository`1.CreateItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).CreateItemAsync(T)
   modifiers.csharp:
   - public
   - static
+  - async
   modifiers.vb:
   - Public
   - Shared
@@ -199,8 +202,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: UpdateItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 102
@@ -208,20 +211,21 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public static Task<Document> UpdateItemAsync(string id, T item)
+    content: public static async Task<Document> UpdateItemAsync(string id, T item)
     parameters:
     - id: id
       type: System.String
     - id: item
       type: '{T}'
     return:
-      type: System.Threading.Tasks.Task{Document}
+      type: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
     content.vb: Public Shared Function UpdateItemAsync(id As String, item As T) As Task(Of Document)
   overload: Scrapbook101core.DocumentDBRepository`1.UpdateItemAsync*
   nameWithType.vb: DocumentDBRepository(Of T).UpdateItemAsync(String, T)
   modifiers.csharp:
   - public
   - static
+  - async
   modifiers.vb:
   - Public
   - Shared
@@ -240,8 +244,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteItemAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 107
@@ -249,7 +253,7 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public static Task DeleteItemAsync(string id)
+    content: public static async Task DeleteItemAsync(string id)
     parameters:
     - id: id
       type: System.String
@@ -261,6 +265,7 @@ items:
   modifiers.csharp:
   - public
   - static
+  - async
   modifiers.vb:
   - Public
   - Shared
@@ -279,8 +284,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Initialize
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 112
@@ -313,8 +318,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: GetCategoryListDocumentAsync
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 226
@@ -322,7 +327,7 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core
   syntax:
-    content: public static Task<bool> GetCategoryListDocumentAsync()
+    content: public static async Task<bool> GetCategoryListDocumentAsync()
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
     content.vb: Public Shared Function GetCategoryListDocumentAsync As Task(Of Boolean)
@@ -331,6 +336,7 @@ items:
   modifiers.csharp:
   - public
   - static
+  - async
   modifiers.vb:
   - Public
   - Shared
@@ -1015,15 +1021,15 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: System.Threading.Tasks.Task{Document}
-  commentId: T:System.Threading.Tasks.Task{Document}
+- uid: System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.Azure.Documents.Document}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   name: Task<Document>
   nameWithType: Task<Document>
-  fullName: System.Threading.Tasks.Task<Document>
+  fullName: System.Threading.Tasks.Task<Microsoft.Azure.Documents.Document>
   nameWithType.vb: Task(Of Document)
-  fullName.vb: System.Threading.Tasks.Task(Of Document)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.Azure.Documents.Document)
   name.vb: Task(Of Document)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -1034,10 +1040,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Document
+  - uid: Microsoft.Azure.Documents.Document
     name: Document
     nameWithType: Document
-    fullName: Document
+    fullName: Microsoft.Azure.Documents.Document
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1051,10 +1057,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Document
+  - uid: Microsoft.Azure.Documents.Document
     name: Document
     nameWithType: Document
-    fullName: Document
+    fullName: Microsoft.Azure.Documents.Document
     isExternal: true
   - name: )
     nameWithType: )

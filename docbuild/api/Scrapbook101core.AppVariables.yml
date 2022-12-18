@@ -30,8 +30,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AppVariables
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 20
@@ -74,8 +74,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AddTestAssets
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 22
@@ -109,8 +109,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ApplicationName
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 23
@@ -144,8 +144,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AssetBasePath
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 24
@@ -179,8 +179,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: AuthKey
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 25
@@ -214,8 +214,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: NoAssetImage
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 26
@@ -249,8 +249,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: BingMapKey
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 27
@@ -284,8 +284,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryDocumentType
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 28
@@ -319,8 +319,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CollectionId
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 29
@@ -354,8 +354,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DatabaseId
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 30
@@ -389,8 +389,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Endpoint
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 31
@@ -424,8 +424,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemDocumentType
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 32
@@ -459,8 +459,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestCategories
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 33
@@ -494,8 +494,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: TestItems
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 34
@@ -529,8 +529,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryDisplayList
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 36
@@ -566,8 +566,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/DocumentDBRepository.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFieldMappingList
     path: ../Scrapbook101core/DocumentDBRepository.cs
     startLine: 37

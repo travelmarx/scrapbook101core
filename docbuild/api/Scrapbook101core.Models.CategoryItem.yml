@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryItem
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 31
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Name
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 33
@@ -73,12 +73,16 @@ items:
     content: >-
       [Required(ErrorMessage = "Name is required.")]
 
+      [JsonProperty(PropertyName = "name")]
+
       public string Name { get; set; }
     parameters: []
     return:
       type: System.String
     content.vb: >-
       <Required(ErrorMessage:="Name is required.")>
+
+      <JsonProperty(PropertyName:="name")>
 
       Public Property Name As String
   overload: Scrapbook101core.Models.CategoryItem.Name*
@@ -90,6 +94,13 @@ items:
     - name: ErrorMessage
       type: System.String
       value: Name is required.
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: PropertyName
+      type: System.String
+      value: name
   modifiers.csharp:
   - public
   - get
@@ -110,8 +121,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: Description
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 37
@@ -119,12 +130,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public string Description { get; set; }
+    content: >-
+      [JsonProperty(PropertyName = "description")]
+
+      public string Description { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Description As String
+    content.vb: >-
+      <JsonProperty(PropertyName:="description")>
+
+      Public Property Description As String
   overload: Scrapbook101core.Models.CategoryItem.Description*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: PropertyName
+      type: System.String
+      value: description
   modifiers.csharp:
   - public
   - get
@@ -145,8 +170,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Models/Category.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CategoryFields
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 40
@@ -154,12 +179,26 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: public CategoryFields CategoryFields { get; set; }
+    content: >-
+      [JsonProperty(PropertyName = "categoryFields")]
+
+      public CategoryFields CategoryFields { get; set; }
     parameters: []
     return:
       type: Scrapbook101core.Models.CategoryFields
-    content.vb: Public Property CategoryFields As CategoryFields
+    content.vb: >-
+      <JsonProperty(PropertyName:="categoryFields")>
+
+      Public Property CategoryFields As CategoryFields
   overload: Scrapbook101core.Models.CategoryItem.CategoryFields*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: PropertyName
+      type: System.String
+      value: categoryFields
   modifiers.csharp:
   - public
   - get

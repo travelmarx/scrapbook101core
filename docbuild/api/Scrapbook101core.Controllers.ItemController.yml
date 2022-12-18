@@ -24,8 +24,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: ItemController
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 17
@@ -266,8 +266,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: .ctor
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 21
@@ -299,8 +299,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: IndexAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 33
@@ -313,7 +313,7 @@ items:
     content: >-
       [ActionName("Index")]
 
-      public Task<ActionResult> IndexAsync(string filter)
+      public async Task<ActionResult> IndexAsync(string filter)
     parameters:
     - id: filter
       type: System.String
@@ -334,6 +334,7 @@ items:
       value: Index
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.DetailsAsync(System.String)
@@ -350,8 +351,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DetailsAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 56
@@ -362,7 +363,7 @@ items:
     content: >-
       [ActionName("Details")]
 
-      public Task<ActionResult> DetailsAsync(string id)
+      public async Task<ActionResult> DetailsAsync(string id)
     parameters:
     - id: id
       type: System.String
@@ -381,6 +382,7 @@ items:
       value: Details
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.CreateAsync
@@ -397,8 +399,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 70
@@ -409,7 +411,7 @@ items:
     content: >-
       [ActionName("Create")]
 
-      public Task<ActionResult> CreateAsync()
+      public async Task<ActionResult> CreateAsync()
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult}
     content.vb: >-
@@ -425,6 +427,7 @@ items:
       value: Create
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.CreateAsync(Scrapbook101core.Models.CombinedModel)
@@ -441,8 +444,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: CreateAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 87
@@ -457,7 +460,7 @@ items:
 
       [ValidateAntiForgeryToken]
 
-      public Task<ActionResult> CreateAsync(CombinedModel combinedModel)
+      public async Task<ActionResult> CreateAsync(CombinedModel combinedModel)
     parameters:
     - id: combinedModel
       type: Scrapbook101core.Models.CombinedModel
@@ -486,6 +489,7 @@ items:
     arguments: []
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.EditAsync(System.String)
@@ -502,8 +506,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 141
@@ -516,7 +520,7 @@ items:
 
       [ActionName("Edit")]
 
-      public Task<ActionResult> EditAsync(string id)
+      public async Task<ActionResult> EditAsync(string id)
     parameters:
     - id: id
       type: System.String
@@ -540,6 +544,7 @@ items:
       value: Edit
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.EditAsync(Scrapbook101core.Models.CombinedModel)
@@ -556,8 +561,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: EditAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 166
@@ -572,7 +577,7 @@ items:
 
       [ValidateAntiForgeryToken]
 
-      public Task<ActionResult> EditAsync(CombinedModel combinedModel)
+      public async Task<ActionResult> EditAsync(CombinedModel combinedModel)
     parameters:
     - id: combinedModel
       type: Scrapbook101core.Models.CombinedModel
@@ -601,6 +606,7 @@ items:
     arguments: []
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.DeleteAsync(System.String)
@@ -617,8 +623,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 210
@@ -631,7 +637,7 @@ items:
 
       [ActionName("Delete")]
 
-      public Task<ActionResult> DeleteAsync(string id)
+      public async Task<ActionResult> DeleteAsync(string id)
     parameters:
     - id: id
       type: System.String
@@ -655,6 +661,7 @@ items:
       value: Delete
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 - uid: Scrapbook101core.Controllers.ItemController.DeleteConfirmedAsync(System.String)
@@ -671,8 +678,8 @@ items:
   source:
     remote:
       path: Scrapbook101core/Controllers/ItemController.cs
-      branch: master
-      repo: https://github.com/travelmarx/scrapbook101core
+      branch: main
+      repo: https://github.com/travelmarx/scrapbook101core.git
     id: DeleteConfirmedAsync
     path: ../Scrapbook101core/Controllers/ItemController.cs
     startLine: 228
@@ -685,7 +692,7 @@ items:
 
       [ActionName("Delete")]
 
-      public Task<ActionResult> DeleteConfirmedAsync([Bind(new string[]{"Id"})] string id)
+      public async Task<ActionResult> DeleteConfirmedAsync([Bind(new string[]{"Id"})] string id)
     parameters:
     - id: id
       type: System.String
@@ -709,6 +716,7 @@ items:
       value: Delete
   modifiers.csharp:
   - public
+  - async
   modifiers.vb:
   - Public
 references:
