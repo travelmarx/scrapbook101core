@@ -30,7 +30,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Item
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 15
@@ -74,7 +74,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Assets
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 20
@@ -83,27 +83,13 @@ items:
   namespace: Scrapbook101core.Models
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "assets")]
-
-      public List<AssetItem> Assets { get; set; }
+    content: public List<AssetItem> Assets { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.List{Scrapbook101core.Models.AssetItem}
       description: "\nA list of assets associated with the item. Can be null, meaning no assets are associated with the item.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="assets")>
-
-      Public Property Assets As List(Of AssetItem)
+    content.vb: Public Property Assets As List(Of AssetItem)
   overload: Scrapbook101core.Models.Item.Assets*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: assets
   modifiers.csharp:
   - public
   - get
@@ -125,7 +111,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: AssetPath
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 33
@@ -135,27 +121,13 @@ items:
   remarks: "\nFor example, there might be images, PDFs\nor other documents that give context about the item. Associating assets is not necessary if you plan to\nimplement Scrapbook101core without any assets. Part of the spirit behind Scrapbook101core however is\nto provide strong visual cues for remembering an item as well as archiving data associated with it,\nso at least one image for each Scrapbook101core is recommended. \n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "assetPath")]
-
-      public string AssetPath { get; set; }
+    content: public string AssetPath { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nThis is the path to any digital assets associated with the item. Example value: &quot;assets/2019/2019-01-01&quot;.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="assetPath")>
-
-      Public Property AssetPath As String
+    content.vb: Public Property AssetPath As String
   overload: Scrapbook101core.Models.Item.AssetPath*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: assetPath
   modifiers.csharp:
   - public
   - get
@@ -177,7 +149,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Category
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 40
@@ -189,8 +161,6 @@ items:
     content: >-
       [Required(ErrorMessage = "Category is required.")]
 
-      [JsonProperty(PropertyName = "category")]
-
       public string Category { get; set; }
     parameters: []
     return:
@@ -198,8 +168,6 @@ items:
       description: "\nOne of the category values described in the <xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class.\nA Scrapbook101core item must be assigned to a category.\n"
     content.vb: >-
       <Required(ErrorMessage:="Category is required.")>
-
-      <JsonProperty(PropertyName:="category")>
 
       Public Property Category As String
   overload: Scrapbook101core.Models.Item.Category*
@@ -211,13 +179,6 @@ items:
     - name: ErrorMessage
       type: System.String
       value: Category is required.
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: category
   modifiers.csharp:
   - public
   - get
@@ -239,7 +200,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFields
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 49
@@ -248,27 +209,13 @@ items:
   namespace: Scrapbook101core.Models
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "categoryFields")]
-
-      public CategoryFields CategoryFields { get; set; }
+    content: public CategoryFields CategoryFields { get; set; }
     parameters: []
     return:
       type: Scrapbook101core.Models.CategoryFields
       description: "\nFields specific to the category selected for the Scrapbook101core item. \nSee the <xref href=\"Scrapbook101core.Models.Category\" data-throw-if-not-resolved=\"false\"></xref> class for more information.\nEach category has a fixed set of fields.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="categoryFields")>
-
-      Public Property CategoryFields As CategoryFields
+    content.vb: Public Property CategoryFields As CategoryFields
   overload: Scrapbook101core.Models.Item.CategoryFields*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: categoryFields
   modifiers.csharp:
   - public
   - get
@@ -290,7 +237,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DateAdded
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 56
@@ -299,27 +246,13 @@ items:
   namespace: Scrapbook101core.Models
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "dateAdded")]
-
-      public DateTime DateAdded { get; set; }
+    content: public DateTime DateAdded { get; set; }
     parameters: []
     return:
       type: System.DateTime
       description: "\nThis value is automatically inserted by code upon initial creation of an item and then never changed.\nExample: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="dateAdded")>
-
-      Public Property DateAdded As Date
+    content.vb: Public Property DateAdded As Date
   overload: Scrapbook101core.Models.Item.DateAdded*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: dateAdded
   modifiers.csharp:
   - public
   - get
@@ -341,7 +274,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DateUpdated
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 67
@@ -351,27 +284,13 @@ items:
   remarks: "\nOn initial creation of an Scrapbook101core item,\nthis property equals <strong>dateAdded</strong>. When an item is edited, this property is updated with the correct timestamp.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "dateUpdated")]
-
-      public DateTime DateUpdated { get; set; }
+    content: public DateTime DateUpdated { get; set; }
     parameters: []
     return:
       type: System.DateTime
       description: "\nThis value is automatically inserted.\nExample: A string that is an ISO 8601 date and time, e.g., &quot;2018-06-07T00:00:00&quot;.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="dateUpdated")>
-
-      Public Property DateUpdated As Date
+    content.vb: Public Property DateUpdated As Date
   overload: Scrapbook101core.Models.Item.DateUpdated*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: dateUpdated
   modifiers.csharp:
   - public
   - get
@@ -393,7 +312,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Description
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 77
@@ -403,27 +322,13 @@ items:
   remarks: "\nThis property provides the\ncontext of why the item is important. Descriptions longer than a couple hundred words should be added as assets.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "description")]
-
-      public string Description { get; set; }
+    content: public string Description { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nInformation about the Scrapbook101core item that isn&apos;t already captured in other fields.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="description")>
-
-      Public Property Description As String
+    content.vb: Public Property Description As String
   overload: Scrapbook101core.Models.Item.Description*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: description
   modifiers.csharp:
   - public
   - get
@@ -445,7 +350,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GeoLocation
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 88
@@ -455,27 +360,13 @@ items:
   remarks: "\nA <a href=\"https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.spatial.point\">Microsoft.Azure.Documents.Spatial.Point</a>\nIf you have a Bing Maps Key and it is specified in the appsettings.json file, then location values are\nconverted into latitude and longitude coordinates (geocoded) to allow for more flexible location searches.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "geoLocation")]
-
-      public Point GeoLocation { get; set; }
+    content: public Point GeoLocation { get; set; }
     parameters: []
     return:
-      type: Microsoft.Azure.Documents.Spatial.Point
+      type: Point
       description: "\nRepresents a point geometry class in the Azure Cosmos DB service.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="geoLocation")>
-
-      Public Property GeoLocation As Point
+    content.vb: Public Property GeoLocation As Point
   overload: Scrapbook101core.Models.Item.GeoLocation*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: geoLocation
   modifiers.csharp:
   - public
   - get
@@ -497,7 +388,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Id
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 94
@@ -506,27 +397,13 @@ items:
   namespace: Scrapbook101core.Models
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "id")]
-
-      public string Id { get; set; }
+    content: public string Id { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nAn auto-generated globally unique identifier (GUID), like &quot;c73af369-7a21-45dd-b9ec-fe31af354fe1&quot;.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="id")>
-
-      Public Property Id As String
+    content.vb: Public Property Id As String
   overload: Scrapbook101core.Models.Item.Id*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: id
   modifiers.csharp:
   - public
   - get
@@ -548,7 +425,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Location
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 104
@@ -558,27 +435,13 @@ items:
   remarks: "\nIt is not required but is helpful. It is important to be consistent with how you enter values to make searching easier.\nExamples: &quot;Seattle, WA&quot; or &quot;101 Main St. Seattle 98103, USA&quot; or &quot;Italy&quot;.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "location")]
-
-      public string Location { get; set; }
+    content: public string Location { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nA friendly name of the location that is relevant for the Scrapbook101core item.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="location")>
-
-      Public Property Location As String
+    content.vb: Public Property Location As String
   overload: Scrapbook101core.Models.Item.Location*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: location
   modifiers.csharp:
   - public
   - get
@@ -600,7 +463,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Rating
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 114
@@ -610,27 +473,13 @@ items:
   remarks: "\nThe rating system will be unique for each implementation. The test data provided with Scrapbook101core\nuses a rating of 1 - 5.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "rating")]
-
-      public string Rating { get; set; }
+    content: public string Rating { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nA rating of the Scrapbook101core item, if applicable.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="rating")>
-
-      Public Property Rating As String
+    content.vb: Public Property Rating As String
   overload: Scrapbook101core.Models.Item.Rating*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: rating
   modifiers.csharp:
   - public
   - get
@@ -652,7 +501,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: UpdatedBy
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 124
@@ -662,27 +511,13 @@ items:
   remarks: "\nThis could be a user name or ID. For example, if you implement\nan authentication scheme based on Windows Live, Facebook, or Google, you can use the user&apos;s email or ID in this field.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty(PropertyName = "updatedBy")]
-
-      public string UpdatedBy { get; set; }
+    content: public string UpdatedBy { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nAn identifier representing who changed the entry.\n"
-    content.vb: >-
-      <JsonProperty(PropertyName:="updatedBy")>
-
-      Public Property UpdatedBy As String
+    content.vb: Public Property UpdatedBy As String
   overload: Scrapbook101core.Models.Item.UpdatedBy*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: updatedBy
   modifiers.csharp:
   - public
   - get
@@ -704,7 +539,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Title
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 130
@@ -716,8 +551,6 @@ items:
     content: >-
       [Required(ErrorMessage = "Title is required.")]
 
-      [JsonProperty(PropertyName = "title")]
-
       public string Title { get; set; }
     parameters: []
     return:
@@ -725,8 +558,6 @@ items:
       description: "\nA descriptive title for the Scrapbook101core item. For example, if item is a book, use all or part of the book title.\n"
     content.vb: >-
       <Required(ErrorMessage:="Title is required.")>
-
-      <JsonProperty(PropertyName:="title")>
 
       Public Property Title As String
   overload: Scrapbook101core.Models.Item.Title*
@@ -738,13 +569,6 @@ items:
     - name: ErrorMessage
       type: System.String
       value: Title is required.
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: title
   modifiers.csharp:
   - public
   - get
@@ -766,7 +590,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Item.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Type
     path: ../Scrapbook101core/Models/Item.cs
     startLine: 141
@@ -780,16 +604,12 @@ items:
     content: >-
       [Required(ErrorMessage = "Type is required.")]
 
-      [JsonProperty(PropertyName = "type")]
-
       public string Type { get; set; }
     parameters: []
     return:
       type: System.String
     content.vb: >-
       <Required(ErrorMessage:="Type is required.")>
-
-      <JsonProperty(PropertyName:="type")>
 
       Public Property Type As String
   overload: Scrapbook101core.Models.Item.Type*
@@ -801,13 +621,6 @@ items:
     - name: ErrorMessage
       type: System.String
       value: Type is required.
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: PropertyName
-      type: System.String
-      value: type
   modifiers.csharp:
   - public
   - get
@@ -1264,19 +1077,12 @@ references:
   name: GeoLocation
   nameWithType: Item.GeoLocation
   fullName: Scrapbook101core.Models.Item.GeoLocation
-- uid: Microsoft.Azure.Documents.Spatial.Point
-  commentId: T:Microsoft.Azure.Documents.Spatial.Point
-  parent: Microsoft.Azure.Documents.Spatial
+- uid: Point
+  commentId: '!:Point'
   isExternal: true
   name: Point
   nameWithType: Point
-  fullName: Microsoft.Azure.Documents.Spatial.Point
-- uid: Microsoft.Azure.Documents.Spatial
-  commentId: N:Microsoft.Azure.Documents.Spatial
-  isExternal: true
-  name: Microsoft.Azure.Documents.Spatial
-  nameWithType: Microsoft.Azure.Documents.Spatial
-  fullName: Microsoft.Azure.Documents.Spatial
+  fullName: Point
 - uid: Scrapbook101core.Models.Item.Id*
   commentId: Overload:Scrapbook101core.Models.Item.Id
   name: Id
