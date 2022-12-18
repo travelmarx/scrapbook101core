@@ -33,7 +33,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: CategoryFields
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 47
@@ -76,7 +76,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: this[]
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 52
@@ -84,24 +84,14 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonIgnore]
-
-      public object this[string propertyName] { get; set; }
+    content: public object this[string propertyName] { get; set; }
     parameters:
     - id: propertyName
       type: System.String
     return:
       type: System.Object
-    content.vb: >-
-      <JsonIgnore>
-
-      Public Property Item(propertyName As String) As Object
+    content.vb: Public Property Item(propertyName As String) As Object
   overload: Scrapbook101core.Models.CategoryFields.Item*
-  attributes:
-  - type: Newtonsoft.Json.JsonIgnoreAttribute
-    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
-    arguments: []
   nameWithType.vb: CategoryFields.Item(String)
   modifiers.csharp:
   - public
@@ -126,7 +116,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Artist
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 59
@@ -134,29 +124,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "artist")]
-
-      public string Artist { get; set; }
+    content: public string Artist { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="artist")>
-
-      Public Property Artist As String
+    content.vb: Public Property Artist As String
   overload: Scrapbook101core.Models.CategoryFields.Artist*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: artist
   modifiers.csharp:
   - public
   - get
@@ -178,7 +151,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Author
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 62
@@ -186,29 +159,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "author")]
-
-      public string Author { get; set; }
+    content: public string Author { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="author")>
-
-      Public Property Author As String
+    content.vb: Public Property Author As String
   overload: Scrapbook101core.Models.CategoryFields.Author*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: author
   modifiers.csharp:
   - public
   - get
@@ -230,7 +186,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: BirthDate
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 65
@@ -238,29 +194,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthDate")]
-
-      public string BirthDate { get; set; }
+    content: public string BirthDate { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="birthDate")>
-
-      Public Property BirthDate As String
+    content.vb: Public Property BirthDate As String
   overload: Scrapbook101core.Models.CategoryFields.BirthDate*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: birthDate
   modifiers.csharp:
   - public
   - get
@@ -282,7 +221,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: BirthPlace
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 68
@@ -290,29 +229,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthPlace")]
-
-      public string BirthPlace { get; set; }
+    content: public string BirthPlace { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="birthPlace")>
-
-      Public Property BirthPlace As String
+    content.vb: Public Property BirthPlace As String
   overload: Scrapbook101core.Models.CategoryFields.BirthPlace*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: birthPlace
   modifiers.csharp:
   - public
   - get
@@ -334,7 +256,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DeathDate
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 71
@@ -342,29 +264,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deathDate")]
-
-      public string DeathDate { get; set; }
+    content: public string DeathDate { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="deathDate")>
-
-      Public Property DeathDate As String
+    content.vb: Public Property DeathDate As String
   overload: Scrapbook101core.Models.CategoryFields.DeathDate*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: deathDate
   modifiers.csharp:
   - public
   - get
@@ -386,7 +291,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: DeathPlace
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 74
@@ -394,29 +299,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deathPlace")]
-
-      public string DeathPlace { get; set; }
+    content: public string DeathPlace { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="deathPlace")>
-
-      Public Property DeathPlace As String
+    content.vb: Public Property DeathPlace As String
   overload: Scrapbook101core.Models.CategoryFields.DeathPlace*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: deathPlace
   modifiers.csharp:
   - public
   - get
@@ -438,7 +326,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Director
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 77
@@ -446,29 +334,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "director")]
-
-      public string Director { get; set; }
+    content: public string Director { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="director")>
-
-      Public Property Director As String
+    content.vb: Public Property Director As String
   overload: Scrapbook101core.Models.CategoryFields.Director*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: director
   modifiers.csharp:
   - public
   - get
@@ -490,7 +361,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Genre
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 80
@@ -498,29 +369,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "genre")]
-
-      public string Genre { get; set; }
+    content: public string Genre { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="genre")>
-
-      Public Property Genre As String
+    content.vb: Public Property Genre As String
   overload: Scrapbook101core.Models.CategoryFields.Genre*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: genre
   modifiers.csharp:
   - public
   - get
@@ -542,7 +396,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Highlight
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 83
@@ -550,29 +404,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highlight")]
-
-      public string Highlight { get; set; }
+    content: public string Highlight { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="highlight")>
-
-      Public Property Highlight As String
+    content.vb: Public Property Highlight As String
   overload: Scrapbook101core.Models.CategoryFields.Highlight*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: highlight
   modifiers.csharp:
   - public
   - get
@@ -594,7 +431,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Location
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 86
@@ -602,29 +439,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location")]
-
-      public string Location { get; set; }
+    content: public string Location { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="location")>
-
-      Public Property Location As String
+    content.vb: Public Property Location As String
   overload: Scrapbook101core.Models.CategoryFields.Location*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: location
   modifiers.csharp:
   - public
   - get
@@ -646,7 +466,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Lodging
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 89
@@ -654,29 +474,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lodging")]
-
-      public string Lodging { get; set; }
+    content: public string Lodging { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="lodging")>
-
-      Public Property Lodging As String
+    content.vb: Public Property Lodging As String
   overload: Scrapbook101core.Models.CategoryFields.Lodging*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: lodging
   modifiers.csharp:
   - public
   - get
@@ -698,7 +501,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Synopsis
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 92
@@ -706,29 +509,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synopsis")]
-
-      public string Synopsis { get; set; }
+    content: public string Synopsis { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="synopsis")>
-
-      Public Property Synopsis As String
+    content.vb: Public Property Synopsis As String
   overload: Scrapbook101core.Models.CategoryFields.Synopsis*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: synopsis
   modifiers.csharp:
   - public
   - get
@@ -750,7 +536,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Theme
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 95
@@ -758,29 +544,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "theme")]
-
-      public string Theme { get; set; }
+    content: public string Theme { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="theme")>
-
-      Public Property Theme As String
+    content.vb: Public Property Theme As String
   overload: Scrapbook101core.Models.CategoryFields.Theme*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: theme
   modifiers.csharp:
   - public
   - get
@@ -802,7 +571,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Type
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 98
@@ -810,29 +579,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-
-      public string Type { get; set; }
+    content: public string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="type")>
-
-      Public Property Type As String
+    content.vb: Public Property Type As String
   overload: Scrapbook101core.Models.CategoryFields.Type*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: type
   modifiers.csharp:
   - public
   - get
@@ -854,7 +606,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Who
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 101
@@ -862,29 +614,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "who")]
-
-      public string Who { get; set; }
+    content: public string Who { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="who")>
-
-      Public Property Who As String
+    content.vb: Public Property Who As String
   overload: Scrapbook101core.Models.CategoryFields.Who*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: who
   modifiers.csharp:
   - public
   - get
@@ -906,7 +641,7 @@ items:
     remote:
       path: Scrapbook101core/Models/Category.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: Year
     path: ../Scrapbook101core/Models/Category.cs
     startLine: 104
@@ -914,29 +649,12 @@ items:
   - Scrapbook101core
   namespace: Scrapbook101core.Models
   syntax:
-    content: >-
-      [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Year")]
-
-      public string Year { get; set; }
+    content: public string Year { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty(NullValueHandling:=NullValueHandling.Ignore, PropertyName:="Year")>
-
-      Public Property Year As String
+    content.vb: Public Property Year As String
   overload: Scrapbook101core.Models.CategoryFields.Year*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: NullValueHandling
-      type: Newtonsoft.Json.NullValueHandling
-      value: 1
-    - name: PropertyName
-      type: System.String
-      value: Year
   modifiers.csharp:
   - public
   - get

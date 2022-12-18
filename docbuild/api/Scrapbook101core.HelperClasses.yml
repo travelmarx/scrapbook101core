@@ -18,7 +18,7 @@ items:
     remote:
       path: Scrapbook101core/HelperClasses.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: HelperClasses
     path: ../Scrapbook101core/HelperClasses.cs
     startLine: 12
@@ -62,7 +62,7 @@ items:
     remote:
       path: Scrapbook101core/HelperClasses.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: BuildPathList
     path: ../Scrapbook101core/HelperClasses.cs
     startLine: 22
@@ -107,7 +107,7 @@ items:
     remote:
       path: Scrapbook101core/HelperClasses.cs
       branch: main
-      repo: https://github.com/travelmarx/scrapbook101core.git
+      repo: https://github.com/travelmarx/scrapbook101core
     id: GetGeocode
     path: ../Scrapbook101core/HelperClasses.cs
     startLine: 63
